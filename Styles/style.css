@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0px;
+}
+
+:root {
+  --primary-50: #f7faff;
+  --primary-100: #cadbff;
+  --primary-200: #a5c3ff;
+  --primary-300: #6c9dff;
+  --primary-400: #447ef2;
+  --primary-500: #255ed1;
+  --primary-600: #1d4ba9;
+  --primary-700: #15316a;
+  --blue-grey: #57697d;
+  --white:#fff;
+}
+
+.text-primary-50 {
+  color: var(--primary-50);
+}
+
+.bg-primary-50 {
+  background-color: var(--primary-50);
+}
+
+.text-primary-100 {
+  color: var(--primary-100);
+}
+
+.bg-primary-100 {
+  background-color: var(--primary-100);
+}
+
+.text-primary-200 {
+  color: var(--primary-200);
+}
+
+.bg-primary-200 {
+  background-color: var(--primary-200);
+}
+
+.text-primary-300 {
+  color: var(--primary-300);
+}
+
+.bg-primary-300 {
+  background-color: var(--primary-300);
+}
+
+.text-primary-400 {
+  color: var(--primary-400);
+}
+
+.bg-primary-400 {
+  background-color: var(--primary-400);
+}
+
+.text-primary-500 {
+  color: var(--primary-500);
+}
+
+.bg-primary-500 {
+  background-color: var(--primary-500);
+}
+
+.text-primary-600 {
+  color: var(--primary-600);
+}
+
+.bg-primary-600 {
+  background-color: var(--primary-600);
+}
+
+.text-primary-700 {
+  color: var(--primary-700);
+}
+
+.bg-primary-700 {
+  background-color: var(--primary-700);
+}
+
+.text-blue-grey {
+  color: var(--blue-grey);
+}
+
+.bg-blue-grey {
+  background-color: var(--blue-grey);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+/*# sourceMappingURL=style.css.map */

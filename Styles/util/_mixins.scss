@@ -1,0 +1,80 @@
+@use "./colors" as *;
+
+$xsm: 360px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+// breakpoint for max width
+
+@mixin xsm($breakpoint:$xsm) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin sm ($breakpoint:$sm) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin md($breakpoint:$md) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin lg ($breakpoint:$lg) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin xl ($breakpoint:$xl){
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin xxl ($breakpoint:$xxl) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+
+// breakpoint min width
+@mixin min-xsm($breakpoint:$xsm) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin min-sm ($breakpoint:$sm) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin min-md($breakpoint:$md) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin min-lg ($breakpoint:$lg) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin min-xl ($breakpoint:$xl){
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin min-xxl ($breakpoint:$xxl) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+

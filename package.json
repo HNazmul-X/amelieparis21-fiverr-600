@@ -1,0 +1,12 @@
+{
+  "name": "amelieparis21.fiverr.600",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./Styles/style.scss ./Styles/style.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
