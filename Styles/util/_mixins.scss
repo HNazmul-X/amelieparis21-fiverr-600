@@ -8,73 +8,153 @@ $xl: 1200px;
 $xxl: 1400px;
 // breakpoint for max width
 
-@mixin xsm($breakpoint:$xsm) {
+@mixin xsm($breakpoint: $xsm) {
     @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
 
-@mixin sm ($breakpoint:$sm) {
+@mixin sm($breakpoint: $sm) {
     @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
 
-@mixin md($breakpoint:$md) {
+@mixin md($breakpoint: $md) {
     @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
 
-@mixin lg ($breakpoint:$lg) {
+@mixin lg($breakpoint: $lg) {
     @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
-@mixin xl ($breakpoint:$xl){
+@mixin xl($breakpoint: $xl) {
     @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
-@mixin xxl ($breakpoint:$xxl) {
+@mixin xxl($breakpoint: $xxl) {
     @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
-
 
 // breakpoint min width
-@mixin min-xsm($breakpoint:$xsm) {
+@mixin min-xsm($breakpoint: $xsm) {
     @media screen and (min-width: $breakpoint) {
         @content;
     }
 }
 
-@mixin min-sm ($breakpoint:$sm) {
+@mixin min-sm($breakpoint: $sm) {
     @media screen and (min-width: $breakpoint) {
         @content;
     }
 }
 
-@mixin min-md($breakpoint:$md) {
+@mixin min-md($breakpoint: $md) {
     @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
 
-@mixin min-lg ($breakpoint:$lg) {
+@mixin min-lg($breakpoint: $lg) {
     @media screen and (min-width: $breakpoint) {
         @content;
     }
 }
-@mixin min-xl ($breakpoint:$xl){
+@mixin min-xl($breakpoint: $xl) {
     @media screen and (min-width: $breakpoint) {
         @content;
     }
 }
-@mixin min-xxl ($breakpoint:$xxl) {
+@mixin min-xxl($breakpoint: $xxl) {
     @media screen and (min-width: $breakpoint) {
         @content;
     }
 }
 
+/* Button mixin */
+@mixin primary-button($bg: $primary-400) {
+    background-color: $bg;
+    border: none;
+    padding: 7px 25px;
+    border-radius: 999px;
+    color: $white;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid $bg;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 0px;
+        left: 0px;
+        background: $white;
+        border-radius: inherit;
+        z-index: -1;
+        transition: 0.3s;
+    }
+    &:focus{
+        box-shadow: 3px 3px 20px transparentize($color: $bg, $amount: 0.7);
+    }
+
+    &:hover {
+        color: $bg;
+        box-shadow: 3px 3px 20px transparentize($color: $bg, $amount: 0.7);
+
+        &::after {
+            transition: 0s;
+            height: 100%;
+        }
+    }
+
+    &:active {
+        transition: 0s;
+        background: transparentize($color: $bg, $amount: 0.3);
+        color: $white;
+        &::after {
+            display: none;
+        }
+    }
+}
+
+/* Input field Mixin */
+@mixin primary-input($isFat: false) {
+    background: $primary-50;
+    border: 3px solid $primary-200;
+    box-sizing: border-box;
+    border-radius: 34.5px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $blue-grey;
+    transition: 0.3s;
+    @if $isFat == false {        
+        padding: 5px 10px 5px 20px;
+    }
+    @if $isFat {
+        padding: 10px 20px;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        caret-color: $primary-500;
+        box-shadow: 3px 3px 20px transparentize($color: $primary-300, $amount: 0.7);
+        background: $white;
+        border-color: $primary-200;
+    }
+
+    &::placeholder {
+        color: transparentize($color: $blue-grey, $amount: 0.3);
+    }
+}
