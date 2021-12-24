@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="./Styles/pages/_login&registation.css">
 </head>
 <body>
 
@@ -17,9 +18,55 @@
     </h1>
     
 
+
+    <button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+
+    <!-- login popup -->
+    <div id="login_registration">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog formPopup">
+                <div class="modal-content" id="loginPopup">
+                    <div class="fCard">
+                        <img src="./Assets/images/Group 21.png" class="img-fluid" alt="">
+                    </div>
+
+                    <form action="" >
+                        <h2>Login</h2>
+
+                        <input type="email" class="form-control" placeholder="Email *">
+
+                        <input type="password" class="form-control" placeholder="Password *">
+
+                        <p class="btn btn-primary">Login</p><br />
+                        <p id="switch" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Create an Account</p><br />
+                        <a href="">Forget Your Password ?</a>
+                    </form>
+
+                </div>
+
+                <div class="modal-content" id="registrationPopup">
+                    <form action="">
+                        <h2>Registration</h2>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- script tags -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/index.js"></script>
-
+    <script src="./js/login&registation.js"></script>
 </body>
 </html>

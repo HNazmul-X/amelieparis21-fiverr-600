@@ -1,0 +1,41 @@
+
+#login_registration  {
+    
+}
+#login_registration #loginPopup {
+   margin-top: 100px;
+   display: block;
+}
+#login_registration #loginPopup {
+    width: 400px;
+    height: 400px;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+    border-radius: 34px;
+}
+#login_registration #loginPopup .fCard {
+    margin-top: -60px;
+}
+#login_registration #loginPopup .fCard img {
+    width: 140px;
+}
+
+
+#login_registration #registrationPopup {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
