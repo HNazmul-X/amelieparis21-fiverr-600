@@ -18,7 +18,8 @@ h1, h2, h3, h4, h5, h6 {
   --primary-600: #1d4ba9;
   --primary-700: #15316a;
   --blue-grey: #57697d;
-  --white:#fff;
+  --white: #fff;
+  --grey-200: #e7e7e9;
 }
 
 .text-primary-50 {
@@ -93,12 +94,121 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--blue-grey);
 }
 
+.text-grey-200 {
+  color: var(--grey-200);
+}
+
+.bg-grey-200 {
+  background-color: var(--grey-200);
+}
+
 .text-white {
   color: var(--white);
 }
 
 .bg-white {
   background-color: var(--white);
+}
+
+.steper-section {
+  background-color: #f7faff;
+  padding: 4rem 0;
+}
+.steper-section .section-wrapper {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+}
+.steper-section .section-wrapper .single-steps-wrapper {
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper {
+  display: flex;
+  flex-shrink: 0;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .active {
+  background-color: #15316a !important;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .finished {
+  background-color: #57697d;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper div {
+  color: #fff;
+  background-color: #e7e7e9;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .label {
+  margin-top: 16px;
+  text-align: center;
+  width: 100%;
+  opacity: 0.87;
+}
+.steper-section .section-wrapper .single-steps-wrapper .hr-line {
+  left: calc(-50% + 20px);
+  right: calc(50% + 20px);
+  position: absolute;
+  flex: 1 1 auto;
+  border: 0;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #eaeaf0;
+  top: 22px;
+}
+
+.content-section {
+  background-color: #f7faff;
+  padding: 1rem 0 5rem;
+}
+
+.contactsheet-content-section .left .my-btn {
+  background-color: #15316a;
+  color: #fff;
+  border-radius: 20px;
+  width: 220px;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+}
+.contactsheet-content-section .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactsheet-content-section .right img {
+  width: 100%;
+  max-width: 350px;
+}
+
+.select-card-base-section .my-btn {
+  background-color: #15316a;
+  color: #fff;
+  border-radius: 20px;
+  width: 170px;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+}
+.select-card-base-section .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.select-card-base-section .right img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

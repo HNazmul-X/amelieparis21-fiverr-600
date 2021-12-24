@@ -7,28 +7,31 @@ $primary-500: #255ed1;
 $primary-600: #1d4ba9;
 $primary-700: #15316a;
 $blue-grey: #57697d;
-$white:#fff;
+$white: #fff;
+$grey-200: #e7e7e9;
 
 :root {
-    --primary-50: #{$primary-50};
-    --primary-100: #{$primary-100};
-    --primary-200: #{$primary-200};
-    --primary-300: #{$primary-300};
-    --primary-400: #{$primary-400};
-    --primary-500: #{$primary-500};
-    --primary-600: #{$primary-600};
-    --primary-700: #{$primary-700};
-    --blue-grey: #{$blue-grey};
-    --white:#{$white};
+  --primary-50: #{$primary-50};
+  --primary-100: #{$primary-100};
+  --primary-200: #{$primary-200};
+  --primary-300: #{$primary-300};
+  --primary-400: #{$primary-400};
+  --primary-500: #{$primary-500};
+  --primary-600: #{$primary-600};
+  --primary-700: #{$primary-700};
+  --blue-grey: #{$blue-grey};
+  --white: #{$white};
+  --grey-200: #{$grey-200};
 }
 
-$all-color: primary-50, primary-100, primary-200, primary-300, primary-400, primary-500, primary-600, primary-700, blue-grey,"white";
+$all-color: primary-50, primary-100, primary-200, primary-300, primary-400,
+  primary-500, primary-600, primary-700, blue-grey, grey-200, "white";
 
 @each $color in $all-color {
-    .text-#{$color} {
-        color: var(--#{$color});
-    }
-    .bg-#{$color} {
-        background-color: var(--#{$color});
-    }
+  .text-#{$color} {
+    color: var(--#{$color});
+  }
+  .bg-#{$color} {
+    background-color: var(--#{$color});
+  }
 }
