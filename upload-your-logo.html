@@ -153,15 +153,20 @@
               </p>
               <div class="mb-3">
                 <div>
-                  <input type="file" id="upload">
-                  <div class="upload-box">
+                  <!-- <label for="first_name"><div>First Name </div></label>
+                  <input type="text" id="first_name" name="first_name"> -->
 
-                  </div>
+                  <label class="upload-box" for="upload">   
+                    <span class="iconify" data-icon="uil:image-upload"></span>   
+                    <h5>Upload your Logo</h5> 
+                    <p class="small-text">JPG or PNG</p>            
+                  </label>
+                  <input class="d-none" type="file" id="upload">
                 </div>
               </div>
-              <p>1 People imported</p>
-              <div class="text-center">
-                <button class="my-btn me-3">Download Refference File</button>
+              <p>logo size</p>
+              <div>
+                <input type="range" value="50" id="slider">
               </div>
             </div>
           </div>
@@ -169,6 +174,10 @@
             <div>
               <img src="./Assest/Images/Group 32.png" alt="Card" />
             </div>
+          </div>
+          <div class="mt-5">
+            <button class="my-btn me-3">Return</button>
+            <button class="my-btn">Following</button>
           </div>
         </div>
       </article>

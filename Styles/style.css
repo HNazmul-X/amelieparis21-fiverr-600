@@ -214,6 +214,55 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+.upload-your-logo-section .upload-box {
+  border: 1px solid #a5c3ff;
+  text-align: center;
+  padding: 20px 40px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.upload-your-logo-section .upload-box svg {
+  font-size: 45px;
+  margin-bottom: 0.5rem;
+}
+.upload-your-logo-section .upload-box h5 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+.upload-your-logo-section .upload-box .small-text {
+  margin-bottom: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #447ef2;
+}
+.upload-your-logo-section #slider {
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 450px;
+  height: 7px;
+  outline: none;
+  border-radius: 0;
+  background-color: #255ed1;
+}
+.upload-your-logo-section #slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 0.5px solid #255ed1;
+}
+.upload-your-logo-section .my-btn {
+  border: none;
+  outline: none;
+  background-color: #15316a;
+  color: #fff;
+  width: 150px;
+  padding: 10px;
+  border-radius: 41px;
+}
+
 .my-button {
   background-color: #447ef2;
   border: none;
