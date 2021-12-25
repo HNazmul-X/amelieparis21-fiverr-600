@@ -9,7 +9,8 @@
   --primary-600: #1d4ba9;
   --primary-700: #15316a;
   --blue-grey: #57697d;
-  --white:#fff;
+  --white: #fff;
+  --grey-200: #e7e7e9;
 }
 
 .text-primary-50 {
@@ -84,6 +85,14 @@
   background-color: var(--blue-grey);
 }
 
+.text-grey-200 {
+  color: var(--grey-200);
+}
+
+.bg-grey-200 {
+  background-color: var(--grey-200);
+}
+
 .text-white {
   color: var(--white);
 }
@@ -151,17 +160,88 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #create-card-login {
-  background: #E5E5E5;
+  background: #f7faff;
 }
 #create-card-login .cardLogin_inner {
   height: 100vh;
-  padding: 90px 0;
+}
+#create-card-login .cardLogin_inner .steper-section {
+  background: none;
+  padding: 4rem 0;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper {
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper {
+  display: flex;
+  flex-shrink: 0;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .active {
+  background-color: #447ef2 !important;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .finished {
+  background-color: #57697d;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper div {
+  color: #fff;
+  background-color: #e7e7e9;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper div svg {
+  font-size: 23px;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .label {
+  margin-top: 16px;
+  text-align: center;
+  width: 100%;
+  opacity: 0.87;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .setpText {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #57697d;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .hr-line {
+  left: calc(-50% + 20px);
+  right: calc(50% + 20px);
+  position: absolute;
+  flex: 1 1 auto;
+  border: 0;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #cadbff;
+  top: 22px;
 }
 #create-card-login .cardLogin_inner .leftArea p {
   margin-bottom: 10px;
 }
+@media screen and (max-width: 576px) {
+  #create-card-login .cardLogin_inner .leftArea p {
+    font-style: 20px;
+  }
+}
 #create-card-login .cardLogin_inner .leftArea button {
-  background: #255ED1;
+  background: #255ed1;
   border-radius: 19px;
   padding: 5px 100px;
   color: #fff;
@@ -171,8 +251,34 @@ h1, h2, h3, h4, h5, h6 {
 #create-card-login .cardLogin_inner .leftArea .btn:focus {
   box-shadow: none;
 }
+@media screen and (max-width: 576px) {
+  #create-card-login .cardLogin_inner {
+    text-align: center;
+  }
+}
 #create-card-login .cardLogin_inner .rightArea img {
   min-width: 100%;
+}
+@media screen and (max-width: 992px) {
+  #create-card-login .cardLogin_inner .rightArea img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #create-card-login .cardLogin_inner .rightArea img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login .cardLogin_inner .rightArea img {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login .cardLogin_inner {
+    text-align: center;
+  }
 }
 #create-card-login #login_registration .modal-dialog {
   min-width: 100%;
@@ -202,10 +308,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 40px;
   line-height: 26px;
   letter-spacing: 0.02em;
-  color: #57697D;
+  color: #57697d;
 }
 #create-card-login #login_registration #loginPopup label {
-  color: #57697D;
+  color: #57697d;
 }
 #create-card-login #login_registration #loginPopup .fCard {
   margin-top: -60px;
@@ -214,14 +320,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 140px;
 }
 #create-card-login #login_registration #loginPopup .logBtn {
-  background: #6C9DFF;
+  background: #6c9dff;
   color: #fff;
   padding: 6px 78px;
   border-radius: 20px;
   margin-bottom: 0;
 }
 #create-card-login #login_registration #loginPopup .createBtn {
-  background: #6C9DFF;
+  background: #6c9dff;
   color: #fff;
   padding: 6px 30px;
   border-radius: 20px;
@@ -231,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.02em;
-  color: #000000;
+  color: black;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -267,7 +373,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 40px;
   line-height: 26px;
   letter-spacing: 0.02em;
-  color: #57697D;
+  color: #57697d;
 }
 #create-card-login #login_registration #registrationPopup .form-floating label {
   padding: 10px 0.75rem;
@@ -282,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: right;
 }
 #create-card-login #login_registration #registrationPopup .validateBtn p {
-  background: #6C9DFF;
+  background: #6c9dff;
   color: #fff;
   padding: 6px 30px;
   border-radius: 20px;
@@ -301,6 +407,107 @@ h1, h2, h3, h4, h5, h6 {
     width: 350px;
     padding: 10px 30px 30px;
   }
+}
+
+.steper-section {
+  background-color: #f7faff;
+  padding: 4rem 0;
+}
+.steper-section .section-wrapper {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+}
+.steper-section .section-wrapper .single-steps-wrapper {
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper {
+  display: flex;
+  flex-shrink: 0;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .active {
+  background-color: #15316a !important;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .finished {
+  background-color: #57697d;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper div {
+  color: #fff;
+  background-color: #e7e7e9;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+}
+.steper-section .section-wrapper .single-steps-wrapper .single-steps .label {
+  margin-top: 16px;
+  text-align: center;
+  width: 100%;
+  opacity: 0.87;
+}
+.steper-section .section-wrapper .single-steps-wrapper .hr-line {
+  left: calc(-50% + 20px);
+  right: calc(50% + 20px);
+  position: absolute;
+  flex: 1 1 auto;
+  border: 0;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #eaeaf0;
+  top: 22px;
+}
+
+.content-section {
+  background-color: #f7faff;
+  padding: 1rem 0 5rem;
+}
+
+.contactsheet-content-section .left .my-btn {
+  background-color: #15316a;
+  color: #fff;
+  border-radius: 20px;
+  width: 220px;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+}
+.contactsheet-content-section .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactsheet-content-section .right img {
+  width: 100%;
+  max-width: 350px;
+}
+
+.select-card-base-section .my-btn {
+  background-color: #15316a;
+  color: #fff;
+  border-radius: 20px;
+  width: 170px;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+}
+.select-card-base-section .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.select-card-base-section .right img {
+  width: 100%;
 }
 
 .my-button {

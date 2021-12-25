@@ -1,22 +1,97 @@
 @use  "../util" as *;
 
 #create-card-login {
-    background: #E5E5E5;
+    background: $primary-50;
 
     .cardLogin_inner {
         height: 100vh;
-        padding: 90px 0;
+
+        .steper-section {
+            background: none;
+            padding: 4rem 0;
+            .section-wrapper {
+                display: flex;
+                padding: 24px;
+                justify-content: center;
+          
+                .single-steps-wrapper {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    position: relative;
+                    .single-steps {
+                        flex-direction: column;
+                        display: flex;
+                        align-items: center;
+                        .img-wrapper {
+                            display: flex;
+                            flex-shrink: 0;
+                            .active {
+                                background-color: $primary-400 !important;
+                            }
+                            .finished{
+                                background-color: $blue-grey;
+                            }
+                            div {
+                                color: $white;
+                                background-color: $grey-200;
+                                cursor: pointer;
+                                width: 50px;
+                                height: 50px;
+                                display: flex;
+                                z-index: 1;
+                                align-items: center;
+                                border-radius: 50%;
+                                justify-content: center;
+    
+                                svg {
+                                    font-size: 23px;
+                                }
+                            }
+                    }
+                    .label {
+                        margin-top: 16px;
+                        text-align: center;
+                        width: 100%;
+                        opacity: 0.87;
+                    }
+    
+                    .setpText {
+                        font-size: 16px;
+                        line-height: 26px;
+                        letter-spacing: 0.02em;
+                        color: $blue-grey;
+                    }
+                }
+                        .hr-line {
+                        left: calc(-50% + 20px);
+                        right: calc(50% + 20px);
+                        position: absolute;
+                        flex: 1 1 auto;
+                        border: 0;
+                        height: 2px;
+                        border-radius: 1px;
+                        background-color: $primary-100;
+                        top: 22px;
+                    }
+               }
+            }
+        }
 
         .leftArea {
             p {
                 margin-bottom: 10px;
             }
+            @include sm {
+                p {
+                    font-style: 20px;;
+                }
+            }
 
             button {
-                background: #255ED1;
+                background: $primary-500;
                 border-radius: 19px;
                 padding: 5px 100px;
-                color: #fff;
+                color: $white;
                 font-size: 16px;
                 letter-spacing: .2px;
             }
@@ -24,10 +99,32 @@
                 box-shadow: none;
             }
         }
+        @include sm {
+            text-align: center;
+        }
         .rightArea {
             img {
                 min-width: 100%;
             }
+            @include lg {
+                img {
+                    width: 100%;
+                }
+            }
+            @include md {
+                img {
+                    width: 100%;
+                }
+            }
+            @include sm {
+                img {
+                    width: 100%;
+                    margin-top: 30px;
+                }
+            }
+        }
+        @include sm {
+            text-align: center;
         }
     }
 
@@ -55,7 +152,7 @@
             height: auto;
             padding: 10px 30px 30px;
             text-align: center;
-            box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+            box-shadow: -2px 13px 18px 14px $shadowBg;
             border-radius: 34px;
 
             .title {
@@ -63,11 +160,11 @@
                 font-size: 40px;
                 line-height: 26px;
                 letter-spacing: 0.02em;
-                color: #57697D;
+                color: $blue-grey;
             }
 
             label {
-                color: #57697D;
+                color: $blue-grey;
             }
 
             .fCard {
@@ -79,16 +176,16 @@
             }
 
             .logBtn {
-                background: #6C9DFF;
-                color: #fff;
+                background: $primary-300;
+                color: $white;
                 padding: 6px 78px;
                 border-radius: 20px;
                 margin-bottom: 0;
             }
 
             .createBtn {
-                background: #6C9DFF;
-                color: #fff;
+                background: $primary-300;
+                color: $white;
                 padding: 6px 30px;
                 border-radius: 20px;
                 margin-bottom: 0;
@@ -98,7 +195,7 @@
                 font-size: 16px;
                 line-height: 26px;
                 letter-spacing: 0.02em;
-                color: #000000;
+                color: black;
                 text-decoration: underline;
                 cursor: pointer;
             }
@@ -131,7 +228,7 @@
             height: 555px;
             padding: 10px 60px 30px;
             text-align: center;
-            box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+            box-shadow: -2px 13px 18px 14px $shadowBg;
             border-radius: 34px;
 
             .title {
@@ -139,7 +236,7 @@
                 font-size: 40px;
                 line-height: 26px;
                 letter-spacing: 0.02em;
-                color: #57697D;
+                color: $blue-grey;
             }
 
             .form-floating {
@@ -160,8 +257,8 @@
                 text-align: right;
 
                 p {
-                    background: #6C9DFF;
-                    color: #fff;
+                    background: $primary-300;
+                    color: $white;
                     padding: 6px 30px;
                     border-radius: 20px;
                     margin-bottom: 0;
