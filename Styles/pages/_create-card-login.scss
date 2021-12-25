@@ -1,0 +1,187 @@
+@use  "../util" as *;
+
+#create-card-login {
+    background: #E5E5E5;
+
+    .cardLogin_inner {
+        height: 100vh;
+        padding: 90px 0;
+
+        .leftArea {
+            p {
+                margin-bottom: 10px;
+            }
+
+            button {
+                background: #255ED1;
+                border-radius: 19px;
+                padding: 5px 100px;
+                color: #fff;
+                font-size: 16px;
+                letter-spacing: .2px;
+            }
+            .btn:focus {
+                box-shadow: none;
+            }
+        }
+        .rightArea {
+            img {
+                min-width: 100%;
+            }
+        }
+    }
+
+
+    #login_registration  {
+
+        .modal-dialog {
+            min-width: 100%;
+        }
+        @include md {
+            .modal-dialog {
+                min-width: 50%;
+            }
+        }
+        @include sm {
+            .modal-dialog {
+                min-width: 50%;
+            }
+        }
+
+        #loginPopup {
+            margin: 80px auto 0;
+            display: block;
+            width: 400px;
+            height: auto;
+            padding: 10px 30px 30px;
+            text-align: center;
+            box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+            border-radius: 34px;
+
+            .title {
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 26px;
+                letter-spacing: 0.02em;
+                color: #57697D;
+            }
+
+            label {
+                color: #57697D;
+            }
+
+            .fCard {
+                margin-top: -60px;
+
+                img {
+                    width: 140px;
+                }
+            }
+
+            .logBtn {
+                background: #6C9DFF;
+                color: #fff;
+                padding: 6px 78px;
+                border-radius: 20px;
+                margin-bottom: 0;
+            }
+
+            .createBtn {
+                background: #6C9DFF;
+                color: #fff;
+                padding: 6px 30px;
+                border-radius: 20px;
+                margin-bottom: 0;
+            }
+
+            .forget {
+                font-size: 16px;
+                line-height: 26px;
+                letter-spacing: 0.02em;
+                color: #000000;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+        @include xl {
+            #loginPopup {
+                width: 500px;
+
+                .logBtn {
+                    padding: 6px 108px;
+                }
+        
+                .createBtn {
+                    padding: 6px 60px;
+                }
+            }
+        }
+        @include sm {
+            #loginPopup {
+                width: 350px;
+            }
+        }
+        
+
+        #registrationPopup {
+            display: none;
+            overflow-y: scroll;
+            margin: 0 auto;
+            width: 650px;
+            height: 555px;
+            padding: 10px 60px 30px;
+            text-align: center;
+            box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+            border-radius: 34px;
+
+            .title {
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 26px;
+                letter-spacing: 0.02em;
+                color: #57697D;
+            }
+
+            .form-floating {
+                label {
+                    padding: 10px 0.75rem;
+                }
+            }
+
+            .form-control {
+                height: calc(2.5rem + 2px);
+            }
+
+            .unFatty-input {
+                border-width: 2px;
+            }
+            
+            .validateBtn {
+                text-align: right;
+
+                p {
+                    background: #6C9DFF;
+                    color: #fff;
+                    padding: 6px 30px;
+                    border-radius: 20px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        @include md {
+            #registrationPopup {
+                margin-top: 70px;
+                width: 550px;
+                padding: 10px 30px 30px;
+            }
+        }
+        @include sm {
+            #registrationPopup {
+                margin-top: 70px;
+                width: 350px;
+                padding: 10px 30px 30px;
+            }
+        }
+    }
+}
+

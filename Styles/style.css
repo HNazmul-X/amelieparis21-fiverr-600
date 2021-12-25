@@ -1,14 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-* {
-  box-sizing: border-box;
-  font-family: "Jost", sans-serif;
-  font-size: 17px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 0px;
-}
-
 :root {
   --primary-50: #f7faff;
   --primary-100: #cadbff;
@@ -104,6 +94,215 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Button mixin */
 /* Input field Mixin */
+* {
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0px;
+}
+
+.unFatty-input {
+  background: #f7faff;
+  border: 3px solid #a5c3ff;
+  box-sizing: border-box;
+  border-radius: 34.5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #57697d;
+  transition: 0.3s;
+  padding: 5px 10px 5px 20px;
+}
+.unFatty-input:focus {
+  outline: none;
+  box-shadow: none;
+  caret-color: #255ed1;
+  box-shadow: 3px 3px 20px rgba(108, 157, 255, 0.3);
+  background: #fff;
+  border-color: #a5c3ff;
+}
+.unFatty-input::placeholder {
+  color: rgba(87, 105, 125, 0.7);
+}
+
+.primary-input {
+  background: #f7faff;
+  border: 3px solid #a5c3ff;
+  box-sizing: border-box;
+  border-radius: 34.5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #57697d;
+  transition: 0.3s;
+  padding: 10px 20px;
+}
+.primary-input:focus {
+  outline: none;
+  box-shadow: none;
+  caret-color: #255ed1;
+  box-shadow: 3px 3px 20px rgba(108, 157, 255, 0.3);
+  background: #fff;
+  border-color: #a5c3ff;
+}
+.primary-input::placeholder {
+  color: rgba(87, 105, 125, 0.7);
+}
+
+#create-card-login {
+  background: #E5E5E5;
+}
+#create-card-login .cardLogin_inner {
+  height: 100vh;
+  padding: 90px 0;
+}
+#create-card-login .cardLogin_inner .leftArea p {
+  margin-bottom: 10px;
+}
+#create-card-login .cardLogin_inner .leftArea button {
+  background: #255ED1;
+  border-radius: 19px;
+  padding: 5px 100px;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+#create-card-login .cardLogin_inner .leftArea .btn:focus {
+  box-shadow: none;
+}
+#create-card-login .cardLogin_inner .rightArea img {
+  min-width: 100%;
+}
+#create-card-login #login_registration .modal-dialog {
+  min-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #create-card-login #login_registration .modal-dialog {
+    min-width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login #login_registration .modal-dialog {
+    min-width: 50%;
+  }
+}
+#create-card-login #login_registration #loginPopup {
+  margin: 80px auto 0;
+  display: block;
+  width: 400px;
+  height: auto;
+  padding: 10px 30px 30px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 34px;
+}
+#create-card-login #login_registration #loginPopup .title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #57697D;
+}
+#create-card-login #login_registration #loginPopup label {
+  color: #57697D;
+}
+#create-card-login #login_registration #loginPopup .fCard {
+  margin-top: -60px;
+}
+#create-card-login #login_registration #loginPopup .fCard img {
+  width: 140px;
+}
+#create-card-login #login_registration #loginPopup .logBtn {
+  background: #6C9DFF;
+  color: #fff;
+  padding: 6px 78px;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+#create-card-login #login_registration #loginPopup .createBtn {
+  background: #6C9DFF;
+  color: #fff;
+  padding: 6px 30px;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+#create-card-login #login_registration #loginPopup .forget {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+  #create-card-login #login_registration #loginPopup {
+    width: 500px;
+  }
+  #create-card-login #login_registration #loginPopup .logBtn {
+    padding: 6px 108px;
+  }
+  #create-card-login #login_registration #loginPopup .createBtn {
+    padding: 6px 60px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login #login_registration #loginPopup {
+    width: 350px;
+  }
+}
+#create-card-login #login_registration #registrationPopup {
+  display: none;
+  overflow-y: scroll;
+  margin: 0 auto;
+  width: 650px;
+  height: 555px;
+  padding: 10px 60px 30px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 34px;
+}
+#create-card-login #login_registration #registrationPopup .title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #57697D;
+}
+#create-card-login #login_registration #registrationPopup .form-floating label {
+  padding: 10px 0.75rem;
+}
+#create-card-login #login_registration #registrationPopup .form-control {
+  height: calc(2.5rem + 2px);
+}
+#create-card-login #login_registration #registrationPopup .unFatty-input {
+  border-width: 2px;
+}
+#create-card-login #login_registration #registrationPopup .validateBtn {
+  text-align: right;
+}
+#create-card-login #login_registration #registrationPopup .validateBtn p {
+  background: #6C9DFF;
+  color: #fff;
+  padding: 6px 30px;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  #create-card-login #login_registration #registrationPopup {
+    margin-top: 70px;
+    width: 550px;
+    padding: 10px 30px 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login #login_registration #registrationPopup {
+    margin-top: 70px;
+    width: 350px;
+    padding: 10px 30px 30px;
+  }
+}
+
 .my-button {
   background-color: #447ef2;
   border: none;
