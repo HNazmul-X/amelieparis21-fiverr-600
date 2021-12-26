@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
+import DashboardLayout from '../Dashboard/Components/DashboardLayout';
 import CreateCardPage from '../pages/Create-card/CreateCardPage';
 
 const NavbarRouter = () => {
@@ -11,6 +12,9 @@ const NavbarRouter = () => {
                 <Route path=":id" element={<h1>Hi Iam abla page</h1>}/>
                 <Route path="about" element={<h1>Hi Iam about page</h1>}/>
                 <Route path="create-card" element={<CreateCardPage/>}/>
+            </Route>
+            <Route path="/admin" element={<DashboardLayout/>}>
+                <Route index element={<h1>Welcome to Dashboard</h1>}/>
             </Route>
             
         </Routes>

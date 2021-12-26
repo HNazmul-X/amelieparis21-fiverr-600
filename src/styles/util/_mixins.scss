@@ -104,7 +104,7 @@ $xxl: 1400px;
         z-index: -1;
         transition: 0.3s;
     }
-    &:focus{
+    &:focus {
         box-shadow: 3px 3px 20px transparentize($color: $bg, $amount: 0.7);
     }
 
@@ -138,7 +138,7 @@ $xxl: 1400px;
     font-weight: 500;
     color: $blue-grey;
     transition: 0.3s;
-    @if $isFat == false {        
+    @if $isFat == false {
         padding: 5px 10px 5px 20px;
     }
     @if $isFat {
@@ -157,4 +157,10 @@ $xxl: 1400px;
     &::placeholder {
         color: transparentize($color: $blue-grey, $amount: 0.3);
     }
+}
+
+@mixin flex-x-y-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

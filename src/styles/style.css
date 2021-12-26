@@ -922,6 +922,48 @@ body {
   border-width: 2px;
 }
 
+#admin_panel_dashboard .layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-wrap: wrap;
+  background: #f0f6ff;
+  overflow: hidden;
+  --menubar-width: 280px;
+  --navbar-height: 70px;
+}
+#admin_panel_dashboard .layout .dashboard__layout__side__menu__bar {
+  width: var(--menubar-width);
+  height: 100vh;
+  overflow-y: auto;
+}
+#admin_panel_dashboard .layout .dashboard__layout__side__menu__bar .sidebar-brand {
+  width: 100%;
+  background: #000;
+  height: var(--navbar-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content {
+  width: calc(100% - var(--menubar-width));
+  height: 100vh;
+  background: #979797;
+  display: flex;
+  flex-flow: wrap;
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard__navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  background: #000;
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard-content {
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+  background: white;
+  overflow-y: scroll;
+}
+
 .my-button {
   background-color: #447ef2;
   border: none;

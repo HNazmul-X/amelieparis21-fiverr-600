@@ -1,0 +1,48 @@
+@use "../util" as *;
+
+#admin_panel_dashboard {
+    .layout {
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+        flex-wrap: wrap;
+        background: $primary-50;
+        overflow: hidden;
+
+        --menubar-width: 280px;
+        --navbar-height: 70px;
+
+        .dashboard__layout__side__menu__bar {
+            width: var(--menubar-width);
+            height: 100vh;
+            overflow-y: auto;
+
+            .sidebar-brand {
+                width: 100%;
+                background: #000;
+                height: var(--navbar-height);
+                @include flex-x-y-center;
+            }
+        }
+
+        .dashboard__layout__main__content {
+            width: calc(100% - var(--menubar-width));
+            height: 100vh;
+            background: rgb(151, 151, 151);
+            display: flex;
+            flex-flow: wrap;
+            .dashboard__navbar {
+                width: 100%;
+                height: var(--navbar-height);
+                background: #000;
+            }
+
+            .dashboard-content {
+                width: 100%;
+                height: calc(100vh - var(--navbar-height));
+                background: white;
+                overflow-y: scroll;
+            }
+        }
+    }
+}
