@@ -4,20 +4,29 @@
   .upload-box {
     border: 1px solid $primary-200;
     text-align: center;
-    padding: 20px 40px;
     border-radius: 6px;
+    border: 1px solid #a5c3ff;
+    text-align: center;   
+    cursor: pointer;
+    width: 211px;
+    height: 113px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     svg {
-      font-size: 45px;
-      margin-bottom: 0.5rem;
+      font-size: 40px;
+      margin-bottom: 5px;
     }
     h5 {
-      font-size: 20px;
-      margin-bottom: 0.5rem;
+      font-size: 17px;
+      margin-bottom: 5px;
+      font-weight: 600;
     }
     .small-text {
       margin-bottom: 0;
-      font-size: 13px;
+      font-size: 9px;
       font-weight: 500;
       color: $primary-400;
     }
@@ -29,7 +38,7 @@
     height: 7px;
     outline: none;
     border-radius: 0;
-    background-color: $primary-500;
+    background-color: $primary-400;
   }
   #slider::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -38,15 +47,37 @@
     height: 15px;
     border-radius: 50%;
     background-color: $white;
-    border: 0.5px solid $primary-500;
+    border: 0.5px solid $primary-400;
+  } 
+  .text_aliagn{
+    margin-bottom: 40px;
+    margin-top: 45px;
   }
-  .my-btn {
+  .align_title{
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 0;
+    text-decoration: underline;
+    margin-bottom: .8rem;
+  }
+  .logo_size{
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 0;
+    text-decoration: underline;
+    margin-bottom: 0;
+  }
+}
+.mb-2rem{
+  margin-bottom: 2rem;
+}
+
+.my-btn-primary {
     border: none;
     outline: none;
-    background-color: $primary-700;
+    background-color: $primary-500;
     color: $white;
-    width: 150px;
+    width: 195px;
     padding: 10px;
     border-radius: 41px;
   }
-}

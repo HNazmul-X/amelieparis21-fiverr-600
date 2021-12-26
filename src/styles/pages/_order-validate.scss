@@ -4,75 +4,6 @@
     background: $primary-50;
 
     .validateInner {
-        .steper_section {
-            background: none;
-            padding: 4rem 0;
-            .section-wrapper {
-                display: flex;
-                padding: 24px 0;
-                justify-content: space-between;
-          
-                .single-steps-wrapper {
-                    position: relative;
-                    .single-steps {
-                        flex-direction: column;
-                        display: flex;
-                        align-items: center;
-                        .img-wrapper {
-                            display: flex;
-                            flex-shrink: 0;
-                            .active {
-                                background-color: $primary-400 !important;
-                            }
-                            .finished{
-                                background-color: $blue-grey;
-                            }
-                            div {
-                                color: $white;
-                                background-color: $grey-200;
-                                cursor: pointer;
-                                width: 50px;
-                                height: 50px;
-                                display: flex;
-                                z-index: 1;
-                                align-items: center;
-                                border-radius: 50%;
-                                justify-content: center;
-    
-                                svg {
-                                    font-size: 23px;
-                                }
-                            }
-                    }
-                    .label {
-                        margin-top: 16px;
-                        text-align: center;
-                        width: 100%;
-                        opacity: 0.87;
-                    }
-    
-                    .setpText {
-                        font-size: 16px;
-                        line-height: 26px;
-                        letter-spacing: 0.02em;
-                        color: $blue-grey;
-                    }
-                }
-                        .hr-line {
-                        left: calc(-50% - 24px);
-                        right: calc(50% + 20px);
-                        position: absolute;
-                        flex: 1 1 auto;
-                        border: 0;
-                        height: 2px;
-                        border-radius: 1px;
-                        background-color: $primary-100;
-                        top: 22px;
-                    }
-               }
-            }
-        }
-
         .validateImg {
             img {
                 width: 100%;
@@ -98,6 +29,15 @@
                 margin-bottom: 20px;
             }
 
+            .form-check-input:checked {
+                background-color: $primary-200;
+                border-color: $primary-400;
+            }            
+
+            .form-check-input[type=checkbox] {
+                border-radius: 3px;
+            }
+
             .form-floating {
                 label {
                     padding: 10px 0.75rem;
@@ -111,6 +51,20 @@
 
             .unFatty-input {
                 border-width: 2px;
+            }
+
+            .validateArea {
+                text-align: center;
+                padding-top: 20px;
+                button {
+                    background: $primary-500;
+                    color: $white;
+                    padding: 5px 50px;
+                    border-radius: 20px;
+                }
+                p {
+                    padding-top: 10px;
+                }
             }
         }
     }
