@@ -1,0 +1,42 @@
+@use "./mixins" as *;
+@use "./colors" as *;
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Jost", sans-serif;
+    font-size: 17px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0px;
+}
+.unFatty-input {
+    @include primary-input($isFat: false);
+}
+.primary-input {
+    @include primary-input($isFat: true);
+}
+
+body {
+    background: $primary-50;
+    color: $blue-grey;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+    opacity: 1;
+    transform: scale(0.85) translateY(-0.5rem) translateX(1.1500000000000004rem);
+    background: white;
+    padding: 4px 15px;
+    text-align: center;
+    margin-bottom: 0px;
+    height: auto;
+    border-radius: 999px;
+}

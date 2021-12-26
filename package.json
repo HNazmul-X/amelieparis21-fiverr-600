@@ -4,11 +4,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sass":"sass ./src/styles/style.scss ./src/styles/style.css -w"
   },
   "dependencies": {
+    "@iconify/react": "^3.1.0",
+    "bootstrap": "^5.1.3",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",

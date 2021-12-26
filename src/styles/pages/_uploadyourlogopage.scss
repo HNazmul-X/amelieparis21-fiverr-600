@@ -1,0 +1,52 @@
+@use "../util/" as *;
+
+.upload-your-logo-section {
+  .upload-box {
+    border: 1px solid $primary-200;
+    text-align: center;
+    padding: 20px 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    svg {
+      font-size: 45px;
+      margin-bottom: 0.5rem;
+    }
+    h5 {
+      font-size: 20px;
+      margin-bottom: 0.5rem;
+    }
+    .small-text {
+      margin-bottom: 0;
+      font-size: 13px;
+      font-weight: 500;
+      color: $primary-400;
+    }
+  }
+  #slider {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 450px;
+    height: 7px;
+    outline: none;
+    border-radius: 0;
+    background-color: $primary-500;
+  }
+  #slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $white;
+    border: 0.5px solid $primary-500;
+  }
+  .my-btn {
+    border: none;
+    outline: none;
+    background-color: $primary-700;
+    color: $white;
+    width: 150px;
+    padding: 10px;
+    border-radius: 41px;
+  }
+}
