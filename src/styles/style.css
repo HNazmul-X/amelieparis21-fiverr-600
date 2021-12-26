@@ -441,7 +441,6 @@ body {
 }
 #create-card-login #login_registration #loginPopup {
   margin: 80px auto 0;
-  display: block;
   width: 400px;
   height: auto;
   padding: 10px 30px 30px;
@@ -504,10 +503,9 @@ body {
   }
 }
 #create-card-login #login_registration #registrationPopup {
-  display: none;
   overflow-y: scroll;
   margin: 0 auto;
-  width: 650px;
+  width: 900px;
   height: 555px;
   padding: 10px 60px 30px;
   text-align: center;
@@ -533,7 +531,7 @@ body {
 #create-card-login #login_registration #registrationPopup .validateBtn {
   text-align: right;
 }
-#create-card-login #login_registration #registrationPopup .validateBtn p {
+#create-card-login #login_registration #registrationPopup .validateBtn button {
   background: #6c9dff;
   color: #fff;
   padding: 6px 30px;
@@ -822,71 +820,6 @@ body {
 #order_validate {
   background: #f0f6ff;
 }
-#order_validate .validateInner .steper_section {
-  background: none;
-  padding: 4rem 0;
-}
-#order_validate .validateInner .steper_section .section-wrapper {
-  display: flex;
-  padding: 24px 0;
-  justify-content: space-between;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper {
-  position: relative;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .single-steps {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper {
-  display: flex;
-  flex-shrink: 0;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .active {
-  background-color: #447ef2 !important;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .finished {
-  background-color: #57697d;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper div {
-  color: #fff;
-  background-color: #e7e7e9;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  z-index: 1;
-  align-items: center;
-  border-radius: 50%;
-  justify-content: center;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper div svg {
-  font-size: 23px;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .single-steps .label {
-  margin-top: 16px;
-  text-align: center;
-  width: 100%;
-  opacity: 0.87;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .single-steps .setpText {
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0.02em;
-  color: #57697d;
-}
-#order_validate .validateInner .steper_section .section-wrapper .single-steps-wrapper .hr-line {
-  left: calc(-50% - 24px);
-  right: calc(50% + 20px);
-  position: absolute;
-  flex: 1 1 auto;
-  border: 0;
-  height: 2px;
-  border-radius: 1px;
-  background-color: #cadbff;
-  top: 22px;
-}
 #order_validate .validateInner .validateImg img {
   width: 100%;
   margin-right: 20px;
@@ -911,6 +844,13 @@ body {
 #order_validate .validateInner .validateForm .subTitle {
   margin-bottom: 20px;
 }
+#order_validate .validateInner .validateForm .form-check-input:checked {
+  background-color: #a5c3ff;
+  border-color: #447ef2;
+}
+#order_validate .validateInner .validateForm .form-check-input[type=checkbox] {
+  border-radius: 3px;
+}
 #order_validate .validateInner .validateForm .form-floating label {
   padding: 10px 0.75rem;
   color: #57697d;
@@ -920,6 +860,19 @@ body {
 }
 #order_validate .validateInner .validateForm .unFatty-input {
   border-width: 2px;
+}
+#order_validate .validateInner .validateForm .validateArea {
+  text-align: center;
+  padding-top: 20px;
+}
+#order_validate .validateInner .validateForm .validateArea button {
+  background: #255ed1;
+  color: #fff;
+  padding: 5px 50px;
+  border-radius: 20px;
+}
+#order_validate .validateInner .validateForm .validateArea p {
+  padding-top: 10px;
 }
 
 .my-button {

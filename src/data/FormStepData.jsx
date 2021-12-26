@@ -1,4 +1,5 @@
 import ContactSheet from "../pages/Create-card/FormComponent/ContactSheet";
+import OrderValidation from "../pages/Create-card/FormComponent/OrderValidation";
 
 export const FormStepsData = [
     {
@@ -8,27 +9,27 @@ export const FormStepsData = [
         component: <ContactSheet />,
     },
     {
-        label: "Contact Sheet",
+        label: "Card Base",
         icon: "cil:contact",
         id: "Steps2",
         component: <></>,
     },
     {
-        label: "Contact Sheet",
+        label: "Logo",
         icon: "cil:contact",
         id: "Steps3",
         component: <ContactSheet />,
     },
     {
-        label: "Contact Sheet",
+        label: "Information",
         icon: "cil:contact",
         id: "Steps4",
         component: <></>,
     },
     {
-        label: "Contact Sheet",
+        label: "Validation",
         icon: "cil:contact",
         id: "Steps5",
-        component: <></>,
+        component: <OrderValidation /> ,
     },
 ];
