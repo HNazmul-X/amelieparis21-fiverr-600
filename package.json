@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "sass":"sass ./src/styles/style.scss ./src/styles/style.css -w"
+    "sass": "sass ./src/styles/style.scss ./src/styles/style.css -w"
   },
   "dependencies": {
     "@iconify/react": "^3.1.0",

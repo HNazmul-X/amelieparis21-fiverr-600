@@ -3,6 +3,7 @@ import { FormStepsData } from '../../data/FormStepData';
 import CreateCardSteps from './CreateCardSteps';
 import CardImage from "../../assets/images/Group 32.png"
 import FormLoginPopup from './FormLoginPopup';
+import { InlineIcon } from "@iconify/react";
 
 export const CreateCardPageContext = createContext({})
 
