@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { FormStepsData } from "../../data/FormStepData";
 import { CreateCardPageContext } from "./CreateCardPage";
 
+
 const CreateCardSteps = () => {
     const { formStepId, setFormStepId } = useContext(CreateCardPageContext);
     const totalSteps = [...FormStepsData];
