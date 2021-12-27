@@ -1,9 +1,10 @@
 @forward "./homepage";
-@forward "./create-card-login";
-@forward "./contactsheetpage";
+@forward "./create-card-page/create-card-login";
+@forward "./create-card-page/contactsheetpage";
 @forward "./orientationpage";
-@forward  "./selectcardbasepage";
-@forward "./uploadyourlogopage";
-@forward "./contact-sheet2";
-@forward "./order-validate";
-@forward "./information";
+@forward  "./create-card-page/selectcardbasepage";
+@forward "./create-card-page/uploadyourlogopage";
+@forward "./create-card-page/contact-sheet2";
+@forward "./create-card-page/order-validate";
+@forward "./create-card-page/information";
+@forward "./create-card-page/cardPreview";

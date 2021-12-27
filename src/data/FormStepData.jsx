@@ -1,41 +1,43 @@
 import ContactSheet from "../pages/Create-card/FormComponent/ContactSheet";
-<<<<<<< HEAD
 import OrderValidation from "../pages/Create-card/FormComponent/OrderValidation";
-=======
-import SelectCardBase from './../pages/Create-card/FormComponent/SelectCardBase';
-import UploadYourLogo from './../pages/Create-card/FormComponent/UploadYourLogo';
-import Information from './../pages/Create-card/FormComponent/Information';
->>>>>>> d7b4054454697ff5ed2990fe901be172086e1a8e
+import SelectCardBase from "./../pages/Create-card/FormComponent/SelectCardBase";
+import UploadYourLogo from "./../pages/Create-card/FormComponent/UploadYourLogo";
+import Information from "./../pages/Create-card/FormComponent/Information";
 
 export const FormStepsData = [
+    /* NOTE: please don't change the Id name; if you change then the whole function will affected for this */
     {
         label: "Contact Sheet",
         icon: "cil:contact",
-        id: "Steps1",
+        id: "step1",
         component: <ContactSheet />,
     },
     {
         label: "Card Base",
         icon: "cil:contact",
-        id: "Steps2",
-        component: <><SelectCardBase /></>,
+        id: "step2",
+        component: (
+            <>
+                <SelectCardBase />
+            </>
+        ),
     },
     {
         label: "Logo",
         icon: "cil:contact",
-        id: "Steps3",
+        id: "step3",
         component: <UploadYourLogo />,
     },
     {
         label: "Information",
         icon: "cil:contact",
-        id: "Steps4",
+        id: "step4",
         component: <Information />,
     },
     {
         label: "Validation",
         icon: "cil:contact",
-        id: "Steps5",
-        component: <OrderValidation /> ,
+        id: "step5",
+        component: <OrderValidation />,
     },
 ];

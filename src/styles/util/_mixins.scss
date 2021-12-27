@@ -164,3 +164,12 @@ $xxl: 1400px;
     justify-content: center;
     align-items: center;
 }
+
+@mixin centered($max: true) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @if ($max == true) {
+        width: max-content;
+    }
+}

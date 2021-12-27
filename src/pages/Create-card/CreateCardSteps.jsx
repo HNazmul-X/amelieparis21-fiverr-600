@@ -18,7 +18,7 @@ const CreateCardSteps = () => {
                                 {index === 0 ? "" : <div class="hr-line"></div>}
                                 <div class="single-steps" onClick={()=> setFormStepId(data?.id)}>
                                     <span class="img-wrapper">
-                                        <div class={`${formStepId === data?.id ? "active" : ""}`}>
+                                        <div class={`${formStepId === data.id ? "active" : ""}`}>
                                             <InlineIcon icon={data?.icon} />
                                         </div>
                                     </span>
