@@ -1,0 +1,45 @@
+@use "../util/" as *;
+
+.faq-page {
+    padding-top: 105px;
+    padding-bottom: 105px;
+  .faq-banner {
+    
+    text-align: center;
+    h1 {
+      font-size: 67px;
+      color: $primary-400;
+      margin-bottom: 52px;
+    }
+  }
+  .single-faq {
+      display: flex;
+      align-items: center;
+      border-radius: 9px;
+      background-color: $white;
+      padding: 30px 20px;
+      box-shadow: 1px 0px 20px 2px $shadowBg;
+      margin-bottom: 20px; 
+      cursor:pointer;  
+      &:last-child{
+          margin-bottom: 0;
+      } 
+    .icon {
+        margin-right: 11px;
+        transition: all 1s linear;
+      svg {
+        font-size: 36px;
+      }
+    }
+    .faq-question {
+      font-size: 26px;
+    }
+    .faq-answer{
+        margin-top: 20px;
+        font-size: 23px;
+        margin-bottom: 0;
+        transition: all .4s linear;
+    }
+  }
+ 
+}

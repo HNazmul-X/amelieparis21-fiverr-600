@@ -989,6 +989,48 @@ body {
   box-shadow: none !important;
 }
 
+.faq-page {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+.faq-page .faq-banner {
+  text-align: center;
+}
+.faq-page .faq-banner h1 {
+  font-size: 67px;
+  color: #447ef2;
+  margin-bottom: 52px;
+}
+.faq-page .single-faq {
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+  background-color: #fff;
+  padding: 30px 20px;
+  box-shadow: 1px 0px 20px 2px rgba(87, 101, 128, 0.22);
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.faq-page .single-faq:last-child {
+  margin-bottom: 0;
+}
+.faq-page .single-faq .icon {
+  margin-right: 11px;
+  transition: all 1s linear;
+}
+.faq-page .single-faq .icon svg {
+  font-size: 36px;
+}
+.faq-page .single-faq .faq-question {
+  font-size: 26px;
+}
+.faq-page .single-faq .faq-answer {
+  margin-top: 20px;
+  font-size: 23px;
+  margin-bottom: 0;
+  transition: all 0.4s linear;
+}
+
 .my-button {
   background-color: #447ef2;
   border: none;
