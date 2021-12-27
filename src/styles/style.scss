@@ -1,6 +1,8 @@
 @use "./other/" as *;
 @use  "./util" as *;
 @use "./pages" as *;
+@use "./dashboard/" as *;
+
 
 .my-button{
     @include primary-button

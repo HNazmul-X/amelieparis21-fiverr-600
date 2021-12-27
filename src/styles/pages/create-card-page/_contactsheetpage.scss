@@ -1,4 +1,4 @@
-@use "../util/" as *;
+@use "../../util/" as *;
 
 .steper-section {
     background-color: $primary-50;
@@ -80,7 +80,6 @@
             color: $white;
             border-radius: 25px;
             width: 220px;
-            // padding: 0.5rem 1rem;
             border: none;
             outline: none;
             padding: 10px;
@@ -90,7 +89,6 @@
     }
     .right {
         display: flex;
-        align-items: center;
         justify-content: center;
 
         img {
@@ -98,4 +96,27 @@
             max-width: 350px;
         }
     }
+
+    &.step5{
+        #realtime-making-card-preview-card{
+            .card-cover{
+                .preview-card__card{
+                    overflow: visible;
+                    .card-front-side{
+                        position: static;
+                        overflow: hidden;
+                    }
+                    .card-backside{
+                        position: static;
+                        margin-top: 30px;
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
 }

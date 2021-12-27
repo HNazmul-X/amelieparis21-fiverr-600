@@ -1,4 +1,4 @@
-@use  "../util" as *;
+@use  "../../util/" as *;
 
 #create-card-login {
     background: $primary-50;
@@ -147,7 +147,6 @@
 
         #loginPopup {
             margin: 80px auto 0;
-            display: block;
             width: 400px;
             height: auto;
             padding: 10px 30px 30px;
@@ -221,15 +220,15 @@
         
 
         #registrationPopup {
-            display: none;
             overflow-y: scroll;
             margin: 0 auto;
-            width: 650px;
+            width: 900px;
             height: 555px;
             padding: 10px 60px 30px;
             text-align: center;
             box-shadow: -2px 13px 18px 14px $shadowBg;
             border-radius: 34px;
+
 
             .title {
                 font-weight: 600;
@@ -256,7 +255,7 @@
             .validateBtn {
                 text-align: right;
 
-                p {
+                button {
                     background: $primary-300;
                     color: $white;
                     padding: 6px 30px;

@@ -1,0 +1,74 @@
+@use  "../../util/" as *;
+
+#order_validate {
+    background: $primary-50;
+
+    .validateInner {
+        .validateImg {
+            img {
+                width: 100%;
+                margin-right: 20px;
+            }
+            @include sm {
+                margin: 0 0 30px 0;
+            }
+            @include xsm {
+                margin: 0 0 30px 0;
+            }
+        }
+
+        .validateForm {
+            padding-bottom: 50px;
+
+            .title {
+                text-decoration: underline;
+                margin-bottom: 35px;
+            }
+
+            .subTitle {
+                margin-bottom: 20px;
+            }
+
+            .form-check-input:checked {
+                background-color: $primary-200;
+                border-color: $primary-400;
+            }            
+
+            .form-check-input[type=checkbox] {
+                border-radius: 3px;
+            }
+
+            .form-floating {
+                label {
+                    padding: 10px 0.75rem;
+                    color: $blue-grey;
+                }
+            }
+
+            .form-control {
+                height: calc(2.5rem + 2px);
+            }
+
+            .unFatty-input {
+                border-width: 2px;
+            }
+
+            .validateArea {
+                text-align: center;
+                padding-top: 20px;
+                button {
+                    background: $primary-500;
+                    color: $white;
+                    padding: 5px 50px;
+                    border-radius: 20px;
+                }
+                p {
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+
