@@ -1,10 +1,20 @@
 @forward "./homepage";
-@forward "./create-card-page/create-card-login";
+// @forward "./create-card-page/create-card-login";
 @forward "./create-card-page/contactsheetpage";
 @forward "./orientationpage";
+<<<<<<< HEAD
+@forward "./faq-page";
+=======
+>>>>>>> b88e4fa166d0bbb4e0eff7018db1a5ac4f14c827
 @forward  "./create-card-page/selectcardbasepage";
 @forward "./create-card-page/uploadyourlogopage";
 @forward "./create-card-page/contact-sheet2";
 @forward "./create-card-page/order-validate";
 @forward "./create-card-page/information";
 @forward "./create-card-page/cardPreview";
+<<<<<<< HEAD
+@forward "./auth/login.scss";
+@forward "./auth/signup.scss";
+=======
+@forward  "./faq-page";
+>>>>>>> b88e4fa166d0bbb4e0eff7018db1a5ac4f14c827

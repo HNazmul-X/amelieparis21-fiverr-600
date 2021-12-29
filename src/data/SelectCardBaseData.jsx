@@ -1,5 +1,5 @@
 
-import Img from "../assets/images/Group 33.png"
+import Img from "../assets/images/img.jpg"
 
 export const SelectCardBaseData = [
     {imgSrc:Img, altText:"Card" },

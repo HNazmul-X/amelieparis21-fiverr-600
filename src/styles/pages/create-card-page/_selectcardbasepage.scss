@@ -26,4 +26,13 @@
     max-width: 380px;
     flex-wrap: wrap;
     gap: 20px;
+    img{
+      padding: 5px;
+      background-color: $primary-200;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+}
+.active-card{
+  background-color: $primary-400 !important;
 }

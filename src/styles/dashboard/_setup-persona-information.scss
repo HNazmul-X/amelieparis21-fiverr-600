@@ -1,0 +1,12 @@
+
+@use "../util/" as *;
+
+.setup-persona-information{
+    .text-area{
+        height: 100% !important;
+        border-radius: 20px !important;
+        &:focus{
+            height: 100% !important;
+        }
+    }
+}
