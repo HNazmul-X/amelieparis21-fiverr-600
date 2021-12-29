@@ -1,6 +1,7 @@
 import React from 'react';
 
 const OrderValidation = () => {
+    
     return (
         <section id="order_validate">
             <div class="container">
