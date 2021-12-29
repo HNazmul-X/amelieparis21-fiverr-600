@@ -1,0 +1,18 @@
+
+@use "../util/" as *;
+
+.setup-social-link{
+    .social-icon-wrapper{
+        display: flex;
+        gap: 15px;
+        .single-icon{
+             box-shadow: 0px 0px 7px 4px $shadowBg;
+            border: 1px solid $shadowBg;
+            padding: 2px;border-radius: 4px;
+        }
+        svg{
+            font-size: 36px;
+            color: $blue-grey;
+        }
+    }
+}

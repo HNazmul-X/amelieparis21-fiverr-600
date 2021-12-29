@@ -1,0 +1,26 @@
+ @use "../util/" as *;
+
+ .card-requested-table-section{
+     padding: 45px 23px;
+     .table{
+         thead{
+             background-color: $primary-100;
+             tr{
+                 text-align: center;
+                th{
+                    font-size: 21px;
+                    font-weight: 400;
+                }
+             }
+         }
+         tbody{
+             tr{
+               text-align: center;
+             }
+         }
+     }
+ }
+
+ .table>:not(:first-child){
+border-top: none !important;
+ }

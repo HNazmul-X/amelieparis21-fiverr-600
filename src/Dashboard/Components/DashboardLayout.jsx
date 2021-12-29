@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import DashboardSideMenu from './DashboardSideMenu';
 
 const DashboardLayout = () => {
     return (
@@ -7,15 +8,16 @@ const DashboardLayout = () => {
             <div className="layout">
                 <div className="dashboard__layout__side__menu__bar">
                     <div className="sidebar-brand">
-                        <h3>company Brand</h3>
+                        <h3>company Brand</h3>                        
                     </div>
+                    <DashboardSideMenu />
 
                     
                 </div>
 
                 <div className="dashboard__layout__main__content">  
                     <div className="dashboard__navbar">
-
+                   
                     </div>
                     <div className="dashboard-content">
                         <Outlet/>

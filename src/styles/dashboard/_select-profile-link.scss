@@ -1,0 +1,42 @@
+@use "../util/" as *;
+
+.select-profile-link {
+  .uplaod-area {
+    display: flex;
+    gap: 15px;
+    svg {
+      font-size: 35px;
+    }
+    p {
+      font-size: 15px;
+      margin-bottom: 0;
+      span {
+        color: $primary-500;
+      }
+    }
+    .upload-logo {
+      width: 40%;
+      border: 1px solid $shadowBg;
+      padding: 16px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+
+    }
+    .upload-box{
+
+        cursor: pointer;
+    }
+    .upload-cover {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $shadowBg;
+      padding:20px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
