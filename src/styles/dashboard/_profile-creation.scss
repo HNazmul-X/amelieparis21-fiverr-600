@@ -1,0 +1,47 @@
+@use "../util/" as *;
+
+.dashbord-profile-createion {
+ padding: 20px;
+  .left-side-container {
+    background-color: $white;
+    padding: 26px;
+  }
+  
+  .select-profile-template {
+    
+    .template-img-wrapper {
+      display: flex;
+      gap: 20px;     
+
+    }
+  }
+}
+
+
+.db-template{
+  padding: 20px 10px;
+  margin-bottom: 25px;
+  padding: 19px;
+    // border: .5px solid $shadowBg;
+    box-shadow: 0px 0px 5px -1px $shadowBg;
+    border-radius: 16px;
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+   
+    h2 {
+      font-size: 26px;      
+    }
+    .right-arrow {
+      font-size: 22px;
+      color: $primary-400;
+      transition: all 0.3s linear;
+    }
+  }
+}
+
+.open-div{
+  margin: 30px 0;
+}

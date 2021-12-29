@@ -1,0 +1,11 @@
+@use "../util/" as *;
+
+.card-body-banner {
+  background-color: $primary-300;
+  color: $white;
+  h1 {
+    font-weight: 400;
+    font-size: 48px;
+    padding: 10px 10px;
+  }
+}
