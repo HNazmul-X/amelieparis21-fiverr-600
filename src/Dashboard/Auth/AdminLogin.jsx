@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import CardRoundImage from "../../assets/images/Group 22.png";
-
+import vector from "../../assets/images/Vector.png";
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     
@@ -10,19 +10,22 @@ const Login = () => {
     }
 
     return (
-        <div id="login_area">
+        <div id='admin_login'>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
-                        <div  id="loginPopup">
-                            <div class="fCard">
+                        <div id="loginInner">
+                        <div class="adminCard">
                                 <img src={CardRoundImage} class="img-fluid" alt="" />
                             </div>
 
                             <form action="" className='px-2' onSubmit={handleSubmit(onSubmit)}>
-                                <h2 class="title">Login</h2>
+                                <div>
+                                    <h1 class="title">WELCOME</h1>
+                                    <p className='subTitle'>Login to Continue</p>
+                                </div>
 
-                                <div class="form-floating my-3">
+                                <div class="form-floating my-3 ">
                                     <input type="email" {...register("email", { required: true })} class="form-control primary-input" id="floatingInput" placeholder="name@example.com" />
                                     <label for="floatingInput">Email *</label>
                                     {errors.email?.type === "required" && (
@@ -38,15 +41,10 @@ const Login = () => {
                                     )}
                                 </div>
 
-                                <div className='d-flex py-3 align-items-center justify-content-center'>
-                                    <a href='/signup' class="mb-3 btn createBtn">
-                                        Resister
-                                    </a>
-                                    <button class="logBtn btn mb-2">Login</button>
-                                </div>
-                                <a href="/" class="forget">
-                                    Forget Your Password ?
-                                </a>
+                                <button class="logBtn btn mb-2">
+                                    Login
+                                    <img src={vector} alt="" />
+                                </button>
                             </form>
                         </div>
                     </div>

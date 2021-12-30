@@ -2,10 +2,9 @@
 
 #signup_area {
     #registrationPopup {
-        overflow-y: scroll;
         margin: 80px auto;
         width: 100%;
-        height: 500px;
+        height: auto;
         padding: 10px 60px 30px;
         text-align: center;
         box-shadow: -2px 13px 18px 14px $shadowBg;
@@ -28,22 +27,10 @@
             }
         }
         .fCard {
-            margin-top: -70px;
-            position: fixed;
+            margin-top: -50px;
             z-index: 1;
-            margin-left: 335px;
             img {
-                width: 140px;
-            }
-        }
-        @include md {
-            .fCard {
-                margin-left: 175px;
-            }
-        }
-        @include sm {
-            .fCard {
-                margin-left: 67px;
+                width: 110px;
             }
         }
         .form-control {

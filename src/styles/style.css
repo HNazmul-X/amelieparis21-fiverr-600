@@ -311,6 +311,254 @@ body {
   }
 }
 
+#create-card-login {
+  background: #f0f6ff;
+}
+#create-card-login .cardLogin_inner {
+  height: 100vh;
+}
+#create-card-login .cardLogin_inner .steper-section {
+  background: none;
+  padding: 4rem 0;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper {
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper {
+  display: flex;
+  flex-shrink: 0;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .active {
+  background-color: #447ef2 !important;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper .finished {
+  background-color: #57697d;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper div {
+  color: #fff;
+  background-color: #e7e7e9;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .img-wrapper div svg {
+  font-size: 23px;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .label {
+  margin-top: 16px;
+  text-align: center;
+  width: 100%;
+  opacity: 0.87;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .single-steps .setpText {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #57697d;
+}
+#create-card-login .cardLogin_inner .steper-section .section-wrapper .single-steps-wrapper .hr-line {
+  left: calc(-50% + 20px);
+  right: calc(50% + 20px);
+  position: absolute;
+  flex: 1 1 auto;
+  border: 0;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #cadbff;
+  top: 22px;
+}
+#create-card-login .cardLogin_inner .leftArea p {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 576px) {
+  #create-card-login .cardLogin_inner .leftArea p {
+    font-style: 20px;
+  }
+}
+#create-card-login .cardLogin_inner .leftArea button {
+  background: #255ed1;
+  border-radius: 19px;
+  padding: 5px 100px;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+#create-card-login .cardLogin_inner .leftArea .btn:focus {
+  box-shadow: none;
+}
+@media screen and (max-width: 576px) {
+  #create-card-login .cardLogin_inner {
+    text-align: center;
+  }
+}
+#create-card-login .cardLogin_inner .rightArea img {
+  min-width: 100%;
+}
+@media screen and (max-width: 992px) {
+  #create-card-login .cardLogin_inner .rightArea img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #create-card-login .cardLogin_inner .rightArea img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login .cardLogin_inner .rightArea img {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login .cardLogin_inner {
+    text-align: center;
+  }
+}
+#create-card-login #login_registration .modal-dialog {
+  min-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #create-card-login #login_registration .modal-dialog {
+    min-width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login #login_registration .modal-dialog {
+    min-width: 50%;
+  }
+}
+#create-card-login #login_registration #loginPopup {
+  margin: 80px auto 0;
+  width: 400px;
+  height: auto;
+  padding: 10px 30px 30px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 34px;
+}
+#create-card-login #login_registration #loginPopup .title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #57697d;
+}
+#create-card-login #login_registration #loginPopup label {
+  color: #57697d;
+}
+#create-card-login #login_registration #loginPopup .fCard {
+  margin-top: -60px;
+}
+#create-card-login #login_registration #loginPopup .fCard img {
+  width: 140px;
+}
+#create-card-login #login_registration #loginPopup .logBtn {
+  background: #6c9dff;
+  color: #fff;
+  padding: 6px 78px;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+#create-card-login #login_registration #loginPopup .createBtn {
+  background: #6c9dff;
+  color: #fff;
+  padding: 6px 30px;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+#create-card-login #login_registration #loginPopup .forget {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+  #create-card-login #login_registration #loginPopup {
+    width: 500px;
+  }
+  #create-card-login #login_registration #loginPopup .logBtn {
+    padding: 6px 108px;
+  }
+  #create-card-login #login_registration #loginPopup .createBtn {
+    padding: 6px 60px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login #login_registration #loginPopup {
+    width: 350px;
+  }
+}
+#create-card-login #login_registration #registrationPopup {
+  overflow-y: scroll;
+  margin: 0 auto;
+  width: 900px;
+  height: 555px;
+  padding: 10px 60px 30px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 34px;
+}
+#create-card-login #login_registration #registrationPopup .title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #57697d;
+}
+#create-card-login #login_registration #registrationPopup .form-floating label {
+  padding: 10px 0.75rem;
+}
+#create-card-login #login_registration #registrationPopup .form-control {
+  height: calc(2.5rem + 2px);
+}
+#create-card-login #login_registration #registrationPopup .unFatty-input {
+  border-width: 2px;
+}
+#create-card-login #login_registration #registrationPopup .validateBtn {
+  text-align: right;
+}
+#create-card-login #login_registration #registrationPopup .validateBtn button {
+  background: #6c9dff;
+  color: #fff;
+  padding: 6px 30px;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  #create-card-login #login_registration #registrationPopup {
+    margin-top: 70px;
+    width: 550px;
+    padding: 10px 30px 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #create-card-login #login_registration #registrationPopup {
+    margin-top: 70px;
+    width: 350px;
+    padding: 10px 30px 30px;
+  }
+}
+
 .steper-section {
   background-color: #f0f6ff;
   padding: 4rem 0;
@@ -939,7 +1187,6 @@ body {
   transform: translate(-40%, -50%) scale(var(--logo-scale));
 }
 
-<<<<<<< HEAD
 #login_area #loginPopup {
   margin: 80px auto 0;
   width: 100%;
@@ -1025,10 +1272,9 @@ body {
 }
 
 #signup_area #registrationPopup {
-  overflow-y: scroll;
   margin: 80px auto;
   width: 100%;
-  height: 500px;
+  height: auto;
   padding: 10px 60px 30px;
   text-align: center;
   box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
@@ -1047,23 +1293,11 @@ body {
   padding: 10px 0.75rem;
 }
 #signup_area #registrationPopup .fCard {
-  margin-top: -70px;
-  position: fixed;
+  margin-top: -50px;
   z-index: 1;
-  margin-left: 335px;
 }
 #signup_area #registrationPopup .fCard img {
-  width: 140px;
-}
-@media screen and (max-width: 768px) {
-  #signup_area #registrationPopup .fCard {
-    margin-left: 175px;
-  }
-}
-@media screen and (max-width: 576px) {
-  #signup_area #registrationPopup .fCard {
-    margin-left: 67px;
-  }
+  width: 110px;
 }
 #signup_area #registrationPopup .form-control {
   height: calc(2.5rem + 2px);
@@ -1095,48 +1329,6 @@ body {
     padding: 10px 30px 30px;
     margin: 70px auto 0;
   }
-=======
-.faq-page {
-  padding-top: 105px;
-  padding-bottom: 105px;
-}
-.faq-page .faq-banner {
-  text-align: center;
-}
-.faq-page .faq-banner h1 {
-  font-size: 67px;
-  color: #447ef2;
-  margin-bottom: 52px;
-}
-.faq-page .single-faq {
-  display: flex;
-  align-items: center;
-  border-radius: 9px;
-  background-color: #fff;
-  padding: 30px 20px;
-  box-shadow: 1px 0px 20px 2px rgba(87, 101, 128, 0.22);
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-.faq-page .single-faq:last-child {
-  margin-bottom: 0;
-}
-.faq-page .single-faq .icon {
-  margin-right: 11px;
-  transition: all 1s linear;
-}
-.faq-page .single-faq .icon svg {
-  font-size: 36px;
-}
-.faq-page .single-faq .faq-question {
-  font-size: 26px;
-}
-.faq-page .single-faq .faq-answer {
-  margin-top: 20px;
-  font-size: 23px;
-  margin-bottom: 0;
-  transition: all 0.4s linear;
->>>>>>> b88e4fa166d0bbb4e0eff7018db1a5ac4f14c827
 }
 
 #admin_panel_dashboard .layout {
@@ -1179,8 +1371,6 @@ body {
   height: calc(100vh - var(--navbar-height));
   background: #f0f6ff;
   overflow-y: scroll;
-<<<<<<< HEAD
-=======
 }
 
 .deshbord-menus-section {
@@ -1405,7 +1595,74 @@ body {
 .setup-social-link .social-icon-wrapper svg {
   font-size: 36px;
   color: #57697d;
->>>>>>> b88e4fa166d0bbb4e0eff7018db1a5ac4f14c827
+}
+
+#admin_login #loginInner {
+  margin: 80px auto 0;
+  width: 100%;
+  height: auto;
+  padding: 10px 30px 30px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 34px;
+}
+#admin_login #loginInner .title {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #57697d;
+  margin-bottom: 10px;
+}
+#admin_login #loginInner .subTitle {
+  font-size: 17px;
+  margin-bottom: 40px;
+}
+#admin_login #loginInner label {
+  color: #57697d;
+}
+#admin_login #loginInner .adminCard {
+  margin-top: -70px;
+}
+#admin_login #loginInner .adminCard img {
+  width: 140px;
+}
+#admin_login #loginInner .logBtn {
+  background: #6c9dff;
+  color: #fff;
+  padding: 6px 50px;
+  border-radius: 20px;
+  margin-bottom: 0 !important;
+  margin-left: 5px;
+}
+#admin_login #loginInner .logBtn img {
+  width: 20px;
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  #admin_login #loginInner .logBtn {
+    padding: 6px 35px !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #admin_login #loginInner {
+    width: 500px;
+  }
+  #admin_login #loginInner .logBtn {
+    padding: 6px 108px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #admin_login #loginInner {
+    width: 500px;
+    margin-left: -83px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #admin_login #loginInner {
+    width: 320px;
+    margin: 80px auto 0;
+  }
 }
 
 .my-button {
