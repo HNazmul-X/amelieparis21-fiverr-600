@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
-import image from "../../../assets/images/Rectangle 13.png";
+import image from "../../../../assets/images/Rectangle 13.png";
 
 function SelectProfileTemplate({open, handelOpen, title}) {
   const datas = [image, image, image, image];

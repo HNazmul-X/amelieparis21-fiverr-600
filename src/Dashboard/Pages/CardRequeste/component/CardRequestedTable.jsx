@@ -1,5 +1,5 @@
 import React from "react";
-import { CardRequestedTableData } from "./../../../data/CardRequestedTableData";
+import { CardRequestedTableData } from "../../../../data/CardRequestedTableData";
 
 function CardRequestedTable() {
   return (
