@@ -927,6 +927,12 @@ body {
   column-gap: 30px;
   margin: 200px 0 70px;
 }
+#contact_sheet2 .contactInner .formArea .btnGroup .returnBtn {
+  background: #255ed1;
+  color: #fff;
+  padding: 5px 60px;
+  border-radius: 20px;
+}
 #contact_sheet2 .contactInner .formArea .btnGroup button {
   background: #255ed1;
   color: #fff;
