@@ -94,6 +94,13 @@
                 column-gap: 30px;
                 margin: 200px 0 70px;
 
+                .returnBtn {
+                    background: $primary-500;
+                    color: $white;
+                    padding: 5px 60px;
+                    border-radius: 20px;
+                    
+                }
                 button {
                     background: $primary-500;
                     color: $white;
