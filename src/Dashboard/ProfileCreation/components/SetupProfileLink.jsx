@@ -8,8 +8,8 @@ function SetupProfileLink({ open, handelOpen, title }) {
     }
   return (
     <div className="select-profile-link db-template">
-      <SectionTitle title={title} handelOpen={handelOpen} />
-      <div className={`${title === open ? "d-block open-div" : "d-none "}`}>
+      <SectionTitle title={title} handelOpen={handelOpen} open={open} />
+      <div className={`${open.includes(title) ? "d-block open-div" : "d-none "}`}>
         <div className="uplaod-area">
           <div className="upload-logo">
             <label class={`upload-box text-center`} htmlFor="upload">

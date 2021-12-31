@@ -6,18 +6,19 @@ import SetUpPersonalInformation from './SetUpPersonalInformation';
 import SetupSocialLink from './SetupSocialLink';
 
 function LeftSide() {
-  const [open, setOpen] = useState("");
+  const [open, setOpen] = useState([]);
   const handelOpen = (data) => {
-    if (data === open) {
-      setOpen("");
+    if (open.includes(data)) {
+     const newList = open.filter(el => el !== data)
+     setOpen(newList)
     } else {
-      setOpen(data);
+      setOpen([...open,data]);
     }
   };
 
   console.log(open)
   return (
-    <div className="left-side-container db-template">
+    <div className="left-side-container ">
       <SelectProfileTemplate handelOpen={handelOpen} open={open} title={"Select Your Profile Template"} />
       <SetupProfileLink handelOpen={handelOpen} open={open} title={"Setup Profile Link"}/>
       <SetUpPersonalInformation  handelOpen={handelOpen} open={open} title={"Setup Personal Information"}/>

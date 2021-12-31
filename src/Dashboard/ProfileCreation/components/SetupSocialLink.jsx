@@ -26,12 +26,19 @@ function SetupSocialLink({ open, handelOpen, title }) {
     },
   ];
 
-  // <InlineIcon icon="uil:image-upload" />
-  //ant-design:plus-outlined
   return (
     <div className="setup-social-link db-template">
-      <SectionTitle title={title} handelOpen={handelOpen} />
-      <div className={`${title === open ? "d-block open-div" : "d-none"}`}>
+      <SectionTitle
+        title={title}
+        handelOpen={handelOpen}
+        open={open}
+        open={open}
+      />
+      <div
+        className={`${open.includes(title) ? "d-block open-div" : "d-none"} ${
+          title === "Setup Social Link" ? "setup-scail-area" : ""
+        }`}
+      >
         <div className={``}>
           <div className="social-icon-wrapper">
             {datas.map((data, index) => (
@@ -42,7 +49,7 @@ function SetupSocialLink({ open, handelOpen, title }) {
               </div>
             ))}
           </div>
-          <div className="mt-5">
+          <div className="socail-link-box">
             <div class="d-flex gap-3">
               <div class="w-50 form-floating mb-3">
                 <input
@@ -95,7 +102,6 @@ function SetupSocialLink({ open, handelOpen, title }) {
                 />
                 <label for="floatingInput">Another</label>
               </div>
-              
             </div>
           </div>
         </div>
