@@ -1481,24 +1481,65 @@ body {
 .card-body-banner h1 {
   font-weight: 400;
   font-size: 48px;
-  padding: 10px 10px;
+  padding: 10px 10px 10px 32px;
 }
 
 .card-requested-table-section {
-  padding: 45px 23px;
+  padding: 45px 32px 45px 23px;
 }
-.card-requested-table-section .table thead {
+.card-requested-table-section .table-conatiner {
+  padding-bottom: 12px;
+  background-color: #fff;
+  border-radius: 9px;
+  box-shadow: 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px rgba(87, 105, 125, 0.01);
+}
+.card-requested-table-section .my-table {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 9px 9px 0 0;
+  overflow: hidden;
+}
+.card-requested-table-section .my-table thead {
   background-color: #cadbff;
+  height: 57px;
 }
-.card-requested-table-section .table thead tr {
+.card-requested-table-section .my-table thead tr {
   text-align: center;
 }
-.card-requested-table-section .table thead tr th {
+.card-requested-table-section .my-table thead tr th {
+  color: black;
+  font-weight: 500;
   font-size: 21px;
-  font-weight: 400;
+  line-height: 26px;
+  border-right: 1px solid #ffffff;
+  width: 25%;
 }
-.card-requested-table-section .table tbody tr {
+.card-requested-table-section .my-table thead tr th:last-child {
+  border-right: none;
+}
+.card-requested-table-section .my-table tbody tr {
   text-align: center;
+  height: 50px;
+}
+.card-requested-table-section .my-table tbody tr td {
+  border: 0.5px solid rgba(220, 226, 238, 0.8);
+  font-size: 21px;
+  line-height: 26px;
+}
+.card-requested-table-section .my-table tbody tr .st-pending {
+  background: #fffbe3;
+  border: 0.5px solid rgba(220, 226, 238, 0.8);
+  color: #ae9200;
+}
+.card-requested-table-section .my-table tbody tr .st-delivered {
+  background: #e9ffe3;
+  border: 0.5px solid rgba(220, 226, 238, 0.8);
+  color: #159800;
+}
+.card-requested-table-section .my-table tbody tr .st-rejected {
+  background: #fff6f7;
+  border: 0.5px solid rgba(220, 226, 238, 0.8);
+  color: #cb0049;
 }
 
 .table > :not(:first-child) {
@@ -1506,23 +1547,25 @@ body {
 }
 
 .dashbord-profile-createion {
-  padding: 20px;
+  padding: 35px 25px;
 }
 .dashbord-profile-createion .left-side-container {
   background-color: #fff;
-  padding: 26px;
+  padding: 30px;
+  border-radius: 9px;
+  box-shadow: 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px rgba(87, 105, 125, 0.01);
 }
 .dashbord-profile-createion .select-profile-template .template-img-wrapper {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .db-template {
-  padding: 20px 10px;
   margin-bottom: 25px;
-  padding: 19px;
-  box-shadow: 0px 0px 5px -1px rgba(87, 101, 128, 0.22);
-  border-radius: 16px;
+  padding: 23px 25px;
+  border: 1px solid #dce2ee;
+  border-radius: 11px;
 }
 .db-template .section-title {
   display: flex;
@@ -1534,13 +1577,16 @@ body {
   font-size: 26px;
 }
 .db-template .section-title .right-arrow {
-  font-size: 22px;
-  color: #447ef2;
+  font-size: 35px;
   transition: all 0.3s linear;
 }
 
 .open-div {
-  margin: 30px 0;
+  margin: 40px 0 30px;
+}
+
+.active-arrow {
+  transform: rotate(90deg) !important;
 }
 
 .select-profile-link .uplaod-area {
@@ -1548,7 +1594,8 @@ body {
   gap: 15px;
 }
 .select-profile-link .uplaod-area svg {
-  font-size: 35px;
+  font-size: 55px;
+  margin-bottom: 7px;
 }
 .select-profile-link .uplaod-area p {
   font-size: 15px;
@@ -1559,12 +1606,13 @@ body {
 }
 .select-profile-link .uplaod-area .upload-logo {
   width: 40%;
-  border: 1px solid rgba(87, 101, 128, 0.22);
-  padding: 16px 8px;
+  padding: 35px 8px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 9px;
+  box-shadow: 0px 1px 7px rgba(21, 49, 106, 0.24);
+  border: 1px solid rgba(87, 105, 125, 0.1);
 }
 .select-profile-link .uplaod-area .upload-box {
   cursor: pointer;
@@ -1574,33 +1622,55 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(87, 101, 128, 0.22);
-  padding: 20px 8px;
+  padding: 35px 8px 40px;
   border-radius: 5px;
   cursor: pointer;
+  border-radius: 9px;
+  box-shadow: 0px 1px 7px rgba(21, 49, 106, 0.24);
+  border: 1px solid rgba(87, 105, 125, 0.1);
 }
 
+.setup-persona-information .form-floating label {
+  left: 31px;
+}
 .setup-persona-information .text-area {
-  height: 100% !important;
+  height: 137px !important;
   border-radius: 20px !important;
 }
 .setup-persona-information .text-area:focus {
-  height: 100% !important;
+  height: 137px !important;
+}
+.setup-persona-information .form-control {
+  padding: 1rem 38px;
 }
 
 .setup-social-link .social-icon-wrapper {
   display: flex;
-  gap: 15px;
+  gap: 8px;
+  margin-bottom: 73px;
 }
 .setup-social-link .social-icon-wrapper .single-icon {
-  box-shadow: 0px 0px 7px 4px rgba(87, 101, 128, 0.22);
-  border: 1px solid rgba(87, 101, 128, 0.22);
-  padding: 2px;
+  padding: 7px 13px;
+  border-radius: 4px;
+  border: 1px solid #dce2ee;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 7px rgba(21, 49, 106, 0.24);
   border-radius: 4px;
 }
 .setup-social-link .social-icon-wrapper svg {
-  font-size: 36px;
+  font-size: 38px;
   color: #57697d;
+}
+
+.setup-scail-area {
+  margin: 24px 0 32px !important;
+}
+
+.socail-link-box .form-floating label {
+  left: 34px;
+}
+.socail-link-box .form-control {
+  padding: 1rem 36px;
 }
 
 #admin_login #loginInner {

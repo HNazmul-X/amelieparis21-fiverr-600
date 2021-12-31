@@ -2,11 +2,17 @@
 @use "../util/" as *;
 
 .setup-persona-information{
+    .form-floating label{
+        left: 31px;
+    }
     .text-area{
-        height: 100% !important;
+        height: 137px !important;
         border-radius: 20px !important;
-        &:focus{
-            height: 100% !important;
+        &:focus{           
+            height: 137px !important;
         }
+    }
+    .form-control{
+        padding: 1rem 38px;
     }
 }

@@ -7,8 +7,8 @@ function SelectProfileTemplate({open, handelOpen, title}) {
  
   return (
     <div className="select-profile-template db-template">
-      <SectionTitle title={title}  handelOpen={handelOpen}  />
-      <div className={`${title === open ? "d-block open-div" : "d-none"}`}>
+      <SectionTitle title={title}  handelOpen={handelOpen} open={open} />
+      <div className={`${open.includes(title) ? "d-block open-div" : "d-none"}`}>
       <div  className={`template-img-wrapper`}>
         {datas.map((data, index) => (
           <div key={index}>

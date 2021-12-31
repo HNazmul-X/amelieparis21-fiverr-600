@@ -4,8 +4,8 @@ import SectionTitle from "./SectionTitle";
 function SetUpPersonalInformation({ open, handelOpen, title }) {
   return (
     <div className="db-template setup-persona-information">
-      <SectionTitle title={title} handelOpen={handelOpen} />
-      <div className={`${title === open ? "d-block open-div" : "d-none"}`}>
+      <SectionTitle title={title} handelOpen={handelOpen} open={open} />
+      <div className={`${open.includes(title) ? "d-block open-div" : "d-none"}`}>
         <div className={`template-img-wrapper`}>
           <div class="w-100 form-floating mb-3">
             <input
