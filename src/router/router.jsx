@@ -8,7 +8,7 @@ import Login from '../pages/auth/Login';
 import SignUp from '../pages/auth/SignUp';
 import AdminLogin from "../Dashboard/Auth/AdminLogin";
 // import CardRequest from "./../Dashboard/CardRequeste/CardRequest";
-// import ProfileCreation from './../Dashboard/ProfileCreation/ProfileCreation';
+ import ProfileCreation from './../Dashboard/ProfileCreation/ProfileCreation';
 
 const NavbarRouter = () => {
     return (
@@ -23,8 +23,8 @@ const NavbarRouter = () => {
                 <Route path="signup" element={<SignUp />} />
             </Route>
             <Route path="/admin" element={<DashboardLayout/>}>
-                <Route index element={<h1>Welcome to Dashboard</h1>}/>
-                {/* <Route index element={<ProfileCreation />} /> */}
+                {/* <Route index element={<h1>Welcome to Dashboard</h1>}/> */}
+                <Route index element={<ProfileCreation />} />
             
             </Route>
             <Route path="admin-login" element={<AdminLogin />} />

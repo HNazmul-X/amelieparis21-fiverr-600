@@ -48,6 +48,8 @@ function SetupSocialLink({ open, handelOpen, title }) {
                 </a>
               </div>
             ))}
+             <div className="single-icon add-icon-container"><InlineIcon className="add-icon" icon={"ant-design:plus-outlined"}/></div>
+            
           </div>
           <div className="socail-link-box">
             <div class="d-flex gap-3">

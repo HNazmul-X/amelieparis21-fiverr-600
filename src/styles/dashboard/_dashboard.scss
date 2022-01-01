@@ -19,8 +19,12 @@
 
       .sidebar-brand {
         width: 100%;
-        background: #000;
+        background: $white;
         height: var(--navbar-height);
+        border-bottom: 1px solid $primary-400;
+        color: $primary-300;
+        font-size: 26px;
+
         @include flex-x-y-center;
       }
     }
@@ -34,7 +38,45 @@
       .dashboard__navbar {
         width: 100%;
         height: var(--navbar-height);
-        background: #000;
+        background: $white;
+        text-align: right;
+        padding-right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+.search_wrapper{
+  position: relative;
+}
+        input{
+          width: 331px;
+          height: 36px;
+          background-color: $primary-50;
+          border-radius: 18px;
+          border: none;
+          padding: 18px;
+          position: relative;
+          &:focus{
+            border: none;
+            outline: none;
+            .search_icon{
+              display: none;
+            }
+          }
+        }
+        .search_icon{
+          position: absolute;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        svg {
+          width: 48px;
+          height: 48px;
+          margin-left: 13px;
+        }
       }
 
       .dashboard-content {

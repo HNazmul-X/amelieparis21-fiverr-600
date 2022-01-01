@@ -1354,8 +1354,11 @@ body {
 }
 #admin_panel_dashboard .layout .dashboard__layout__side__menu__bar .sidebar-brand {
   width: 100%;
-  background: #000;
+  background: #fff;
   height: var(--navbar-height);
+  border-bottom: 1px solid #447ef2;
+  color: #6c9dff;
+  font-size: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1370,7 +1373,44 @@ body {
 #admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard__navbar {
   width: 100%;
   height: var(--navbar-height);
-  background: #000;
+  background: #fff;
+  text-align: right;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard__navbar .search_wrapper {
+  position: relative;
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard__navbar input {
+  width: 331px;
+  height: 36px;
+  background-color: #f0f6ff;
+  border-radius: 18px;
+  border: none;
+  padding: 18px;
+  position: relative;
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard__navbar input:focus {
+  border: none;
+  outline: none;
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard__navbar input:focus .search_icon {
+  display: none;
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard__navbar .search_icon {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard__navbar svg {
+  width: 48px;
+  height: 48px;
+  margin-left: 13px;
 }
 #admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard-content {
   width: 100%;
@@ -1650,16 +1690,33 @@ body {
   margin-bottom: 73px;
 }
 .setup-social-link .social-icon-wrapper .single-icon {
-  padding: 7px 13px;
   border-radius: 4px;
   border: 1px solid #dce2ee;
   box-sizing: border-box;
   box-shadow: 0px 1px 7px rgba(21, 49, 106, 0.24);
   border-radius: 4px;
+  width: 56px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.setup-social-link .social-icon-wrapper .single-icon a {
+  display: flex;
+  color: #57697d;
+}
+.setup-social-link .social-icon-wrapper .add-icon-container {
+  background-color: #DCE2EE !important;
+  border: 1px solid #57697d;
+  cursor: pointer;
+}
+.setup-social-link .social-icon-wrapper .add-icon {
+  border: 1px dotted;
+  border-radius: 4px;
+  padding: 2px;
 }
 .setup-social-link .social-icon-wrapper svg {
-  font-size: 38px;
-  color: #57697d;
+  font-size: 27px;
 }
 
 .setup-scail-area {
