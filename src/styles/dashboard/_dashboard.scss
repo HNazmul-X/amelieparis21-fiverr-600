@@ -44,38 +44,36 @@
         display: flex;
         align-items: center;
         justify-content: end;
-.search_wrapper{
-  position: relative;
-}
-        input{
+        .search_wrapper {
           width: 331px;
+          cursor: pointer;
+        }
+        input {
           height: 36px;
           background-color: $primary-50;
-          border-radius: 18px;
           border: none;
           padding: 18px;
-          position: relative;
-          &:focus{
-            border: none;
-            outline: none;
-            .search_icon{
-              display: none;
-            }
+          border-radius: 0 18px 18px 0;
+          padding-left: 10px;
+          cursor: pointer;
+          &:focus {
+            box-shadow: none;
           }
         }
-        .search_icon{
-          position: absolute;
-          left: 0;
-          width: 20px;
-          height: 20px;
-          top: 50%;
-          transform: translateY(-50%);
-        }
 
-        svg {
+        .avatar {
           width: 48px;
           height: 48px;
           margin-left: 13px;
+        }
+        .adon {
+          border: none;
+          background-color: $primary-50;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 0px 0 18px;
+          border-radius: 18px 0 0 18px;
         }
       }
 
@@ -104,9 +102,10 @@
           width: 85%;
           margin: auto;
           justify-content: space-between;
-          padding: 20px 0;
           align-items: center;
-
+          .menu-item {
+            padding: 20px 0;
+          }
           .left {
             display: flex;
             justify-content: center;

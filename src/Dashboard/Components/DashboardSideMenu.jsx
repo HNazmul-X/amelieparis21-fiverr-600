@@ -17,26 +17,38 @@ function DashboardSideMenu() {
                 } menu-title-area`}
               >
                 <div className="menu-title-container">
-                  <Link to="/" className="left">
-                    <InlineIcon icon="uil:image-upload" />
-                    <p className="title">{data.label}</p>
-                  </Link>
-                  <InlineIcon
-                    onClick={() => setActiveMenu(data.label)}
-                    className="right-arrow"
-                    icon="ep:arrow-right"
-                  />
+                  {data.dropdown && data.dropdown.length ? (
+                    <p
+                      onClick={() => setActiveMenu(data.label)}
+                      className="left mb-0 menu-item"
+                    >
+                      <InlineIcon icon="uil:image-upload" />
+                      <span className="title">{data.label}</span>
+                    </p>
+                  ) : (
+                    <Link to={data.destination} className="left mb-0 menu-item">
+                      <InlineIcon icon="uil:image-upload" />
+                      <span className="title">{data.label}</span>
+                    </Link>
+                  )}
+                  {data.dropdown && data.dropdown.length > 0 && (
+                    <InlineIcon className="right-arrow" icon="ep:arrow-right" />
+                  )}
                 </div>
               </div>
-              {data.dropdown.length > 0 && (
+              {data.dropdown && data.dropdown.length > 0 && (
                 <div
                   className={`${
                     activeMenu === data.label ? "d-block" : "d-none"
                   } dropworn-area`}
                 >
                   <div className="dropdown-container">
-                    {data.dropdown.map((drp) => (
-                      <Link to={drp.destination} className="single-dropdown">
+                    {data.dropdown.map((drp, index) => (
+                      <Link
+                        key={index}
+                        to={drp.destination}
+                        className="single-dropdown"
+                      >
                         {drp.label}
                       </Link>
                     ))}

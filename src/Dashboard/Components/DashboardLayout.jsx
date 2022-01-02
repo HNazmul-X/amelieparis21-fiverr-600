@@ -15,13 +15,15 @@ const DashboardLayout = () => {
         </div>
 
         <div className="dashboard__layout__main__content">
+          {" "}
           <div className="dashboard__navbar">
-            <div className="search_wrapper">
-              <input type="text" />
-              <InlineIcon className="search_icon" icon=":ant-design:search-outlined"
-              />
+            <div class="input-group search_wrapper">
+              <span class="input-group-text" className="adon">
+                <InlineIcon icon=":ant-design:search-outlined" />
+              </span>
+              <input type="text" className="form-control" />
             </div>
-            <InlineIcon icon="carbon:user-avatar" />
+            <InlineIcon className="avatar" icon="carbon:user-avatar" />
           </div>
           <div className="dashboard-content">
             <Outlet />
