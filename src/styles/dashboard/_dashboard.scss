@@ -1,147 +1,150 @@
 @use "../util" as *;
 
 #admin_panel_dashboard {
-  .layout {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    flex-wrap: wrap;
-    background: $white;
-    overflow: hidden;
-
-    --menubar-width: 280px;
-    --navbar-height: 70px;
-
-    .dashboard__layout__side__menu__bar {
-      width: var(--menubar-width);
-      height: 100vh;
-      overflow-y: auto;
-
-      .sidebar-brand {
+    .layout {
+        display: flex;
+        min-height: 100vh;
         width: 100%;
-        background: #000;
-        height: var(--navbar-height);
-        @include flex-x-y-center;
-      }
+        flex-wrap: wrap;
+        background: $white;
+        overflow: hidden;
+
+        --menubar-width: 280px;
+        --navbar-height: 70px;
+
+        .dashboard__layout__side__menu__bar {
+            width: var(--menubar-width);
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 2px solid darken($color: $grey-200, $amount: 5);
+
+            .sidebar-brand {
+                width: 100%;
+                background: $white;
+                height: var(--navbar-height);
+                @include flex-x-y-center;
+                border-bottom: 3px solid $primary-200;
+                color:$primary-300;
+            }
+        }
+
+        .dashboard__layout__main__content {
+            width: calc(100% - var(--menubar-width));
+            height: 100vh;
+            background: rgb(151, 151, 151);
+            display: flex;
+            flex-flow: wrap;
+            .dashboard__navbar {
+                width: 100%;
+                height: var(--navbar-height);
+                background: $white;
+                border-bottom: 1px solid $grey-200;
+            }
+
+            .dashboard-content {
+                width: 100%;
+                height: calc(100vh - var(--navbar-height));
+                background: $primary-50;
+                overflow-y: scroll;
+            }
+        }
     }
-
-    .dashboard__layout__main__content {
-      width: calc(100% - var(--menubar-width));
-      height: 100vh;
-      background: rgb(151, 151, 151);
-      display: flex;
-      flex-flow: wrap;
-      .dashboard__navbar {
-        width: 100%;
-        height: var(--navbar-height);
-        background: #000;
-      }
-
-      .dashboard-content {
-        width: 100%;
-        height: calc(100vh - var(--navbar-height));
-        background: $primary-50;
-        overflow-y: scroll;
-      }
-    }
-  }
 }
 
 .deshbord-menus-section {
-  @include flex-x-y-center;
-  width: 100%;
-  .menu-container {
+    @include flex-x-y-center;
     width: 100%;
-    .single-menu-section {
-      transition: all 0.4s linear;
-      .menu-title-area {
-      }
-      .single-menu-container {
-        .menu-title-container {
-          display: flex;
-          width: 85%;
-          margin: auto;
-          justify-content: space-between;
-          padding: 20px 0;
-          align-items: center;
+    .menu-container {
+        width: 100%;
+        .single-menu-section {
+            transition: all 0.4s linear;
+            overflow: hidden;
+            .single-menu-container {
+                .menu-title-container {
+                    display: flex;
+                    width: 85%;
+                    margin: auto;
+                    justify-content: space-between;
+                    padding: 15px 0;
+                    align-items: center;
 
-          .left {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            .title {
-              margin-bottom: 0;
-              font-size: 19px;
-              line-height: 26px;
-              font-weight: 400;
-              color: $blue-grey;
-              transition: all 0.3s linear;
+                    .left {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-decoration: none;
+                        .title {
+                            margin-bottom: 0;
+                            font-size: 19px;
+                            line-height: 26px;
+                            font-weight: 400;
+                            color: $blue-grey;
+                            transition: all 0.3s linear;
+                        }
+                        svg {
+                            font-size: 30px;
+                            margin-right: 10px;
+                            color: $primary-300;
+                            transition: all 0.3s linear;
+                        }
+                    }
+                    .right-arrow {
+                        font-size: 22px;
+                        color: $primary-400;
+                        transition: all 0.3s linear;
+                    }
+                }
+                .dropworn-area {
+                    display: none;
+                    transition: 0.5s;
+                    background: $grey-200;
+
+                    .dropdown-container {
+                        padding-left: 40px;
+                        .single-dropdown {
+                            margin-bottom: 0;
+                            padding: 5px 0;
+                            transition: color 0.5s ease-in-out;
+                            text-decoration: none;
+                            color: $blue-grey;
+                            display: block;
+                            &:hover {
+                                color: $primary-400 !important;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
             }
-            svg {
-              font-size: 30px;
-              margin-right: 10px;
-              color: $primary-300;
-              transition: all 0.3s linear;
+            &:hover {
+                .menu-title-area {
+                    background-color: $primary-400;
+                }
+                cursor: pointer;
+                .right-arrow {
+                    color: $white !important;
+                }
+
+                svg {
+                    color: $white !important;
+                }
+                .title {
+                    color: $white !important;
+                }
             }
-          }
-          .right-arrow {
-            font-size: 22px;
-            color: $primary-400;
-            transition: all 0.3s linear;
-          }
         }
-        .dropworn-area {
-          display: none;
-          width: 85%;
-          margin: auto;
-          .dropdown-container {
-            margin-left: 40px;
-            .single-dropdown {
-              margin-bottom: 0;
-              padding: 5px 0;
-              transition: color 0.5s ease-in-out;
-              text-decoration: none;
-              color: $blue-grey;
-              display: block;
-              &:hover {
-                color: $primary-400 !important;
-                font-weight: 600;
-              }
-            }
-          }
-        }
-      }
-      &:hover {
-        .menu-title-area {
-          background-color: $primary-400;
-        }
-        cursor: pointer;
+    }
+    .active-link {
+        background-color: $primary-400 !important;
         .right-arrow {
-          color: $white !important;
-        }
-
-        svg {
-          color: $white !important;
+            color: $white !important;
+            transform: rotate(90deg);
         }
         .title {
-          color: $white !important;
+            color: $white !important;
         }
-      }
+        svg {
+            color: $white !important;
+        }
     }
-  }
-}
-
-.active-link {
-  background-color: $primary-400 !important;
-  .right-arrow {
-    color: $white !important;
-    transform: rotate(90deg);
-  }
-  .title {
-    color: $white !important;
-  }
-  svg {
-    color: $white !important;
-  }
 }

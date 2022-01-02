@@ -12,8 +12,8 @@ export default class GetCookie {
     getCookie(name) {
         const allCookie = decodeURIComponent(document.cookie);
         const cookieArray = allCookie.split(";");
-        const namedCookie = cookieArray.find((c) => c.startsWith(` ${name}`)) || cookieArray.find((e) => c.startsWith(name));
-        const cookieValue = namedCookie.split("=")[1];
+        const namedCookie = cookieArray.find((c) => c.startsWith(` ${name}`)) || cookieArray.find((c) => c.startsWith(name));
+        const cookieValue = namedCookie && namedCookie.split("=")[1];
         return cookieValue;
     }
 

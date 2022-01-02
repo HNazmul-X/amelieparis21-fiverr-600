@@ -1,12 +1,12 @@
-import React from 'react'
-import cardImg from "../../../../assets/images/Rectangle 9.png"
+import React from "react";
+import ProfileTemplate1 from "../../../Components/ProfileTemplate1/ProfileTemplate1";
 
-function RightSection() {
+function CardPreview() {
     return (
-        <div>
-            <img src={cardImg} alt="" className='w-100' />
+        <div className="position-sticky top-0">
+            <ProfileTemplate1/>
         </div>
-    )
+    );
 }
 
-export default RightSection
+export default CardPreview;

@@ -1,136 +1,141 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import CardRoundImage from "../../assets/images/Group 23.png";
+import Authentication from "../../Util/Authentication";
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    
-    const onSubmit = (data) => {
-        console.log(data);
-    } 
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        watch,
+    } = useForm();
+    console.log(watch("firstName"));
+
+    const onSubmit = async (data) => {
+
+        console.log(data)
+        const signedUpUser = await Authentication.signupAndData("http://localhost:8080/api/auth/signup", {
+            username: data?.username,
+            password: data?.password,
+            confirmPassword: data?.confirmPassword,
+            email: data?.email,
+            firstname: data?.firstName,
+            lastname: data?.lastName,
+            address: data?.address,
+            additional_address: data?.additional_address,
+            society: data?.society,
+            phone: data?.phone,
+            city: data?.city,
+            ambassador_code: data?.ambassador_code,
+            postalCode: data?.postalCode,
+        });
+    };
 
     return (
-        <div id='signup_area'>
+        <div id="signup_area">
             <div className="container">
                 <div className="row">
                     <div className="col-md-10 offset-md-1">
-                        <div class="modal-content" id="registrationPopup">
-                            <div class="fCard">
-                                <img src={CardRoundImage} class="img-fluid" alt="" />
+                        <div className="modal-content" id="registrationPopup">
+                            <div className="fCard">
+                                <img src={CardRoundImage} className="img-fluid" alt="" />
                             </div>
 
                             <form action="" onSubmit={handleSubmit(onSubmit)}>
-                                <h2 class="title mb-4 mt-5">Registration</h2>
+                                <h2 className="title mb-4 mt-5">Registration</h2>
 
-                                <div class="d-flex gap-3">
-                                    <div class="w-100 form-floating mt-3 ">
-                                        <input type="text" {...register("firstName", { required: true })} class="form-control unFatty-input" id="floatingInput" placeholder="name@example.com" />
-                                        <label for="floatingInput">First Name</label>
-                                        {errors.firstName?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">First Name is required</span>
-                                        )}
+                                <div className="d-flex gap-3 mb-5">
+                                    <div className="w-100 form-floating mt-3 ">
+                                        <input type="text" {...register("firstName", { required: true })} className="form-control unFatty-input" id="floatingInput44" placeholder="name@example.com" />
+                                        <label for="floatingInput44">First Name</label>
+                                        {errors.firstName?.type === "required" && <span className="d-block ps-3 text-danger text-start">First Name is required</span>}
                                     </div>
 
-                                    <div class="w-100 form-floating mt-3 ">
-                                        <input type="text" {...register("lastName", { required: true })} class="form-control unFatty-input" id="floatingInput" placeholder="name@example.com" />
-                                        <label for="floatingInput">Last Name</label>
-                                        {errors.lastName?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">Last Name is required</span>
-                                        )}
+                                    <div className="w-100 form-floating mt-3 ">
+                                        <input type="text" {...register("lastName", { required: true })} className="form-control unFatty-input" id="floatingInput1" placeholder="name@example.com" />
+                                        <label for="floatingInput1">Last Name</label>
+                                        {errors.lastName?.type === "required" && <span className="d-block ps-3 text-danger text-start">Last Name is required</span>}
                                     </div>
                                 </div>
 
-                                <div class="form-floating my-3 ">
-                                    <input type="email" {...register("email", { required: true })} class="form-control unFatty-input" id="floatingInput" placeholder="name@example.com" />
-                                    <label for="floatingInput">Email *</label>
-                                    {errors.email?.type === "required" && (
-                                        <span className="d-block ps-3 text-danger text-start">Email is required</span>
-                                    )}
+                                <div className="form-floating my-4 mb-5 ">
+                                    <input type="email" {...register("email", { required: true })} className="form-control unFatty-input" id="floatingInput2" placeholder="name@example.com" />
+                                    <label for="floatingInput2">Email *</label>
+                                    {errors.email?.type === "required" && <span className="d-block ps-3 text-danger text-start">Email is required</span>}
+                                </div>
+                                <div className="form-floating my-4 mb-5 ">
+                                    <input type="" {...register("username", { required: true })} className="form-control unFatty-input" id="floatingInput5" placeholder="name@example.com" />
+                                    <label for="floatingInput5">Username</label>
+                                    {errors.username?.type === "required" && <span className="d-block ps-3 text-danger text-start">Username is required</span>}
                                 </div>
 
-                                <div class="d-flex gap-4 mb-3">
-                                    <div class="w-100 form-floating">
-                                        <input type="password" {...register("password", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label for="floatingPassword">Password *</label>
-                                        {errors.password?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">Password is required</span>
-                                        )}
+                                <div className="d-flex gap-4 my-4">
+                                    <div className="w-100 form-floating">
+                                        <input type="password" {...register("password", { required: true })} className="form-control unFatty-input" id="floatingPassword45" placeholder="Password" />
+                                        <label for="floatingPassword45">Password *</label>
+                                        {errors.password?.type === "required" && <span className="d-block ps-3 text-danger text-start">Password is required</span>}
                                     </div>
-                                    <div class="w-100 form-floating">
-                                        <input type="password" {...register("rePassword", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label for="floatingPassword">Re-Password *</label>
-                                        {errors.rePassword?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">Re-Password is required</span>
-                                        )}
-                                    </div>
-                                </div>
-
-                                <div class="d-flex gap-3">
-                                    <div class="w-100 form-floating mb-3">
-                                        <input type="text" {...register("society", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label for="floatingPassword">Society</label>
-                                        {errors.society?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">Society is required</span>
-                                        )}
-                                    </div>
-
-                                    <div class="w-100 form-floating mb-3">
-                                        <input type="tel" {...register("phone", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label for="floatingPassword">Phone</label>
-                                        {errors.phone?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">Phone is required</span>
-                                        )}
+                                    <div className="w-100 form-floating">
+                                        <input type="password" {...register("confirmPassword", { required: true })} className="form-control unFatty-input" id="floatingPassword76" placeholder="Password" />
+                                        <label for="floatingPassword76">Re-Password *</label>
+                                        {errors.confirmPassword?.type === "required" && <span className="d-block ps-3 text-danger text-start">Re-Password is required</span>}
                                     </div>
                                 </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" {...register("address", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                    <label for="floatingPassword">Address</label>
-                                    {errors.address?.type === "required" && (
-                                        <span className="d-block ps-3 text-danger text-start">Address is required</span>
-                                    )}
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" {...register("additionalAddress", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                    <label for="floatingPassword">Additional Address</label>
-                                    {errors.additionalAddress?.type === "required" && (
-                                        <span className="d-block ps-3 text-danger text-start">Additional Address is required</span>
-                                    )}
-                                </div>
-
-                                <div class="d-flex gap-3">
-                                    <div class="w-100 form-floating mb-3">
-                                        <input type="text" {...register("postalCode", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label for="floatingPassword">Postal code</label>
-                                        {errors.postalCode?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">Postal Code is required</span>
-                                        )}
+                                <div className="d-flex gap-3">
+                                    <div className="w-100 form-floating my-3">
+                                        <input type="text" {...register("society", { required: true })} className="form-control unFatty-input" id="floatingPassword123" placeholder="Password" />
+                                        <label for="floatingPassword123">Society</label>
+                                        {errors.society?.type === "required" && <span className="d-block ps-3 text-danger text-start">Society is required</span>}
                                     </div>
 
-                                    <div class="w-100 form-floating mb-3">
-                                        <input type="text" {...register("city", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label for="floatingPassword">City</label>
-                                        {errors.city?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">City is required</span>
-                                        )}
+                                    <div className="w-100 form-floating my-3">
+                                        <input type="tel" {...register("phone", { required: true })} className="form-control unFatty-input" id="floatingPassword786" placeholder="Password" />
+                                        <label for="floatingPassword786">Phone</label>
+                                        {errors.phone?.type === "required" && <span className="d-block ps-3 text-danger text-start">Phone is required</span>}
+                                    </div>
+                                </div>
+
+                                <div className="form-floating my-4 mb-5">
+                                    <input type="text" {...register("address", { required: true })} className="form-control unFatty-input" id="floatingPassword2324" placeholder="Password" />
+                                    <label for="floatingPassword2324">Address</label>
+                                    {errors.address?.type === "required" && <span className="d-block ps-3 text-danger text-start">Address is required</span>}
+                                </div>
+
+                                <div className="form-floating my-4">
+                                    <input type="text" {...register("additional_address", { required: false })} className="form-control unFatty-input" id="floatingPassword127" placeholder="Password" />
+                                    <label for="floatingPassword127">Additional Address</label>
+                                </div>
+
+                                <div className="d-flex gap-3">
+                                    <div className="w-100 form-floating my-4">
+                                        <input type="text" {...register("postalCode", { required: true })} className="form-control unFatty-input" id="floatingPassword48" placeholder="Password" />
+                                        <label for="floatingPassword48">Postal code</label>
+                                        {errors.postalCode?.type === "required" && <span className="d-block ps-3 text-danger text-start">Postal Code is required</span>}
+                                    </div>
+
+                                    <div className="w-100 form-floating my-4">
+                                        <input type="text" {...register("city", { required: true })} className="form-control unFatty-input" id="floatingPass324" placeholder="Password" />
+                                        <label for="floatingPass324">City</label>
+                                        {errors.city?.type === "required" && <span className="d-block ps-3 text-danger text-start">City is required</span>}
                                     </div>
                                 </div>
 
                                 <div>
-                                    <p class="text-start my-0 ms-3">Do you have an ambassador code ?</p>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" {...register("ambassadorCode", { required: true })} class="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label for="floatingPassword">Ambassador Code</label>
-                                        {errors.ambassadorCode?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">Ambassador Code is required</span>
-                                        )}
+                                    <p className="text-start my-0 ms-3">Do you have an ambassador code ?</p>
+                                    <div className="form-floating my-3">
+                                        <input type="text" {...register("ambassador_code", { required: false })} className="form-control unFatty-input" id="floatingPassword39" placeholder="Password" />
+                                        <label for="floatingPassword39">Ambassador Code</label>
+                                        {errors.ambassador_code?.type === "required" && <span className="d-block ps-3 text-danger text-start">Ambassador Code is required</span>}
                                     </div>
                                 </div>
 
-                                <div class="validateBtn">
-                                    <button class="btn">Register</button>
-                                    <p>Already Have an Account ? <a href="/login">Login</a></p>
+                                <div className="validateBtn">
+                                    <button className="btn">Register</button>
+                                    <p>
+                                        Already Have an Account ? <a href="/login">Login</a>
+                                    </p>
                                 </div>
                             </form>
                         </div>

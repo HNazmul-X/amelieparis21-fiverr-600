@@ -10,19 +10,19 @@ const CreateCardSteps = () => {
 
     return (
         <>
-            <section class="steper-section">
-                <article class="container">
-                    <div class="section-wrapper" style={{ "--total-count": totalSteps.length }}>
+            <section className="steper-section">
+                <article className="container">
+                    <div className="section-wrapper" style={{ "--total-count": totalSteps.length }}>
                         {totalSteps.map((data, index) => (
-                            <div class="single-steps-wrapper">
-                                {index === 0 ? "" : <div class="hr-line"></div>}
-                                <div class="single-steps" onClick={()=> setFormStepId(data?.id)}>
-                                    <span class="img-wrapper">
-                                        <div class={`${formStepId === data.id ? "active" : ""}`}>
+                            <div className="single-steps-wrapper">
+                                {index === 0 ? "" : <div className="hr-line"></div>}
+                                <div className="single-steps" onClick={()=> setFormStepId(data?.id)}>
+                                    <span className="img-wrapper">
+                                        <div className={`${formStepId === data.id ? "active" : ""}`}>
                                             <InlineIcon icon={data?.icon} />
                                         </div>
                                     </span>
-                                    <span class="label">
+                                    <span className="label">
                                         <span>{data?.label} </span>
                                     </span>
                                 </div>

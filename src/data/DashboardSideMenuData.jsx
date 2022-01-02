@@ -1,35 +1,42 @@
-
-export const datas = [
+export const ProfileSidebarData = [
     {
-        icon:"",
+        icon: "",
         label: "Profile Creation",
-        destination:"",
-        dropdown: [{
-            label:"Dropdown 1",
-            destination:"/"
-        },{
-            label:"Dropdown 1",
-            destination:"/"
-        },]
+        destination: "",
+        id: "f00a5ae9-b5f1-44af-811b-dc94831bef8f",
+        dropdown: [
+            {
+                label: "Dropdown 1",
+                destination: "/",
+            },
+            {
+                label: "Dropdown 1",
+                destination: "/",
+            },
+        ],
     },
     {
-        icon:"",
-        label: "test2",
-        destination:"",
-        dropdown: [{
-            label:"Dropdown 1",
-            destination:"/"
-        },]
+        icon: "",
+        label: "Card Request",
+        destination: "",
+        id: "31a57a94-f16a-4ce0-b2f4-2029462fc2b9",
+        dropdown: [
+            {
+                label: "Dropdown 1",
+                destination: "/",
+            },
+        ],
     },
     {
-        icon:"",
-        label: "test3",
-        destination:"",
-        dropdown: [{
-            label:"Dropdown 1",
-            destination:"/"
-        },]
-    }
-]
-
-
+        icon: "",
+        label: "I don't know",
+        destination: "",
+        id: "d799b9b9-c10f-4df9-95a6-954e923ddf7a",
+        dropdown: [
+            {
+                label: "Dropdown 1",
+                destination: "/",
+            },
+        ],
+    },
+];

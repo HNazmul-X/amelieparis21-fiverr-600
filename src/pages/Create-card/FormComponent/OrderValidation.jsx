@@ -23,22 +23,22 @@ const OrderValidation = () => {
 
   return (
     <section id="order_validate">
-      <div class="container">
-        <div class="validateInner">
+      <div className="container">
+        <div className="validateInner">
           <form
             action=""
-            class="validateForm"
+            className="validateForm"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <h3 class="title">Validate your Order</h3>
+            <h3 className="title">Validate your Order</h3>
             <div>
-              <h6 class="subTitle">Delivary</h6>
+              <h6 className="subTitle">Delivary</h6>
 
-              <div class="d-flex gap-3">
-                <div class="w-100 form-floating mb-3">
+              <div className="d-flex gap-3">
+                <div className="w-100 form-floating mb-3">
                   <input
                     type="text"
-                    class="form-control primary-input"
+                    className="form-control primary-input"
                     id="floatingInput"
                     placeholder="name@example.com"
                     {...register("firstName", { required: true })}
@@ -49,10 +49,10 @@ const OrderValidation = () => {
                   )}
                 </div>
 
-                <div class="w-100 form-floating mb-3">
+                <div className="w-100 form-floating mb-3">
                   <input
                     type="text"
-                    class="form-control primary-input"
+                    className="form-control primary-input"
                     id="floatingInput"
                     placeholder="name@example.com"
                     {...register("lastName", { required: true })}
@@ -64,10 +64,10 @@ const OrderValidation = () => {
                 </div>
               </div>
 
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                   {...register("society", { required: true })}
@@ -78,10 +78,10 @@ const OrderValidation = () => {
                 )}
               </div>
 
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                   {...register("address", { required: true })}
@@ -92,10 +92,10 @@ const OrderValidation = () => {
                 )}
               </div>
 
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                   {...register("additionalAddress", { required: true })}
@@ -108,11 +108,11 @@ const OrderValidation = () => {
                 )}
               </div>
 
-              <div class="d-flex gap-3">
-                <div class="w-100 form-floating mb-3">
+              <div className="d-flex gap-3">
+                <div className="w-100 form-floating mb-3">
                   <input
                     type="password"
-                    class="form-control primary-input"
+                    className="form-control primary-input"
                     id="floatingInput"
                     placeholder="name@example.com"
                     {...register("postalCode", { required: true })}
@@ -125,10 +125,10 @@ const OrderValidation = () => {
                   )}
                 </div>
 
-                <div class="w-100 form-floating mb-3">
+                <div className="w-100 form-floating mb-3">
                   <input
                     type="password"
-                    class="form-control primary-input"
+                    className="form-control primary-input"
                     id="floatingInput"
                     placeholder="name@example.com"
                     {...register("city", { required: true })}
@@ -140,10 +140,10 @@ const OrderValidation = () => {
                 </div>
               </div>
 
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                   {...register("country", { required: true })}
@@ -156,7 +156,7 @@ const OrderValidation = () => {
             </div>
 
             <div className={`pt-4`}>
-              <h6 class="subTitle">Delivary</h6>
+              <h6 className="subTitle">Delivary</h6>
 
               <div className="form-check">
                 <input
@@ -167,18 +167,18 @@ const OrderValidation = () => {
                   onChange={() => setSameBillingAddress(!sameBillingAddress)}
                 />
                 <label
-                  class="form-check-label check_box_label mb-3"
+                  className="form-check-label check_box_label mb-3"
                   for="b_checkbox"
                 >
                   My billing address is the same
                 </label>
               </div>
               <div className={`${sameBillingAddress ? "d-none" : "d-block"} `}>
-                <div class="d-flex gap-3">
-                  <div class="w-100 form-floating mb-3">
+                <div className="d-flex gap-3">
+                  <div className="w-100 form-floating mb-3">
                     <input
                       type="text"
-                      class="form-control primary-input"
+                      className="form-control primary-input"
                       id="floatingInput"
                       placeholder="name@example.com"
                       {...register("b_firstName", {
@@ -193,10 +193,10 @@ const OrderValidation = () => {
                     )}
                   </div>
 
-                  <div class="w-100 form-floating mb-3">
+                  <div className="w-100 form-floating mb-3">
                     <input
                       type="text"
-                      class="form-control primary-input"
+                      className="form-control primary-input"
                       id="floatingInput"
                       placeholder="name@example.com"
                       {...register("b_lastName", {
@@ -212,10 +212,10 @@ const OrderValidation = () => {
                   </div>
                 </div>
 
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="text"
-                    class="form-control primary-input"
+                    className="form-control primary-input"
                     id="floatingInput"
                     placeholder="name@example.com"
                     {...register("b_society", {
@@ -228,10 +228,10 @@ const OrderValidation = () => {
                   )}
                 </div>
 
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="text"
-                    class="form-control primary-input"
+                    className="form-control primary-input"
                     id="floatingInput"
                     placeholder="name@example.com"
                     {...register("b_address", {
@@ -244,10 +244,10 @@ const OrderValidation = () => {
                   )}
                 </div>
 
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="text"
-                    class="form-control primary-input"
+                    className="form-control primary-input"
                     id="floatingInput"
                     placeholder="name@example.com"
                     {...register("b_additionalAddress", {
@@ -262,11 +262,11 @@ const OrderValidation = () => {
                   )}
                 </div>
 
-                <div class="d-flex gap-3">
-                  <div class="w-100 form-floating mb-3">
+                <div className="d-flex gap-3">
+                  <div className="w-100 form-floating mb-3">
                     <input
                       type="password"
-                      class="form-control primary-input"
+                      className="form-control primary-input"
                       id="floatingInput"
                       placeholder="name@example.com"
                       {...register("b_postalCode", {
@@ -281,10 +281,10 @@ const OrderValidation = () => {
                     )}
                   </div>
 
-                  <div class="w-100 form-floating mb-3">
+                  <div className="w-100 form-floating mb-3">
                     <input
                       type="password"
-                      class="form-control primary-input"
+                      className="form-control primary-input"
                       id="floatingInput"
                       placeholder="name@example.com"
                       {...register("b_city", {
@@ -298,10 +298,10 @@ const OrderValidation = () => {
                   </div>
                 </div>
 
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="text"
-                    class="form-control primary-input"
+                    className="form-control primary-input"
                     id="floatingInput"
                     placeholder="name@example.com"
                     {...register("b_country", {
@@ -315,10 +315,10 @@ const OrderValidation = () => {
                 </div>
               </div>
 
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                   {...register("commentOnCommance", { required: true })}
@@ -332,10 +332,10 @@ const OrderValidation = () => {
               </div>
 
               <p className="mb-0 ms-3 pt-4">Do you have a promo code?</p>
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                   {...register("promoCode")}

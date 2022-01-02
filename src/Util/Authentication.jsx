@@ -39,6 +39,7 @@ export default class Authentication {
                     headers: {
                         "Content-type": "application/json",
                     },
+                    body:JSON.stringify(userData)
                 });
                 const returnedData = (await returnedResponse).json();
 

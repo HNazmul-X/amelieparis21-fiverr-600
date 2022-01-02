@@ -15,33 +15,33 @@ const Login = () => {
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
                         <div id="loginInner">
-                        <div class="adminCard">
-                                <img src={CardRoundImage} class="img-fluid" alt="" />
+                        <div className="adminCard">
+                                <img src={CardRoundImage} className="img-fluid" alt="" />
                             </div>
 
                             <form action="" className='px-2' onSubmit={handleSubmit(onSubmit)}>
                                 <div>
-                                    <h1 class="title">WELCOME</h1>
+                                    <h1 className="title">WELCOME</h1>
                                     <p className='subTitle'>Login to Continue</p>
                                 </div>
 
-                                <div class="form-floating my-3 ">
-                                    <input type="email" {...register("email", { required: true })} class="form-control primary-input" id="floatingInput" placeholder="name@example.com" />
+                                <div className="form-floating my-3 ">
+                                    <input type="email" {...register("email", { required: true })} className="form-control primary-input" id="floatingInput" placeholder="name@example.com" />
                                     <label for="floatingInput">Email *</label>
                                     {errors.email?.type === "required" && (
                                         <span className="d-block ps-3 text-danger text-start">Email is required</span>
                                     )}
                                 </div>
 
-                                <div class="form-floating mb-4">
-                                    <input type="password" {...register("password", { required: true })} class="form-control primary-input" id="floatingPassword" placeholder="Password" />
+                                <div className="form-floating mb-4">
+                                    <input type="password" {...register("password", { required: true })} className="form-control primary-input" id="floatingPassword" placeholder="Password" />
                                     <label for="floatingPassword">Password *</label>
                                     {errors.password?.type === "required" && (
                                         <span className="d-block ps-3 text-danger text-start">Password is required</span>
                                     )}
                                 </div>
 
-                                <button class="logBtn btn mb-2">
+                                <button className="logBtn btn mb-2">
                                     Login
                                     <img src={vector} alt="" />
                                 </button>

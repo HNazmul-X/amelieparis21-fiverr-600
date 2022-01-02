@@ -1,5 +1,5 @@
 import React from "react";
-import RightSection from "./CardPreview";
+import CardPreview from "./CardPreview";
 import LeftSide from "./LeftSide";
 
 function ProfileCreationMain() {
@@ -9,8 +9,8 @@ function ProfileCreationMain() {
         <div className="col-md-7">
           <LeftSide />
         </div>
-        <div className="col-md-5">
-          <RightSection />
+        <div className="col-md-5"> 
+          <CardPreview />
         </div>
       </div>
     </div>
