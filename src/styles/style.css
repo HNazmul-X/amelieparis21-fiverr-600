@@ -1490,8 +1490,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid #a5c3ff;
-  color: #6c9dff;
 }
 #admin_panel_dashboard .layout .dashboard__layout__main__content {
   width: calc(100% - var(--menubar-width));
@@ -1504,9 +1502,6 @@ body {
   width: 100%;
   height: var(--navbar-height);
   background: #fff;
-<<<<<<< HEAD
-  border-bottom: 1px solid #e7e7e9;
-=======
   text-align: right;
   padding-right: 30px;
   display: flex;
@@ -1542,7 +1537,6 @@ body {
   justify-content: center;
   padding: 0 0px 0 18px;
   border-radius: 18px 0 0 18px;
->>>>>>> 942e096a42f8061a39db364e5978f7d52965da45
 }
 #admin_panel_dashboard .layout .dashboard__layout__main__content .dashboard-content {
   width: 100%;
@@ -1569,14 +1563,8 @@ body {
   width: 85%;
   margin: auto;
   justify-content: space-between;
-<<<<<<< HEAD
   padding: 15px 0;
-=======
->>>>>>> 942e096a42f8061a39db364e5978f7d52965da45
   align-items: center;
-}
-.deshbord-menus-section .menu-container .single-menu-section .single-menu-container .menu-title-container .menu-item {
-  padding: 20px 0;
 }
 .deshbord-menus-section .menu-container .single-menu-section .single-menu-container .menu-title-container .left {
   display: flex;
@@ -2023,225 +2011,6 @@ body {
   padding: 10px;
 }
 
-<<<<<<< HEAD
-section.card1 {
-  background: #fff;
-  margin: auto;
-  max-width: 400px;
-  overflow: hidden;
-  border: #e7e7e9 1px solid;
-  padding: 10px;
-}
-section.card1 .background-image img {
-  width: 100%;
-}
-section.card1 .about {
-  padding: 0px 20px;
-}
-section.card1 .about .profile-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-top: -70px;
-  overflow: hidden;
-}
-section.card1 .about .profile-img img {
-  width: 100%;
-}
-section.card1 .about .name h3 {
-  font-weight: bold;
-  margin-bottom: 0;
-}
-section.card1 .about .nature span {
-  font-size: 14px;
-  font-weight: 600;
-  color: #5B5B5B;
-}
-section.card1 .about .career {
-  display: flex;
-  align-items: center;
-}
-section.card1 .about .career .yellow-border {
-  background: #FFA412;
-  width: 2px;
-  height: 50px;
-  margin-right: 5px;
-}
-section.card1 .about .career .info span {
-  font-size: 12px;
-  font-weight: 500;
-  display: block;
-}
-section.card1 .about .tag-btns {
-  display: flex;
-}
-section.card1 .about .tag-btns button {
-  border: none;
-  padding: 4px 12px;
-  border-radius: 3px;
-  font-size: 10px;
-  background: #FFF4E1;
-  margin-right: 12px;
-}
-section.card1 .about .tag-btns button a {
-  text-decoration: none;
-  color: #FFA412;
-  font-weight: 500;
-}
-section.card1 .social-section {
-  margin-top: 50px;
-  border-radius: 24px 24px 0 0;
-  background: #fff;
-  box-shadow: 0px 4px 16px #333E63;
-  position: relative;
-  padding: 50px 30px 50px 40px;
-}
-section.card1 .social-section .big-button {
-  position: absolute;
-  text-align: center;
-  top: -12px;
-  width: 100%;
-  left: 0;
-}
-section.card1 .social-section .big-button button {
-  background: linear-gradient(to right, #FF8C00, #FF3710);
-  padding: 8px 45px;
-  border-radius: 8px;
-  border: none;
-  margin-top: -20px;
-  box-shadow: 0px 15px 30px rgba(255, 56, 16, 0.5);
-}
-section.card1 .social-section .big-button button a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-}
-section.card1 .social-section .social-links .social-line {
-  margin-bottom: 10px;
-  border: 1px solid #E5E5E5;
-  border-radius: 8px;
-  align-items: center;
-  padding: 5px 20px 3px 0;
-}
-section.card1 .social-section .social-links .social-line .icon {
-  margin-right: 6px;
-  width: 60px;
-  margin-left: -25px;
-}
-section.card1 .social-section .social-links .social-line .icon img {
-  width: 100%;
-}
-section.card1 .social-section .social-links .social-line .open-icon {
-  margin-top: -5px;
-}
-section.card1 .social-section .social-links .social-line .details h5 {
-  margin-bottom: 0;
-  font-weight: bold;
-  line-height: 1;
-  font-size: 18px;
-}
-section.card1 .social-section .social-links .social-line .details span {
-  font-size: 10px;
-  font-weight: 500;
-=======
-.profile-2-conatiner {
-  width: 375px;
-  margin: auto;
-  background-color: #fff;
-}
-.profile-2-conatiner .content {
-  transform: translateY(-50px);
-}
-.profile-2-conatiner .profile_pic_area {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 18px;
-}
-.profile-2-conatiner .profile_pic_area .profile_pic {
-  width: 108px;
-  height: 108px;
-  border: 4px solid #fff;
-  border-radius: 50%;
-}
-.profile-2-conatiner .profile_pic_area .profile_pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.profile-2-conatiner .profile_pic_area .shear_icon_wrapper {
-  position: absolute;
-  right: 17px;
-  bottom: 13px;
-}
-.profile-2-conatiner .profile_pic_area .shear_icon_wrapper .share_icon {
-  width: 24px;
-  height: 24px;
-  color: #333e63;
-  cursor: pointer;
-}
-.profile-2-conatiner .besic-info {
-  text-align: center;
-}
-.profile-2-conatiner .besic-info h3 {
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 24px;
-  margin-bottom: 12px;
-  color: #333e63;
-}
-.profile-2-conatiner .besic-info p {
-  font-size: 14px;
-  color: #778cae;
-  padding-bottom: 30px;
-  margin-bottom: 0;
-}
-.profile-2-conatiner .contact-section {
-  padding: 0 28px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.profile-2-conatiner .contact-section .single-contact {
-  display: flex;
-  text-decoration: none;
-  align-items: flex-start;
-  width: 100%;
-  border-top: 0.5px solid #e0e0e0;
-  padding: 17px 0;
-}
-.profile-2-conatiner .contact-section .single-contact svg {
-  font-size: 24px;
-  width: 24px;
-  color: #8a3efe;
-}
-.profile-2-conatiner .contact-section .single-contact p {
-  margin-bottom: 0;
-  padding-left: 8px;
-  margin-top: -4px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333e63;
-}
-.profile-2-conatiner .contact-section .add-contact-button {
-  background-image: linear-gradient(91.54deg, #8a3efe -1.94%, #4d00c4 100%);
-  box-shadow: 0px 12px 36px rgba(138, 62, 254, 0.36);
-  padding: 20px 0;
-  width: 100%;
-  color: #fff;
-  border-radius: 12px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 16px;
-  margin-top: 25px;
-}
-
-.w-50 {
-  width: 50%;
-}
-
 .profile-template-1 {
   width: 375px;
   margin: auto;
@@ -2371,7 +2140,6 @@ section.card1 .social-section .social-links .social-line .details span {
 }
 .profile-template-1 .contact-section .social-container .signle-social-link .active-arrow {
   transform: rotate(90deg);
->>>>>>> 942e096a42f8061a39db364e5978f7d52965da45
 }
 
 .my-button {

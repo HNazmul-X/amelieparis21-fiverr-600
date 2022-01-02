@@ -6,10 +6,10 @@ function ProfileCreationMain() {
   return (
     <div className="dashbord-profile-createion">
       <div className="row">
-        <div className="col-md-7 pe-0">
+        <div className="col-md-7 col-xxl-9 pe-0">
           <LeftSide />
         </div>
-        <div className="col-md-5"> 
+        <div className="col-md-5 col-xxl-3"> 
           <CardPreview />
         </div>
       </div>
