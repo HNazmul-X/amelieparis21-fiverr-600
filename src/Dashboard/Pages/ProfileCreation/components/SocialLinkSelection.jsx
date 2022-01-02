@@ -17,7 +17,7 @@ const SocialLinkSelection = ({ onClose }) => {
 
                 <div className="selection_card__icons-container">
                     {ProfileCreationSocialLinksData?.map((icon, index) => {
-                        return <IconCard setSelectedIcon={setSelectedIcon} selectedIcon={selectedIcon} icon={icon} index={index} />;
+                        return <IconCard key={index} setSelectedIcon={setSelectedIcon} selectedIcon={selectedIcon} icon={icon} index={index} />;
                     })}
                 </div>
 
@@ -39,7 +39,6 @@ const IconCard = ({ icon, index, selectedIcon, setSelectedIcon }) => {
     const handleSelection = () => {
         const inputCheckbox = inputRef && inputRef.current;
         setIsSelected(inputCheckbox.checked);
-        console.log(selectedIcon.includes(icon));
     };
     useEffect(() => {
         if (isSelected) {
@@ -47,7 +46,6 @@ const IconCard = ({ icon, index, selectedIcon, setSelectedIcon }) => {
         } else if (!isSelected) {
             setSelectedIcon([...selectedIcon.filter((item) => item.id !== icon.id)]);
         }
-        console.log(selectedIcon);
     }, [isSelected]);
 
     return (

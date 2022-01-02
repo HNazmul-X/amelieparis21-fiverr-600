@@ -13,8 +13,7 @@ const SignUp = () => {
     console.log(watch("firstName"));
 
     const onSubmit = async (data) => {
-
-        console.log(data)
+        console.log(data);
         const signedUpUser = await Authentication.signupAndData("http://localhost:8080/api/auth/signup", {
             username: data?.username,
             password: data?.password,
@@ -77,7 +76,13 @@ const SignUp = () => {
                                         {errors.password?.type === "required" && <span className="d-block ps-3 text-danger text-start">Password is required</span>}
                                     </div>
                                     <div className="w-100 form-floating">
-                                        <input type="password" {...register("confirmPassword", { required: true })} className="form-control unFatty-input" id="floatingPassword76" placeholder="Password" />
+                                        <input
+                                            type="password"
+                                            {...register("confirmPassword", { required: true })}
+                                            className="form-control unFatty-input"
+                                            id="floatingPassword76"
+                                            placeholder="Password"
+                                        />
                                         <label for="floatingPassword76">Re-Password *</label>
                                         {errors.confirmPassword?.type === "required" && <span className="d-block ps-3 text-danger text-start">Re-Password is required</span>}
                                     </div>
@@ -104,7 +109,13 @@ const SignUp = () => {
                                 </div>
 
                                 <div className="form-floating my-4">
-                                    <input type="text" {...register("additional_address", { required: false })} className="form-control unFatty-input" id="floatingPassword127" placeholder="Password" />
+                                    <input
+                                        type="text"
+                                        {...register("additional_address", { required: false })}
+                                        className="form-control unFatty-input"
+                                        id="floatingPassword127"
+                                        placeholder="Password"
+                                    />
                                     <label for="floatingPassword127">Additional Address</label>
                                 </div>
 
@@ -125,7 +136,13 @@ const SignUp = () => {
                                 <div>
                                     <p className="text-start my-0 ms-3">Do you have an ambassador code ?</p>
                                     <div className="form-floating my-3">
-                                        <input type="text" {...register("ambassador_code", { required: false })} className="form-control unFatty-input" id="floatingPassword39" placeholder="Password" />
+                                        <input
+                                            type="text"
+                                            {...register("ambassador_code", { required: false })}
+                                            className="form-control unFatty-input"
+                                            id="floatingPassword39"
+                                            placeholder="Password"
+                                        />
                                         <label for="floatingPassword39">Ambassador Code</label>
                                         {errors.ambassador_code?.type === "required" && <span className="d-block ps-3 text-danger text-start">Ambassador Code is required</span>}
                                     </div>

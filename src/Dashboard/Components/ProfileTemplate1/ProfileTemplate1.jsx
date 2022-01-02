@@ -1,76 +1,176 @@
-import React from 'react';
+import React, { useState } from "react";
+import banner from "../../../assets/images/Cover Image1.png";
+import profilePic from "../../../assets/images/Profile Picture (2).png";
+import { InlineIcon } from "@iconify/react";
+import linkdinIcon from "../../../assets/images/Linkedin.png";
+import facebookIcon from "../../../assets/images/Facebook.png";
+import callIcon from "../../../assets/images/icon.png";
+import emailIcon from "../../../assets/images/icon (1).png";
+import instagramIcon from "../../../assets/images/Instagram.png";
 
-const ProfileTemplate1 = () => {
-    return (
-        <section className="card1">
-            <div className="background-image">
-                <img src="CoverImage.png" alt="" />
-            </div>
-            <div className="about">
-                <div className="profile-img">
-                    <img src="Profile Picture.png" alt="" />
-                </div>
-                <div className="name-and-share-icon d-flex justify-content-between">
-                    <div className="name">
-                        <h3>Sandhya Mer</h3>
-                    </div>
-                    <div className="share-icon">
-                        <img src="Share.png" alt="" />
-                    </div>
-                </div>
-                <div className="nature">
-                    <span>PEACE | LOVE | TRAVEL</span>
-                </div>
-                <div className="career">
-                    <div className="yellow-border"></div>
-                    <div className="info">
-                        <span className="posting">Social Media Manager at VRTeam Design</span>
-                        <span className="subject">Design</span>
-                        <span className="industry">ASU | Media & Firm</span>
-                        <span className="location">Junagadh, IN</span>
-                    </div>
-                </div>
-                <div className="tag-btns">
-                    <button className="social-media">
-                        <a href="#">Social Meida</a>
-                    </button>
-                    <button className="marketing">
-                        <a href="#">Marketing</a>
-                    </button>
-                    <button className="design">
-                        <a href="#">Design</a>
-                    </button>
-                    <button className="graphic-design">
-                        <a href="#">GRAPHIC DESIGN</a>
-                    </button>
-                </div>
-            </div>
+function ProfileTemplate1() {
+  const workLists = ["Social Media", "MARKETING", "DESIGN", "GRAPHIC"];
 
-            <div className="social-section">
-                <div className="big-button add-to-contact">
-                    <button>
-                        <a href="">ADD TO CONTACT</a>
-                    </button>
-                </div>
-                <div className="social-links">
-                    <div className="social-line d-flex justify-content-between">
-                        <div className="icon-details d-flex">
-                            <div className="icon instagram">
-                                <img src="Instagram.png" alt="" />
-                            </div>
-                            <div className="details">
-                                <h5 className="media-name">Instagram</h5>
-                                <span className="media-posting">Sandhyamer</span>
-                            </div>
-                        </div>
-                        <div className="open-icon">
-                            <img src="Path.png" alt="" />
-                        </div>
-                    </div>
-                </div>
+  const socilaLink = [
+    {
+      title: "Instagram",
+      des: "Sandhyamer",
+      icon: instagramIcon,
+      destination: "https://www.youtube.com/",
+    },
+    {
+      title: "Facebook",
+      des: "Sandhyamer",
+      icon: facebookIcon,
+      destination: "https://www.youtube.com/",
+    },
+    {
+      title: "Linkedin",
+      des: "Sandhyamer",
+      icon: linkdinIcon,
+      destination: "https://www.youtube.com/",
+    },
+    {
+      title: "Phone",
+      des: "Sandhyamer",
+      icon: callIcon,
+      destination: "https://www.youtube.com/",
+    },
+    {
+      title: "E-mail",
+      des: "Sandhyamer",
+      icon: emailIcon,
+      destination: "https://www.youtube.com/",
+    },
+  ];
+
+  return (
+    <div className="profile-template-1">
+      <div className="banner">
+        <img src={banner} alt="Banner" />
+      </div>
+      {/* <div className='content'> */}
+      <div className="besic-info">
+        <img className="profile-pic" src={profilePic} alt="profile" />
+        <div className="info">
+          <div className="name-section">
+            <div>
+              <h3>Sandhya Mer</h3>
+              <p>Peace | Love | Travel</p>
             </div>
-        </section>
-    );
-};
+            <div className="share">
+              <InlineIcon className="share_icon" icon="bx:bxs-share-alt" />
+            </div>
+          </div>
+          <div className="description">
+            <p>
+              Social Media Manager at VRTeam Design ASU | Media & Firm Junagadh,
+              IN
+            </p>
+          </div>
+          <div className="work-container">
+            {workLists.map((el, index) => (
+              <p key={index} className="single-work">
+                {el}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="contact-section">
+        <button className="add-contact-btn">ADD TO CONTACT</button>
+        <div className="social-container">
+          {/* {socilaLink.map((el, index) => (
+            <div
+              className="signle-social-link"
+              key={index}
+              onClick={() => handelOpen(el.title)}
+            >
+              <div className="left">
+                <img src={el.icon} alt={el.title} />
+                <div>
+                  <h5>{el.title}</h5>
+                  <p>{el.des}</p>
+                </div>
+              </div>
+              <InlineIcon
+                className={`right-arrow ${
+                  open?.includes(el.title) ? "active-arrow" : ""
+                }`}
+                icon="ep:arrow-right"
+              />
+            </div>
+          ))} */}
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            className="signle-social-link"
+          >
+            <div className="left">
+              <img src={instagramIcon} alt={"linkdinIcon"} />
+              <div>
+                <h5>Instagram</h5>
+                <p>Sandhyamer</p>
+              </div>
+            </div>
+            <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />
+          </a>
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            className="signle-social-link"
+          >
+            <div className="left">
+              <img src={facebookIcon} alt={"linkdinIcon"} />
+              <div>
+                <h5>Facebook</h5>
+                <p>Sandhyamer</p>
+              </div>
+            </div>
+            <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />
+          </a>
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            className="signle-social-link"
+          >
+            <div className="left">
+              <img src={linkdinIcon} alt={"linkdinIcon"} />
+              <div>
+                <h5>Linkedin</h5>
+                <p>Sandhyamer</p>
+              </div>
+            </div>
+            <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />
+          </a>
+          <a href="tel:https://www.youtube.com" className="signle-social-link">
+            <div className="left">
+              <img src={callIcon} alt={"linkdinIcon"} />
+              <div>
+                <h5>Phone</h5>
+                <p>Sandhyamer</p>
+              </div>
+            </div>
+            <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />
+          </a>
+          <a
+            href="mailto:https://www.youtube.com"
+            className="signle-social-link"
+          >
+            <div className="left">
+              <img src={emailIcon} alt={"linkdinIcon"} />
+              <div>
+                <h5>E-mail</h5>
+                <p>Sandhyamer</p>
+              </div>
+            </div>
+            <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />
+          </a>
+        </div>
+      </div>
+      {/* </div> */}
+    </div>
+  );
+}
 
 export default ProfileTemplate1;

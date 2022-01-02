@@ -6,16 +6,34 @@
     gap: 8px;
     margin-bottom: 73px;
     .single-icon {
-      padding: 7px 13px;
       border-radius: 4px;
       border: 1px solid #dce2ee;
       box-sizing: border-box;
       box-shadow: 0px 1px 7px rgb(21 49 106 / 24%);
       border-radius: 4px;
+      width: 56px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+      display: flex;
+      color: $blue-grey;
+    }
+    }
+    .add-icon-container{
+      background-color: #DCE2EE !important;
+      border: 1px solid $blue-grey;
+      cursor: pointer;
+    }
+    .add-icon{
+      border: 1px dotted ;
+      border-radius: 4px;
+      padding: 2px;
+     
     }
     svg {
-      font-size: 38px;
-      color: $blue-grey;
+      font-size: 27px;
     }
   }
 }

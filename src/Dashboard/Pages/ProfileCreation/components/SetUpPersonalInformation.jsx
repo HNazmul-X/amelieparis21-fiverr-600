@@ -14,7 +14,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
               id="floatingInput"
               placeholder="name@example.com"
             />
-            <label for="floatingInput">Name</label>
+            <label htmlFor="floatingInput">Name</label>
           </div>
           <div className="w-100 form-floating mb-3">
             <input
@@ -23,7 +23,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
               id="floatingInput"
               placeholder="name@example.com"
             />
-            <label for="floatingInput">Tagline</label>
+            <label htmlFor="floatingInput">Tagline</label>
           </div>
           <div className="w-100 form-floating mb-3">
             <textarea
@@ -32,7 +32,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
               id="floatingInput"
               placeholder="name@example.com"
             ></textarea>
-            <label for="floatingInput">Tagline</label>
+            <label htmlFor="floatingInput">Tagline</label>
           </div>
           <div className="d-flex gap-3">
             <div className="w-100 form-floating mb-3">
@@ -42,7 +42,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
                 id="floatingInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">First Name</label>
+              <label htmlFor="floatingInput">First Name</label>
             </div>
 
             <div className="w-100 form-floating mb-3">
@@ -52,7 +52,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
                 id="floatingInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Last Name</label>
+              <label htmlFor="floatingInput">Last Name</label>
             </div>
           </div>
         </div>

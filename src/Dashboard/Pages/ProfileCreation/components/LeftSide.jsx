@@ -7,13 +7,14 @@ import SetupSocialLink from "./SetupSocialLink";
 import SocialLinkSelection from "./SocialLinkSelection";
 
 function LeftSide() {
-    const [open, setOpen] = useState("");
+    const [open, setOpen] = useState([]);
     const [iconPopupShow, setIconPopupShow] = useState(true);
     const handelOpen = (data) => {
-        if (data === open) {
-            setOpen("");
+        if (open.includes(data)) {
+            const newOpen = open.filter(el => el !== data)
+            setOpen(newOpen);
         } else {
-            setOpen(data);
+            setOpen([...open, data]);
         }
     };
 

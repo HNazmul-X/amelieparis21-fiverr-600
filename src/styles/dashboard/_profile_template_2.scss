@@ -1,0 +1,114 @@
+@use "../util/" as *;
+
+$gray-700: #333e63;
+$gray-500: #778cae;
+$white: #fff;
+$perpel-600: #8a3efe;
+$white-800: #e0e0e0;
+$button-bg: linear-gradient(91.54deg, #8a3efe -1.94%, #4d00c4 100%);
+$button-shadow: 0px 12px 36px rgba(138, 62, 254, 0.36);
+
+.profile-2-conatiner {
+  width: 375px;
+  margin: auto;
+  background-color: $white;
+
+  .content {
+    transform: translateY(-50px);
+  }
+  //profile pic
+  .profile_pic_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // transform: translateY(-50%);
+    position: relative;
+    margin-bottom: 18px;
+
+    .profile_pic {
+      width: 108px;
+      height: 108px;
+      border: 4px solid $white;
+      border-radius: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .shear_icon_wrapper {
+      position: absolute;
+      right: 17px;
+      bottom: 13px;
+      .share_icon {
+        width: 24px;
+        height: 24px;
+        color: $gray-700;
+        cursor: pointer;
+      }
+    }
+  }
+  //besic info
+  .besic-info {
+    text-align: center;
+    h3 {
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 24px;
+      margin-bottom: 12px;
+      color: $gray-700;
+    }
+    p {
+      font-size: 14px;
+      color: $gray-500;
+      padding-bottom: 30px;
+      margin-bottom: 0;
+    }
+  }
+
+  //contact info
+  .contact-section {
+    padding: 0 28px;
+
+    display: flex;
+    flex-wrap: wrap;
+    .single-contact {
+      display: flex;
+      text-decoration: none;
+      align-items: flex-start;
+      width: 100%;
+      border-top: 0.5px solid $white-800;
+      padding: 17px 0;
+      svg {
+        font-size: 24px;
+        width: 24px;
+        color: $perpel-600;
+      }
+      p {
+        margin-bottom: 0;
+        padding-left: 8px;
+        margin-top: -4px;
+        font-size: 16px;
+        font-weight: 600;
+        color: $gray-700;
+      }
+    }
+    .add-contact-button {
+      background-image: $button-bg;
+      box-shadow: $button-shadow;
+      padding: 20px 0;
+      width: 100%;
+      color: $white;
+      border-radius: 12px;
+      text-align: center;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 25px;
+    }
+  }
+}
+.w-50{
+  width: 50%;
+}
