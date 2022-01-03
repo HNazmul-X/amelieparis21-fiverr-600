@@ -7,8 +7,8 @@ function CardPreview() {
     return (
         <div>
             {/* <img src={cardImg} alt="" className='w-100' /> */}
-            {/* <ProfileTemplate2 /> */}
-            <ProfileTemplate1 />
+            <ProfileTemplate2 />
+            {/* <ProfileTemplate1 /> */}
         </div>
     );
 }

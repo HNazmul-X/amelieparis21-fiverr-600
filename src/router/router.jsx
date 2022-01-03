@@ -12,6 +12,7 @@ import AdminLogin from "../Dashboard/Auth/AdminLogin";
 // import CardRequest from "./../Dashboard/CardRequeste/CardRequest";
 
 import PrivateRoute from "./PrivateRoute";
+import CardStatus from "../pages/Create-card/CardStatus";
 
 const NavbarRouter = () => {
     return (
@@ -30,6 +31,7 @@ const NavbarRouter = () => {
                     <Route path=":id" element={<h1>Hi Iam abla page</h1>} />
                     <Route path="about" element={<h1>Hi Iam about page</h1>} />
                     <Route path="create-card" element={<CreateCardPage />} />
+                    <Route path="/card-status/:cardId" element={<CardStatus/>}/>
                     <Route path="faq" element={<FaqPage />} />
                 </Route>
                 

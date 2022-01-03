@@ -1,33 +1,44 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { InlineIcon } from "@iconify/react";
 import { CreateCardPageContext } from "../CreateCardPage";
+import { FormStepsData } from "../../../data/FormStepData";
 
-function Information() {
-    const { cardLogo, setCardLogo } = useContext(CreateCardPageContext);
+function Information({ componentIndex }) {
+    const { cardLogo, setCardLogo, checkingSteps, cardFiles, setCardFiles, setFormStepId, setCheckingSteps } = useContext(CreateCardPageContext);
     const textAlignData = ["left", "center", "right"];
-    const [selectedAlignment, setSelectedAlignment] = useState("Center");
 
     const handleChangeCheckbox = (data) => {
-        setSelectedAlignment(data);
         cardLogo.back.infoAlign = data;
-        setCardLogo({...cardLogo});
+        setCardLogo({ ...cardLogo });
     };
 
-    const handleFileUpload = (e) => {
+    const handleFileUpload = useCallback((e) => {
         const reader = new FileReader();
         reader.addEventListener("load", function () {
             cardLogo.back.logo = this.result;
             setCardLogo({ ...cardLogo });
+            setCardFiles({ ...cardFiles, backside: e.target.files[0] });
+
+            if (cardLogo?.back?.logo?.length > 0) {
+                setTimeout(() => {
+                    checkingSteps.step4 = true;
+                    setCheckingSteps({ ...checkingSteps });
+                });
+            }
         });
 
         reader.readAsDataURL(e.target.files[0]);
-    };
+    }, []);
 
     const handleScalingLogo = (e) => {
         cardLogo.back.scale = e.target.value / 100;
         setCardLogo({ ...cardLogo });
     };
-
+    const handleChangingStep = function () {
+        if (checkingSteps?.step4) {
+            setFormStepId(FormStepsData[componentIndex + 1]?.id);
+        }
+    };
 
     return (
         <div className="upload-your-logo-section">
@@ -52,14 +63,23 @@ function Information() {
             <div className="text_aliagn ">
                 <p className="align_title">Text Alignment</p>
                 <div className="d-flex gap-20">
-                    {textAlignData.map((data, index) => (
-                        <div key={index} className="form-check">
-                            <input className="form-check-input check_box" type="checkbox" value={data} id={data} checked={data === selectedAlignment} onChange={() => handleChangeCheckbox(data)} />
-                            <label className="form-check-label check_box_label" for={data}>
-                                {data}
-                            </label>
-                        </div>
-                    ))}
+                    {textAlignData.map((data, index) => {
+                        return (
+                            <div key={index} className="form-check">
+                                <input
+                                    className="form-check-input check_box"
+                                    type="checkbox"
+                                    value={data}
+                                    id={data}
+                                    checked={data === cardLogo?.back?.infoAlign}
+                                    onChange={() => handleChangeCheckbox(data)}
+                                />
+                                <label className="form-check-label check_box_label" for={data}>
+                                    {data}
+                                </label>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
             <p className="logo_size mb-2">logo size</p>
@@ -68,7 +88,9 @@ function Information() {
             </div>
             <div className="mt-5">
                 <button className="my-btn-primary me-3">Return</button>
-                <button className="my-btn-primary">Following</button>
+                <button onClick={handleChangingStep} disabled={!checkingSteps?.step4} className={`my-btn-primary ${!checkingSteps?.step4 ? "opacity-50" : ""}`}>
+                    Following
+                </button>
             </div>
         </div>
     );

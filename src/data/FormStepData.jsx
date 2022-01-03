@@ -10,34 +10,30 @@ export const FormStepsData = [
         label: "Contact Sheet",
         icon: "cil:contact",
         id: "step1",
-        component: <ContactSheet />,
+        component: ContactSheet,
     },
     {
         label: "Card Base",
         icon: "cil:contact",
         id: "step2",
-        component: (
-            <>
-                <SelectCardBase />
-            </>
-        ),
+        component: SelectCardBase,
     },
     {
         label: "Logo",
         icon: "cil:contact",
         id: "step3",
-        component: <UploadYourLogo />,
+        component: UploadYourLogo,
     },
     {
         label: "Information",
         icon: "cil:contact",
         id: "step4",
-        component: <Information />,
+        component: Information,
     },
     {
         label: "Validation",
         icon: "cil:contact",
         id: "step5",
-        component: <OrderValidation />,
+        component: OrderValidation,
     },
 ];

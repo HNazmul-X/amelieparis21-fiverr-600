@@ -13,7 +13,7 @@ const SignUp = () => {
     console.log(watch("firstName"));
 
     const onSubmit = async (data) => {
-        console.log(data);
+       
         const signedUpUser = await Authentication.signupAndData("http://localhost:8080/api/auth/signup", {
             username: data?.username,
             password: data?.password,
@@ -29,6 +29,8 @@ const SignUp = () => {
             ambassador_code: data?.ambassador_code,
             postalCode: data?.postalCode,
         });
+
+        console.log(signedUpUser)
     };
 
     return (

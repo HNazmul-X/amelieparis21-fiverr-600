@@ -11,7 +11,7 @@ const CardPreview = () => {
                     <div className={`card-front-side`} style={{ "--logo-scale": cardLogo?.front?.scale, backgroundImage: `url(${cardLogo?.card_base})` }}>
                         <div className="front__wrapper">
                             <h1 className={`front__title ${formStepId}`}>One Card Pro</h1>
-                            <img src={cardLogo?.front?.logo} alt="" className={`front__logo ${formStepId}`} />
+                            {cardLogo?.front?.logo?.length > 2 && <img src={cardLogo?.front?.logo} alt="" className={`front__logo ${formStepId}`} />}
                         </div>
                     </div>
                     <div className="card-backside" style={{ backgroundImage: `url(${cardLogo?.card_base})` }}>
@@ -32,9 +32,6 @@ const CardPreview = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="qr-code col-5 d-flex justify-content-center align-items-center">
-                <img src="https://app.wemet.fr/static/media/qrCode.cf9b9dcc.png" className="w-75" alt="" />
             </div>
         </div>
     );

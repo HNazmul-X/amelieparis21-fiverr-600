@@ -751,14 +751,6 @@ body {
   outline: none;
   padding: 10px;
 }
-.contactsheet-content-section .right {
-  display: flex;
-  justify-content: center;
-}
-.contactsheet-content-section .right img {
-  width: 100%;
-  max-width: 350px;
-}
 .contactsheet-content-section.step5 #realtime-making-card-preview-card .card-cover .preview-card__card {
   overflow: visible;
 }
@@ -2140,6 +2132,104 @@ body {
 }
 .profile-template-1 .contact-section .social-container .signle-social-link .active-arrow {
   transform: rotate(90deg);
+}
+
+.profile-2-conatiner {
+  width: 375px;
+  margin: auto;
+  background-color: #fff;
+}
+.profile-2-conatiner .content {
+  transform: translateY(-50px);
+}
+.profile-2-conatiner .profile_pic_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 18px;
+}
+.profile-2-conatiner .profile_pic_area .profile_pic {
+  width: 108px;
+  height: 108px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+}
+.profile-2-conatiner .profile_pic_area .profile_pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.profile-2-conatiner .profile_pic_area .shear_icon_wrapper {
+  position: absolute;
+  right: 17px;
+  bottom: 13px;
+}
+.profile-2-conatiner .profile_pic_area .shear_icon_wrapper .share_icon {
+  width: 24px;
+  height: 24px;
+  color: #333e63;
+  cursor: pointer;
+}
+.profile-2-conatiner .besic-info {
+  text-align: center;
+}
+.profile-2-conatiner .besic-info h3 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  color: #333e63;
+}
+.profile-2-conatiner .besic-info p {
+  font-size: 14px;
+  color: #778cae;
+  padding-bottom: 30px;
+  margin-bottom: 0;
+}
+.profile-2-conatiner .contact-section {
+  padding: 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.profile-2-conatiner .contact-section .single-contact {
+  display: flex;
+  text-decoration: none;
+  align-items: flex-start;
+  width: 100%;
+  border-top: 0.5px solid #e0e0e0;
+  padding: 17px 0;
+}
+.profile-2-conatiner .contact-section .single-contact svg {
+  font-size: 24px;
+  width: 24px;
+  color: #8a3efe;
+}
+.profile-2-conatiner .contact-section .single-contact p {
+  margin-bottom: 0;
+  padding-left: 8px;
+  margin-top: -4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333e63;
+}
+.profile-2-conatiner .contact-section .add-contact-button {
+  background-image: linear-gradient(91.54deg, #8a3efe -1.94%, #4d00c4 100%);
+  box-shadow: 0px 12px 36px rgba(138, 62, 254, 0.36);
+  padding: 20px 0;
+  width: 100%;
+  color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.w-50 {
+  width: 50%;
 }
 
 .my-button {
