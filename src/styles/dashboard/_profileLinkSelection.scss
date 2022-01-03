@@ -1,0 +1,98 @@
+@use "../util" as *;
+
+.social_link_selection {
+    position: fixed;
+    background: transparentize($color: $blue-grey, $amount: 0.3);
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    @include flex-x-y-center;
+    opacity: 1;
+    transition: 0.5s;
+
+    .social_link_selection_card {
+        width: 600px;
+        background: white;
+        box-shadow: 10px 10px 20px 2px darken($color: $shadowBg, $amount: 10);
+        border-radius: 10px;
+        height: 400px;
+        position: relative;
+        z-index: 1;
+
+        .selection_card__title {
+            padding: 5px;
+            border-bottom: 1px solid $grey-200;
+            text-align: center;
+            h3 {
+                color: lighten($color: $blue-grey, $amount: 20);
+            }
+        }
+        .selection_card__icons-container {
+            width: 100%;
+            display: flex;
+            flex-flow: wrap;
+            gap: 5px;
+            padding: 10px;
+
+            align-items: center;
+
+            .icon-card {
+                width: calc(100% / 5.2);
+
+                text-align: center;
+                border: 1px solid $grey-200;
+                height: 110px;
+                .icon-card-wrapper {
+                    width: 100%;
+                    padding: 5px;
+                    height: 100%;
+                    border-radius: 5px;
+
+                    &.active {
+                        background: $blue-grey;
+
+                        .card__icon {
+                            color: $white;
+                        }
+                        .card__text {
+                            color: $white;
+                        }
+
+                        &:hover {
+                            background: transparentize($color: $blue-grey, $amount: 0.2);
+                            .card__icon {
+                                color: $white;
+                            }
+                            .card__text {
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background: transparentize($blue-grey, 0.8);
+                    }
+                    .card__checkMark {
+                        margin-top: 5px;
+                    }
+                    .card__icon {
+                        svg {
+                            max-width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        .selection_card__confirm-button {
+            position: absolute;
+            width: 100%;
+            text-align: right;
+            bottom: 0px;
+            padding: 10px;
+        }
+    }
+
+}

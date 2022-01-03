@@ -1,6 +1,6 @@
 import React from 'react'
-import DashboardTopBanner from '../Components/DashboardTopBanner';
-import ProfileCreationMain from './components/ProfileCreationMain';
+import DashboardTopBanner from '../../Components/DashboardTopBanner'
+import ProfileCreationMain from "./components/ProfileCreationMain"
 
 function ProfileCreation() {
     return (

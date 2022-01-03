@@ -1,5 +1,5 @@
 import React from 'react'
-import cardImg from "../../../assets/images/Rectangle 9.png"
+import cardImg from "../../../../assets/images/Rectangle 9.png"
 
 function RightSection() {
     return (

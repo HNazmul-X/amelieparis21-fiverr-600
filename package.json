@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "@iconify/react": "^3.1.0",
+    "axios": "^0.24.0",
     "bootstrap": "^5.0.0-alpha1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.5",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
