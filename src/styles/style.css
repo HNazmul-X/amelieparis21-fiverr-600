@@ -1456,6 +1456,76 @@ body {
   transition: all 0.4s linear;
 }
 
+#verification_area #signUp_Verification {
+  margin: 80px auto 0;
+  width: 100%;
+  height: auto;
+  padding: 10px 40px 30px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 34px;
+  background: #fff;
+}
+#verification_area #signUp_Verification .VCard {
+  margin-top: -70px;
+}
+#verification_area #signUp_Verification .VCard img {
+  width: 140px;
+}
+#verification_area #signUp_Verification .verificationDetails .verificationText {
+  padding: 0 20px 15px 20px;
+}
+#verification_area #signUp_Verification .verificationDetails .verificationText h5 {
+  color: #255ed1;
+  margin-bottom: 5px;
+}
+#verification_area #signUp_Verification .verificationDetails .verificationText p {
+  color: #57697d;
+}
+@media screen and (max-width: 360px) {
+  #verification_area #signUp_Verification .verificationDetails .verificationText {
+    padding: 0 0 15px 0;
+  }
+}
+#verification_area #signUp_Verification .verificationDetails .otpWrapper .otpInput {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 15px;
+}
+#verification_area #signUp_Verification .verificationDetails .verifyBtn {
+  background: #255ed1;
+  color: #fff;
+  padding: 6px 74px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 360px) {
+  #verification_area #signUp_Verification {
+    padding: 10px 30px 30px;
+  }
+}
+#verification_area #successful_area {
+  margin: 80px auto 0;
+  width: 100%;
+  height: auto;
+  padding: 10px 40px 70px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 20px;
+  background: #fff;
+}
+#verification_area #successful_area .SCard img {
+  width: 160px;
+}
+#verification_area #successful_area .SInfo h4 {
+  color: #255ed1;
+  margin-bottom: 10px;
+}
+#verification_area #successful_area .SInfo p {
+  color: #57697d;
+}
+
 #admin_panel_dashboard .layout {
   display: flex;
   min-height: 100vh;

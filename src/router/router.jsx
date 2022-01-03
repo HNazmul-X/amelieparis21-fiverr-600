@@ -9,6 +9,7 @@ import SignUp from "../pages/auth/SignUp";
 import ProfileCreation from "../Dashboard/Pages/ProfileCreation/ProfileCreation";
 import CardRequest from "../Dashboard/Pages/CardRequeste/CardRequest";
 import AdminLogin from "../Dashboard/Auth/AdminLogin";
+import Verification from "../pages/auth/Verification";
 // import CardRequest from "./../Dashboard/CardRequeste/CardRequest";
 
 import PrivateRoute from "./PrivateRoute";
@@ -25,16 +26,15 @@ const NavbarRouter = () => {
                 <Route index element={<h1>Hi Iam Home page</h1>} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />
-
+                <Route path="/verify-profile/:verificationId" element={<Verification />} />
                 {/* navbar layout Private route */}
                 <Route element={<PrivateRoute />}>
                     <Route path=":id" element={<h1>Hi Iam abla page</h1>} />
                     <Route path="about" element={<h1>Hi Iam about page</h1>} />
                     <Route path="create-card" element={<CreateCardPage />} />
-                    <Route path="/card-status/:cardId" element={<CardStatus/>}/>
+                    <Route path="/card-status/:cardId" element={<CardStatus />} />
                     <Route path="faq" element={<FaqPage />} />
                 </Route>
-                
             </Route>
 
             {/* Dashboard Layout Router */}
