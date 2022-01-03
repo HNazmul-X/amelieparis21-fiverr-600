@@ -1,38 +1,52 @@
 @use "../../util/" as *;
-
+@use "sass:math";
 .select-card-base-section {
-    .my-btn {
-        background-color: $primary-700;
-        color: $white;
-        border-radius: 20px;
-        width: 170px;
-        padding: 0.5rem 1rem;
-        border: none;
-        outline: none;
-      }
-      .right {
+    .select_card_thumb {
         display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        img {
-          width: 100%;
+        flex-flow: wrap;
+        gap: 15px;
+        .base-card {
+            width: math.div(100%, 2.4);
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+            --after-text: "Select";
+            --text-weight: 400;
+            --text-color: #{$white};
+            $overlay-color:transparentize($color: $blue-grey, $amount: 0.5);
+            --opacity: 0;
+            cursor: pointer;
+            &.active-card {
+              $overlay-color:transparentize($color: $primary-600, $amount: 0.5);;
+                --after-text: "Selected";
+                --opacity: 1;
+            }
+            &:hover{
+              --opacity:1;
+            }
+
+            &::after {
+                position: absolute;
+                content: var(--after-text);
+                display: block;
+                font-size: 1.4rem;
+                top: 0;
+                opacity: var(--opacity);
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                color: var(--text-color);
+                @include flex-x-y-center;
+                background: $overlay-color;
+            }
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
         }
-      }
-}
-.selec_card_thumb{
-  display: flex;
-    width: 100%;
-    max-width: 380px;
-    flex-wrap: wrap;
-    gap: 20px;
-    img{
-      padding: 5px;
-      background-color: $primary-200;
-      border-radius: 4px;
-      cursor: pointer;
     }
 }
-.active-card{
-  background-color: $primary-400 !important;
+
+.active-card {
+    background-color: $primary-400 !important;
 }

@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Verification = () => {
+    const [toggle, setToggle] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.eventDefault();
+        setToggle(true);
+    }
+
     return (
         <div id="verification_area">
+            {!toggle ?
             <div className="container">
                 <div className="row">
                     <div className="col-lg-5 col-md-7 col-sm-9 mx-auto">
@@ -24,16 +32,16 @@ const Verification = () => {
                                         
                                     </div>
 
-                                    <button className="btn verifyBtn">Verify</button>
+                                    <button onClick={() => handleSubmit(e)} className="btn verifyBtn">Verify</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            :
             <div className="container">
-                {/* <div className="row">
+                <div className="row">
                     <div className="col-md-8 offset-md-2">
                         <div id="successful_area">
                             <div class="SCard">
@@ -46,8 +54,9 @@ const Verification = () => {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
+            }
         </div>
     );
 };

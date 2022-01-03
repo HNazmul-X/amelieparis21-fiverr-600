@@ -11,7 +11,7 @@ export const CreateCardPageContext = createContext({});
 const CreateCardPage = () => {
     const [formStepId, setFormStepId] = useState(FormStepsData[0]?.id);
     const [cardLogo, setCardLogo] = useState({
-        base:"",
+        card_base:"",
         front: {
             logo: "",
             scale:1
@@ -27,13 +27,13 @@ const CreateCardPage = () => {
     return (
         <CreateCardPageContext.Provider value={{ ...contextData }}>
             <CreateCardSteps />
-            <section class={`contactsheet-content-section content-section ${formStepId} `}>
-                <article class="container">
-                    <div class="row py-2 w-100">
-                        <div class={`col-md-7 col-xl-6 left ${formStepId === "step5" ? "order-2" : ""}`}>
+            <section className={`contactsheet-content-section content-section ${formStepId} `}>
+                <article className="container">
+                    <div className="row py-2 w-100">
+                        <div className={`col-md-7 col-xl-6 left ${formStepId === "step5" ? "order-2" : ""}`}>
                             {[...FormStepsData].map((item, index) => (formStepId === item.id ? item.component : null))}
                         </div>
-                        <div class={`col-md-5 col-xl-6 right ${formStepId === "step5" ? "order-1" : "align-items-center"}`}>
+                        <div className={`col-md-5 col-xl-6 right ${formStepId === "step5" ? "order-1" : "align-items-center"}`}>
                             <CardPreview />
                         </div>
                     </div>

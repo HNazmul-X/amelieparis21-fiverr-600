@@ -32,7 +32,6 @@ function SetupSocialLink({ open, handelOpen, title }) {
         title={title}
         handelOpen={handelOpen}
         open={open}
-        open={open}
       />
       <div
         className={`${open.includes(title) ? "d-block open-div" : "d-none"} ${
@@ -48,59 +47,61 @@ function SetupSocialLink({ open, handelOpen, title }) {
                 </a>
               </div>
             ))}
+             <div className="single-icon add-icon-container"><InlineIcon className="add-icon" icon={"ant-design:plus-outlined"}/></div>
+            
           </div>
           <div className="socail-link-box">
-            <div class="d-flex gap-3">
-              <div class="w-50 form-floating mb-3">
+            <div className="d-flex gap-3">
+              <div className="w-50 form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Facebook</label>
+                <label htmlFor="floatingInput">Facebook</label>
               </div>
 
-              <div class="w-50 form-floating mb-3">
+              <div className="w-50 form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Intsagram</label>
+                <label htmlFor="floatingInput">Intsagram</label>
               </div>
             </div>
-            <div class="d-flex gap-3">
-              <div class="w-50 form-floating mb-3">
+            <div className="d-flex gap-3">
+              <div className="w-50 form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Twitter</label>
+                <label htmlFor="floatingInput">Twitter</label>
               </div>
 
-              <div class="w-50 form-floating mb-3">
+              <div className="w-50 form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Linkedin</label>
+                <label htmlFor="floatingInput">Linkedin</label>
               </div>
             </div>
-            <div class="d-flex gap-3">
-              <div class="w-50 form-floating mb-3">
+            <div className="d-flex gap-3">
+              <div className="w-50 form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control primary-input"
+                  className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Another</label>
+                <label htmlFor="floatingInput">Another</label>
               </div>
             </div>
           </div>
