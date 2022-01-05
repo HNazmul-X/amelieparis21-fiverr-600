@@ -1,15 +1,17 @@
 import React from "react";
-import cardImg from "../../../../assets/images/Rectangle 9.png"
-import ProfileTemplate1 from './../../../Components/ProfileTemplate1/ProfileTemplate1';
-import ProfileTemplate2 from './../../../Components/ProfileTemplate2/ProfileTemplate2';
-import ProfileTemplate3 from './../../../Components/ProfileTemplate3/ProfileTemplate3';
+import cardImg from "../../../../assets/images/Rectangle 9.png";
+import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
+import { allTemplateData } from "../Data/profileCreationData";
 
 function CardPreview() {
+    const {profileTemplateId} = useProfileContext();
+
+
     return (
-        <div>
+        <div className="">
             {/* <img src={cardImg} alt="" className='w-100' /> */}
-            {/* <ProfileTemplate2 /> */}
-            <ProfileTemplate3 />
+            {allTemplateData.map((template) => (profileTemplateId === template.id ? <template.template /> : null))}
+            {/* <ProfileTemplate1 /> */}
         </div>
     );
 }

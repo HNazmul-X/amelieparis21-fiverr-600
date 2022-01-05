@@ -1,23 +1,39 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { InlineIcon } from "@iconify/react";
 import { CreateCardPageContext } from "../CreateCardPage";
+import { FormStepsData } from "../../../data/FormStepData";
 
-function UploadYourLogo() {
-    const { setCardLogo, cardLogo } = useContext(CreateCardPageContext);
+function UploadYourLogo({ componentIndex }) {
+    const { setCardLogo, checkingSteps, setFormStepId, setCheckingSteps, cardFiles, setCardFiles, cardLogo } = useContext(CreateCardPageContext);
 
     const handleScalingLogo = (e) => {
         cardLogo.front.scale = e.target.value / 100;
         setCardLogo({ ...cardLogo });
     };
 
-    const handleFileUpload = (e) => {
+    const handleFileUpload = useCallback((e) => {
+        console.log("updateing")
         const reader = new FileReader();
         reader.addEventListener("load", function () {
             cardLogo.front.logo = this.result;
             setCardLogo({ ...cardLogo });
+            setCardFiles({ ...cardFiles, frontSide: e.target.files[0] });
+
+            if (cardLogo?.front?.logo?.length > 0) {
+                setTimeout(() => {
+                    checkingSteps.step3 = true;
+                    setCheckingSteps({ ...checkingSteps });
+                });
+            }
         });
 
         reader.readAsDataURL(e.target.files[0]);
+    }, []);
+
+    const handleChangingStep = function () {
+        if (checkingSteps?.step3) {
+            setFormStepId(FormStepsData[componentIndex + 1]?.id);
+        }
     };
 
     return (
@@ -48,7 +64,9 @@ function UploadYourLogo() {
             </div>
             <div className="mt-5">
                 <button className="my-btn-primary me-3">Return</button>
-                <button className="my-btn-primary">Following</button>
+                <button onClick={handleChangingStep} disabled={!checkingSteps?.step3} className={`my-btn-primary ${!checkingSteps?.step3 ? "opacity-50" : ""}`}>
+                    Following
+                </button>
             </div>
         </div>
     );

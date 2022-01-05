@@ -13,6 +13,13 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
   width: 375px;
   margin: auto;
   background-color: $white;
+  .banner{
+    img{
+      aspect-ratio: 3/1.8;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 
   .besic-info {
     padding: 24px;

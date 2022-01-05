@@ -1,11 +1,11 @@
 export default class GetCookie {
     constructor() {}
 
-    setCookie(name, value, days) {
+    setCookie(name, value, days = 7) {
         const date = new Date();
-        date.setTime(date.getTime + 1000 * 60 * 60 * 24 * days);
+        date.setTime(date.getTime() + 1000 * 60 * 60 * 24 * days);
         const expires = date.toUTCString();
-        document.cookie = `${name}=${value};expires=${expires};path=/`;
+        document.cookie = `${name}=${value};expires=${expires};path=/;priority=high`;
         return true;
     }
 

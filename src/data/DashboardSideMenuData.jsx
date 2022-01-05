@@ -5,14 +5,6 @@ export const ProfileSidebarData = [
         destination: "",
         id: "f00a5ae9-b5f1-44af-811b-dc94831bef8f",
         dropdown: [
-            {
-                label: "Dropdown 1",
-                destination: "/",
-            },
-            {
-                label: "Dropdown 1",
-                destination: "/",
-            },
         ],
     },
     {

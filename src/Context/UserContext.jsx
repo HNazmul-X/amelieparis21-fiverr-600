@@ -11,14 +11,15 @@ const UserContext = ({ children }) => {
     const Location = useLocation();
     const navigate = useNavigate();
 
-    const loginUser = (loggedInUser, callback) => {
-        if (!loggedInUser) {
+    const loginUser = (loggedInUser = {}, callback) => {
+        if (!Object.values(loggedInUser).length > 0) {
             throw new Error("please provide new user Data to Login");
         }
         loggedInUser.isLoggedIn = true;
         const token = loggedInUser.token;
         setUser({ ...loggedInUser });
         cookie.setCookie("token", token, 7);
+        cookie.setCookie("userId", loggedInUser._id, 7);
         if (callback) {
             callback();
         }
@@ -39,7 +40,6 @@ const UserContext = ({ children }) => {
         } = await axios.post("http://localhost:8080/api/auth/verify-token", {
             token: cookie.getCookie("token"),
         });
-        console.log(loggedInUser);
         if (loggedInUser) {
             if (loggedInUser?.token?.length > 2) {
                 loginUser(loggedInUser, () => navigate(Location.pathname, { replace: true }));

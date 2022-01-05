@@ -3,9 +3,8 @@ import React, { useContext } from "react";
 import { FormStepsData } from "../../data/FormStepData";
 import { CreateCardPageContext } from "./CreateCardPage";
 
-
 const CreateCardSteps = () => {
-    const { formStepId, setFormStepId } = useContext(CreateCardPageContext);
+    const { formStepId, setFormStepId, checkingSteps } = useContext(CreateCardPageContext);
     const totalSteps = [...FormStepsData];
 
     return (
@@ -16,9 +15,9 @@ const CreateCardSteps = () => {
                         {totalSteps.map((data, index) => (
                             <div className="single-steps-wrapper">
                                 {index === 0 ? "" : <div className="hr-line"></div>}
-                                <div className="single-steps" onClick={()=> setFormStepId(data?.id)}>
+                                <div className="single-steps" onClick={() => checkingSteps[data.id] && setFormStepId(data?.id)}>
                                     <span className="img-wrapper">
-                                        <div className={`${formStepId === data.id ? "active" : ""}`}>
+                                        <div className={`${formStepId === data.id ? "active" : ""} ${checkingSteps[data.id] ? "active" : ""}`}>
                                             <InlineIcon icon={data?.icon} />
                                         </div>
                                     </span>

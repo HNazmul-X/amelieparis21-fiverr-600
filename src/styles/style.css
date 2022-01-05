@@ -421,6 +421,14 @@ body {
     transform: translateX(120%);
   }
 }
+.swal-modal {
+  box-shadow: 6px 17px 25px rgba(87, 105, 125, 0.07), 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px -6px rgba(87, 105, 125, 0.12);
+  background: #f0f6ff;
+}
+.swal-modal .swal-footer .swal-button-container .swal-button {
+  background: #255ed1 !important;
+}
+
 #create-card-login {
   background: #f0f6ff;
 }
@@ -750,14 +758,6 @@ body {
   border: none;
   outline: none;
   padding: 10px;
-}
-.contactsheet-content-section .right {
-  display: flex;
-  justify-content: center;
-}
-.contactsheet-content-section .right img {
-  width: 100%;
-  max-width: 350px;
 }
 .contactsheet-content-section.step5 #realtime-making-card-preview-card .card-cover .preview-card__card {
   overflow: visible;
@@ -1464,6 +1464,80 @@ body {
   transition: all 0.4s linear;
 }
 
+#verification_area #signUp_Verification {
+  margin: 80px auto 0;
+  width: 100%;
+  height: auto;
+  padding: 10px 40px 30px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 34px;
+  background: #fff;
+}
+#verification_area #signUp_Verification .VCard {
+  margin-top: -60px;
+  padding-bottom: 40px;
+}
+#verification_area #signUp_Verification .VCard img {
+  width: 110px;
+  box-shadow: 0 0 10px rgba(87, 101, 128, 0.22);
+  border-radius: 50%;
+}
+#verification_area #signUp_Verification .verificationDetails .verificationText {
+  padding: 0 20px 15px 20px;
+}
+#verification_area #signUp_Verification .verificationDetails .verificationText h5 {
+  color: #255ed1;
+  margin-bottom: 5px;
+}
+#verification_area #signUp_Verification .verificationDetails .verificationText p {
+  color: #57697d;
+}
+@media screen and (max-width: 360px) {
+  #verification_area #signUp_Verification .verificationDetails .verificationText {
+    padding: 0 0 15px 0;
+  }
+}
+#verification_area #signUp_Verification .verificationDetails .otpWrapper .otpInput {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 15px;
+}
+#verification_area #signUp_Verification .verificationDetails .verifyBtn {
+  background: #255ed1;
+  color: #fff;
+  padding: 6px 74px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 360px) {
+  #verification_area #signUp_Verification {
+    padding: 10px 30px 30px;
+  }
+}
+
+#successfully_area #successful_area {
+  margin: 80px auto 0;
+  width: 100%;
+  height: auto;
+  padding: 10px 40px 70px;
+  text-align: center;
+  box-shadow: -2px 13px 18px 14px rgba(87, 101, 128, 0.22);
+  border-radius: 20px;
+  background: #fff;
+}
+#successfully_area #successful_area .SCard img {
+  width: 160px;
+}
+#successfully_area #successful_area .SInfo h4 {
+  color: #255ed1;
+  margin-bottom: 10px;
+}
+#successfully_area #successful_area .SInfo p {
+  color: #57697d;
+}
+
 #admin_panel_dashboard .layout {
   display: flex;
   min-height: 100vh;
@@ -1726,6 +1800,38 @@ body {
   flex-wrap: wrap;
   gap: 20px;
 }
+.dashbord-profile-createion .select-profile-template .template-img-wrapper .profile-template-card {
+  width: 29.4117647059%;
+  box-shadow: 6px 17px 25px rgba(87, 105, 125, 0.07), 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px -6px rgba(87, 105, 125, 0.12);
+  border: 5px solid;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+.dashbord-profile-createion .select-profile-template .template-img-wrapper .profile-template-card:hover::after {
+  z-index: 1;
+}
+.dashbord-profile-createion .select-profile-template .template-img-wrapper .profile-template-card::after {
+  content: "Select";
+  color: white;
+  position: absolute;
+  z-index: -1;
+  background: rgba(87, 105, 125, 0.7);
+  font-size: 25px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashbord-profile-createion .select-profile-template .template-img-wrapper .profile-template-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
 .db-template {
   margin-bottom: 25px;
@@ -1772,13 +1878,56 @@ body {
 }
 .select-profile-link .uplaod-area .upload-logo {
   width: 40%;
-  padding: 35px 8px 40px;
+  border: 1px solid rgba(87, 101, 128, 0.22);
+  aspect-ratio: 3/2;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9px;
   box-shadow: 0px 1px 7px rgba(21, 49, 106, 0.24);
   border: 1px solid rgba(87, 105, 125, 0.1);
+  aspect-ratio: 3/1.7;
+}
+.select-profile-link .uplaod-area .upload-logo:is(.image_loaded) {
+  padding: 0px;
+}
+.select-profile-link .uplaod-area .upload-logo:is(.image_loaded):hover .upload-box::after {
+  background: rgba(87, 105, 125, 0.5);
+  content: "Change";
+}
+.select-profile-link .uplaod-area .upload-logo:is(.image_loaded) .upload-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 9px;
+}
+.select-profile-link .uplaod-area .upload-logo:is(.image_loaded) .upload-box::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.select-profile-link .uplaod-area .upload-logo:not(.image_loaded) {
+  padding: 35px 8px 40px;
+}
+.select-profile-link .uplaod-area .upload-logo .uploaded_logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .select-profile-link .uplaod-area .upload-box {
   cursor: pointer;
@@ -1788,12 +1937,56 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
   padding: 35px 8px 40px;
   border-radius: 5px;
   cursor: pointer;
   border-radius: 9px;
   box-shadow: 0px 1px 7px rgba(21, 49, 106, 0.24);
   border: 1px solid rgba(87, 105, 125, 0.1);
+  aspect-ratio: 3/1.7;
+}
+.select-profile-link .uplaod-area .upload-cover:is(.image_loaded) {
+  padding: 0px;
+}
+.select-profile-link .uplaod-area .upload-cover:is(.image_loaded):hover .upload-box::after {
+  background: rgba(87, 105, 125, 0.5);
+  content: "Change";
+}
+.select-profile-link .uplaod-area .upload-cover:is(.image_loaded) .upload-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 9px;
+}
+.select-profile-link .uplaod-area .upload-cover:is(.image_loaded) .upload-box::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.select-profile-link .uplaod-area .upload-cover:not(.image_loaded) {
+  padding: 35px 8px 40px;
+}
+.select-profile-link .uplaod-area .upload-cover .uploaded_logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .setup-persona-information .form-floating label {
@@ -1807,7 +2000,7 @@ body {
   height: 137px !important;
 }
 .setup-persona-information .form-control {
-  padding: 1rem 38px;
+  padding: 10px 38px;
 }
 
 .setup-social-link .social-icon-wrapper {
@@ -1831,8 +2024,11 @@ body {
   display: flex;
   color: #57697d;
 }
+.setup-social-link .social-icon-wrapper .single-icon a svg {
+  width: 30px;
+}
 .setup-social-link .social-icon-wrapper .add-icon-container {
-  background-color: #DCE2EE !important;
+  background-color: #dce2ee !important;
   border: 1px solid #57697d;
   cursor: pointer;
 }
@@ -2015,6 +2211,11 @@ body {
   width: 375px;
   margin: auto;
   background-color: #fff;
+}
+.profile-template-1 .banner img {
+  aspect-ratio: 3/1.8;
+  width: 100%;
+  object-fit: cover;
 }
 .profile-template-1 .besic-info {
   padding: 24px;
@@ -2240,6 +2441,7 @@ body {
   width: 50%;
 }
 
+<<<<<<< HEAD
 .profile-template-3 {
   max-width: 500px;
   width: 100%;
@@ -2368,6 +2570,8 @@ body {
   color: #778cae;
 }
 
+=======
+>>>>>>> 562c46a8d280e1a764c37369afcde530a6b30bd6
 .my-button {
   background-color: #447ef2;
   border: none;
