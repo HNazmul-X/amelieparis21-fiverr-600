@@ -1,114 +1,71 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
 import { InlineIcon } from "@iconify/react";
+import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
+import { useForm } from "react-hook-form";
 
-function SetupSocialLink({ open, handelOpen, title }) {
-  const datas = [
-    {
-      icon: "ant-design:twitter-outlined",
-      link: "https://icon-sets.iconify.design/bx/bxl-facebook/",
-      text: "Twitter",
-    },
-    {
-      icon: "ant-design:instagram-outlined",
-      link: "https://icon-sets.iconify.design/bx/bxl-facebook/",
-      text: "Intsagram",
-    },
-    {
-      icon: "bx:bxl-facebook",
-      link: "https://icon-sets.iconify.design/bx/bxl-facebook/",
-      text: "Facebook",
-    },
-    {
-      icon: "bx:bxl-linkedin",
-      link: "https://icon-sets.iconify.design/bx/bxl-facebook/",
-      text: "Linkedin",
-    },
-  ];
+function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
+    const { socialLinks, setUserInfo } = useProfileContext();
+    const {
+        handleSubmit,
+        register,
+        formState: { errors },
+    } = useForm();
 
-  return (
-    <div className="setup-social-link db-template">
-      <SectionTitle
-        title={title}
-        handelOpen={handelOpen}
-        open={open}
-      />
-      <div
-        className={`${open.includes(title) ? "d-block open-div" : "d-none"} ${
-          title === "Setup Social Link" ? "setup-scail-area" : ""
-        }`}
-      >
-        <div className={``}>
-          <div className="social-icon-wrapper">
-            {datas.map((data, index) => (
-              <div className="single-icon" key={index}>
-                <a href={data.link} target="_blank">
-                  <InlineIcon icon={data.icon} />
-                </a>
-              </div>
-            ))}
-             <div className="single-icon add-icon-container"><InlineIcon className="add-icon" icon={"ant-design:plus-outlined"}/></div>
-            
-          </div>
-          <div className="socail-link-box">
-            <div className="d-flex gap-3">
-              <div className="w-50 form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control primary-input"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
-                <label htmlFor="floatingInput">Facebook</label>
-              </div>
+    const submitSocialLink = (e) => {
+        e.preventDefault();
+        console.log(e.target.elements);
+        const createdArray = [...e.target.elements]
+            .filter((data) => data.tagName === "INPUT" && data.value !== "")
+            .map((data) => {
+                return { name: data.getAttribute("name"), link: data.value };
+            });
+        setUserInfo((prev) => {
+            return { ...prev, links: createdArray };
+        });
+    };
 
-              <div className="w-50 form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control primary-input"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
-                <label htmlFor="floatingInput">Intsagram</label>
-              </div>
+    return (
+        <div className="setup-social-link db-template">
+            <SectionTitle title={title} handelOpen={handelOpen} open={open} />
+            <div className={`${open.includes(title) ? "d-block open-div" : "d-none"} ${title === "Setup Social Link" ? "setup-scail-area" : ""}`}>
+                <div className={``}>
+                    <div className="social-icon-wrapper">
+                        {socialLinks?.map((data, index) => (
+                            <div className="single-icon" key={index}>
+                                <a href={data.link} target="_blank">
+                                    {data.icon}
+                                </a>
+                            </div>
+                        ))}
+                        <div onClick={() => setIconPopupShow(true)} className="single-icon add-icon-container">
+                            <InlineIcon className="add-icon" icon={"ant-design:plus-outlined"} />
+                        </div>
+                    </div>
+                    <div className="socail-link-box">
+                        <form onSubmit={submitSocialLink}>
+                            <div className="row row-cols-2 w-100">
+                                {socialLinks?.map((data) => {
+                                    return (
+                                        <div className="col p-1 mb-3">
+                                            <div className=" form-floating">
+                                                <input name={data.name} type="text" className="form-control primary-input" id={data?.id} placeholder="name@example.com" />
+                                                <label htmlFor={data.id}>{data?.name}</label>
+                                            </div>
+                                            {errors[data.name] && <small className="small text-danger text-center d-block mt-1">this field is required</small>}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                            <div className="text-end">
+                                <button type="submit">submit data</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div className="d-flex gap-3">
-              <div className="w-50 form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control primary-input"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
-                <label htmlFor="floatingInput">Twitter</label>
-              </div>
-
-              <div className="w-50 form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control primary-input"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
-                <label htmlFor="floatingInput">Linkedin</label>
-              </div>
-            </div>
-            <div className="d-flex gap-3">
-              <div className="w-50 form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control primary-input"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
-                <label htmlFor="floatingInput">Another</label>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default SetupSocialLink;

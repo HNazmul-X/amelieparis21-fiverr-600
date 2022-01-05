@@ -1,12 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ProfileCreationSocialLinksData } from "../../../../data/ProfileCreationData";
+import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
+import { allSocialsIcons } from "../Data/AllSocialLInkData";
 
-const SocialLinkSelection = ({ onClose }) => {
-    const [selectedIcon, setSelectedIcon] = useState([]);
+const SocialLinkSelection = ({ onClose, selectedIcon, setSelectedIcon }) => {
+    const { setSocialLinks, socialLinks } = useProfileContext();
 
     const handleClosing = () => {
-        onClose()
-    }
+        onClose();
+        setSelectedIcon(socialLinks);
+    };
+
+    const handleAddingLink = () => {
+        onClose();
+        setSocialLinks((prev) => {
+            return [...selectedIcon];
+        });
+    };
 
     return (
         <div className="social_link_selection">
@@ -16,14 +25,18 @@ const SocialLinkSelection = ({ onClose }) => {
                 </div>
 
                 <div className="selection_card__icons-container">
-                    {ProfileCreationSocialLinksData?.map((icon, index) => {
-                        return <IconCard key={index} setSelectedIcon={setSelectedIcon} selectedIcon={selectedIcon} icon={icon} index={index} />;
+                    {allSocialsIcons?.map((icon, index) => {
+                        return <IconCard selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} key={index} icon={icon} index={index} />;
                     })}
                 </div>
 
                 <div className="selection_card__confirm-button">
-                    <button onClick={handleClosing} className=" me-2 border-0 py-2 px-4 text-light rounded-pill bg-primary-400">Cancel</button>
-                    <button className=" border-0 py-2 px-4 text-light rounded-pill bg-primary-400">Ok</button>
+                    <button onClick={handleClosing} className=" me-2 border-0 py-2 px-4 text-light rounded-pill bg-primary-400">
+                        Cancel
+                    </button>
+                    <button onClick={handleAddingLink} className=" border-0 py-2 px-4 text-light rounded-pill bg-primary-400">
+                        Ok
+                    </button>
                 </div>
             </div>
         </div>
@@ -41,12 +54,19 @@ const IconCard = ({ icon, index, selectedIcon, setSelectedIcon }) => {
         setIsSelected(inputCheckbox.checked);
     };
     useEffect(() => {
-        if (isSelected) {
+        if (isSelected && !selectedIcon?.includes(icon)) {
             setSelectedIcon([...selectedIcon, icon]);
         } else if (!isSelected) {
             setSelectedIcon([...selectedIcon.filter((item) => item.id !== icon.id)]);
         }
     }, [isSelected]);
+
+    useEffect(() => {
+        if (selectedIcon.includes(icon)) {
+            setIsSelected(true);
+            inputRef.current.checked = true;
+        }
+    }, []);
 
     return (
         <>
@@ -55,7 +75,7 @@ const IconCard = ({ icon, index, selectedIcon, setSelectedIcon }) => {
                     <div className="card__text">{icon.name}</div>
                     <div className="card__icon">{icon?.icon}</div>
                     <div className="card__checkMark">
-                        <input type="checkbox" onChange={handleSelection.bind(this, icon)} ref={inputRef} name="" id={`icon${index}`} />
+                        <input type="checkbox" onChange={handleSelection} ref={inputRef} name="" id={`icon${index}`} />
                     </div>
                 </label>
             </div>

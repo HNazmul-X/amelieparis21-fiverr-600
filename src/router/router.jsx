@@ -19,7 +19,6 @@ const NavbarRouter = () => {
     return (
         <Routes>
             {/* Admin Login */}
-            <Route path="/admin/login" element={<AdminLogin />} />
 
             {/* Navbar Layout Router */}
             <Route path="/" element={<Navbar />}>
@@ -41,6 +40,7 @@ const NavbarRouter = () => {
             <Route path="/admin" element={<DashboardLayout />}>
                 <Route index element={<ProfileCreation />} />
                 <Route path="table" element={<CardRequest />} />
+                <Route path="login" element={<AdminLogin />} />
             </Route>
         </Routes>
     );

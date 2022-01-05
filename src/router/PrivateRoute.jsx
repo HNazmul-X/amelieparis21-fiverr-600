@@ -10,7 +10,6 @@ const PrivateRoute = () => {
     const jwtToken = getCookie.getCookie("token");
     const userContextEmpty = Object.values(auth?.user);
 
-
     if (auth?.user?.isLoggedIn) {
         return <Outlet />;
     } else {

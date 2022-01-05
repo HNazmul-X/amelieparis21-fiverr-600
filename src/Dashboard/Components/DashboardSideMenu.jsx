@@ -38,7 +38,7 @@ const SidebarAccordion = ({ data, index, activeMenu, setActiveMenu }) => {
     return (
         <div key={index} className="single-menu-section">
             <div className="single-menu-container">
-                <div className={`menu-title-area ${data?.id === activeMenu ? "active-link" : ""} `} onClick={() => handleExpandingMenus(data?.id)}>
+                <div className={`menu-title-area ${data?.id === activeMenu ? "active-link" : ""} `} onClick={() => isDropDown(data) && handleExpandingMenus(data?.id)}>
                     <div className="menu-title-container">
                         {isDropDown(data) ? (
                             <>
@@ -57,17 +57,19 @@ const SidebarAccordion = ({ data, index, activeMenu, setActiveMenu }) => {
                         {isDropDown(data) && <InlineIcon className="right-arrow" icon="ep:arrow-right" />}
                     </div>
                 </div>
-                <div className={`dropworn-area d-block`} ref={dropdownRef} style={{ maxHeight: activeMenu === data?.id ? dropdownRef.current.scrollHeight : 0 }}>
-                    <div className="p-2">
-                        <div className="dropdown-container">
-                            {data.dropdown.map((drp) => (
-                                <Link to={drp.destination} className="single-dropdown">
-                                    {drp.label}
-                                </Link>
-                            ))}
+                {isDropDown(data) && (
+                    <div className={`dropworn-area d-block`} ref={dropdownRef} style={{ maxHeight: activeMenu === data?.id ? dropdownRef.current.scrollHeight : 0 }}>
+                        <div className="p-2">
+                            <div className="dropdown-container">
+                                {data.dropdown.map((drp) => (
+                                    <Link to={drp.destination} className="single-dropdown">
+                                        {drp.label}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
                 <div></div>
             </div>
         </div>
