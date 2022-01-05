@@ -2142,6 +2142,232 @@ body {
   transform: rotate(90deg);
 }
 
+.profile-2-conatiner {
+  width: 375px;
+  margin: auto;
+  background-color: #fff;
+}
+.profile-2-conatiner .content {
+  transform: translateY(-50px);
+}
+.profile-2-conatiner .profile_pic_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 18px;
+}
+.profile-2-conatiner .profile_pic_area .profile_pic {
+  width: 108px;
+  height: 108px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+}
+.profile-2-conatiner .profile_pic_area .profile_pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.profile-2-conatiner .profile_pic_area .shear_icon_wrapper {
+  position: absolute;
+  right: 17px;
+  bottom: 13px;
+}
+.profile-2-conatiner .profile_pic_area .shear_icon_wrapper .share_icon {
+  width: 24px;
+  height: 24px;
+  color: #333e63;
+  cursor: pointer;
+}
+.profile-2-conatiner .besic-info {
+  text-align: center;
+}
+.profile-2-conatiner .besic-info h3 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  color: #333e63;
+}
+.profile-2-conatiner .besic-info p {
+  font-size: 14px;
+  color: #778cae;
+  padding-bottom: 30px;
+  margin-bottom: 0;
+}
+.profile-2-conatiner .contact-section {
+  padding: 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.profile-2-conatiner .contact-section .single-contact {
+  display: flex;
+  text-decoration: none;
+  align-items: flex-start;
+  width: 100%;
+  border-top: 0.5px solid #e0e0e0;
+  padding: 17px 0;
+}
+.profile-2-conatiner .contact-section .single-contact svg {
+  font-size: 24px;
+  width: 24px;
+  color: #8a3efe;
+}
+.profile-2-conatiner .contact-section .single-contact p {
+  margin-bottom: 0;
+  padding-left: 8px;
+  margin-top: -4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333e63;
+}
+.profile-2-conatiner .contact-section .add-contact-button {
+  background-image: linear-gradient(91.54deg, #8a3efe -1.94%, #4d00c4 100%);
+  box-shadow: 0px 12px 36px rgba(138, 62, 254, 0.36);
+  padding: 20px 0;
+  width: 100%;
+  color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.profile-template-3 {
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+}
+.profile-template-3 .banner {
+  clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 77%, 81% 87%, 51% 95%, 21% 88%, 0 78%, 0% 35%, 0 0);
+}
+.profile-template-3 .banner img {
+  width: 100%;
+}
+.profile-template-3 .besic-info {
+  position: relative;
+}
+.profile-template-3 .besic-info .profile-pic-container {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  left: 50%;
+  top: -120px;
+  transform: translate(-50%, 50%);
+}
+.profile-template-3 .besic-info .profile-pic-container .wrapper {
+  position: relative;
+}
+.profile-template-3 .besic-info .profile-pic-container .wrapper .share {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #f51c57;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 50%;
+}
+.profile-template-3 .besic-info .profile-pic-container img {
+  width: 100%;
+}
+.profile-template-3 .besic-info .info {
+  padding-top: 70px;
+  text-align: center;
+}
+.profile-template-3 .besic-info .info h3 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 24px;
+  color: #333e63;
+  margin-bottom: 13px;
+}
+.profile-template-3 .besic-info .info p {
+  font-size: 18px;
+  line-height: 12px;
+  color: #778cae;
+}
+.profile-template-3 .contact {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.profile-template-3 .contact a {
+  width: 48px;
+  margin: auto;
+  text-decoration: none;
+  text-align: center;
+}
+.profile-template-3 .contact a svg {
+  font-size: 36px;
+  padding: 7px;
+  border: 1px solid #f51c57;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #f51c57;
+}
+.profile-template-3 .contact a p {
+  font-size: 12px;
+  text-decoration: none;
+  color: #333e63;
+  text-align: center;
+}
+.profile-template-3 .add-contact-btn {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.profile-template-3 .add-contact-btn button {
+  background-image: linear-gradient(180deg, #f51c57 0%, #ba0033 100%);
+  box-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  border: none;
+  border-radius: 100px;
+}
+.profile-template-3 .about {
+  padding: 30px;
+  text-align: center;
+}
+.profile-template-3 .about h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 18px;
+  color: #f51c57;
+  margin-bottom: 18px;
+}
+.profile-template-3 .about p {
+  font-size: 15px;
+  line-height: 23px;
+  color: #778cae;
+}
+
 .my-button {
   background-color: #447ef2;
   border: none;

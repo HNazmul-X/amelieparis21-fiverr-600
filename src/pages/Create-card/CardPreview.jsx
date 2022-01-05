@@ -33,9 +33,6 @@ const CardPreview = () => {
                     </div>
                 </div>
             </div>
-            <div className="qr-code col-5 d-flex justify-content-center align-items-center">
-                <img src="https://app.wemet.fr/static/media/qrCode.cf9b9dcc.png" className="w-75" alt="" />
-            </div>
         </div>
     );
 };
