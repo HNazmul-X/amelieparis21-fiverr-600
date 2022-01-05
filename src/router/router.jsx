@@ -14,6 +14,7 @@ import Verification from "../pages/auth/Verification";
 
 import PrivateRoute from "./PrivateRoute";
 import CardStatus from "../pages/Create-card/CardStatus";
+import Successfully from "../pages/auth/Successfully";
 
 const NavbarRouter = () => {
     return (
@@ -26,6 +27,7 @@ const NavbarRouter = () => {
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />
                 <Route path="/verify-profile/:verificationId" element={<Verification />} />
+                <Route path="/successfully-profile/:successfullyId" element={<Successfully />} />
                 {/* navbar layout Private route */}
                 <Route element={<PrivateRoute />}>
                     <Route path=":id" element={<h1>Hi Iam abla page</h1>} />
