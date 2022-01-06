@@ -2441,7 +2441,6 @@ body {
   width: 50%;
 }
 
-<<<<<<< HEAD
 .profile-template-3 {
   max-width: 500px;
   width: 100%;
@@ -2570,8 +2569,56 @@ body {
   color: #778cae;
 }
 
-=======
->>>>>>> 562c46a8d280e1a764c37369afcde530a6b30bd6
+.setup-profile-button-info .preview-btn {
+  text-align: center;
+}
+.setup-profile-button-info .preview-btn button {
+  padding: 13px 59px;
+  color: #fff;
+  font-size: 21px;
+  line-height: 26px;
+  background-color: #a5c3ff;
+  border-radius: 25.5px;
+  border: 0;
+  box-shadow: 6px 17px 25px rgba(87, 105, 125, 0.07), 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px -6px rgba(87, 105, 125, 0.12);
+}
+.setup-profile-button-info form {
+  margin-top: 32px;
+}
+.setup-profile-button-info form input {
+  text-align: center !important;
+}
+.setup-profile-button-info form label {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.setup-profile-button-info form .form-floating > .form-control:focus ~ label,
+.setup-profile-button-info form .form-floating > .form-control:not(:placeholder-shown) ~ label,
+.setup-profile-button-info form .form-floating > .form-select ~ label {
+  opacity: 1;
+  transform: scale(0.85) translateY(-0.8rem) translateX(-50%);
+  background: #f0f6ff;
+  padding: 0px 20px !important;
+  text-align: center;
+  margin-bottom: 0px;
+  height: auto;
+  font-size: 16px;
+  border-radius: 999px;
+}
+.setup-profile-button-info form .submit-btn {
+  margin-top: 25px;
+  text-align: center;
+}
+.setup-profile-button-info form .submit-btn button {
+  padding: 6px 33px;
+  border: none;
+  background-color: #255ed1;
+  border-radius: 19px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+}
+
 .my-button {
   background-color: #447ef2;
   border: none;
