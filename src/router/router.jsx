@@ -15,6 +15,8 @@ import Verification from "../pages/auth/Verification";
 import PrivateRoute from "./PrivateRoute";
 import CardStatus from "../pages/Create-card/CardStatus";
 import Successfully from "../pages/auth/Successfully";
+import AllCard from "../Dashboard/Pages/CardRequeste/subpages/AllCard/AllCard";
+import SingleCardPreview from "../Dashboard/Pages/CardRequeste/Releted/SingleCardPreview";
 
 const NavbarRouter = () => {
     return (
@@ -26,7 +28,7 @@ const NavbarRouter = () => {
                 <Route index element={<h1>Hi Iam Home page</h1>} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />
-                <Route path="/verify-profile/:verificationId" element={<Verification />} />
+                <Route path="/verify-profile/:verificationId/:code/:userId" element={<Verification />} />
                 <Route path="/successfully-profile/:successfullyId" element={<Successfully />} />
                 {/* navbar layout Private route */}
                 <Route element={<PrivateRoute />}>
@@ -41,7 +43,10 @@ const NavbarRouter = () => {
             {/* Dashboard Layout Router */}
             <Route path="/admin" element={<DashboardLayout />}>
                 <Route index element={<ProfileCreation />} />
-                <Route path="table" element={<CardRequest />} />
+                <Route path="card-request/" element={<CardRequest />}>
+                    <Route path="all/" element={<AllCard/>}/>
+                    <Route path="preview/:cardId" element={<SingleCardPreview/>}/>
+                </Route>
                 <Route path="login" element={<AdminLogin />} />
             </Route>
         </Routes>

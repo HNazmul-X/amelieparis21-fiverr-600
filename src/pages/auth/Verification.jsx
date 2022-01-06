@@ -1,17 +1,40 @@
-import React, { useState } from 'react';
-import VerificationImg from '../../assets/images/verification.png';
+import React, { useState } from "react";
+import VerificationImg from "../../assets/images/verification.png";
 import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
+import swal from "@sweetalert/with-react";
+import axios from "axios";
+import { useAuth } from "../../Context/UserContext";
 
 const Verification = () => {
+    /* Using Hooks here */
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
+    const { verificationId, code, userId } = useParams();
+    const auth = useAuth();
+    const [isSpinnerShow, setIsSpinnerShow] = useState(false);
+    const navigate = useNavigate();
 
-    const handleOtpVerification = () => {
-        console.log("hello");
-    }
+    /* verifying code */
+    const handleOtpVerification = async (data) => {
+        setIsSpinnerShow(true);
+        try {
+            const { data: returnedData } = await axios.post("http://localhost:8080/api/auth/verify-profile/", { code: data.code, id: verificationId, userId });
+            if (returnedData.error) {
+                setIsSpinnerShow(false);
+                swal("Error Ocurred", returnedData.error, "error");
+            } else {
+                const user = { token: returnedData?.token, isLoggedIn: returnedData?.isLoggedIn, ...returnedData?.user };
+                auth.loginUser(user, () => navigate("/", { replace: true }));
+            }
+        } catch (e) {
+            setIsSpinnerShow(false);
+            swal("error Occured", e.message, "error");
+        }
+    };
 
     return (
         <div id="verification_area">
@@ -31,12 +54,19 @@ const Verification = () => {
 
                                 <form action="" onSubmit={handleSubmit(handleOtpVerification)}>
                                     <div className="form-floating otpWrapper my-3">
-                                        <input type="number" min={0} maxlength="6" class="form-control primary-input otpInput" id="floatingInput" placeholder="6 Digit OTP" />
+                                        <input type="text" {...register("code", { required: true })} class="form-control primary-input otpInput" id="floatingInput" placeholder="6 Digit OTP" />
                                         <label for="floatingInput">6 Digit OTP *</label>
-                                        
+                                        {errors.code && <p className="small text-danger">please Enter Your code</p>}
                                     </div>
 
-                                    <button className="btn verifyBtn">Verify</button>
+                                    <button className="btn verifyBtn">
+                                        {isSpinnerShow && (
+                                            <div class="spinner-border spinner-border-sm me-3" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        )}
+                                        Verify
+                                    </button>
                                 </form>
                             </div>
                         </div>

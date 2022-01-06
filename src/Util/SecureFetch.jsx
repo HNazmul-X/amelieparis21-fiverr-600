@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useAuth } from "../Context/UserContext";
 import GetCookie from "./Coockie";
 
 export const SecureFetch = {
@@ -9,7 +8,7 @@ export const SecureFetch = {
      * @param {which data you want to push} data
      * @returns
      */
-    post: (url, data,config) => {
+    post: (url, data, config) => {
         const getCookie = new GetCookie();
         return new Promise(async (resolve, reject) => {
             const token = getCookie.getCookie("token");
@@ -35,6 +34,31 @@ export const SecureFetch = {
             } else {
                 const error = new Error("Sorry you are not logged in user");
                 reject(error);
+            }
+        });
+    },
+
+    get: (url, config) => {
+        const getCookie = new GetCookie();
+        return new Promise(async (resolve, reject) => {
+            try {
+                const { data: returnedData, status } = await axios.get(url, {
+                    headers: {
+                        "Content-type": "Application/json",
+                        Authorization: getCookie.getCookie("token"),
+                        userId: getCookie.getCookie("userId"),
+                    },
+                    ...config,
+                });
+                if (status === 200) {
+                    resolve(returnedData);
+                } else {
+                    reject("failed to fetch data");
+                }
+            } catch (e) {
+                if(e){
+                    reject(e)
+                }
             }
         });
     },

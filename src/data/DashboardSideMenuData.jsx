@@ -14,8 +14,16 @@ export const ProfileSidebarData = [
         id: "31a57a94-f16a-4ce0-b2f4-2029462fc2b9",
         dropdown: [
             {
-                label: "Dropdown 1",
-                destination: "/",
+                label: "All Card",
+                destination: "/admin/card-request/all",
+            },
+            {
+                label: "Delivered",
+                destination: "/admin/card-request/delivered",
+            },
+            {
+                label: "Rejected",
+                destination: "/admin/card-request/rejected",
             },
         ],
     },
