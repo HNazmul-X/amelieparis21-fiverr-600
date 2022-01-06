@@ -54,7 +54,7 @@ const OrderValidation = () => {
                     logo: uploadedImg.frontSide,
                     scale: cardLogo.front?.scale,
                 },
-                backside: {
+                backSide: {
                     logo: uploadedImg.backSide,
                     scale: cardLogo.back.scale,
                     infoAlign: cardLogo.back.infoAlign,
