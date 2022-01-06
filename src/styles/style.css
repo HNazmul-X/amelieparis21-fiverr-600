@@ -2441,6 +2441,137 @@ body {
   width: 50%;
 }
 
+<<<<<<< HEAD
+.profile-template-3 {
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+}
+.profile-template-3 .banner {
+  clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 77%, 81% 87%, 51% 95%, 21% 88%, 0 78%, 0% 35%, 0 0);
+}
+.profile-template-3 .banner img {
+  width: 100%;
+}
+.profile-template-3 .besic-info {
+  position: relative;
+}
+.profile-template-3 .besic-info .profile-pic-container {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  left: 50%;
+  top: -120px;
+  transform: translate(-50%, 50%);
+}
+.profile-template-3 .besic-info .profile-pic-container .wrapper {
+  position: relative;
+}
+.profile-template-3 .besic-info .profile-pic-container .wrapper .share {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #f51c57;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 50%;
+}
+.profile-template-3 .besic-info .profile-pic-container img {
+  width: 100%;
+}
+.profile-template-3 .besic-info .info {
+  padding-top: 70px;
+  text-align: center;
+}
+.profile-template-3 .besic-info .info h3 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 24px;
+  color: #333e63;
+  margin-bottom: 13px;
+}
+.profile-template-3 .besic-info .info p {
+  font-size: 18px;
+  line-height: 12px;
+  color: #778cae;
+}
+.profile-template-3 .contact {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.profile-template-3 .contact a {
+  width: 48px;
+  margin: auto;
+  text-decoration: none;
+  text-align: center;
+}
+.profile-template-3 .contact a svg {
+  font-size: 36px;
+  padding: 7px;
+  border: 1px solid #f51c57;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #f51c57;
+}
+.profile-template-3 .contact a p {
+  font-size: 12px;
+  text-decoration: none;
+  color: #333e63;
+  text-align: center;
+}
+.profile-template-3 .add-contact-btn {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.profile-template-3 .add-contact-btn button {
+  background-image: linear-gradient(180deg, #f51c57 0%, #ba0033 100%);
+  box-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  border: none;
+  border-radius: 100px;
+}
+.profile-template-3 .about {
+  padding: 30px;
+  text-align: center;
+}
+.profile-template-3 .about h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 18px;
+  color: #f51c57;
+  margin-bottom: 18px;
+}
+.profile-template-3 .about p {
+  font-size: 15px;
+  line-height: 23px;
+  color: #778cae;
+}
+
+=======
+>>>>>>> 562c46a8d280e1a764c37369afcde530a6b30bd6
 .my-button {
   background-color: #447ef2;
   border: none;
