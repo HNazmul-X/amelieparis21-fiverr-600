@@ -2,56 +2,189 @@ import swal from "@sweetalert/with-react";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { SecureFetch } from "../../../../Util/SecureFetch";
+import { InlineIcon } from "@iconify/react";
+import qrCodeImage from "../../../../assets/images/Group.png";
 
 const SingleCardPreview = ({}) => {
-    const [singleCardData, setSingleCardData] = useState();
-    const { cardId } = useParams();
+  const datas = {
+    firstname: "",
+    lastname: "",
+    email: "",
+    postalCode: "",
+    society: "",
+    city: "",
+    address: "",
+    additional_address: "",
+    website: "",
+    landing: "",
+    position: "",
+    phone: "",
+  };
 
-    useEffect(async () => {
-        try {
-            const data = await SecureFetch.get(`http://localhost:8080/api/card/get-single-card/${cardId}`);
-            setSingleCardData(data);
-            console.log(data)
-        } catch (e) {
-            swal(e.message, "", "error");
-        }
-    }, []);
+  const [singleCardData, setSingleCardData] = useState(datas);
+  const [showDetails, setShowDetails] = useState(false);
+  const { cardId } = useParams();
 
-    return (
-        <div className="row w-100  justify-content-center p-5">
-            <div className="col-md-8 col-lg-6 col-xxl-5">
-                <div id="realtime-making-card-preview-card">
-                    <div className="card-cover">
-                        <div className={`preview-card__card step5`}>
-                            <div className={`card-front-side`} style={{ "--logo-scale": singleCardData?.frontSide?.scale, backgroundImage: `url(${singleCardData?.card_base})` }}>
-                                <div className="front__wrapper">
-                                    <h1 className={`front__title step5`}>One Card Pro</h1>
-                                    {singleCardData?.frontSide?.logo?.length > 2 && <img src={`http://localhost:8080${singleCardData?.frontSide?.logo}`} alt="" className={`front__logo step5`} />}
-                                </div>
-                            </div>
-                            <div className="card-backside" style={{ backgroundImage: `url(${singleCardData?.card_base})` }}>
-                                <div className="backside__wrapper m-0 row w-100">
-                                    <div className="info-and-logo col-7">
-                                        <div className="info-and-logo__logo" style={{ "--logo-scale": singleCardData?.backSide?.scale }}>
-                                            <img src={`http://localhost:8080/${singleCardData?.backSide?.logo}`} alt="" className="" />
-                                        </div>
-                                        <div className={`info-and-logo__info  justify-${singleCardData?.backSide?.infoAlign}`}>
-                                            <h5>H. Nazmul Hassan</h5>
-                                            <h6>Web developer</h6>
-                                            <p>10934739837</p>
-                                        </div>
-                                    </div>
-                                    <div className="qr-code col-5 d-flex justify-content-center align-items-center">
-                                        <img src="https://app.wemet.fr/static/media/qrCode.cf9b9dcc.png" className="w-75" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  useEffect(async () => {
+    try {
+      const data = await SecureFetch.get(
+        `http://localhost:8080/api/card/get-single-card/${cardId}`
+      );
+      setSingleCardData(data);
+      console.log(data);
+    } catch (e) {
+      swal(e.message, "", "error");
+    }
+  }, []);
+
+  const baseUrl = "http://localhost:8080";
+  const frontScale = singleCardData?.frontSide?.scale || 1;
+
+  const {
+    firstname,
+    lastname,
+    email,
+    postalCode,
+    society,
+    city,
+    address,
+    additional_address,
+    website,
+    landing,
+    position,
+    phone,
+  } = singleCardData;
+
+  return (
+    <div className="signle-card-preview">
+      <div>
+        <div className="image-area ">
+          <div
+            className="front-logo-wrapper"
+            style={{ backgroundImage: `url(${singleCardData?.card_base})` }}
+          >
+            <div className="front-logo">
+              <img
+                style={{ transform: `scale(${frontScale})` }}
+                src={`${baseUrl}/${singleCardData?.frontSide?.logo}`}
+                alt=""
+              />
             </div>
+            <div className="card-name-area">
+              <p className="card-name">One </p>
+              <p className="sm-text">Card pro</p>
+            </div>
+            <div className="icon">
+              <InlineIcon className="sigle-icon" icon={"clarity:wifi-solid"} />
+            </div>
+          </div>
+          <div
+            className="back-logo-wrapper"
+            style={{ backgroundImage: `url(${singleCardData?.card_base})` }}
+          >
+            <div className="info-container">
+              <div className="back-logo">
+                <img
+                  src={`${baseUrl}/${singleCardData?.backSide?.logo}`}
+                  alt=""
+                />
+              </div>
+              <div>
+                <h5 className="name">
+                  {singleCardData?.firstname + " " + singleCardData?.lastname}
+                </h5>
+                <p className="position">{singleCardData?.position}</p>
+                <p className="phone">{singleCardData?.phone}</p>
+              </div>
+            </div>
+            <div className="qr-code">
+              <img src={qrCodeImage} alt="QR Code" />
+            </div>
+          </div>
         </div>
-    );
+      </div>
+      <div
+        className="card-details"
+        onClick={() => setShowDetails(!showDetails)}
+      >
+        <div className="header">
+          <p>Card Details</p>
+          <InlineIcon
+            className={`right-arrow ${showDetails ? "active-arrow" : ""}`}
+            icon="ep:arrow-right"
+          />
+        </div>
+        <div className="card-details-content">
+          <div className="details-container">
+            <div className="single-fild">
+              <p>First name</p>
+              <input type="text" value={singleCardData.firstname} readOnly />
+            </div>
+            <div className="single-fild">
+              <p>Last name</p>
+              <input type="text" value={singleCardData.lastname} readOnly />
+            </div>
+          </div>
+          <div className="details-container">
+            <div className="single-fild">
+              <p>Email</p>
+              <input type="text" value={singleCardData.email} readOnly />
+            </div>
+            <div className="single-fild">
+              <p>Postal Code</p>
+              <input type="text" value={singleCardData.postalCode} readOnly />
+            </div>
+          </div>
+          <div className="details-container">
+            <div className="single-fild">
+              <p>Socity</p>
+              <input type="text" value={singleCardData.society} readOnly />
+            </div>
+            <div className="single-fild">
+              <p>City</p>
+              <input type="text" value={singleCardData.city} readOnly />
+            </div>
+          </div>
+          <div className="details-container">
+            <div className="single-fild">
+              <p>Address</p>
+              <input type="text" value={singleCardData.address} readOnly />
+            </div>
+          </div>
+          <div className="details-container">
+            <div className="single-fild">
+              <p>Additional Address</p>
+              <input
+                type="text"
+                value={singleCardData.additional_address}
+                readOnly
+              />
+            </div>
+          </div>
+          <div className="details-container">
+            <div className="single-fild">
+              <p>Website</p>
+              <input type="text" value={singleCardData.website} readOnly />
+            </div>
+            <div className="single-fild">
+              <p>Landing</p>
+              <input type="text" value={singleCardData.landing} readOnly />
+            </div>
+          </div>
+          <div className="details-container">
+            <div className="single-fild">
+              <p>Position</p>
+              <input type="text" value={singleCardData.position} readOnly />
+            </div>
+            <div className="single-fild">
+              <p>Phone</p>
+              <input type="text" value={singleCardData.phone} readOnly />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default SingleCardPreview;

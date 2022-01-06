@@ -25,7 +25,7 @@ const AllCard = () => {
         setCardData(data);
     }, []);
 
-    
+    console.log(cardData);
 
     return (
         <div className="card-requested-table-section">
@@ -43,7 +43,7 @@ const AllCard = () => {
                         </thead>
 
                         <tbody>
-                            {cardData.map((data, index) => {
+                            {cardData?.map((data, index) => {
                                 const d = new Date(data?.delivery_info?.orderDate);
                                 const formattedDate = `${d.getDate()}/ ${d.getMonth() + 1}/ ${d.getFullYear()}`;
 
