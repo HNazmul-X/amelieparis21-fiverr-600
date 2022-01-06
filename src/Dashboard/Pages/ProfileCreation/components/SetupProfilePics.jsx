@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SectionTitle from "./SectionTitle";
 import { InlineIcon } from "@iconify/react";
 import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
-import swal from "sweetalert";
+import swal from "@sweetalert/with-react";
 
 function SetupProfilePics({ open, handelOpen, title }) {
     const { setUserPics, userPics } = useProfileContext();

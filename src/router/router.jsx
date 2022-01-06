@@ -26,7 +26,7 @@ const NavbarRouter = () => {
                 <Route index element={<h1>Hi Iam Home page</h1>} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />
-                <Route path="/verify-profile/:verificationId" element={<Verification />} />
+                <Route path="/verify-profile/:verificationId/:code/:userId" element={<Verification />} />
                 <Route path="/successfully-profile/:successfullyId" element={<Successfully />} />
                 {/* navbar layout Private route */}
                 <Route element={<PrivateRoute />}>

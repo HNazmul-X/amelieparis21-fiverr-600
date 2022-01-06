@@ -1,5 +1,7 @@
+import swal from "@sweetalert/with-react";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import CardRoundImage from "../../assets/images/Group 23.png";
 import Authentication from "../../Util/Authentication";
 
@@ -8,12 +10,12 @@ const SignUp = () => {
         register,
         handleSubmit,
         formState: { errors },
-        watch,
     } = useForm();
-    console.log(watch("firstName"));
+    const navigate = useNavigate();
+    const [isSpinnerShow, setIsSpinnerShow] = useState(false);
 
     const onSubmit = async (data) => {
-       
+        setIsSpinnerShow(true);
         const signedUpUser = await Authentication.signupAndData("http://localhost:8080/api/auth/signup", {
             username: data?.username,
             password: data?.password,
@@ -30,7 +32,24 @@ const SignUp = () => {
             postalCode: data?.postalCode,
         });
 
-        console.log(signedUpUser)
+        if (signedUpUser.error) {
+            setIsSpinnerShow(false)
+            console.log(signedUpUser);
+            const allError = Object.values(signedUpUser).map((err) => <li className="mb-0 text-danger text-start">{err}</li>);
+            console.log(allError);
+
+            swal(
+                <div className="py-3">
+                    <h1 className="">Invalid Information</h1>
+                    <ul className="mt-2">{allError}</ul>
+                </div>,
+            );
+        } else {
+            console.log("I am entering");
+            navigate(`/verify-profile/${signedUpUser?.verificationInfo?._id}/${encodeURIComponent(signedUpUser?.verificationInfo?.code)}/${signedUpUser?.updatedUser?._id}`, {
+                replace: true,
+            });
+        }
     };
 
     return (
@@ -66,7 +85,14 @@ const SignUp = () => {
                                     {errors.email?.type === "required" && <span className="d-block ps-3 text-danger text-start">Email is required</span>}
                                 </div>
                                 <div className="form-floating my-4 mb-5 ">
-                                    <input type="" {...register("username", { required: true })} className="form-control unFatty-input" id="floatingInput5" placeholder="name@example.com" />
+                                    <input
+                                        type="text"
+                                        {...register("username", { required: true })}
+                                        name="username"
+                                        className="form-control unFatty-input"
+                                        id="floatingInput5"
+                                        placeholder="name@example.com"
+                                    />
                                     <label for="floatingInput5">Username</label>
                                     {errors.username?.type === "required" && <span className="d-block ps-3 text-danger text-start">Username is required</span>}
                                 </div>
@@ -151,7 +177,14 @@ const SignUp = () => {
                                 </div>
 
                                 <div className="validateBtn">
-                                    <button className="btn">Register</button>
+                                    <button className="btn d-inline-flex align-items-center ">
+                                        {isSpinnerShow && (
+                                            <div class="spinner-border spinner-border-sm me-3" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        )}
+                                        Register
+                                    </button>
                                     <p>
                                         Already Have an Account ? <a href="/login">Login</a>
                                     </p>
