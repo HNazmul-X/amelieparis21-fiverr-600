@@ -2,7 +2,7 @@ import ProfileTemplate1 from "../../../Components/ProfileTemplate1/ProfileTempla
 import ProfileTemplate2 from "../../../Components/ProfileTemplate2/ProfileTemplate2"
 import TEMPLATE_PREVIEW_IMG_1 from "../../../../assets/images/profile-1.png"
 import TEMPLATE_PREVIEW_IMG_2 from "../../../../assets/images/profile-2.png"
-import ProfileTemplate3 from './../../../Components/ProfileTemplate3/ProfileTemplate3';
+import ProfileTemplate3 from '../../../Components/ProfileTemplate3/ProfileTemplate3';
 
 
 

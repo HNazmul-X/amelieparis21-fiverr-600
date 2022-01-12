@@ -7,7 +7,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
     const { setUserInfo } = useProfileContext();
     const { register, handleSubmit } = useForm();
     const submitUserData = (data) => {
-        console.log(data);
+        data.tags = data?.tags.split(",");
         setUserInfo((prev) => {
             return { ...prev, ...data };
         });
@@ -28,9 +28,9 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
                             <label htmlFor="floatingInput">Tagline</label>
                         </div>
                         <div className="w-100 form-floating mb-3">
-                           <textarea {...register("about")} rows="4" className="form-control primary-input text-area" id="floatingInput" placeholder="name@example.com"></textarea>
+                            <textarea {...register("about")} rows="4" className="form-control primary-input text-area" id="floatingInput" placeholder="name@example.com"></textarea>
                             <label htmlFor="floatingInput">About</label>
-                        </div> 
+                        </div>
                         <div className="w-100 form-floating mb-3">
                             <input {...register("tags")} type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" />
                             <label htmlFor="floatingInput">

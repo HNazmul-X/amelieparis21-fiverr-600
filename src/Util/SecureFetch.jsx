@@ -25,6 +25,7 @@ export const SecureFetch = {
                     if (returnedData) {
                         resolve(returnedData);
                     } else {
+                        console.log(returnedData);
                         const error = new Error("Failed to Post Data");
                         reject(error);
                     }
@@ -56,8 +57,8 @@ export const SecureFetch = {
                     reject("failed to fetch data");
                 }
             } catch (e) {
-                if(e){
-                    reject(e)
+                if (e) {
+                    reject(e);
                 }
             }
         });

@@ -1,10 +1,22 @@
 export const ProfileSidebarData = [
     {
         icon: "",
-        label: "Profile Creation",
+        label: "Profile Request",
         destination: "",
         id: "f00a5ae9-b5f1-44af-811b-dc94831bef8f",
         dropdown: [
+            {
+                label: "All User Profile",
+                destination: "/admin/profile-request/all-user-profile",
+            },
+            {
+                label: "Created Profile",
+                destination: "/admin/profile-request/created-profile",
+            },
+            {
+                label: "Pending Profile",
+                destination: "/admin/profile-request/pending-profile",
+            },
         ],
     },
     {

@@ -1,5 +1,6 @@
-import React from "react";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/UserContext";
 import GetCookie from "../Util/Coockie";
 
@@ -9,6 +10,7 @@ const PrivateRoute = () => {
     const getCookie = new GetCookie();
     const jwtToken = getCookie.getCookie("token");
     const userContextEmpty = Object.values(auth?.user);
+    const navigate = useNavigate();
 
     if (auth?.user?.isLoggedIn) {
         return <Outlet />;

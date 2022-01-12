@@ -11,7 +11,7 @@ import { useProfileContext } from "../../../Context/ProfileTemplateContext";
 
 function ProfileTemplate1() {
     const workLists = ["Social Media", "MARKETING", "DESIGN", "GRAPHIC"];
-    const { userInfo, userPics } = useProfileContext();
+    const { userInfo, userPics,buttonInfo } = useProfileContext();
 
     const social = {
         facebook: facebookIcon,
@@ -42,7 +42,7 @@ function ProfileTemplate1() {
                         <p>{userInfo?.about || "Write Something About You"}</p>
                     </div>
                     <div className="work-container">
-                        {workLists.map((el, index) => (
+                        {userInfo.tags?.map((el, index) => (
                             <p key={index} className="single-work">
                                 {el}
                             </p>
@@ -51,7 +51,7 @@ function ProfileTemplate1() {
                 </div>
             </div>
             <div className="contact-section">
-                <button className="add-contact-btn">ADD TO CONTACT</button>
+                <button className="add-contact-btn">{buttonInfo?.info?.text || "ADD TO CONTACT"}</button>
                 <div className="social-container">
                     {userInfo.links.map((data) => (
                         <a href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${data?.link}`} target="_blank" className="signle-social-link">

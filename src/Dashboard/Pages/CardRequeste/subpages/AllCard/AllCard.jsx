@@ -1,9 +1,7 @@
 import { InlineIcon } from "@iconify/react";
 import swal from "@sweetalert/with-react";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CardRequestedTableData } from "../../../../../data/CardRequestedTableData";
 import { SecureFetch } from "../../../../../Util/SecureFetch";
 
 const AllCard = () => {
@@ -17,20 +15,21 @@ const AllCard = () => {
             delivery_info: { _id: "", orderDate: 0 },
         },
     ]);
-    const [singleCardData, setSingleCardData] = useState({});
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(async () => {
-        const data = await SecureFetch.get("http://localhost:8080/api/card/get-all-card/all");
-        setCardData(data);
+        try {
+            const data = await SecureFetch.get("http://localhost:8080/api/card/get-all-card/all");
+            setCardData(data);
+        } catch (e) {
+            console.log(e);
+        }
     }, []);
-
-    console.log(cardData);
 
     return (
         <div className="card-requested-table-section">
             <div className="table-conatiner">
-                {cardData.length > 1 ? (
+                {cardData.length > 0 ? (
                     <table className="my-table">
                         <thead>
                             <tr>
@@ -56,7 +55,11 @@ const AllCard = () => {
                                         <td className="py-1">
                                             <InlineIcon className="p-1 fs-3 alert-success btn mx-2 rounded-pill" icon={"la:check"} />
                                             <InlineIcon className="p-1 fs-3 alert-danger btn mx-2 rounded-pill" icon={"la:times"} />
-                                            <InlineIcon onClick={() => navigate(`/admin/card-request/preview/${data?._id}`)} className="p-1 fs-3 alert-primary btn mx-2 rounded-pill" icon={"fluent:open-folder-16-filled"} />
+                                            <InlineIcon
+                                                onClick={() => navigate(`/admin/card-request/preview/${data?._id}`)}
+                                                className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"
+                                                icon={"fluent:open-folder-16-filled"}
+                                            />
                                         </td>
                                     </tr>
                                 );
