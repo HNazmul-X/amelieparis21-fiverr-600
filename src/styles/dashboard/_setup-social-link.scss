@@ -1,10 +1,10 @@
 @use "../util/" as *;
-
 .setup-social-link {
     .social-icon-wrapper {
         display: flex;
         gap: 8px;
         margin-bottom: 73px;
+        flex-wrap: wrap;
         .single-icon {
             border-radius: 4px;
             border: 1px solid #dce2ee;
@@ -19,8 +19,8 @@
             a {
                 display: flex;
                 color: $blue-grey;
-                svg{
-                  width: 30px;
+                svg {
+                    width: 30px;
                 }
             }
         }
@@ -39,14 +39,27 @@
         }
     }
 }
+
 .setup-scail-area {
-    margin: 24px 0 32px !important ;
+    margin: 24px 0 32px !important;
 }
+
 .socail-link-box {
     .form-floating label {
         left: 34px;
     }
     .form-control {
         padding: 1rem 36px;
+    }
+    .text-end {
+        button {
+            padding: 6px 33px;
+            border: none;
+            background-color: $primary-500;
+            border-radius: 19px;
+            font-size: 16px;
+            line-height: 26px;
+            color: $white;
+        }
     }
 }

@@ -1,5 +1,4 @@
 @use "../../util/" as *;
-
 $black: #030303;
 $white: #fff;
 $tem1-gray-700: #5b5b5b;
@@ -8,7 +7,6 @@ $tem1-golden-rod-200: rgba(250, 156, 15, 0.2);
 $tem1-box-shadow: 0px 18px 36px rgba(255, 89, 2, 0.24);
 $tem1-box-shadow2: 0px -8px 36px rgba(51, 62, 99, 0.08);
 $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
-
 .profile-template-1 {
     width: 375px;
     margin: auto;
@@ -20,7 +18,6 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
             object-fit: cover;
         }
     }
-
     .besic-info {
         padding: 24px;
         position: relative;
@@ -121,11 +118,16 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
                 justify-content: space-between;
                 cursor: pointer;
                 text-decoration: none;
-
                 img {
                     position: absolute;
                     left: -23px;
+                    width: 40px;
+                    height: 40px;
+                    background: #fff;
+                    border-radius: 50%;
+                    border: 1px solid #f1f1f1;
                     top: 50%;
+                    object-fit: contain;
                     transform: translateY(-50%);
                 }
                 h5 {

@@ -52,7 +52,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                                 })}
                             </div>
                             <div className="text-end">
-                                <button type="submit">submit data</button>
+                                <button type="submit">Submit Data</button>
                             </div>
                         </form>
                     </div>

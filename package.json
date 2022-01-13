@@ -8,7 +8,6 @@
     "sass": "sass ./src/styles/style.scss ./src/styles/style.css -w"
   },
   "dependencies": {
-    "@iconify/react": "^3.1.0",
     "@sweetalert/with-react": "^0.1.1",
     "axios": "^0.24.0",
     "bootstrap": "^5.0.0-alpha1",
@@ -21,6 +20,19 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@iconify/icons-akar-icons": "^1.1.30",
+    "@iconify/icons-ant-design": "^1.1.1",
+    "@iconify/icons-bi": "^1.1.12",
+    "@iconify/icons-brandico": "^1.1.0",
+    "@iconify/icons-bx": "^1.1.4",
+    "@iconify/icons-bytesize": "^1.1.0",
+    "@iconify/icons-cib": "^1.1.0",
+    "@iconify/icons-clarity": "^1.1.2",
+    "@iconify/icons-dashicons": "^1.1.0",
+    "@iconify/icons-fa-brands": "^1.1.1",
+    "@iconify/icons-gg": "^1.1.0",
+    "@iconify/icons-mdi": "^1.1.42",
+    "@iconify/react": "^3.1.2",
     "@vitejs/plugin-react": "^1.0.7",
     "vite": "^2.7.2"
   }
