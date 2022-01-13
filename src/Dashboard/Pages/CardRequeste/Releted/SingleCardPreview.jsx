@@ -94,7 +94,7 @@ const SingleCardPreview = ({}) => {
                   {singleCardData?.firstname + " " + singleCardData?.lastname}
                 </h5>
                 <p className="position">{singleCardData?.position}</p>
-                <p className="phone">{singleCardData?.phone}</p>
+                <p className="phone mb-0 ">{singleCardData?.phone}</p>
               </div>
             </div>
             <div className="qr-code">
@@ -105,16 +105,16 @@ const SingleCardPreview = ({}) => {
       </div>
       <div
         className="card-details"
-        onClick={() => setShowDetails(!showDetails)}
+       
       >
-        <div className="header">
+        <div className="header"  onClick={() => setShowDetails(!showDetails)}>
           <p>Card Details</p>
           <InlineIcon
             className={`right-arrow ${showDetails ? "active-arrow" : ""}`}
             icon="ep:arrow-right"
           />
         </div>
-        <div className="card-details-content">
+        <div className={`card-details-content ${showDetails ? "d-block" : "d-none"}`}>
           <div className="details-container">
             <div className="single-fild">
               <p>First name</p>

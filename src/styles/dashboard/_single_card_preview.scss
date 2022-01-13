@@ -1,6 +1,7 @@
 @use "../util/" as *;
 
 $card-details-conetnt-bg: #f7faff;
+$border-bg:#DCE2EE;
 
 .signle-card-preview {
   padding: 75px 58px;
@@ -15,7 +16,7 @@ $card-details-conetnt-bg: #f7faff;
       justify-content: center;
       position: relative;
       border-radius: 9px;
-      width: 100%;
+      width: 50%;
       overflow: hidden;
       box-shadow: $large-spreading-shadow;
       .front-logo {
@@ -56,9 +57,9 @@ $card-details-conetnt-bg: #f7faff;
     }
 
     .back-logo-wrapper {
-      width: 100%;
+      width: 50%;
       box-shadow: $large-spreading-shadow;
-      padding: 40px 30px;
+      padding: 40px 30px 10px;
       border-radius: 9px;
       display: flex;
       gap: 8px;
@@ -85,9 +86,9 @@ $card-details-conetnt-bg: #f7faff;
         }
       }
       .back-logo {
-        max-width: 156px;
+        
         img {
-          width: 100%;
+          max-width: 156px;
         }
       }
 
@@ -103,13 +104,15 @@ $card-details-conetnt-bg: #f7faff;
 
   .card-details {
     margin-top: 65px;
+    box-shadow: $large-spreading-shadow;
     .header {
       background-color: $white;
-      padding: 20px 34px;
+      padding: 23px 34px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
+      border-bottom:1px solid $border-bg;
       p {
         margin-bottom: 0;
         font-weight: 600;
@@ -124,9 +127,10 @@ $card-details-conetnt-bg: #f7faff;
     }
 
     .card-details-content {
-      padding: 13px 62px 80px 65px;
+      padding: 13px 62px 50px 65px;
       background-color: $card-details-conetnt-bg;
-      box-shadow: $large-spreading-shadow;
+     
+      transition: all .4s linear;
       .details-container {
         display: flex;
         // flex-wrap: wrap;
