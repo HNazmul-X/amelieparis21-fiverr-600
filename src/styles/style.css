@@ -433,6 +433,119 @@ body {
   color: #fff;
 }
 
+.multiple-design-section {
+  position: relative;
+  padding: 115px 0 99px;
+  background-color: #dce2ee;
+}
+.multiple-design-section .top-icon-area {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 147px;
+  height: 147px;
+  border: 2px solid #57697d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  top: -55px;
+  transform: translateX(-50%);
+}
+.multiple-design-section .top-icon-area img {
+  width: 100%;
+}
+.multiple-design-section h3 {
+  font-size: 51px;
+  color: #57697d;
+  text-align: center;
+  margin-bottom: 89px;
+}
+.multiple-design-section .image-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 85px;
+}
+.multiple-design-section .image-area img {
+  max-width: 210px;
+  width: 100%;
+}
+.multiple-design-section .image-area img:nth-child(2) {
+  margin-top: 45px;
+}
+.multiple-design-section .image-area img:nth-child(3) {
+  margin-top: 90px;
+}
+.multiple-design-section .icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  margin-top: 38px;
+}
+.multiple-design-section .icon-wrapper .icon {
+  width: 74px;
+  height: 74px;
+  background-color: #6c9dff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.multiple-design-section .icon-wrapper .icon svg {
+  font-size: 25px;
+  color: #fff;
+}
+
+.video-explainer-section {
+  position: relative;
+  padding: 115px 0 99px;
+  background-color: #fff;
+  padding: 35px;
+}
+.video-explainer-section .top-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-self: unset;
+}
+.video-explainer-section .top-icon-area {
+  width: 147px;
+  height: 147px;
+  border: 2px solid #57697d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  top: -55px;
+  transform: translateX(-50%);
+}
+.video-explainer-section .top-icon-area img {
+  width: 100%;
+}
+.video-explainer-section .video-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
+}
+.video-explainer-section .video-frame .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 #create-card-login {
   background: #f0f6ff;
 }
