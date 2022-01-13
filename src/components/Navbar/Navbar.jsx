@@ -32,6 +32,13 @@ const Navbar = () => {
                                         Home
                                     </Link>
                                 </li>
+                                {auth.user?.isAdmin && (
+                                    <li className="navbar-list-item">
+                                        <Link to={"/admin"} className="navbar-list-link">
+                                            Dashboard
+                                        </Link>
+                                    </li>
+                                )}
                                 <li className="navbar-list-item">
                                     <Link to={"/faq"} className="navbar-list-link">
                                         FAQ

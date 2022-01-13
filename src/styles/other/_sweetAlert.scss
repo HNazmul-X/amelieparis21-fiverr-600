@@ -1,12 +1,17 @@
-@use  "../util/" as *;
+@use "../util/" as *;
 
-.swal-modal{
+.swal-modal {
     box-shadow: $large-spreading-shadow;
-    background:$primary-50 ;
-    .swal-footer{
-        .swal-button-container{
-            .swal-button{
+    background: $primary-50;
+    .swal-footer {
+        .swal-button-container {
+            .swal-button {
                 background: $primary-500 !important;
+
+                &.swal-button--cancel {
+                    background: $red-500 !important;
+                    color: $white;
+                }
             }
         }
     }

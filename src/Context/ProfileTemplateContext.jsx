@@ -24,11 +24,27 @@ const ProfileTemplateContext = ({ children }) => {
         },
     });
 
-    const providerData = { profileTemplateId, socialLinks, userInfo, userPics, setProfileTemplateId, setUserPics, setSocialLinks, setUserInfo };
+    const [buttonInfo, setButtonInfo] = useState({
+        info: {
+            text: "",
+            link: "",
+        },
+        colors: {
+            bg: "",
+            color: "",
+            shadow: "",
+        },
+    });
+
+    const providerData = { profileTemplateId, socialLinks, userInfo, userPics, buttonInfo, setButtonInfo, setProfileTemplateId, setUserPics, setSocialLinks, setUserInfo };
 
     return <ProfileTemplateContextData.Provider value={{ ...providerData }}>{children}</ProfileTemplateContextData.Provider>;
 };
 
 export default ProfileTemplateContext;
 
-export const useProfileContext = () => useContext(ProfileTemplateContextData);
+export const useProfileContext = () => {
+    const { profileTemplateId, setProfileTemplateId, socialLinks, setSocialLinks, userInfo, setUserInfo, userPics, setUserPics, buttonInfo, setButtonInfo } = useContext(ProfileTemplateContextData);
+
+    return { profileTemplateId, setProfileTemplateId, socialLinks, setSocialLinks, userInfo, setUserInfo, userPics, setUserPics, buttonInfo, setButtonInfo };
+};

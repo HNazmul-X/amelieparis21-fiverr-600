@@ -73,6 +73,7 @@ const OrderValidation = () => {
                     phone,
                     city,
                     country,
+                    society,
                     postalCode,
                 },
                 deliveryInfo: {
@@ -111,20 +112,41 @@ const OrderValidation = () => {
 
                             <div className="d-flex gap-3">
                                 <div className="w-100 form-floating mb-3">
-                                    <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("firstName", { required: true })} />
+                                    <input
+                                        type="text"
+                                        className="form-control primary-input"
+                                        id="floatingInput"
+                                        name="firstname"
+                                        placeholder="name@example.com"
+                                        {...register("firstName", { required: true })}
+                                    />
                                     <label for="floatingInput">First Name</label>
                                     {errors.firstName?.type === "required" && <span className="text-danger ">First name is required</span>}
                                 </div>
 
                                 <div className="w-100 form-floating mb-3">
-                                    <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("lastName", { required: true })} />
+                                    <input
+                                        type="text"
+                                        className="form-control primary-input"
+                                        id="floatingInput"
+                                        name="lastname"
+                                        placeholder="name@example.com"
+                                        {...register("lastName", { required: true })}
+                                    />
                                     <label for="floatingInput">Last Name</label>
                                     {errors.lastName?.type === "required" && <span className="text-danger ">Last name is required</span>}
                                 </div>
                             </div>
 
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("society", { required: true })} />
+                                <input
+                                    type="text"
+                                    className="form-control primary-input"
+                                    id="floatingInput"
+                                    name="society"
+                                    placeholder="name@example.com"
+                                    {...register("society", { required: true })}
+                                />
                                 <label for="floatingInput">Society</label>
                                 {errors.society?.type === "required" && <span className="text-danger ">Society is required</span>}
                             </div>
@@ -143,13 +165,13 @@ const OrderValidation = () => {
 
                             <div className="d-flex gap-3">
                                 <div className="w-100 form-floating mb-3">
-                                    <input type="password" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("postalCode", { required: true })} />
+                                    <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("postalCode", { required: true })} />
                                     <label for="floatingInput">Postal code</label>
                                     {errors.postalCode?.type === "required" && <span className="text-danger ">Postal code is required</span>}
                                 </div>
 
                                 <div className="w-100 form-floating mb-3">
-                                    <input type="password" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("city", { required: true })} />
+                                    <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("city", { required: true })} />
                                     <label for="floatingInput">City</label>
                                     {errors.city?.type === "required" && <span className="text-danger ">City is required</span>}
                                 </div>
@@ -247,7 +269,7 @@ const OrderValidation = () => {
                                 <div className="d-flex gap-3">
                                     <div className="w-100 form-floating mb-3">
                                         <input
-                                            type="password"
+                                            type="text"
                                             className="form-control primary-input"
                                             id="floatingInput"
                                             placeholder="name@example.com"
@@ -261,7 +283,7 @@ const OrderValidation = () => {
 
                                     <div className="w-100 form-floating mb-3">
                                         <input
-                                            type="password"
+                                            type="text"
                                             className="form-control primary-input"
                                             id="floatingInput"
                                             placeholder="name@example.com"

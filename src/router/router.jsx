@@ -6,7 +6,7 @@ import CreateCardPage from "../pages/Create-card/CreateCardPage";
 import FaqPage from "../pages/Faq-page/FaqPage";
 import Login from "../pages/auth/Login";
 import SignUp from "../pages/auth/SignUp";
-import ProfileCreation from "../Dashboard/Pages/ProfileCreation/ProfileCreation";
+import ProfileRequest from "../Dashboard/Pages/ProfileRequest/ProfileRequest";
 import CardRequest from "../Dashboard/Pages/CardRequeste/CardRequest";
 import AdminLogin from "../Dashboard/Auth/AdminLogin";
 import Verification from "../pages/auth/Verification";
@@ -17,6 +17,9 @@ import CardStatus from "../pages/Create-card/CardStatus";
 import Successfully from "../pages/auth/Successfully";
 import AllCard from "../Dashboard/Pages/CardRequeste/subpages/AllCard/AllCard";
 import SingleCardPreview from "../Dashboard/Pages/CardRequeste/Releted/SingleCardPreview";
+import AllRequest from "../Dashboard/Pages/ProfileRequest/Subpages/AllRequest/AllRequest";
+import ProfileCreation from "../Dashboard/Pages/ProfileRequest/Subpages/ProfileCreation/ProfileCreation";
+import PlayGround from "../pages/playgournd/playground";
 
 const NavbarRouter = () => {
     return (
@@ -26,6 +29,7 @@ const NavbarRouter = () => {
             {/* Navbar Layout Router */}
             <Route path="/" element={<Navbar />}>
                 <Route index element={<h1>Hi Iam Home page</h1>} />
+                <Route path="/playground" element={<PlayGround />} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />
                 <Route path="/verify-profile/:verificationId/:code/:userId" element={<Verification />} />
@@ -42,10 +46,14 @@ const NavbarRouter = () => {
 
             {/* Dashboard Layout Router */}
             <Route path="/admin" element={<DashboardLayout />}>
-                <Route index element={<ProfileCreation />} />
+                <Route path="profile-request/" element={<ProfileRequest />}>
+                    <Route path="all-user-profile" element={<AllRequest />} />
+                    <Route path="profile-creation/:profileId" element={<ProfileCreation />} />
+                </Route>
+
                 <Route path="card-request/" element={<CardRequest />}>
-                    <Route path="all/" element={<AllCard/>}/>
-                    <Route path="preview/:cardId" element={<SingleCardPreview/>}/>
+                    <Route path="all/" element={<AllCard />} />
+                    <Route path="preview/:cardId" element={<SingleCardPreview />} />
                 </Route>
                 <Route path="login" element={<AdminLogin />} />
             </Route>

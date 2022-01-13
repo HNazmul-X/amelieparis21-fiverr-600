@@ -1,3 +1,4 @@
+import swal from "@sweetalert/with-react";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -17,8 +18,12 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
 
     const submitLoginData = async (data) => {
-        const returnedData = await Authentication.loginAndData("http://localhost:8080/api/auth/login", { ...data });
-        auth.loginUser(returnedData, () => navigate(from, { replace: true }));
+        try {
+            const returnedData = await Authentication.loginAndData("http://localhost:8080/api/auth/login", { ...data });
+            auth.loginUser(returnedData, () => navigate(from, { replace: true }));
+        } catch (e) {
+            swal("Invalid Credentials", "Please check is your username or password is correct. otherwise you've entered a wrong password", "error");
+        }
     };
 
     return (
@@ -35,8 +40,8 @@ const Login = () => {
                                 <h2 className="title">Login</h2>
 
                                 <div className="form-floating my-3">
-                                    <input type="email" {...register("usernameOrEmail", { required: true })} className="form-control primary-input" id="floatingInput" placeholder="name@example.com" />
-                                    <label for="floatingInput">Email *</label>
+                                    <input type="text" {...register("usernameOrEmail", { required: true })} className="form-control primary-input" id="floatingInput" name="usernameOrEmail" placeholder="name@example.com" />
+                                    <label for="floatingInput">Username Or email *</label>
                                     {errors.usernameOrEmail?.type === "required" && <span className="d-block ps-3 text-danger text-start">Email or username is required</span>}
                                 </div>
 

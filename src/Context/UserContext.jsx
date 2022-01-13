@@ -17,11 +17,15 @@ const UserContext = ({ children }) => {
         }
         loggedInUser.isLoggedIn = true;
         const token = loggedInUser.token;
-        setUser({ ...loggedInUser });
-        cookie.setCookie("token", token, 7);
-        cookie.setCookie("userId", loggedInUser._id, 7);
-        if (callback) {
-            callback();
+        if (token) {
+            setUser({ ...loggedInUser });
+            cookie.setCookie("token", token, 7);
+            cookie.setCookie("userId", loggedInUser._id, 7);
+            if (callback) {
+                callback();
+            }
+        } else {
+            loginUser();
         }
     };
 
@@ -42,12 +46,10 @@ const UserContext = ({ children }) => {
         });
         if (loggedInUser) {
             if (loggedInUser?.token?.length > 2) {
-                loginUser(loggedInUser, () => navigate(Location.pathname, { replace: true }));
-            } else {
+                loginUser(loggedInUser, () => navigate(location.pathname, { replace: true }));
+            } else if (!loggedInUser.token) {
                 logoutUser();
             }
-        } else {
-            logoutUser();
         }
     }, []);
 
