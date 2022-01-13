@@ -44,6 +44,8 @@
                 td {
                     border: 0.5px solid rgba(220, 226, 238, 0.8);
                     font-size: 0.95rem;
+                    word-wrap:break-word;
+                    line-height: 15px;
                 }
                 .st-pending {
                     background: #fffbe3;

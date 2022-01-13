@@ -8,6 +8,7 @@
     "sass": "sass ./src/styles/style.scss ./src/styles/style.css -w"
   },
   "dependencies": {
+    "@iconify/react": "^3.1.0",
     "@sweetalert/with-react": "^0.1.1",
     "axios": "^0.24.0",
     "bootstrap": "^5.0.0-alpha1",
