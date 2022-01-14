@@ -86,7 +86,7 @@
 }
 
 #about_area .swiper-button-next:after {
-    content: url(../../assets/images/rightArrow.png);
+    content: url(../../../../assets/images/rightArrow.png);
 }
 
 
@@ -98,6 +98,6 @@
 }
 
 #about_area .swiper-button-prev:after {
-    content: url(../../assets/images/leftArrow.png);
+    content: url(../../../../assets/images/leftArrow.png);
     cursor: pointer;
 }
