@@ -1,8 +1,9 @@
 import React from "react";
 import MultipleDesign from "./sections/MultipleDesign";
 import VideoExplainer from "./sections/VideoExplainer";
-import SubHome from "./sections/SubHome/SubHome";
-import About from "./sections/SubHome/About";
+import OneCard from "./sections/OneCard";
+import AboutUS from "./sections/AboutUS";
+import Refference from "./sections/Refference";
 import HeroSection from "./HomeContainer/HeroSection";
 
 function HomePage() {
@@ -10,11 +11,12 @@ function HomePage() {
     <>
       <div className="py-5"></div>
       <HeroSection />
-      <SubHome />
+      <OneCard />
       <MultipleDesign />
       <VideoExplainer />
       <div className="py-5">
-        <About />
+        <Refference />
+        <AboutUS />
       </div>
     </>
   );
