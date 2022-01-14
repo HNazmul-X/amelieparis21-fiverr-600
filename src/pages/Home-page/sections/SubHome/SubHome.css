@@ -82,7 +82,7 @@
 }
 
 #whyOneCart .swiper-button-next:after {
-    content: url(../../assets/images/right.png);
+    content: url(../../../../assets/images/right.png);
     cursor: pointer;
 }
 
@@ -96,7 +96,7 @@
 }
 
 #whyOneCart .swiper-button-prev:after {
-    content: url(../../assets/images/left.png);
+    content: url(../../../../assets/images/left.png);
     cursor: pointer;
 }
 
