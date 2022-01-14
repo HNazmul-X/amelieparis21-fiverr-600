@@ -8,6 +8,7 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
     const [buttonText, setButtonText] = useState("");
     const [buttonLink, setButtonLink] = useState("");
     const [err, setErr] = useState([]);
+    const [buttonDesign, setButtonDesign] = useState({background: "", color: "", shadow: ""});
 
     const handelChange = (data) => {
         const name = data.target.name;
@@ -18,6 +19,11 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
 
         if (name === "buttonText") setButtonText(value);
         if (name === "buttonLink") return setButtonLink(value);
+
+        // 
+        if (data.target.name === "background") setButtonDesign({...buttonDesign, background: data.target.value});
+        if (data.target.name === "color") setButtonDesign({...buttonDesign, color: data.target.value});
+        if (data.target.name === "shadow") setButtonDesign({...buttonDesign, shadow: data.target.value});
     };
 
     const handelSubmit = (e) => {
@@ -33,6 +39,11 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
                     text: buttonText,
                     link: buttonLink,
                 },
+                colors: {
+                    bg: buttonDesign.background,
+                    color: buttonDesign.color,
+                    shadow: buttonDesign.shadow,
+                },
             };
         });
     };
@@ -43,7 +54,7 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
             <div className={`${open.includes(title) ? "d-block open-div" : "d-none"} ${title === "Setup Profile Button info" ? "setup-profile-button-info-area" : ""}`}>
                 <div>
                     <div className="preview-btn">
-                        <button>{buttonText || "Preivew Text"}</button>
+                        <button style={{background: `${buttonDesign.background}`, color: `${buttonDesign.color}`, boxShadow: `0px 0px 5px ${buttonDesign.shadow}`}}>{buttonText || "Preivew Text"}</button>
                     </div>
                     <form onSubmit={handelSubmit}>
                         <div className="w-100 form-floating mb-3">
@@ -61,9 +72,27 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
                         </div>
                         <div className="w-100 form-floating mb-3">
                             <input value={buttonLink} onChange={(e) => handelChange(e)} type="text" name="buttonLink" className="form-control primary-input" id="btnLink" placeholder="Button Link" />
-                            <label htmlFor="btnText">Type Button Text</label>
+                            <label htmlFor="btnText">Type Button Link</label>
                             {err === "buttonLink" && <p className="mb-0 text-center text-danger">Button Text Required</p>}
                         </div>
+
+                        <div className="d-flex justify-content-between gap-4 align-items-center px-3 py-2">
+                            <div className="text-center w-100">
+                                <input style={{width: "100%"}} type="color"  onChange={(e) => handelChange(e)} value={buttonDesign.background} name="background" /><br />
+                                <label style={{transform: "translateX(0)"}} htmlFor="">BackGround</label>
+                            </div>
+                            
+                            <div className="text-center w-100">
+                                <input style={{width: "100%"}} type="color"  onChange={(e) => handelChange(e)} value={buttonDesign.color} name="color" /><br />
+                                <label style={{transform: "translateX(0)"}} htmlFor="">Color</label>
+                            </div>
+                            
+                            <div className="text-center w-100">
+                                <input style={{width: "100%"}} type="color"  onChange={(e) => handelChange(e)} value={buttonDesign.shadow} name="shadow" /><br />
+                                <label style={{transform: "translateX(0)"}} htmlFor="">Shadow</label>
+                            </div>
+                        </div>
+
                         <div className="submit-btn">
                             <button type={"submit"}>Submit</button>
                         </div>

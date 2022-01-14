@@ -2015,6 +2015,7 @@ body {
   display: flex;
   gap: 8px;
   margin-bottom: 73px;
+  flex-wrap: wrap;
 }
 .setup-social-link .social-icon-wrapper .single-icon {
   border-radius: 4px;
@@ -2058,6 +2059,15 @@ body {
 }
 .socail-link-box .form-control {
   padding: 1rem 36px;
+}
+.socail-link-box .text-end button {
+  padding: 6px 33px;
+  border: none;
+  background-color: #255ed1;
+  border-radius: 19px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
 }
 
 #admin_login #loginInner {
@@ -2165,6 +2175,8 @@ body {
   flex-flow: wrap;
   gap: 5px;
   padding: 10px;
+  height: 240px;
+  overflow-y: auto;
   align-items: center;
 }
 .social_link_selection .social_link_selection_card .selection_card__icons-container .icon-card {
@@ -2329,7 +2341,13 @@ body {
 .profile-template-1 .contact-section .social-container .signle-social-link img {
   position: absolute;
   left: -23px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #f1f1f1;
   top: 50%;
+  object-fit: contain;
   transform: translateY(-50%);
 }
 .profile-template-1 .contact-section .social-container .signle-social-link h5 {
@@ -2358,6 +2376,11 @@ body {
   margin: auto;
   background-color: #fff;
 }
+.profile-2-conatiner .banner img {
+  aspect-ratio: 3/1.8;
+  width: 100%;
+  object-fit: cover;
+}
 .profile-2-conatiner .content {
   transform: translateY(-50px);
 }
@@ -2373,11 +2396,6 @@ body {
   height: 108px;
   border: 4px solid #fff;
   border-radius: 50%;
-}
-.profile-2-conatiner .profile_pic_area .profile_pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 .profile-2-conatiner .profile_pic_area .shear_icon_wrapper {
   position: absolute;
@@ -2432,7 +2450,31 @@ body {
   font-weight: 600;
   color: #333e63;
 }
-.profile-2-conatiner .contact-section .add-contact-button {
+.profile-2-conatiner .contact-inner {
+  padding: 0 28px;
+}
+.profile-2-conatiner .contact-inner .single-contact {
+  display: flex;
+  text-decoration: none;
+  align-items: flex-start;
+  width: 100%;
+  border-top: 0.5px solid #e0e0e0;
+  padding: 17px 0;
+}
+.profile-2-conatiner .contact-inner .single-contact svg {
+  font-size: 24px;
+  width: 24px;
+  color: #8a3efe;
+}
+.profile-2-conatiner .contact-inner .single-contact p {
+  margin-bottom: 0;
+  padding-left: 8px;
+  margin-top: -4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333e63;
+}
+.profile-2-conatiner .contact-inner .add-contact-button {
   background-image: linear-gradient(91.54deg, #8a3efe -1.94%, #4d00c4 100%);
   box-shadow: 0px 12px 36px rgba(138, 62, 254, 0.36);
   padding: 20px 0;
@@ -2461,6 +2503,7 @@ body {
 }
 .profile-template-3 .banner img {
   width: 100%;
+  object-fit: cover;
 }
 .profile-template-3 .besic-info {
   position: relative;
@@ -2477,6 +2520,16 @@ body {
 }
 .profile-template-3 .besic-info .profile-pic-container .wrapper {
   position: relative;
+}
+.profile-template-3 .besic-info .profile-pic-container .wrapper .profile-pic {
+  position: absolute;
+  top: -35px;
+  left: -2px;
+  transform: translateY(30%);
+  width: 108px;
+  height: 108px;
+  border: 2px solid #fff;
+  border-radius: 50%;
 }
 .profile-template-3 .besic-info .profile-pic-container .wrapper .share {
   position: absolute;
@@ -2629,165 +2682,141 @@ body {
   color: #fff;
 }
 
-.single-card-preview {
-  --each-card-width: 350px;
-  --each-card-height: auto;
-  --card-bg: #57697d;
-  --card-aspect-ratio: 2/1;
+.signle-card-preview {
+  padding: 75px 58px;
+}
+.signle-card-preview .image-area {
   display: flex;
-  flex-wrap: wrap;
+  gap: 20px;
+}
+.signle-card-preview .image-area .front-logo-wrapper {
+  padding: 60px 10px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 3rem;
-}
-@media screen and (min-width: 992px) {
-  .single-card-preview {
-    justify-content: space-between;
-    --each-card-width: 450px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .single-card-preview {
-    justify-content: center;
-    column-gap: 20px;
-  }
-}
-.single-card-preview .front-side {
-  border-radius: 10px;
-  width: 350px;
-  background-color: #57697d;
-  aspect-ratio: 2/1;
-  height: auto;
   position: relative;
-  z-index: 1;
-  color: white;
+  border-radius: 9px;
+  width: 50%;
   overflow: hidden;
+  box-shadow: 6px 17px 25px rgba(87, 105, 125, 0.07), 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px -6px rgba(87, 105, 125, 0.12);
 }
-@media screen and (min-width: 992px) {
-  .single-card-preview .front-side {
-    width: 450px;
-  }
+.signle-card-preview .image-area .front-logo-wrapper .front-logo {
+  max-width: 176px;
 }
-.single-card-preview .front-side .logo,
-.single-card-preview .front-side .one-card-logo,
-.single-card-preview .front-side .icon {
+.signle-card-preview .image-area .front-logo-wrapper .front-logo img {
+  width: 100%;
+}
+.signle-card-preview .image-area .front-logo-wrapper .card-name-area {
   position: absolute;
-}
-.single-card-preview .front-side .one-card-logo {
   bottom: 10px;
-  margin-bottom: 0px;
   left: 10px;
 }
-.single-card-preview .front-side .icon {
-  right: 10px;
-  top: 50%;
-  transform: translate(0, -50%) rotate(90deg);
+.signle-card-preview .image-area .front-logo-wrapper .card-name-area .card-name {
+  font-size: 32px;
+  line-height: 26px;
+  color: #fff;
+  margin-bottom: 0;
 }
-.single-card-preview .front-side .icon .iconify {
-  font-size: 30px;
+.signle-card-preview .image-area .front-logo-wrapper .card-name-area .sm-text {
+  font-size: 15px;
+  line-height: 26px;
+  margin-bottom: 0;
+  color: #fff;
 }
-.single-card-preview .front-side .logo {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 26%;
-}
-.single-card-preview .front-side .logo img {
-  width: 100%;
-  height: 100%;
-  transform: scale(var(--logo-scale));
-}
-.single-card-preview .back-side {
-  border-radius: 10px;
-  width: 350px;
-  background-color: #57697d;
-  aspect-ratio: 2/1;
-  height: auto;
-  position: relative;
-  z-index: 1;
-  color: white;
-  overflow: hidden;
-}
-@media screen and (min-width: 992px) {
-  .single-card-preview .back-side {
-    width: 450px;
-  }
-}
-.single-card-preview .back-side .logo-and-info {
-  display: flex;
-  flex-flow: column;
-}
-.single-card-preview .back-side .logo-and-info .logo {
-  width: 100%;
-  height: 145px;
-  position: relative;
-  --logo-scale:1;
-}
-.single-card-preview .back-side .logo-and-info .logo img.logo__logo {
+.signle-card-preview .image-area .front-logo-wrapper .icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(var(--logo-scale));
-  width: 39%;
+  right: 10px;
 }
-.single-card-preview .back-side .logo-and-info .info {
-  padding: 5px 10px 10px 10px;
+.signle-card-preview .image-area .front-logo-wrapper .icon svg {
+  font-size: 48px;
+  transform: rotate(90deg);
+  color: #fff;
+}
+.signle-card-preview .image-area .back-logo-wrapper {
+  width: 50%;
+  box-shadow: 6px 17px 25px rgba(87, 105, 125, 0.07), 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px -6px rgba(87, 105, 125, 0.12);
+  padding: 40px 30px 10px;
+  border-radius: 9px;
   display: flex;
-  flex-flow: column;
+  gap: 8px;
 }
-.single-card-preview .back-side .logo-and-info .info.center {
+.signle-card-preview .image-area .back-logo-wrapper .info-container {
+  width: 70% !important;
+}
+.signle-card-preview .image-area .back-logo-wrapper .info-container .name {
+  font-size: 25px;
+  line-height: 26px;
+  color: #fff;
+  margin-top: 30px;
+}
+.signle-card-preview .image-area .back-logo-wrapper .info-container .position {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  color: #fff;
+  margin-bottom: 0;
+}
+.signle-card-preview .image-area .back-logo-wrapper .info-container .phone {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #fff;
+}
+.signle-card-preview .image-area .back-logo-wrapper .back-logo img {
+  max-width: 156px;
+}
+.signle-card-preview .image-area .back-logo-wrapper .qr-code {
+  display: flex;
   align-items: center;
+  height: 100%;
+  width: 30%;
+  justify-content: center;
 }
-.single-card-preview .back-side .logo-and-info .info p {
-  margin-bottom: 0px;
-  line-height: 22px;
-}
-.single-card-preview .back-side .logo-and-info .info p.name {
-  font-size: 1.4rem;
-}
-
-.card-details {
+.signle-card-preview .card-details {
   margin-top: 65px;
+  box-shadow: 6px 17px 25px rgba(87, 105, 125, 0.07), 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px -6px rgba(87, 105, 125, 0.12);
 }
-.card-details .header {
+.signle-card-preview .card-details .header {
   background-color: #fff;
-  padding: 20px 34px;
+  padding: 23px 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  border-bottom: 1px solid #DCE2EE;
 }
-.card-details .header p {
+.signle-card-preview .card-details .header p {
   margin-bottom: 0;
   font-weight: 600;
   font-size: 26px;
   line-height: 26px;
   color: #57697d;
 }
-.card-details .header svg {
+.signle-card-preview .card-details .header svg {
   font-size: 24px;
   transition: all 0.4s linear;
 }
-.card-details .card-details-content {
-  padding: 13px 62px 80px 65px;
+.signle-card-preview .card-details .card-details-content {
+  padding: 13px 62px 50px 65px;
   background-color: #f7faff;
-  box-shadow: 6px 17px 25px rgba(87, 105, 125, 0.07), 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px -6px rgba(87, 105, 125, 0.12);
+  transition: all 0.4s linear;
 }
-.card-details .card-details-content .details-container {
+.signle-card-preview .card-details .card-details-content .details-container {
   display: flex;
   gap: 62px;
 }
-.card-details .card-details-content .details-container .single-fild {
+.signle-card-preview .card-details .card-details-content .details-container .single-fild {
   width: 100%;
   margin-bottom: 13px;
 }
-.card-details .card-details-content .details-container .single-fild p {
+.signle-card-preview .card-details .card-details-content .details-container .single-fild p {
   margin-bottom: 0;
   color: #57697d;
   font-weight: 600;
   font-size: 15px;
   line-height: 26px;
 }
-.card-details .card-details-content .details-container .single-fild input {
+.signle-card-preview .card-details .card-details-content .details-container .single-fild input {
   border: 1px solid #dce2ee;
   outline: none;
   background-color: #fff;
