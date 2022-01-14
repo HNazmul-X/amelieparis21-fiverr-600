@@ -1,17 +1,21 @@
 import React from "react";
-import HeroSection from "./HomeContainer/HeroSection";
 import MultipleDesign from "./sections/MultipleDesign";
 import VideoExplainer from "./sections/VideoExplainer";
+import SubHome from "./sections/SubHome/SubHome";
+import About from "./sections/SubHome/About";
+import HeroSection from "./HomeContainer/HeroSection";
 
 function HomePage() {
   return (
     <>
-      <div className="py-5">
-        <HeroSection />
-      </div>
+      <div className="py-5"></div>
+      <HeroSection />
+      <SubHome />
       <MultipleDesign />
       <VideoExplainer />
-      <div className="py-5"></div>
+      <div className="py-5">
+        <About />
+      </div>
     </>
   );
 }
