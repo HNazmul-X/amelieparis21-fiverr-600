@@ -10,10 +10,10 @@ import "swiper/css/navigation";
 import "./slider.css";
 
 // import Swiper core and required modules
-import SwiperCore, { Navigation } from "swiper";
+import SwiperCore, { Navigation, Autoplay } from "swiper";
 
 // install Swiper modules
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Autoplay]);
 
 const HeroSlider = () => {
   const [sliderData, setSliderData] = useState(HeroSliderData);
@@ -30,55 +30,61 @@ const HeroSlider = () => {
         />
         <h2>join the One Card pro community</h2>
       </div>
-      <div className="hero-slider__container">
-        <div className="slick-slider">
-          <div className="slick-slide">
-            <Swiper
-              breakpoints={{
-                // when window width is <= 320px
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 100,
-                },
-                // when window width is <= 480px
-                480: {
-                  slidesPerView: 1,
-                  spaceBetween: 150,
-                },
+      <div id="customSwiper">
+        <div className="hero-slider__container">
+          <div className="swipe-slider">
+            <div className="swipe-slide">
+              <Swiper
+                breakpoints={{
+                  // when window width is <= 320px
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 100,
+                  },
+                  // when window width is <= 480px
+                  480: {
+                    slidesPerView: 1,
+                    spaceBetween: 150,
+                  },
 
-                // when window width is <= 640px
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 140,
-                },
+                  // when window width is <= 640px
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 140,
+                  },
 
-                // when window width is <= 768px
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 100,
-                },
-              }}
-              slidesPerView={3}
-              spaceBetween={100}
-              slidesPerGroup={1}
-              loop={true}
-              loopFillGroupWithBlank={true}
-              navigation={true}
-              className="mySwiper"
-            >
-              {sliderData.map((slider, index) => (
-                <SwiperSlide key={index}>
-                  {({ isNext }) => (
-                    <div className={`${isNext && "active-slide"} slide-item`}>
-                      <div className="slide-item__image">
-                        <img src={slider.img} alt="slider" />
+                  // when window width is <= 768px
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 100,
+                  },
+                }}
+                slidesPerView={3}
+                spaceBetween={100}
+                slidesPerGroup={1}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                navigation={true}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                }}
+                className="mySwiper"
+              >
+                {sliderData.map((slider, index) => (
+                  <SwiperSlide key={index}>
+                    {({ isNext }) => (
+                      <div className={`${isNext && "active-slide"} slide-item`}>
+                        <div className="slide-item__image">
+                          <img src={slider.img} alt="slider" />
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </SwiperSlide>
-              ))}
-              ;
-            </Swiper>
+                    )}
+                  </SwiperSlide>
+                ))}
+                ;
+              </Swiper>
+            </div>
           </div>
         </div>
       </div>

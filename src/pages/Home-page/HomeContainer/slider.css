@@ -1,9 +1,9 @@
-#heroCustomSlider .swiper {
+#customSwiper .swiper {
   width: 100%;
   height: 100%;
 }
 
-#heroCustomSlider .swiper-slide {
+#customSwiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   height: 600px;
@@ -22,18 +22,17 @@
   align-items: center;
 }
 
-#heroCustomSlider .swiper-slide img {
+#customSwiper .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#heroCustomSlider .mySwiper {
-  /* padding: 0px 100px; */
+#customSwiper .mySwiper {
   padding: 0px 100px;
 }
 
-#heroCustomSlider .mySwiper .swiper-button-next {
+#customSwiper .mySwiper .swiper-button-next {
   background-image: url("../../../assets/images/next.svg");
   background-repeat: no-repeat;
   background-size: 60% auto;
@@ -42,10 +41,10 @@
   border-radius: 50%;
   padding: 30px;
 }
-#heroCustomSlider .mySwiper .swiper-button-next::after {
+#customSwiper .mySwiper .swiper-button-next::after {
   display: none;
 }
-#heroCustomSlider .mySwiper .swiper-button-prev {
+#customSwiper .mySwiper .swiper-button-prev {
   background-image: url("../../../assets/images/prev.svg");
   background-repeat: no-repeat;
   background-size: 60% auto;
@@ -54,13 +53,13 @@
   border-radius: 50%;
   padding: 30px;
 }
-#heroCustomSlider .mySwiper .swiper-button-prev::after {
+#customSwiper .mySwiper .swiper-button-prev::after {
   display: none;
 }
-#heroCustomSlider .mySwiper .active-slide {
+#customSwiper .mySwiper .active-slide {
   transform: scale(1.3);
 }
-#heroCustomSlider .slide-item {
+#customSwiper .slide-item {
   background: #fff;
   width: 400px;
   height: auto;
