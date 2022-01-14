@@ -20,36 +20,30 @@ import SingleCardPreview from "../Dashboard/Pages/CardRequeste/Releted/SingleCar
 import AllRequest from "../Dashboard/Pages/ProfileRequest/Subpages/AllRequest/AllRequest";
 import ProfileCreation from "../Dashboard/Pages/ProfileRequest/Subpages/ProfileCreation/ProfileCreation";
 import PlayGround from "../pages/playgournd/playground";
-import HomePage from "../pages/Home-page/HomePage";
+import HomePage from './../pages/Home-page/HomePage';
 
 const NavbarRouter = () => {
   return (
     <Routes>
       {/* Admin Login */}
 
-      {/* Navbar Layout Router */}
-      <Route path="/" element={<Navbar />}>
-        <Route index element={<HomePage />} />
-        <Route path="/playground" element={<PlayGround />} />
-        <Route path="login" element={<Login />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route
-          path="/verify-profile/:verificationId/:code/:userId"
-          element={<Verification />}
-        />
-        <Route
-          path="/successfully-profile/:successfullyId"
-          element={<Successfully />}
-        />
-        {/* navbar layout Private route */}
-        <Route element={<PrivateRoute />}>
-          <Route path=":id" element={<h1>Hi Iam abla page</h1>} />
-          <Route path="about" element={<h1>Hi Iam about page</h1>} />
-          <Route path="create-card" element={<CreateCardPage />} />
-          <Route path="/card-status/:cardId" element={<CardStatus />} />
-          <Route path="faq" element={<FaqPage />} />
-        </Route>
-      </Route>
+            {/* Navbar Layout Router */}
+            <Route path="/" element={<Navbar />}>
+                <Route index element={<HomePage />} />
+                <Route path="/playground" element={<PlayGround />} />
+                <Route path="login" element={<Login />} />
+                <Route path="signup" element={<SignUp />} />
+                <Route path="/verify-profile/:verificationId/:code/:userId" element={<Verification />} />
+                <Route path="/successfully-profile/:successfullyId" element={<Successfully />} />
+                {/* navbar layout Private route */}
+                <Route element={<PrivateRoute />}>
+                    <Route path=":id" element={<h1>Hi Iam abla page</h1>} />
+                    <Route path="about" element={<h1>Hi Iam about page</h1>} />
+                    <Route path="create-card" element={<CreateCardPage />} />
+                    <Route path="/card-status/:cardId" element={<CardStatus />} />
+                    <Route path="faq" element={<FaqPage />} />
+                </Route>
+            </Route>
 
       {/* Dashboard Layout Router */}
       <Route path="/admin" element={<DashboardLayout />}>
