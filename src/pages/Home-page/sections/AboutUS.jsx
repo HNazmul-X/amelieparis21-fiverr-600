@@ -27,7 +27,7 @@ const AboutUS = () => {
                 </div>
 
                 <Swiper 
-                    spaceBetween={50}
+                    spaceBetween={30}
                     slidesPerView={3}
                     onSlideChange={() => console.log('slide change')}
                     // onSwiper={(swiper) => console.log(swiper)}
@@ -41,48 +41,6 @@ const AboutUS = () => {
                     autoplayDisableOnInteraction={false}
                     cssMode={true} navigation={true} pagination={true} mousewheel={true} keyboard={true}
                 >
-                    <SwiperSlide className='slider_cart'>
-                        <div className="cartInfo">
-                            <div><InlineIcon className='userIcon' icon={"carbon:user-avatar-filled-alt"} /></div>
-                                
-                            <div className="personalInfo">
-                                <h6>Nam Janinah <span className='rating'>4.5</span></h6>
-
-                                <div className="starIcon">
-                                    <InlineIcon icon={"ant-design:star-filled"} />
-                                    <InlineIcon icon={"ant-design:star-filled"} />
-                                    <InlineIcon icon={"ant-design:star-filled"} />
-                                    <InlineIcon icon={"ant-design:star-filled"} />
-                                    <InlineIcon icon={"ant-design:star-outlined"} />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="cartText">
-                            <p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusa</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className='slider_cart'>
-                        <div className="cartInfo">
-                            <div><InlineIcon className='userIcon' icon={"carbon:user-avatar-filled-alt"} /></div>
-                                
-                            <div className="personalInfo">
-                                <h6>Nam Janinah <span className='rating'>4.5</span></h6>
-
-                                <div className="starIcon">
-                                    <InlineIcon icon={"ant-design:star-filled"} />
-                                    <InlineIcon icon={"ant-design:star-filled"} />
-                                    <InlineIcon icon={"ant-design:star-filled"} />
-                                    <InlineIcon icon={"ant-design:star-filled"} />
-                                    <InlineIcon icon={"ant-design:star-outlined"} />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="cartText">
-                            <p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusa</p>
-                        </div>
-                    </SwiperSlide>
                     <SwiperSlide className='slider_cart'>
                         <div className="cartInfo">
                             <div><InlineIcon className='userIcon' icon={"carbon:user-avatar-filled-alt"} /></div>

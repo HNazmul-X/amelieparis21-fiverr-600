@@ -179,7 +179,7 @@ $light-gray: #dce2ee;
     }
     .refference_content {
         h2 {
-            color: #fff;
+            color: $white;
             padding-bottom: 15px;
             font-family: Josefin Sans;
             font-style: normal;
@@ -190,14 +190,14 @@ $light-gray: #dce2ee;
             word-spacing: 5px;
         }
         p {
-            color: #fff;
+            color: $white;
             padding-bottom: 25px;
         }
         .refferenceBtn {
             font-size: 18px;
             line-height: 26px;
             letter-spacing: 0.02em;
-            color: #FFFFFF;
+            color: $white;
             background-color: #255ED1;
             border-radius: 5px;
             padding: 8px 20px;
@@ -229,6 +229,7 @@ $light-gray: #dce2ee;
 // AboutUS.jsx file sass
 #about_area {
     padding: 30px 0 20px;
+    overflow: hidden;
     .aboutTop {
         text-align: center;
         padding-bottom: 60px;
@@ -238,9 +239,9 @@ $light-gray: #dce2ee;
         }
     }
     .slider_cart {
-        background: #fff;
+        background: $white;
         border-radius: 6px;
-        box-shadow: 0 0 10px #ddd;
+        box-shadow: 0 0 10px $grey-200;
         padding: 15px 25px;
         margin-bottom: 100px;
         .cartInfo {
@@ -256,14 +257,14 @@ $light-gray: #dce2ee;
                     font-size: 16px;
                     .rating {
                         font-size: 11px;
-                        color: #FFD178;
-                        background: #57697D;
+                        color: $yellow-200;
+                        background: $blue-grey;
                         border-radius: 40px;
                         padding: 1px 7px;
                     }
                 }
                 .starIcon {
-                    color: #FFA901;
+                    color: $yellow-400;
                 }
             }
         }
