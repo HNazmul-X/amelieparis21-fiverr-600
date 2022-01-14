@@ -9,7 +9,7 @@
         background: $white;
         overflow: hidden;
 
-        --menubar-width: 280px;
+        --menubar-width: 230px;
         --navbar-height: 70px;
 
         .dashboard__layout__side__menu__bar {
@@ -102,7 +102,7 @@
                     width: 85%;
                     margin: auto;
                     justify-content: space-between;
-                    padding: 15px 0;
+                    padding: 10px 0;
                     align-items: center;
 
                     .left {
@@ -112,21 +112,21 @@
                         text-decoration: none;
                         .title {
                             margin-bottom: 0;
-                            font-size: 19px;
+                            font-size: 1rem;
                             line-height: 26px;
                             font-weight: 400;
                             color: $blue-grey;
                             transition: all 0.3s linear;
                         }
                         svg {
-                            font-size: 30px;
+                            font-size: 20px;
                             margin-right: 10px;
                             color: $primary-300;
                             transition: all 0.3s linear;
                         }
                     }
                     .right-arrow {
-                        font-size: 22px;
+                        font-size: 17px;
                         color: $primary-400;
                         transition: all 0.3s linear;
                     }

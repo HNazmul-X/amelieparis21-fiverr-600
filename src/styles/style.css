@@ -1549,7 +1549,7 @@ body {
   flex-wrap: wrap;
   background: #fff;
   overflow: hidden;
-  --menubar-width: 280px;
+  --menubar-width: 230px;
   --navbar-height: 70px;
 }
 #admin_panel_dashboard .layout .dashboard__layout__side__menu__bar {
@@ -1641,7 +1641,7 @@ body {
   width: 85%;
   margin: auto;
   justify-content: space-between;
-  padding: 15px 0;
+  padding: 10px 0;
   align-items: center;
 }
 .deshbord-menus-section .menu-container .single-menu-section .single-menu-container .menu-title-container .left {
@@ -1652,20 +1652,20 @@ body {
 }
 .deshbord-menus-section .menu-container .single-menu-section .single-menu-container .menu-title-container .left .title {
   margin-bottom: 0;
-  font-size: 19px;
+  font-size: 1rem;
   line-height: 26px;
   font-weight: 400;
   color: #57697d;
   transition: all 0.3s linear;
 }
 .deshbord-menus-section .menu-container .single-menu-section .single-menu-container .menu-title-container .left svg {
-  font-size: 30px;
+  font-size: 20px;
   margin-right: 10px;
   color: #6c9dff;
   transition: all 0.3s linear;
 }
 .deshbord-menus-section .menu-container .single-menu-section .single-menu-container .menu-title-container .right-arrow {
-  font-size: 22px;
+  font-size: 17px;
   color: #447ef2;
   transition: all 0.3s linear;
 }
@@ -1771,6 +1771,8 @@ body {
 .card-requested-table-section .my-table tbody tr td {
   border: 0.5px solid rgba(220, 226, 238, 0.8);
   font-size: 0.95rem;
+  word-wrap: break-word;
+  line-height: 15px;
 }
 .card-requested-table-section .my-table tbody tr .st-pending {
   background: #fffbe3;
