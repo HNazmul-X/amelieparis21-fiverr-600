@@ -1,1 +1,119 @@
-@use  "../util" as *;
+@use "../util" as *;
+
+$light-gray: #dce2ee;
+
+.multiple-design-section {
+  position: relative;
+  padding: 115px 0 99px;
+  background-color: $light-gray;
+  .top-icon-area {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 147px;
+    height: 147px;
+    border: 2px solid $blue-grey;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: $white;
+    top: -55px;
+    transform: translateX(-50%);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h3 {
+    font-size: 51px;
+    color: $blue-grey;
+    text-align: center;
+    margin-bottom: 89px;
+  }
+  .image-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 85px;
+    img {
+      max-width: 210px;
+      width: 100%;
+      //   background-color:  $blue-grey;
+      &:nth-child(2) {
+        margin-top: 45px;
+      }
+      &:nth-child(3) {
+        margin-top: 90px;
+      }
+    }
+  }
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+    margin-top: 38px;
+    .icon {
+      width: 74px;
+      height: 74px;
+      background-color: $primary-300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      svg {
+        font-size: 25px;
+        color: $white;
+      }
+    }
+  }
+}
+
+.video-explainer-section {
+  position: relative;
+  padding: 115px 0 99px;
+  background-color: $white;
+  padding: 35px;
+  .top-icon-wrapper{
+    display: flex;
+    align-items: center;
+    justify-self: unset;
+  }
+  .top-icon-area { 
+    width: 147px;
+    height: 147px;
+    border: 2px solid $blue-grey;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: $white;
+    top: -55px;
+    transform: translateX(-50%);
+
+    img {
+      width: 100%;
+    }
+  }
+  .video-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}

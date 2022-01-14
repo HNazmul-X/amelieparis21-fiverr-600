@@ -20,6 +20,7 @@ import SingleCardPreview from "../Dashboard/Pages/CardRequeste/Releted/SingleCar
 import AllRequest from "../Dashboard/Pages/ProfileRequest/Subpages/AllRequest/AllRequest";
 import ProfileCreation from "../Dashboard/Pages/ProfileRequest/Subpages/ProfileCreation/ProfileCreation";
 import PlayGround from "../pages/playgournd/playground";
+import HomePage from './../pages/Home-page/HomePage';
 
 const NavbarRouter = () => {
     return (
@@ -28,7 +29,7 @@ const NavbarRouter = () => {
 
             {/* Navbar Layout Router */}
             <Route path="/" element={<Navbar />}>
-                <Route index element={<h1>Hi Iam Home page</h1>} />
+                <Route index element={<HomePage />} />
                 <Route path="/playground" element={<PlayGround />} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />

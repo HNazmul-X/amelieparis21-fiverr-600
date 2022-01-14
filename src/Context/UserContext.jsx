@@ -13,6 +13,7 @@ const UserContext = ({ children }) => {
 
     const loginUser = (loggedInUser = {}, callback) => {
         if (!Object.values(loggedInUser).length > 0) {
+            logoutUser(() => navigate("/login", { replace: true }));
             throw new Error("please provide new user Data to Login");
         }
         loggedInUser.isLoggedIn = true;
@@ -32,7 +33,7 @@ const UserContext = ({ children }) => {
     const logoutUser = (callback) => {
         setUser({});
         cookie.deleteCookie("token");
-        navigate("/login", { replace: true });
+        cookie.deleteCookie("userId");
         if (callback) {
             callback();
         }
@@ -44,12 +45,15 @@ const UserContext = ({ children }) => {
         } = await axios.post("http://localhost:8080/api/auth/verify-token", {
             token: cookie.getCookie("token"),
         });
+        console.log()
         if (loggedInUser) {
             if (loggedInUser?.token?.length > 2) {
                 loginUser(loggedInUser, () => navigate(location.pathname, { replace: true }));
             } else if (!loggedInUser.token) {
                 logoutUser();
             }
+        } else {
+           logoutUser()
         }
     }, []);
 

@@ -1,0 +1,208 @@
+#whyOneCart {
+    padding: 20px 0 70px;
+}
+
+#whyOneCart .oneCart_top {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+#whyOneCart .oneCart_top img {
+    width: 100px;
+    padding-bottom: 6px;
+}
+
+#whyOneCart .oneCart_top h2 {
+    color: #000;
+}
+
+#whyOneCart .oneCart_slider .content_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 25px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#whyOneCart .oneCart_slider .content_area:first-child {
+    margin-left: 25px;
+    box-shadow: 0 0 10px 1px #ddd;
+}
+
+#whyOneCart .oneCart_slider .content_area p {
+    margin-bottom: 0;
+}
+
+#whyOneCart .oneCart_slider .image_area {
+    text-align: right;
+}
+
+
+/* ---------------------------------------------------------------------------------------------- */
+
+
+/* custom pagination slider css */
+
+#whyOneCart .swiper-horizontal>#whyOneCart .swiper-pagination-bullets,
+#whyOneCart .swiper-pagination-bullets.swiper-pagination-horizontal,
+#whyOneCart .swiper-pagination-custom,
+#whyOneCart .swiper-pagination-fraction {
+    bottom: 75px !important;
+    left: -430px !important;
+}
+
+#whyOneCart .swiper-pagination-bullet-active {
+    background: #85A0BF !important;
+}
+
+#whyOneCart .swiper-pagination-bullet {
+    width: 13px !important;
+    height: 13px !important;
+    background: #fff !important;
+    border: 1px solid #85A0BF;
+}
+
+#whyOneCart .swiper-pagination-bullet-active {
+    background: #85A0BF !important;
+}
+
+
+/* right icon next */
+
+#whyOneCart .swiper-button-next {
+    right: auto;
+    left: 450px;
+    top: 510px;
+    cursor: pointer;
+}
+
+#whyOneCart .swiper-button-next:after {
+    content: url(../../assets/images/right.png);
+    cursor: pointer;
+}
+
+
+/* left icon prev */
+
+#whyOneCart .swiper-button-prev {
+    left: 300px;
+    top: 510px;
+    cursor: pointer;
+}
+
+#whyOneCart .swiper-button-prev:after {
+    content: url(../../assets/images/left.png);
+    cursor: pointer;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+#refference_area {
+    background: #85A0BF;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+#refference_area::before {
+    position: absolute;
+    content: "";
+    z-index: 1;
+    bottom: -61px;
+    right: -43px;
+    width: 120px;
+    height: 150px;
+    background: url(../../assets/images/round.png) no-repeat;
+    background-size: contain;
+}
+
+#refference_area .refference_content h2 {
+    color: #fff;
+    padding-bottom: 15px;
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 62px;
+    line-height: 74px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+
+#refference_area .refference_content p {
+    color: #fff;
+    padding-bottom: 25px;
+}
+
+#refference_area .refference_content .refferenceBtn {
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    background-color: #255ED1;
+    border-radius: 5px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+#refference_area .refference_img {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+#refference_area .refference_img img {
+    width: 270px;
+    margin-bottom: -80px;
+}
+
+#refference_area .refference_img::before {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 650px;
+    z-index: -1;
+    top: 0;
+    left: -20px;
+    background: url(../../assets/images/Vector1.png) no-repeat;
+    background-size: contain;
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
+
+
+/* responsive code  */
+
+@media (min-width: 481px) and (max-width: 768px) {}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #whyOneCart .oneCart_slider .content_area:first-child {
+        margin-left: 0;
+    }
+    #whyOneCart .oneCart_slider .image_area {
+        margin-bottom: 200px;
+    }
+    /* recode */
+    #whyOneCart .swiper-horizontal>#whyOneCart .swiper-pagination-bullets,
+    #whyOneCart .swiper-pagination-bullets.swiper-pagination-horizontal,
+    #whyOneCart .swiper-pagination-custom,
+    #whyOneCart .swiper-pagination-fraction {
+        bottom: 130px !important;
+        left: 0 !important;
+    }
+    #whyOneCart .swiper-button-next {
+        left: 0;
+        top: 1530;
+    }
+    #whyOneCart .swiper-button-prev {
+        left: 230px;
+        top: 1530px;
+    }
+}

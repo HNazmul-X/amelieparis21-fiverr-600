@@ -7,11 +7,13 @@ import { SecureFetch } from "../../../../../Util/SecureFetch";
 const AllRequest = () => {
     const navigate = useNavigate()
     const [allProfileData, setAllProfileData] = useState([]);
+    console.log(allProfileData);
 
     useEffect(async () => {
         try {
             const data = await SecureFetch.get("http://localhost:8080/api/profile/all-profile");
             setAllProfileData(data);
+            console.log("data", data);
         } catch (err) {
             swal("Error Ocurred", err.message, "error");
         }

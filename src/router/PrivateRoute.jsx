@@ -10,9 +10,8 @@ const PrivateRoute = () => {
     const getCookie = new GetCookie();
     const jwtToken = getCookie.getCookie("token");
     const userContextEmpty = Object.values(auth?.user);
-    const navigate = useNavigate();
 
-    if (auth?.user?.isLoggedIn) {
+    if (auth?.user?.isLoggedIn && Object.keys(auth.user).keys.length > 0) {
         return <Outlet />;
     } else {
         if (userContextEmpty && jwtToken?.length > 2) {
