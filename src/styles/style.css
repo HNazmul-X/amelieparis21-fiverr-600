@@ -547,7 +547,7 @@ body {
 }
 
 #whyOneCart {
-  padding: 20px 0 70px;
+  padding: 20px 0;
 }
 #whyOneCart .oneCart_top {
   text-align: center;
@@ -580,6 +580,12 @@ body {
   margin-left: 25px;
   box-shadow: 0 0 10px 1px #e7e7e9;
 }
+@media screen and (max-width: 576px) {
+  #whyOneCart .oneCart_slider .content_area:first-child {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 #whyOneCart .oneCart_slider .content_area p {
   margin-bottom: 0;
 }
@@ -588,6 +594,11 @@ body {
 }
 #whyOneCart .oneCart_slider .image_area img {
   height: 530px;
+}
+@media screen and (max-width: 576px) {
+  #whyOneCart .oneCart_slider .image_area {
+    text-align: center;
+  }
 }
 
 #refference_area {
@@ -619,9 +630,29 @@ body {
   letter-spacing: 1px;
   word-spacing: 5px;
 }
+@media screen and (max-width: 768px) {
+  #refference_area .refference_content h2 {
+    letter-spacing: normal;
+    word-spacing: normal;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #refference_area .refference_content h2 {
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    margin-bottom: 30px;
+  }
+}
 #refference_area .refference_content p {
   color: #fff;
   padding-bottom: 25px;
+}
+@media screen and (max-width: 576px) {
+  #refference_area .refference_content p {
+    text-align: left;
+  }
 }
 #refference_area .refference_content .refferenceBtn {
   font-size: 18px;
@@ -632,6 +663,12 @@ body {
   border-radius: 5px;
   padding: 8px 20px;
   cursor: pointer;
+}
+@media screen and (max-width: 576px) {
+  #refference_area .refference_content {
+    text-align: center;
+    margin-bottom: 80px;
+  }
 }
 #refference_area .refference_img {
   position: relative;
@@ -649,9 +686,21 @@ body {
   background: url(../assets/images/Vector1.png) no-repeat;
   background-size: contain;
 }
+@media screen and (max-width: 768px) {
+  #refference_area .refference_img::before {
+    top: 70px;
+    left: -60px;
+  }
+}
 #refference_area .refference_img img {
   width: 270px;
   margin-bottom: -80px;
+}
+@media screen and (max-width: 768px) {
+  #refference_area .refference_img img {
+    width: 330px;
+    margin-left: -40px;
+  }
 }
 
 #about_area {

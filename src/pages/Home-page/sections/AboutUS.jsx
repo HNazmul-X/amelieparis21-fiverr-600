@@ -27,8 +27,28 @@ const AboutUS = () => {
                 </div>
 
                 <Swiper 
-                    spaceBetween={30}
-                    slidesPerView={3}
+                    breakpoints={{
+                        320: {
+                            spaceBetween: 60,
+                            slidesPerView: 1,
+                        },
+                        480: {
+                            slidesPerView: 1,
+                            spaceBetween: 60,
+                        },
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 150,
+                        },
+                        768: { 
+                            slidesPerView: 2,
+                            spaceBetween: 60,
+                        },
+                        980: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        }
+                      }}
                     onSlideChange={() => console.log('slide change')}
                     // onSwiper={(swiper) => console.log(swiper)}
                     modules={[Controller, Thumbs]} 
@@ -36,9 +56,12 @@ const AboutUS = () => {
                     onSwiper={(setControlledSwiper, setThumbsSwiper)}
                     watchSlidesProgress
                     parallax={true}
-                    autoplay={5000}
-                    speed={800}
-                    autoplayDisableOnInteraction={false}
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    autoplay={{
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    }}
                     cssMode={true} navigation={true} pagination={true} mousewheel={true} keyboard={true}
                 >
                     <SwiperSlide className='slider_cart'>

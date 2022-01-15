@@ -7,16 +7,15 @@ import Refference from './sections/Refference';
 
 function HomePage() {
     return (
-        <><div className='py-5'>
-
-        </div>
-            <OneCard />
-            <MultipleDesign />
-            <VideoExplainer />
+        <>
             <div className='py-5'>
-            <Refference />
-            <AboutUS />
-        </div>
+                <OneCard />
+                <MultipleDesign />
+                <VideoExplainer />
+                <div className='py-5' />
+                <Refference />
+                <AboutUS />
+            </div>
         </>
     )
 }

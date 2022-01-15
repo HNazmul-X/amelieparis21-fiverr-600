@@ -116,7 +116,7 @@ $light-gray: #dce2ee;
 
 // OneCard.jsx file sass
 #whyOneCart {
-    padding: 20px 0 70px;
+    padding: 20px 0;
     .oneCart_top {
         text-align: center;
         margin-bottom: 80px;
@@ -146,6 +146,12 @@ $light-gray: #dce2ee;
                 margin-left: 25px;
                 box-shadow: 0 0 10px 1px $grey-200;
             }
+            @include sm {
+                &:first-child {
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+            }
             p {
                 margin-bottom: 0;
             }
@@ -154,6 +160,11 @@ $light-gray: #dce2ee;
             text-align: right;
             img {
                 height: 530px;
+            }
+        }
+        @include sm {
+            .image_area {
+                text-align: center;
             }
         }
     }
@@ -189,9 +200,29 @@ $light-gray: #dce2ee;
             letter-spacing: 1px;
             word-spacing: 5px;
         }
+        @include md {
+            h2 {
+                letter-spacing: normal;
+                word-spacing: normal;
+                margin-bottom: 30px;
+            }
+        }
+        @include sm {
+            h2 {
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                margin-bottom: 30px;
+            }
+        }
         p {
             color: $white;
             padding-bottom: 25px;
+        }
+        @include sm {
+            p {
+                text-align: left;
+            }
         }
         .refferenceBtn {
             font-size: 18px;
@@ -202,6 +233,12 @@ $light-gray: #dce2ee;
             border-radius: 5px;
             padding: 8px 20px;
             cursor: pointer;
+        }
+    }
+    @include sm {
+        .refference_content {
+            text-align: center;
+            margin-bottom: 80px;
         }
     }
     .refference_img {
@@ -219,9 +256,21 @@ $light-gray: #dce2ee;
             background: url(../assets/images/Vector1.png) no-repeat;
             background-size: contain;
         }
+        @include md {
+            &::before {
+                top: 70px;
+                left: -60px;
+            }
+        }
         img {
             width: 270px;
             margin-bottom: -80px;
+        }
+        @include md {
+            img {
+                width: 330px;
+                margin-left: -40px;
+            }
         }
     }
 }
