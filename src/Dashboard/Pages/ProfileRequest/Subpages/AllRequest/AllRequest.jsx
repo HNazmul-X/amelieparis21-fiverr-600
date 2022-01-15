@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { SecureFetch } from "../../../../../Util/SecureFetch";
 
 const AllRequest = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [allProfileData, setAllProfileData] = useState([]);
 
     useEffect(async () => {
         try {
-            const data = await SecureFetch.get("http://localhost:8080/api/profile/all-profile");
+            const data = await SecureFetch.get("https://onecard-pro.herokuapp.com/api/profile/all-profile");
             setAllProfileData(data);
         } catch (err) {
             swal("Error Ocurred", err.message, "error");
@@ -35,6 +35,7 @@ const AllRequest = () => {
 
                             <tbody>
                                 {allProfileData?.map((data, index) => {
+                                    console.log(data);
                                     return (
                                         <tr key={index}>
                                             <td>{data?.user.username}</td>
@@ -51,6 +52,7 @@ const AllRequest = () => {
                                                     className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"
                                                     icon={"fluent:open-folder-16-filled"}
                                                 />
+                                                {data?.user?.profileTemplate ? <InlineIcon className="p-1 fs-3 alert-info btn mx-2 rounded-pill" icon={"bx:bx-expand-alt"} /> : null}
                                             </td>
                                         </tr>
                                     );

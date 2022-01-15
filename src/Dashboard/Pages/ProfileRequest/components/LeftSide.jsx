@@ -25,7 +25,7 @@ function LeftSide() {
 
     // useEffects
     useEffect(async () => {
-        const x = await SecureFetch.get(`http://localhost:8080/api/user/get-user-by-profileId/${profileId}?select=_id`);
+        const x = await SecureFetch.get(`https://onecard-pro.herokuapp.com/api/user/get-user-by-profileId/${profileId}?select=_id`);
         setTemplatedUser(x);
         if (!x.user?.profileTemplate) {
             resetProfileContext();
@@ -125,7 +125,7 @@ function LeftSide() {
                 const imageFormData = new FormData();
                 imageFormData.append("coverPic", profileContext?.userPics?.cover?.file);
                 imageFormData.append("profilePic", profileContext?.userPics?.profile?.file);
-                const data = await SecureFetch.post(`http://localhost:8080/api/profile-template/upload-template-images`, imageFormData);
+                const data = await SecureFetch.post(`https://onecard-pro.herokuapp.com/api/profile-template/upload-template-images`, imageFormData);
                 if (data.error) {
                     swal("Error", data?.error, "error");
                 } else {
@@ -147,7 +147,7 @@ function LeftSide() {
                             link: profileContext?.buttonInfo?.info?.link || "",
                         },
                     };
-                    const returnedData = await SecureFetch.post(`http://localhost:8080/api/profile-template/create-profile-template/${templatedUser?.user?._id}`, templateDataGathering);
+                    const returnedData = await SecureFetch.post(`https://onecard-pro.herokuapp.com/api/profile-template/create-profile-template/${templatedUser?.user?._id}`, templateDataGathering);
 
                     if (returnedData.error) {
                         swal("Failed To create Template", returnedData.error, "error");
