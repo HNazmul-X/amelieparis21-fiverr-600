@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import about from "../../../assets/images/about.png";
 import { Controller, Thumbs  } from 'swiper';
 import SwiperCore, {
-    Navigation,Pagination,Mousewheel,Keyboard
+    Navigation,Pagination,Mousewheel,Keyboard,Autoplay
 } from 'swiper';
 import { InlineIcon } from '@iconify/react';
 
@@ -12,7 +12,7 @@ import 'swiper/css';
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 
-SwiperCore.use([Navigation,Pagination,Mousewheel,Keyboard]);
+SwiperCore.use([Navigation,Pagination,Mousewheel,Keyboard,Autoplay]);
 
 const AboutUS = () => {
     const [controlledSwiper, setControlledSwiper] = useState(null);

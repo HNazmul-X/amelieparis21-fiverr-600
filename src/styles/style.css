@@ -433,6 +433,131 @@ body {
   color: #fff;
 }
 
+.hero-section {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+.hero-section .hero-container {
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.hero-section .hero-container .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 576px) {
+  .hero-section .hero-container .hero-image {
+    width: calc(100% - 2rem);
+    padding: 0px 1rem;
+  }
+}
+.hero-section .hero-container .hero-text {
+  margin: 0 auto;
+}
+@media screen and (min-width: 1200px) {
+  .hero-section .hero-container .hero-text {
+    align-self: flex-start;
+    padding: 100px 0px;
+  }
+}
+.hero-section .hero-container .hero-text h2 {
+  font-style: normal;
+  display: inline-block;
+  font-weight: bold;
+  font-size: calc(2.5rem + 1vw);
+  line-height: 30px;
+  color: #15316a;
+  margin-bottom: 1.5rem;
+}
+.hero-section .hero-container .hero-text p {
+  font-size: 20px;
+  max-width: 430px;
+  line-height: 25px;
+  color: #000000;
+}
+@media screen and (max-width: 576px) {
+  .hero-section .hero-container {
+    gap: 2rem;
+    text-align: center;
+  }
+  .hero-section .hero-container .hero-text h2 {
+    font-size: calc(3.5rem - 2.5vw);
+    line-height: 2.3rem;
+  }
+  .hero-section .hero-container .hero-text p {
+    max-width: 100%;
+    text-align: justify;
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero-section .hero-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.hero-section .hero-slider {
+  width: 100%;
+  height: 793px;
+  position: relative;
+}
+.hero-section .hero-slider .slideHeaderIcon .slideHeaderIconImage {
+  position: absolute;
+  top: 8%;
+  left: 45%;
+  transform: translateY(-45%) translateX(-8%);
+  z-index: 1;
+}
+@media screen and (max-width: 768px) {
+  .hero-section .hero-slider .slideHeaderIcon .slideHeaderIconImage {
+    top: 7%;
+    left: 40%;
+    transform: translateY(-40%) translateX(-7%);
+  }
+}
+@media screen and (max-width: 576px) {
+  .hero-section .hero-slider .slideHeaderIcon .slideHeaderIconImage {
+    top: 5%;
+    left: 38%;
+    transform: translateY(-38%) translateX(-5%);
+  }
+}
+.hero-section .hero-slider .slideHeaderIcon h2 {
+  text-align: center;
+  font-size: calc(1.5rem + 1vw);
+  position: absolute;
+  color: #f0f6ff;
+  z-index: 1;
+  top: 18%;
+  left: 28%;
+}
+@media screen and (max-width: 768px) {
+  .hero-section .hero-slider .slideHeaderIcon h2 {
+    top: 18%;
+    left: 20%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .hero-section .hero-slider .slideHeaderIcon h2 {
+    font-size: calc(1.5rem + 1vw);
+    top: 18%;
+    left: 14%;
+    transform: translateY(-18%);
+  }
+}
+.hero-section .hero-slider #customSwiper .hero-slider__container {
+  background-color: #6c9dff;
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  height: 100%;
+  width: 100%;
+}
+.hero-section .hero-slider #customSwiper .swipe-slider {
+  padding-top: 168px;
+}
 .multiple-design-section {
   position: relative;
   padding: 115px 0 99px;
@@ -530,12 +655,39 @@ body {
 }
 .video-explainer-section .video-frame {
   position: relative;
+  padding: 115px 0 99px;
+  background-color: #fff;
+  padding: 35px;
+}
+.video-explainer-section .video-frame .top-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-self: unset;
+}
+.video-explainer-section .video-frame .top-icon-area {
+  width: 147px;
+  height: 147px;
+  border: 2px solid #57697d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  top: -55px;
+  transform: translateX(-50%);
+}
+.video-explainer-section .video-frame .top-icon-area img {
+  width: 100%;
+}
+.video-explainer-section .video-frame .video-frame {
+  position: relative;
   width: 100%;
   overflow: hidden;
   padding-top: 56.25%;
   /* 16:9 Aspect Ratio */
 }
-.video-explainer-section .video-frame .responsive-iframe {
+.video-explainer-section .video-frame .video-frame .responsive-iframe {
   position: absolute;
   top: 0;
   left: 0;

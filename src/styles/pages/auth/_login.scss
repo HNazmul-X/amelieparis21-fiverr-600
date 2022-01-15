@@ -1,97 +1,96 @@
-@use  "../../util/" as *;
+@use "../../util/" as *;
 
 #login_area {
-    #loginPopup {
-        margin: 80px auto 0;
-        width: 100%;
-        height: auto;
-        padding: 10px 30px 30px;
-        text-align: center;
-        box-shadow: -2px 13px 18px 14px $shadowBg;
-        border-radius: 34px;
+  #loginPopup {
+    margin: 80px auto 0;
+    width: 100%;
+    height: auto;
+    padding: 10px 30px 30px;
+    text-align: center;
+    box-shadow: -2px 13px 18px 14px $shadowBg;
+    border-radius: 34px;
 
-        .title {
-            font-weight: 600;
-            font-size: 40px;
-            line-height: 26px;
-            letter-spacing: 0.02em;
-            color: $primary-400;
-            margin-bottom: 50px;
-        }
-
-        label {
-            color: $blue-grey;
-        }
-
-        .fCard {
-            margin-top: -70px;
-
-            img {
-                width: 140px;
-            }
-        }
-
-        .logBtn {
-            background: $primary-300;
-            color: $white;
-            padding: 6px 74px;
-            border-radius: 20px;
-            margin-bottom: 0 !important;
-            margin-left: 5px;
-        }
-        @include md {
-            .logBtn {
-                padding: 6px 35px !important;
-            }
-        }
-       
-
-        .createBtn {
-            background: $primary-300;
-            color: $white;
-            padding: 6px 70px;
-            border-radius: 20px;
-            margin-bottom: 0 !important;
-            margin-right: 5px;
-        }
-        @include md {
-            .createBtn {
-                padding: 6px 30px !important;
-            }
-        }        
-
-        .forget {
-            font-size: 16px;
-            line-height: 26px;
-            letter-spacing: 0.02em;
-            color: black;
-            text-decoration: underline;
-            cursor: pointer;
-        }
+    .title {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 26px;
+      letter-spacing: 0.02em;
+      color: $primary-400;
+      margin-bottom: 50px;
     }
-    @include xl {
-        #loginPopup {
-            width: 500px;
 
-            .logBtn {
-                padding: 6px 108px;
-            }
-    
-            .createBtn {
-                padding: 6px 60px;
-            }
-        }
+    label {
+      color: $blue-grey;
+    }
+
+    .fCard {
+      margin-top: -70px;
+
+      img {
+        width: 140px;
+      }
+    }
+
+    .logBtn {
+      background: $primary-300;
+      color: $white;
+      padding: 6px 74px;
+      border-radius: 20px;
+      margin-bottom: 0 !important;
+      margin-left: 5px;
     }
     @include md {
-        #loginPopup {
-            width: 500px;
-            margin-left: -83px;
-        }
+      .logBtn {
+        padding: 6px 35px !important;
+      }
     }
-    @include sm {
-        #loginPopup {
-            width: 320px;
-            margin: 80px auto 0;
-        }
+
+    .createBtn {
+      background: $primary-300;
+      color: $white;
+      padding: 6px 70px;
+      border-radius: 20px;
+      margin-bottom: 0 !important;
+      margin-right: 5px;
     }
+    @include md {
+      .createBtn {
+        padding: 6px 30px !important;
+      }
+    }
+
+    .forget {
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 0.02em;
+      color: black;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  @include xl {
+    #loginPopup {
+      width: 500px;
+
+      .logBtn {
+        padding: 6px 108px;
+      }
+
+      .createBtn {
+        padding: 6px 60px;
+      }
+    }
+  }
+  @include md {
+    #loginPopup {
+      width: 500px;
+      margin-left: -83px;
+    }
+  }
+  @include sm {
+    #loginPopup {
+      width: 320px;
+      margin: 80px auto 0;
+    }
+  }
 }

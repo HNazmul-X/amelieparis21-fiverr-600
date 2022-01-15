@@ -12,7 +12,7 @@ function ProfileCreationMain() {
 
     useEffect(async () => {
         try {
-            const url = `http://localhost:8080/api/profile/single-profile/${profileId}?select=user firstname lastname`;
+            const url = `https://onecard-pro.herokuapp.com/api/profile/single-profile/${profileId}?select=user firstname lastname`;
             const data = await SecureFetch.get(encodeURI(url));
             setSingleProfile(data);
         } catch (e) {
@@ -22,7 +22,7 @@ function ProfileCreationMain() {
 
     const handleShowingFullPreview = async function () {
         try {
-            const url = `http://localhost:8080/api/profile/single-profile/61d85bfd135ddaa72aeb326d`;
+            const url = `https://onecard-pro.herokuapp.com/api/profile/single-profile/61d85bfd135ddaa72aeb326d`;
            const data = await SecureFetch.get(url);
             const dataArray = Object.entries(data);
             const modalContent = (
