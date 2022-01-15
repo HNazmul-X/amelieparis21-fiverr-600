@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Controller, Thumbs  } from 'swiper';
 import SwiperCore, {
-    Navigation,Pagination,Mousewheel,Keyboard
+    Navigation,Pagination,Mousewheel,Keyboard,Autoplay
 } from 'swiper';
 
 import star from "../../../assets/images/star.png";
@@ -16,7 +16,7 @@ import "swiper/css/pagination"
 import "./customSlider.css";
 
 
-SwiperCore.use([Navigation,Pagination,Mousewheel,Keyboard]);
+SwiperCore.use([Navigation,Pagination,Mousewheel,Keyboard,Autoplay]);
 
 const sliderInfo = [
     {
@@ -61,6 +61,12 @@ const OneCard = () => {
                     controller={{ control: controlledSwiper, swiper: thumbsSwiper }}
                     onSwiper={(setControlledSwiper, setThumbsSwiper)}
                     watchSlidesProgress
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                    }}
                     cssMode={true} navigation={true} pagination={true} mousewheel={true} keyboard={true}
                 >
                     <SwiperSlide className="oneCart_slider">
