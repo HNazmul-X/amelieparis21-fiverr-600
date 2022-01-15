@@ -5,6 +5,7 @@ import OneCard from "./sections/OneCard";
 import AboutUS from "./sections/AboutUS";
 import Refference from "./sections/Refference";
 import HeroSection from "./HomeContainer/HeroSection";
+import WorkSection from "./sections/HowItWorks/WorkSection";
 
 function HomePage() {
   return (
@@ -14,6 +15,7 @@ function HomePage() {
       <OneCard />
       <MultipleDesign />
       <VideoExplainer />
+      <WorkSection />
       <div className="py-5">
         <Refference />
         <AboutUS />
