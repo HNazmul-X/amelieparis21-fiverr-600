@@ -19,7 +19,7 @@ const AllCard = () => {
 
     useEffect(async () => {
         try {
-            const data = await SecureFetch.get("http://localhost:8080/api/card/get-all-card/all");
+            const data = await SecureFetch.get("https://onecard-pro.herokuapp.com/api/card/get-all-card/all");
             setCardData(data);
         } catch (e) {
             console.log(e);

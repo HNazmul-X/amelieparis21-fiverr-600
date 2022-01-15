@@ -16,7 +16,7 @@ const SignUp = () => {
 
     const onSubmit = async (data) => {
         setIsSpinnerShow(true);
-        const signedUpUser = await Authentication.signupAndData("http://localhost:8080/api/auth/signup", {
+        const signedUpUser = await Authentication.signupAndData("https://onecard-pro.herokuapp.com/api/auth/signup", {
             username: data?.username,
             password: data?.password,
             confirmPassword: data?.confirmPassword,

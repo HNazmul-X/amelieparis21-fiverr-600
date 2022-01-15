@@ -23,9 +23,9 @@ import PlayGround from "../pages/playgournd/playground";
 import HomePage from './../pages/Home-page/HomePage';
 
 const NavbarRouter = () => {
-    return (
-        <Routes>
-            {/* Admin Login */}
+  return (
+    <Routes>
+      {/* Admin Login */}
 
             {/* Navbar Layout Router */}
             <Route path="/" element={<Navbar />}>
@@ -45,21 +45,24 @@ const NavbarRouter = () => {
                 </Route>
             </Route>
 
-            {/* Dashboard Layout Router */}
-            <Route path="/admin" element={<DashboardLayout />}>
-                <Route path="profile-request/" element={<ProfileRequest />}>
-                    <Route path="all-user-profile" element={<AllRequest />} />
-                    <Route path="profile-creation/:profileId" element={<ProfileCreation />} />
-                </Route>
+      {/* Dashboard Layout Router */}
+      <Route path="/admin" element={<DashboardLayout />}>
+        <Route path="profile-request/" element={<ProfileRequest />}>
+          <Route path="all-user-profile" element={<AllRequest />} />
+          <Route
+            path="profile-creation/:profileId"
+            element={<ProfileCreation />}
+          />
+        </Route>
 
-                <Route path="card-request/" element={<CardRequest />}>
-                    <Route path="all/" element={<AllCard />} />
-                    <Route path="preview/:cardId" element={<SingleCardPreview />} />
-                </Route>
-                <Route path="login" element={<AdminLogin />} />
-            </Route>
-        </Routes>
-    );
+        <Route path="card-request/" element={<CardRequest />}>
+          <Route path="all/" element={<AllCard />} />
+          <Route path="preview/:cardId" element={<SingleCardPreview />} />
+        </Route>
+        <Route path="login" element={<AdminLogin />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default NavbarRouter;

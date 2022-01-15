@@ -13,7 +13,7 @@ const SingleCardPreview = ({}) => {
 
     useEffect(async () => {
         try {
-            const data = await SecureFetch.get(`http://localhost:8080/api/card/get-single-card/${cardId}`);
+            const data = await SecureFetch.get(`https://onecard-pro.herokuapp.com/api/card/get-single-card/${cardId}`);
             setSingleCardData(data);
             console.log(data);
         } catch (e) {
