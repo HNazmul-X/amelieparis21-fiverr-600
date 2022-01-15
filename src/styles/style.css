@@ -531,7 +531,7 @@ body {
   color: #f0f6ff;
   z-index: 1;
   top: 18%;
-  left: 28%;
+  left: 30%;
 }
 @media screen and (max-width: 768px) {
   .hero-section .hero-slider .slideHeaderIcon h2 {
@@ -554,7 +554,7 @@ body {
   width: 100%;
 }
 .hero-section .hero-slider #customSwiper .swipe-slider {
-  padding-top: 168px;
+  padding-top: 200px;
 }
 .hero-section .hero-slider #customSwiper .swipe-slider .swipe-slide .swiper {
   width: 100%;
