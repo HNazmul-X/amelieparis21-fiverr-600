@@ -16,7 +16,6 @@ function HomePage() {
       <OneCard />
       <MultipleDesign />
       <VideoExplainer />
-      <MultipleDesign />
       <WorkSection />
       <div className="py-5">
         <Refference />
