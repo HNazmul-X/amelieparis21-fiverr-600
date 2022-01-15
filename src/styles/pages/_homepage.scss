@@ -1,13 +1,22 @@
 @use "../util" as *;
 
 $light-gray: #dce2ee;
+$video-border: #dce2ee;
+$yellow-400: #fee444;
+$semi-multed-color: #85a0bf;
 
 .multiple-design-section {
   position: relative;
-  padding: 115px 0 99px;
   background-color: $light-gray;
+
+  .content-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding: 115px 0 99px;
+  }
   .top-icon-area {
     position: absolute;
+    z-index: 999999;
     left: 50%;
     top: 0;
     width: 147px;
@@ -32,22 +41,42 @@ $light-gray: #dce2ee;
     color: $blue-grey;
     text-align: center;
     margin-bottom: 89px;
+    @include md {
+      margin-bottom: 50px;
+    }
   }
   .image-area {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 85px;
-    img {
-      max-width: 210px;
-      width: 100%;
-      //   background-color:  $blue-grey;
+    z-index: 99;
+    @include md {
+      display: none;
+    }
+    .img-wrapper {
+      z-index: 99;
       &:nth-child(2) {
         margin-top: 45px;
       }
       &:nth-child(3) {
         margin-top: 90px;
       }
+      img {
+        max-width: 210px;
+        z-index: 99;
+        width: 100%;
+      }
+    }
+  }
+  .slider-area {
+    display: none;
+    @include md {
+      display: block;
+    }
+    img {
+      max-width: 300px;
+      width: 100%;
     }
   }
   .icon-wrapper {
@@ -56,6 +85,7 @@ $light-gray: #dce2ee;
     justify-content: center;
     gap: 38px;
     margin-top: 38px;
+    z-index: 99;
     .icon {
       width: 74px;
       height: 74px;
@@ -65,25 +95,99 @@ $light-gray: #dce2ee;
       justify-content: center;
       border-radius: 50%;
       cursor: pointer;
+      z-index: 999;
       svg {
         font-size: 25px;
         color: $white;
+        z-index: 99;
       }
     }
+  }
+  .left-round {
+    position: absolute;
+    width: 528px;
+    height: 528px;
+    left: -260px;
+    bottom: 32px;
+    background-color: $white;
+    border-radius: 50%;
+    @include lg {
+      width: 480px;
+      height: 445px;
+    }
+    @include md {
+      width: 400px;
+      height: 365px;
+    }
+  }
+  .full-rounded {
+    position: absolute;
+    border-radius: 50%;
+    width: 256px;
+    height: 256px;
+    border: 6px solid rgba(68, 126, 242, 0.5);
+    bottom: 280px;
+    left: 134px;
+    opacity: 0.1;
+    @include lg {
+      width: 165px;
+      height: 165px;
+      bottom: 327px;
+      left: 194px;
+    }
+    @include md {
+      bottom: 425px;
+      left: 134px;
+    }
+  }
+  .right-rounded {
+    position: absolute;
+    border-radius: 50%;
+    width: 430px;
+    height: 430px;
+    background-color: $white;
+    border-radius: 50%;
+    right: -215px;
+    bottom: 109px;
+    @include lg {
+      width: 350px;
+      height: 350px;
+    }
+    @include md {
+      width: 320px;
+    height: 320px;
+      bottom: 180px;
+    }
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 50px !important;
+    text-align: center;
   }
 }
 
 .video-explainer-section {
   position: relative;
-  padding: 115px 0 99px;
+  padding: 50px 0 108px;
   background-color: $white;
-  padding: 35px;
-  .top-icon-wrapper{
+  .top-icon-wrapper {
     display: flex;
     align-items: center;
-    justify-self: unset;
+    justify-content: center;
   }
-  .top-icon-area { 
+  h3 {
+    font-size: 51px;
+    color: $blue-grey;
+    text-align: center;
+    margin-bottom: 36px;
+    @include md {
+      font-size: 45px;
+    }
+    @include sm {
+      font-size: 35px;
+    }
+  }
+  .top-icon-area {
     width: 147px;
     height: 147px;
     border: 2px solid $blue-grey;
@@ -91,10 +195,18 @@ $light-gray: #dce2ee;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 32px;
     background-color: $white;
-    top: -55px;
-    transform: translateX(-50%);
+    margin-bottom: 19px;
+
+    @include md {
+      width: 130px;
+      height: 130px;
+    }
+    @include sm {
+      width: 110px;
+      height: 110px;
+    }
 
     img {
       width: 100%;
@@ -116,4 +228,186 @@ $light-gray: #dce2ee;
       border: none;
     }
   }
+  .video-wrapper {
+    padding: 20px;
+
+    .video-container {
+      border: 8px solid $video-border;
+      box-sizing: border-box;
+      border-radius: 18px;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      position: relative;
+      .play-icon {
+        position: absolute;
+        width: 102px;
+        height: 102px;
+        background-color: $light-gray;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        @include sm {
+          width: 80px;
+          height: 80px;
+        }
+        .icon {
+          svg {
+            width: 78px;
+            height: 78px;
+            color: $blue-grey;
+            margin-top: 8px;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
 }
+
+.get-in-touch-section {
+  background-color: $primary-500;
+  padding: 160px 0;
+  position: relative;
+  @include md {
+    padding: 80px 0;
+  }
+  .parten-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .left-side {
+    z-index: 999;
+    .label {
+      color: $yellow-400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 11px;
+      margin-bottom: 15px;
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 31px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: $white;
+      @include md {
+        font-size: 20px;
+        margin-bottom: 50px;
+      }
+    }
+    .label-1 {
+      font-weight: bold;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      color: $white;
+      margin-bottom: 14px;
+      @include md {
+        margin-bottom: 5px;
+      }
+    }
+    .email {
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: $white !important;
+      text-decoration: none;
+      @include md {
+        font-size: 17px;
+      }
+    }
+    .teliphone {
+      font-size: 26px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: $white;
+      font-weight: 500;
+      text-decoration: none;
+      @include md {
+        font-size: 17px;
+      }
+    }
+    .address {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: $white;
+      font-size: 23px;
+      font-weight: 500;
+      @include md {
+        font-size: 17px;
+      }
+    }
+    .botom-area {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 50px;
+    }
+  }
+
+  .right-side {
+    z-index: 999;
+    @include md {
+      margin-top: 30px;
+    }
+    .contact-form {
+      max-width: 498px;
+      width: 100%;
+      background-color: $white;
+      padding: 40px 19px 56px 25px;
+      border-radius: 5px;
+      @include md {
+        padding: 40px 19px 40px 25px;
+      }
+      .unFatty-input {
+        border-radius: 12px !important;
+        padding: 15px 40px !important;
+        font-size: 19px;
+      }
+      label {
+        // padding-left: 40px !important;
+        left: 30px;
+      }
+      .form-floating > .form-control:focus ~ label {
+        transform: scale(0.85) translateY(-0.8rem) translateX(2.5rem);
+      }
+      .form-floating > .form-control:not(:placeholder-shown) ~ label {
+        transform: scale(0.85) translateY(-0.8rem) translateX(2.5rem);
+      }
+      .text-area {
+        height: 187px;
+      }
+      .submit-btn {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: $white;
+        background: $semi-multed-color;
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: $white;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 24px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        .arrow {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Swiper overright
