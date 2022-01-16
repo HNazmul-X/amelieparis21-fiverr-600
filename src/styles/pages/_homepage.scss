@@ -491,7 +491,7 @@ $black: #000000;
   width: 100%;
   // height: 650px;
   .work-section-container {
-    max-width: 1366px;
+    // max-width: 1366px;
     margin: 0 auto;
     padding: 40px 0px;
     display: flex;
@@ -513,7 +513,7 @@ $black: #000000;
       .sliderLine {
         color: #85a0bf;
         height: 6px;
-        width: 70%;
+        width: 68%;
         margin: 0 auto;
       }
       .timeLineNumber {
@@ -710,26 +710,38 @@ $black: #000000;
       object-fit: cover;
     }
     .swiper-button-next {
-      position: absolute;
-      right: 0;
-      bottom: -250px;
+      // left: auto;
+      top: 410px;
+      right: calc(50% - 22rem);
       background-image: url("../assets/images/next.svg");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 70% auto;
+      background-size: 40% auto;
       border-radius: 8px;
       background-color: $white;
-      padding: 25px 40px;
+      padding: 20px 50px;
+      @include lg {
+        top: 825px;
+        left: calc(50% + 1rem);
+      }
     }
     .swiper-button-prev {
+      left: auto;
+      top: 410px;
+      right: calc(50% - 13rem);
       background-image: url("../assets/images/prev.svg");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 70% auto;
+      background-size: 40% auto;
       background-color: $white;
       border-radius: 8px;
-      padding: 25px 40px;
+      padding: 20px 50px;
+      @include lg {
+        top: 825px;
+        right: calc(50%);
+      }
     }
+
     .swiper-button-prev::after {
       display: none;
     }
