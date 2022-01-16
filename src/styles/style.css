@@ -1019,6 +1019,9 @@ body {
 }
 .video-explainer-section .video-wrapper {
   padding: 20px;
+  max-width: 992px;
+  width: 100%;
+  margin: auto;
 }
 .video-explainer-section .video-wrapper .video-container {
   border: 8px solid #dce2ee;
@@ -3506,6 +3509,7 @@ body {
 }
 .profile-template-1 .contact-section .social-container {
   padding: 35px 0px 0 24px;
+  display: block;
 }
 .profile-template-1 .contact-section .social-container .signle-social-link {
   position: relative;
@@ -3550,6 +3554,61 @@ body {
   transition: all 0.4s linear;
 }
 .profile-template-1 .contact-section .social-container .signle-social-link .active-arrow {
+  transform: rotate(90deg);
+}
+
+.mx-550 {
+  max-width: 550px !important;
+  width: 100% !important;
+}
+
+.social-container-1 {
+  padding: 35px 0px 0 24px;
+  display: block;
+}
+.social-container-1 .signle-social-link {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 13px 18px 13px 30px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  text-decoration: none;
+}
+.social-container-1 .signle-social-link img {
+  position: absolute;
+  left: -23px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #f1f1f1;
+  top: 50%;
+  object-fit: contain;
+  transform: translateY(-50%);
+}
+.social-container-1 .signle-social-link h5 {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #030303;
+}
+.social-container-1 .signle-social-link p {
+  margin-bottom: 0;
+  line-height: 8px;
+  font-size: 9px;
+  color: #5b5b5b;
+}
+.social-container-1 .signle-social-link .right-arrow {
+  color: #030303;
+  font-size: 20px;
+  transition: all 0.4s linear;
+}
+.social-container-1 .signle-social-link .active-arrow {
   transform: rotate(90deg);
 }
 
@@ -3812,6 +3871,22 @@ body {
   font-size: 15px;
   line-height: 23px;
   color: #778cae;
+}
+
+.wrapper-3 {
+  width: 100%;
+  height: 100%;
+}
+.wrapper-3 .share-3 {
+  transform: translate(0px, 11px);
+}
+
+.name-section-3 {
+  margin-top: 24px;
+}
+
+.max-w-none {
+  max-width: none !important;
 }
 
 .setup-profile-button-info .preview-btn {

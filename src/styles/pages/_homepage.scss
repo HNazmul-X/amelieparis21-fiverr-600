@@ -449,6 +449,9 @@ $black: #000000;
   }
   .video-wrapper {
     padding: 20px;
+    max-width: 992px;
+    width: 100%;
+    margin: auto;
     .video-container {
       border: 8px solid $video-border;
       box-sizing: border-box;
