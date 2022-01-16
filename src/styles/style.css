@@ -3444,12 +3444,12 @@ body {
   font-weight: 600;
   font-size: 24px;
   line-height: 24px;
-  color: var(--icon-text);
+  color: #030303;
   margin-bottom: 6px;
 }
 .profile-template-1 .besic-info .info .name-section p {
   font-weight: 600;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 10px;
   color: #5b5b5b;
 }
@@ -3464,12 +3464,12 @@ body {
 }
 .profile-template-1 .besic-info .info .description {
   padding-left: 8px;
-  border-left: 2px solid var(--icon-text);
+  border-left: 2px solid darkorange;
 }
 .profile-template-1 .besic-info .info .description p {
-  font-size: 11.5px;
+  font-size: 11px;
   line-height: 18px;
-  color: var(--text);
+  color: #030303;
 }
 .profile-template-1 .besic-info .info .work-container {
   display: flex;
@@ -3540,7 +3540,7 @@ body {
   font-size: 14px;
   line-height: 14px;
   font-weight: 600;
-  color: var(--icon-text);
+  color: #030303;
 }
 .profile-template-1 .contact-section .social-container .signle-social-link p {
   margin-bottom: 0;
@@ -3740,7 +3740,6 @@ body {
   max-width: 500px;
   width: 100%;
   background-color: #fff;
-  --red-700: #f51c57;
 }
 .profile-template-3 .banner {
   clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 77%, 81% 87%, 51% 95%, 21% 88%, 0 78%, 0% 35%, 0 0);
@@ -3784,7 +3783,7 @@ body {
   justify-content: center;
   width: 36px;
   height: 36px;
-  background-color: var(--red-700);
+  background-color: #f51c57;
   color: #fff;
   font-size: 18px;
   border-radius: 50%;
@@ -3800,13 +3799,13 @@ body {
   font-weight: 600;
   font-size: 30px;
   line-height: 24px;
-  color: var(--text);
+  color: #333e63;
   margin-bottom: 13px;
 }
 .profile-template-3 .besic-info .info p {
   font-size: 18px;
   line-height: 12px;
-  color: var(--text);
+  color: #778cae;
 }
 .profile-template-3 .contact {
   padding-left: 30px;
@@ -3827,11 +3826,11 @@ body {
 .profile-template-3 .contact a svg {
   font-size: 36px;
   padding: 7px;
-  border: 1px solid var(--red-700);
+  border: 1px solid #f51c57;
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  color: var(--red-700);
+  color: #f51c57;
 }
 .profile-template-3 .contact a p {
   font-size: 12px;
@@ -3867,13 +3866,13 @@ body {
   font-weight: 600;
   font-size: 20px;
   line-height: 18px;
-  color: var(--red-700);
+  color: #f51c57;
   margin-bottom: 18px;
 }
 .profile-template-3 .about p {
   font-size: 15px;
   line-height: 23px;
-  color: var(--text);
+  color: #778cae;
 }
 
 .wrapper-3 {
