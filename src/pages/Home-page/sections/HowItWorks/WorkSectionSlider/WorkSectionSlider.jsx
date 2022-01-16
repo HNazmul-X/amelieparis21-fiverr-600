@@ -40,7 +40,7 @@ const WorkSectionSlider = ({ sliderData, handleChange, handleDecrease }) => {
                   <div className="slider-text-content">
                     <p>{item.description}</p>
                   </div>
-                  <div className="slider-controller-btn">
+                  {/* <div className="slider-controller-btn">
                     <button id="leftBtn" className="prevBtn">
                       <Icon icon="la:arrow-left" style={{ fontSize: "45px" }} />
                     </button>
@@ -50,7 +50,7 @@ const WorkSectionSlider = ({ sliderData, handleChange, handleDecrease }) => {
                         style={{ fontSize: "45px" }}
                       />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </SwiperSlide>

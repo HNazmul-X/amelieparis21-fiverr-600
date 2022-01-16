@@ -1060,7 +1060,6 @@ body {
   width: 100%;
 }
 .work-section .work-section-container {
-  max-width: 1366px;
   margin: 0 auto;
   padding: 40px 0px;
   display: flex;
@@ -1080,7 +1079,7 @@ body {
 .work-section .work-section-container .slideTimeLine .sliderLine {
   color: #85a0bf;
   height: 6px;
-  width: 70%;
+  width: 68%;
   margin: 0 auto;
 }
 .work-section .work-section-container .slideTimeLine .timeLineNumber {
@@ -1270,25 +1269,39 @@ body {
   object-fit: cover;
 }
 .work-section #work-slider .swiper-button-next {
-  position: absolute;
-  right: 0;
-  bottom: -250px;
+  top: 410px;
+  right: calc(50% - 22rem);
   background-image: url("../assets/images/next.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70% auto;
+  background-size: 40% auto;
   border-radius: 8px;
   background-color: #fff;
-  padding: 25px 40px;
+  padding: 20px 50px;
+}
+@media screen and (max-width: 992px) {
+  .work-section #work-slider .swiper-button-next {
+    top: 825px;
+    left: calc(50% + 1rem);
+  }
 }
 .work-section #work-slider .swiper-button-prev {
+  left: auto;
+  top: 410px;
+  right: calc(50% - 13rem);
   background-image: url("../assets/images/prev.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70% auto;
+  background-size: 40% auto;
   background-color: #fff;
   border-radius: 8px;
-  padding: 25px 40px;
+  padding: 20px 50px;
+}
+@media screen and (max-width: 992px) {
+  .work-section #work-slider .swiper-button-prev {
+    top: 825px;
+    right: 50%;
+  }
 }
 .work-section #work-slider .swiper-button-prev::after {
   display: none;
