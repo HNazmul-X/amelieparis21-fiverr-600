@@ -9,8 +9,9 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
     max-width: 500px;
     width: 100%;
     background-color: $white;
+    --red-700: #{$red-700};
     .banner {
-        clip-path: polygon( 50% 0%, 100% 0, 100% 35%, 100% 77%, 81% 87%, 51% 95%, 21% 88%, 0 78%, 0% 35%, 0 0);
+        clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 77%, 81% 87%, 51% 95%, 21% 88%, 0 78%, 0% 35%, 0 0);
         img {
             width: 100%;
             object-fit: cover;
@@ -48,7 +49,7 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
                     justify-content: center;
                     width: 36px;
                     height: 36px;
-                    background-color: $red-700;
+                    background-color: var(--red-700);
                     color: $white;
                     font-size: 18px;
                     border-radius: 50%;
@@ -65,13 +66,13 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
                 font-weight: 600;
                 font-size: 30px;
                 line-height: 24px;
-                color: $black-700;
+                color: var(--text);
                 margin-bottom: 13px;
             }
             p {
                 font-size: 18px;
                 line-height: 12px;
-                color: $tem-3gray-500;
+                color: var(--text);
             }
         }
     }
@@ -94,11 +95,11 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
             svg {
                 font-size: 36px;
                 padding: 7px;
-                border: 1px solid $red-700;
+                border: 1px solid var(--red-700);
                 border-radius: 50%;
                 width: 40px;
                 height: 40px;
-                color: $red-700;
+                color: var(--red-700);
             }
             p {
                 font-size: 12px;
@@ -135,13 +136,13 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
             font-weight: 600;
             font-size: 20px;
             line-height: 18px;
-            color: $red-700;
+            color: var(--red-700);
             margin-bottom: 18px;
         }
         p {
             font-size: 15px;
             line-height: 23px;
-            color: $tem-3gray-500;
+            color: var(--text);
         }
     }
 }

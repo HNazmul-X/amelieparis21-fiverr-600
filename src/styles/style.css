@@ -3441,12 +3441,12 @@ body {
   font-weight: 600;
   font-size: 24px;
   line-height: 24px;
-  color: #030303;
+  color: var(--icon-text);
   margin-bottom: 6px;
 }
 .profile-template-1 .besic-info .info .name-section p {
   font-weight: 600;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 10px;
   color: #5b5b5b;
 }
@@ -3461,12 +3461,12 @@ body {
 }
 .profile-template-1 .besic-info .info .description {
   padding-left: 8px;
-  border-left: 2px solid darkorange;
+  border-left: 2px solid var(--icon-text);
 }
 .profile-template-1 .besic-info .info .description p {
-  font-size: 11px;
+  font-size: 11.5px;
   line-height: 18px;
-  color: #030303;
+  color: var(--text);
 }
 .profile-template-1 .besic-info .info .work-container {
   display: flex;
@@ -3536,7 +3536,7 @@ body {
   font-size: 14px;
   line-height: 14px;
   font-weight: 600;
-  color: #030303;
+  color: var(--icon-text);
 }
 .profile-template-1 .contact-section .social-container .signle-social-link p {
   margin-bottom: 0;
@@ -3557,6 +3557,8 @@ body {
   width: 375px;
   margin: auto;
   background-color: #fff;
+  --purple-600: var(--purple-600);
+  --text: #000;
 }
 .profile-2-conatiner .banner img {
   aspect-ratio: 3/1.8;
@@ -3598,7 +3600,7 @@ body {
   font-size: 30px;
   line-height: 24px;
   margin-bottom: 12px;
-  color: #333e63;
+  color: var(--text);
 }
 .profile-2-conatiner .besic-info p {
   font-size: 14px;
@@ -3622,7 +3624,7 @@ body {
 .profile-2-conatiner .contact-section .single-contact svg {
   font-size: 24px;
   width: 24px;
-  color: #8a3efe;
+  color: var(--purple-600);
 }
 .profile-2-conatiner .contact-section .single-contact p {
   margin-bottom: 0;
@@ -3630,7 +3632,7 @@ body {
   margin-top: -4px;
   font-size: 16px;
   font-weight: 600;
-  color: #333e63;
+  color: var(--text);
 }
 .profile-2-conatiner .contact-inner {
   padding: 0 28px;
@@ -3646,7 +3648,7 @@ body {
 .profile-2-conatiner .contact-inner .single-contact svg {
   font-size: 24px;
   width: 24px;
-  color: #8a3efe;
+  color: var(--purple-600);
 }
 .profile-2-conatiner .contact-inner .single-contact p {
   margin-bottom: 0;
@@ -3679,6 +3681,7 @@ body {
   max-width: 500px;
   width: 100%;
   background-color: #fff;
+  --red-700: #f51c57;
 }
 .profile-template-3 .banner {
   clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 77%, 81% 87%, 51% 95%, 21% 88%, 0 78%, 0% 35%, 0 0);
@@ -3722,7 +3725,7 @@ body {
   justify-content: center;
   width: 36px;
   height: 36px;
-  background-color: #f51c57;
+  background-color: var(--red-700);
   color: #fff;
   font-size: 18px;
   border-radius: 50%;
@@ -3738,13 +3741,13 @@ body {
   font-weight: 600;
   font-size: 30px;
   line-height: 24px;
-  color: #333e63;
+  color: var(--text);
   margin-bottom: 13px;
 }
 .profile-template-3 .besic-info .info p {
   font-size: 18px;
   line-height: 12px;
-  color: #778cae;
+  color: var(--text);
 }
 .profile-template-3 .contact {
   padding-left: 30px;
@@ -3765,11 +3768,11 @@ body {
 .profile-template-3 .contact a svg {
   font-size: 36px;
   padding: 7px;
-  border: 1px solid #f51c57;
+  border: 1px solid var(--red-700);
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  color: #f51c57;
+  color: var(--red-700);
 }
 .profile-template-3 .contact a p {
   font-size: 12px;
@@ -3805,13 +3808,13 @@ body {
   font-weight: 600;
   font-size: 20px;
   line-height: 18px;
-  color: #f51c57;
+  color: var(--red-700);
   margin-bottom: 18px;
 }
 .profile-template-3 .about p {
   font-size: 15px;
   line-height: 23px;
-  color: #778cae;
+  color: var(--text);
 }
 
 .setup-profile-button-info .preview-btn {

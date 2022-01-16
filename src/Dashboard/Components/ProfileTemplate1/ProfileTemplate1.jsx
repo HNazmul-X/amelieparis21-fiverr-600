@@ -29,7 +29,7 @@ import blogger from "../../../assets/images/social_icon/blogger.png";
 
 function ProfileTemplate1() {
     const workLists = ["Social Media", "MARKETING", "DESIGN", "GRAPHIC"];
-    const { userInfo, userPics,buttonInfo } = useProfileContext();
+    const { userInfo, userPics, buttonInfo, iconAndTextColor } = useProfileContext();
 
     const social = {
         facebook: facebookIcon,
@@ -58,7 +58,7 @@ function ProfileTemplate1() {
     };
     console.log(userInfo.name);
     return (
-        <div className="profile-template-1">
+        <div className="profile-template-1" style={{ "--icon-text": iconAndTextColor?.icon, "--text": iconAndTextColor?.text }}>
             <div className="banner">
                 <img src={userPics?.cover?.dataURL || banner} alt="Banner" />
             </div>
@@ -87,7 +87,9 @@ function ProfileTemplate1() {
                 </div>
             </div>
             <div className="contact-section">
-                <button style={{background: `${buttonInfo.colors.bg}`, color: `${buttonInfo.colors.color}`, boxShadow: `0 0 5px ${buttonInfo.colors.shadow}`}} className="add-contact-btn">{buttonInfo?.info?.text || "ADD TO CONTACT"}</button>
+                <button style={{ background: `${buttonInfo.colors.bg}`, color: `${buttonInfo.colors.color}`, boxShadow: `0 0 5px ${buttonInfo.colors.shadow}` }} className="add-contact-btn">
+                    {buttonInfo?.info?.text || "ADD TO CONTACT"}
+                </button>
                 <div className="social-container">
                     {userInfo.links.map((data) => (
                         <a href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${data?.link}`} target="_blank" className="signle-social-link">

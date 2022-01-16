@@ -98,7 +98,14 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
 
                         <div className="d-flex justify-content-between gap-4 align-items-center px-3 py-2">
                             <div className="text-center w-100">
-                                <input style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} value={buttonDesign.background} name="background" />
+                                <input
+                                    defaultValue={buttonDesign?.background}
+                                    style={{ width: "100%" }}
+                                    type="color"
+                                    onChange={(e) => handelChange(e)}
+                                    value={buttonDesign.background}
+                                    name="background"
+                                />
                                 <br />
                                 <label style={{ transform: "translateX(0)" }} htmlFor="">
                                     BackGround
@@ -106,7 +113,7 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
                             </div>
 
                             <div className="text-center w-100">
-                                <input style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} value={buttonDesign.color} name="color" />
+                                <input defaultValue={buttonDesign?.color} style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} value={buttonDesign.color} name="color" />
                                 <br />
                                 <label style={{ transform: "translateX(0)" }} htmlFor="">
                                     Color
@@ -114,7 +121,7 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
                             </div>
 
                             <div className="text-center w-100">
-                                <input style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} value={buttonDesign.shadow} name="shadow" />
+                                <input defaultValue={buttonDesign?.shadow} style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} value={buttonDesign.shadow} name="shadow" />
                                 <br />
                                 <label style={{ transform: "translateX(0)" }} htmlFor="">
                                     Shadow
