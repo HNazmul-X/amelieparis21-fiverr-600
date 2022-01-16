@@ -4,8 +4,9 @@
 #whyOneCart .swiper-pagination-bullets.swiper-pagination-horizontal,
 #whyOneCart .swiper-pagination-custom,
 #whyOneCart .swiper-pagination-fraction {
-    bottom: 140px !important;
-    left: -430px !important;
+    bottom: 85px !important;
+    left: -70px !important;
+    width: 60%;
 }
 
 #whyOneCart .swiper-pagination-bullet-active {
@@ -55,13 +56,24 @@
 
 /* responsive code  */
 
+@media (min-width: 769px) and (max-width: 1200px) {
+    #whyOneCart .swiper-button-next {
+        left: 374px;
+        top: 610px;
+    }
+    #whyOneCart .swiper-button-prev {
+        left: 260px;
+        top: 610px;
+    }
+}
+
 @media (min-width: 481px) and (max-width: 768px) {
     /* recode */
     #whyOneCart .swiper-horizontal>#whyOneCart .swiper-pagination-bullets,
     #whyOneCart .swiper-pagination-bullets.swiper-pagination-horizontal,
     #whyOneCart .swiper-pagination-custom,
     #whyOneCart .swiper-pagination-fraction {
-        display: block;
+        display: none;
     }
     #whyOneCart .swiper-button-next {
         display: none;
@@ -77,7 +89,7 @@
     #whyOneCart .swiper-pagination-bullets.swiper-pagination-horizontal,
     #whyOneCart .swiper-pagination-custom,
     #whyOneCart .swiper-pagination-fraction {
-        display: block;
+        display: none;
     }
     #whyOneCart .swiper-button-next {
         display: none;

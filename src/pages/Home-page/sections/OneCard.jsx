@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Controller, Thumbs  } from 'swiper';
 import SwiperCore, {
     Navigation,Pagination,Mousewheel,Keyboard,Autoplay
 } from 'swiper';
@@ -40,9 +39,8 @@ const sliderInfo = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?"
     },
 ];
+
 const OneCard = () => {
-    const [controlledSwiper, setControlledSwiper] = useState(null);
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return (
         <div id='whyOneCart'>
@@ -52,26 +50,20 @@ const OneCard = () => {
                     <h2>Why One Card</h2>
                 </div>
 
-                <Swiper 
-                    spaceBetween={50}
-                    slidesPerView={1}
-                    onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    modules={[Controller, Thumbs]} 
-                    controller={{ control: controlledSwiper, swiper: thumbsSwiper }}
-                    onSwiper={(setControlledSwiper, setThumbsSwiper)}
-                    watchSlidesProgress
-                    loop={true}
-                    loopFillGroupWithBlank={true}
-                    autoplay={{
-                    delay: 2000,
-                    disableOnInteraction: false,
-                    }}
-                    cssMode={true} navigation={true} pagination={true} mousewheel={true} keyboard={true}
-                >
-                    <SwiperSlide className="oneCart_slider">
-                        <div className="row">
-                            <div className="col-md-6">
+                <div className="row">
+                    <div className="col-md-6">
+                        <Swiper 
+                            spaceBetween={50}
+                            slidesPerView={1}
+                            loop={true}
+                            loopFillGroupWithBlank={true}
+                            autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                            }}
+                             navigation={true} pagination={true} keyboard={true}
+                        >
+                            <SwiperSlide className="oneCart_slider">
                                 {
                                     sliderInfo.map(info => 
                                         <div className="content_area">
@@ -84,18 +76,8 @@ const OneCard = () => {
                                         </div>
                                     )
                                 }
-                            </div>
-
-                            <div className="col-md-6">
-                                <div className="image_area">
-                                    <img src={sliderImg} alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="oneCart_slider">
-                        <div className="row">
-                            <div className="col-md-6">
+                            </SwiperSlide>
+                            <SwiperSlide className="oneCart_slider">
                                 {
                                     sliderInfo.map(info => 
                                         <div className="content_area">
@@ -108,18 +90,8 @@ const OneCard = () => {
                                         </div>
                                     )
                                 }
-                            </div>
-
-                            <div className="col-md-6">
-                                <div className="image_area">
-                                    <img src={sliderImg} alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="oneCart_slider">
-                        <div className="row">
-                            <div className="col-md-6">
+                            </SwiperSlide>
+                            <SwiperSlide className="oneCart_slider">
                                 {
                                     sliderInfo.map(info => 
                                         <div className="content_area">
@@ -132,16 +104,16 @@ const OneCard = () => {
                                         </div>
                                     )
                                 }
-                            </div>
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
 
-                            <div className="col-md-6">
-                                <div className="image_area">
-                                    <img src={sliderImg} alt="" />
-                                </div>
-                            </div>
+                    <div className="col-md-6">
+                        <div className="image_area">
+                            <img src={sliderImg} alt="" />
                         </div>
-                    </SwiperSlide>
-                </Swiper>
+                    </div>
+                </div>
             </div>
         </div>
     );

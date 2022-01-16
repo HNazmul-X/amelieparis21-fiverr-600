@@ -299,6 +299,7 @@ $light-gray: #dce2ee;
                 margin-right: -25px;
                 margin-left: 25px;
                 box-shadow: 0 0 10px 1px $grey-200;
+                z-index: 99;
             }
             @include sm {
                 &:first-child {
@@ -310,15 +311,23 @@ $light-gray: #dce2ee;
                 margin-bottom: 0;
             }
         }
-        .image_area {
-            text-align: right;
-            img {
-                height: 530px;
-            }
+    }
+    @include sm {
+        .oneCart_slider {
+            padding-bottom: 130px;
         }
-        @include sm {
-            .image_area {
-                text-align: center;
+    }
+    .image_area {
+        text-align: right;
+        img {
+            height: 530px;
+        }
+    }
+    @include sm {
+        .image_area {
+            text-align: center;
+            img {
+                padding-bottom: 100px;
             }
         }
     }
@@ -327,32 +336,38 @@ $light-gray: #dce2ee;
 // Refference.jsx file sass
 #refference_area {
     background: #85A0BF;
-    position: relative;
+    //     position: relative;
     z-index: -1;
     overflow: hidden;
     padding: 80px 0;
-    &::before {
-        position: absolute;
-        content: "";
-        z-index: 1;
-        bottom: -61px;
-        right: -43px;
-        width: 120px;
-        height: 150px;
-        background: url(../assets/images/round.png) no-repeat;
-        background-size: contain;
-    }
     .refference_content {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            z-index: 1;
+            bottom: -158px;
+            right: -687px;
+            width: 120px;
+            height: 150px;
+            background: url(../assets/images/round.png) no-repeat;
+            background-size: contain;
+        }
+        @include sm {
+            &::before {
+                bottom: -651px;
+                right: -58px;
+            }
+        }
         h2 {
             color: $white;
             padding-bottom: 15px;
-            font-family: Josefin Sans;
             font-style: normal;
             font-weight: bold;
             font-size: 62px;
             line-height: 74px;
-            letter-spacing: 1px;
-            word-spacing: 5px;
+            letter-spacing: .1rem;
+            word-spacing: 2px;
         }
         @include md {
             h2 {
@@ -446,7 +461,7 @@ $light-gray: #dce2ee;
         border-radius: 6px;
         box-shadow: 0 0 10px $grey-200;
         padding: 15px 25px;
-        margin-bottom: 100px;
+        margin: 0 0 100px;
         .cartInfo {
             display: flex;
             align-items: center;
@@ -468,6 +483,18 @@ $light-gray: #dce2ee;
                 }
                 .starIcon {
                     color: $yellow-400;
+                }
+            }
+        }
+        .cartText {
+            p {
+                span {
+                    color: $primary-700;
+                    background: $gray-300;
+                    border-radius: 15px;
+                    padding: 1px 5px;
+                    font-size: 13px;
+                    cursor: pointer;
                 }
             }
         }

@@ -731,6 +731,7 @@ body {
   margin-right: -25px;
   margin-left: 25px;
   box-shadow: 0 0 10px 1px #e7e7e9;
+  z-index: 99;
 }
 @media screen and (max-width: 576px) {
   #whyOneCart .oneCart_slider .content_area:first-child {
@@ -741,46 +742,61 @@ body {
 #whyOneCart .oneCart_slider .content_area p {
   margin-bottom: 0;
 }
-#whyOneCart .oneCart_slider .image_area {
+@media screen and (max-width: 576px) {
+  #whyOneCart .oneCart_slider {
+    padding-bottom: 130px;
+  }
+}
+#whyOneCart .image_area {
   text-align: right;
 }
-#whyOneCart .oneCart_slider .image_area img {
+#whyOneCart .image_area img {
   height: 530px;
 }
 @media screen and (max-width: 576px) {
-  #whyOneCart .oneCart_slider .image_area {
+  #whyOneCart .image_area {
     text-align: center;
+  }
+  #whyOneCart .image_area img {
+    padding-bottom: 100px;
   }
 }
 
 #refference_area {
   background: #85A0BF;
-  position: relative;
   z-index: -1;
   overflow: hidden;
   padding: 80px 0;
 }
-#refference_area::before {
+#refference_area .refference_content {
+  position: relative;
+}
+#refference_area .refference_content::before {
   position: absolute;
   content: "";
   z-index: 1;
-  bottom: -61px;
-  right: -43px;
+  bottom: -158px;
+  right: -687px;
   width: 120px;
   height: 150px;
   background: url(../assets/images/round.png) no-repeat;
   background-size: contain;
 }
+@media screen and (max-width: 576px) {
+  #refference_area .refference_content::before {
+    bottom: -651px;
+    right: -58px;
+  }
+}
 #refference_area .refference_content h2 {
   color: #fff;
   padding-bottom: 15px;
-  font-family: Josefin Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 62px;
   line-height: 74px;
-  letter-spacing: 1px;
-  word-spacing: 5px;
+  letter-spacing: 0.1rem;
+  word-spacing: 2px;
 }
 @media screen and (max-width: 768px) {
   #refference_area .refference_content h2 {
@@ -872,7 +888,7 @@ body {
   border-radius: 6px;
   box-shadow: 0 0 10px #e7e7e9;
   padding: 15px 25px;
-  margin-bottom: 100px;
+  margin: 0 0 100px;
 }
 #about_area .slider_cart .cartInfo {
   display: flex;
@@ -895,6 +911,14 @@ body {
 }
 #about_area .slider_cart .cartInfo .personalInfo .starIcon {
   color: #FFA901;
+}
+#about_area .slider_cart .cartText p span {
+  color: #15316a;
+  background: #DCE2EE;
+  border-radius: 15px;
+  padding: 1px 5px;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 #create-card-login {
