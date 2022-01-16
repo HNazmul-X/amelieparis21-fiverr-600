@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import about from "../../../assets/images/about.png";
 import { Controller, Thumbs  } from 'swiper';
 import SwiperCore, {
-    Navigation,Pagination,Mousewheel,Keyboard,Autoplay
+    Navigation,Pagination,Autoplay
 } from 'swiper';
 import { InlineIcon } from '@iconify/react';
 
@@ -12,11 +12,9 @@ import 'swiper/css';
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 
-SwiperCore.use([Navigation,Pagination,Mousewheel,Keyboard,Autoplay]);
+SwiperCore.use([Navigation,Pagination,Autoplay]);
 
 const AboutUS = () => {
-    const [controlledSwiper, setControlledSwiper] = useState(null);
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return (
         <div id="about_area">
@@ -50,19 +48,11 @@ const AboutUS = () => {
                         }
                       }}
                     onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    modules={[Controller, Thumbs]} 
-                    controller={{ control: controlledSwiper, swiper: thumbsSwiper }}
-                    onSwiper={(setControlledSwiper, setThumbsSwiper)}
-                    watchSlidesProgress
-                    parallax={true}
                     loop={true}
-                    loopFillGroupWithBlank={true}
                     autoplay={{
                         delay: 2000,
                         disableOnInteraction: false,
-                    }}
-                    cssMode={true} navigation={true} pagination={true} mousewheel={true} keyboard={true}
+                    }} navigation={true} pagination={true}
                 >
                     <SwiperSlide className='slider_cart'>
                         <div className="cartInfo">

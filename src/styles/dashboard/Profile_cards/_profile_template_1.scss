@@ -48,14 +48,57 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
           line-height: 10px;
           color: $tem1-gray-700;
         }
-      }
-      .share {
-        cursor: pointer;
-        svg {
-          color: $tem1-golden-rod;
-          width: 24px;
-          height: 24px;
-          font-size: 24px;
+        .info {
+            .name-section {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+                h3 {
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 24px;
+                    color: var(--icon-text);
+                    margin-bottom: 6px;
+                }
+                p {
+                    font-weight: 600;
+                    font-size: 11px;
+                    line-height: 10px;
+                    color: $tem1-gray-700;
+                }
+            }
+            .share {
+                cursor: pointer;
+                svg {
+                    color: $tem1-golden-rod;
+                    width: 24px;
+                    height: 24px;
+                    font-size: 24px;
+                }
+            }
+            .description {
+                padding-left: 8px;
+                border-left: 2px solid var(--icon-text);
+                p {
+                    font-size: 11.5px;
+                    line-height: 18px;
+                    color: var(--text);
+                }
+            }
+            .work-container {
+                display: flex;
+                gap: 6px;
+                flex-wrap: wrap;
+                .single-work {
+                    font-weight: 600;
+                    font-size: 8px;
+                    line-height: 8px;
+                    color: $tem1-golden-rod;
+                    background-color: $tem1-golden-rod-200;
+                    padding: 6px 10px;
+                    border-radius: 4px;
+                }
+            }
         }
       }
       .description {
@@ -131,11 +174,53 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
           object-fit: contain;
           transform: translateY(-50%);
         }
-        h5 {
-          font-size: 14px;
-          line-height: 14px;
-          font-weight: 600;
-          color: $black;
+        .social-container {
+            padding: 35px 0px 0 24px;
+            .signle-social-link {
+                position: relative;
+                background: #ffffff;
+                border: 1px solid #e4e4e4;
+                box-sizing: border-box;
+                border-radius: 8px;
+                padding: 13px 18px 13px 30px;
+                margin-bottom: 8px;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                text-decoration: none;
+                img {
+                    position: absolute;
+                    left: -23px;
+                    width: 40px;
+                    height: 40px;
+                    background: #fff;
+                    border-radius: 50%;
+                    border: 1px solid #f1f1f1;
+                    top: 50%;
+                    object-fit: contain;
+                    transform: translateY(-50%);
+                }
+                h5 {
+                    font-size: 14px;
+                    line-height: 14px;
+                    font-weight: 600;
+                    color: var(--icon-text);
+                }
+                p {
+                    margin-bottom: 0;
+                    line-height: 8px;
+                    font-size: 9px;
+                    color: #5b5b5b;
+                }
+                .right-arrow {
+                    color: $black;
+                    font-size: 20px;
+                    transition: all 0.4s linear;
+                }
+                .active-arrow {
+                    transform: rotate(90deg);
+                }
+            }
         }
         p {
           margin-bottom: 0;

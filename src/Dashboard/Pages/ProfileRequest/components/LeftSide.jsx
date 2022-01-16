@@ -140,8 +140,7 @@ function LeftSide() {
                         button: {
                             ...profileContext?.buttonInfo.colors,
                         },
-                        icon: "",
-                        text: "",
+                        ...profileContext.iconAndTextColor,
                     },
                     socialLinks: [...profileContext?.userInfo?.links],
                     personalInfo: {
@@ -168,7 +167,6 @@ function LeftSide() {
                         cover: uploadedPics?.coverPic,
                     };
                 }
-                debugger
 
                 // CHECKING RETURNED DATA OR ERROR
                 const checkingDataOrError = (r_data) => {

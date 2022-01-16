@@ -1,16 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
 import SectionTitle from "./SectionTitle";
 
 function SetUpPersonalInformation({ open, handelOpen, title }) {
-    const { setUserInfo, userInfo } = useProfileContext();
+    const { setUserInfo, userInfo, setIconAndTextColor } = useProfileContext();
+    const [textColor, setTextColor] = useState("");
     const { register, handleSubmit } = useForm();
     const submitUserData = (data) => {
         data.tags = data?.tags.split(",");
         setUserInfo((prev) => {
             return { ...prev, ...data };
         });
+        setIconAndTextColor((prev) => {
+            return {
+                ...prev,
+                text: textColor,
+            };
+        });
+    };
+
+    const handleChangeTextColor = (e) => {
+        setTextColor(e.target.value);
     };
 
     return (
@@ -54,8 +65,12 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
                             />
                             <label htmlFor="floatingInput_address">Address</label>
                         </div>
-                        <div className="text-end">
-                            <button className="btn text-white bg-primary-500 px-4 rounded-pill">Submit</button>
+                        <div className="text-end d-flex justify-content-between align-items-center">
+                            <div className="w-50 me-2">
+                                <input onChange={handleChangeTextColor} defaultValue={"#255ed1"} type="color" className="form-control p-0" name="" id="" />
+                                <small className="w-100 text-center d-block small">Text Color</small>
+                            </div>
+                            <button className="btn text-white bg-primary-500 px-4  rounded-pill">Submit</button>
                         </div>
                     </div>
                 </form>

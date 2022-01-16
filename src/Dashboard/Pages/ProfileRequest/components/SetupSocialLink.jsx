@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionTitle from "./SectionTitle";
 import { InlineIcon } from "@iconify/react";
 import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
-import { useForm } from "react-hook-form";
 
 function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
-    const { socialLinks, setUserInfo, userInfo } = useProfileContext();
+    const [iconColor, setIconColor] = useState("");
+    const { socialLinks, setUserInfo, userInfo,  setIconAndTextColor } = useProfileContext();
 
     const submitSocialLink = (e) => {
         e.preventDefault();
@@ -18,6 +18,12 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
         setUserInfo((prev) => {
             return { ...prev, links: createdArray };
         });
+        setIconAndTextColor((prev) => {
+            return { ...prev, icon: iconColor };
+        });
+    };
+    const handleIconColorChange = (e) => {
+        setIconColor(e.target.value);
     };
 
     return (
@@ -28,7 +34,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                     <div className="social-icon-wrapper">
                         {socialLinks?.map((data, index) => (
                             <div className="single-icon" key={index}>
-                                <a href={data.link} target="_blank">
+                                <a href={data.link} style={{ color: iconColor }} target="_blank">
                                     {data.icon}
                                 </a>
                             </div>
@@ -60,8 +66,12 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                                     );
                                 })}
                             </div>
-                            <div className="text-end">
-                                <button type="submit">Submit Data</button>
+                            <div className="text-end d-flex justify-content-between align-items-center">
+                                <div className="w-50 me-2">
+                                    <input onChange={handleIconColorChange} defaultValue={"#57697d"} type="color" className="form-control p-0" name="" id="" />
+                                    <small className="w-100 text-center d-block small">Text Color</small>
+                                </div>
+                                <button className="btn text-white bg-primary-500 px-4  rounded-pill">Submit</button>
                             </div>
                         </form>
                     </div>
