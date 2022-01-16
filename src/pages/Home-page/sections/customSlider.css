@@ -53,6 +53,41 @@
 }
 
 
+/* responsive code  */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    /* recode */
+    #whyOneCart .swiper-horizontal>#whyOneCart .swiper-pagination-bullets,
+    #whyOneCart .swiper-pagination-bullets.swiper-pagination-horizontal,
+    #whyOneCart .swiper-pagination-custom,
+    #whyOneCart .swiper-pagination-fraction {
+        display: block;
+    }
+    #whyOneCart .swiper-button-next {
+        display: none;
+    }
+    #whyOneCart .swiper-button-prev {
+        display: none;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    /* recode */
+    #whyOneCart .swiper-horizontal>#whyOneCart .swiper-pagination-bullets,
+    #whyOneCart .swiper-pagination-bullets.swiper-pagination-horizontal,
+    #whyOneCart .swiper-pagination-custom,
+    #whyOneCart .swiper-pagination-fraction {
+        display: block;
+    }
+    #whyOneCart .swiper-button-next {
+        display: none;
+    }
+    #whyOneCart .swiper-button-prev {
+        display: none;
+    }
+}
+
+
 /* ------------------------------------------- */
 
 
@@ -108,4 +143,19 @@
 #about_area .swiper-button-prev:after {
     content: url(../../../assets/images/leftArrow.png);
     cursor: pointer;
+}
+
+
+/* responsive code  */
+
+@media (min-width: 481px) and (max-width: 768px) {}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    /* recode */
+    #about_area .swiper-button-next {
+        display: none;
+    }
+    #about_area .swiper-button-prev {
+        display: none;
+    }
 }

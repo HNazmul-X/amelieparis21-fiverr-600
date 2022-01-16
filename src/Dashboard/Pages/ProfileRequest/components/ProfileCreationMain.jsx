@@ -30,7 +30,6 @@ function ProfileCreationMain() {
     useEffect(async () => {
         try {
             const x = await SecureFetch.get(`http://localhost:8080/api/user/get-user-by-profileId/${profileId}?select=_id`);
-            
 
             if (x?.user?.profileTemplate) {
                 const data = await SecureFetch.get(`${apiBaseURL}/api/profile-template/getSingleTemplateData/${x.user?.profileTemplate}`);
