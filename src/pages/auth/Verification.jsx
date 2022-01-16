@@ -23,7 +23,7 @@ const Verification = () => {
     setIsSpinnerShow(true);
     try {
       const { data: returnedData } = await axios.post(
-        "https://onecard-pro.herokuapp.com/api/auth/verify-profile/",
+        "http://localhost:8080/api/auth/verify-profile/",
         { code: data.code, id: verificationId, userId }
       );
       if (returnedData.error) {

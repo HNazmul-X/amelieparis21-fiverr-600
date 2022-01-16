@@ -11,7 +11,7 @@ const AllRequest = () => {
 
     useEffect(async () => {
         try {
-            const data = await SecureFetch.get("https://onecard-pro.herokuapp.com/api/profile/all-profile");
+            const data = await SecureFetch.get("http://localhost:8080/api/profile/all-profile");
             setAllProfileData(data);
             console.log("data", data);
         } catch (err) {
@@ -52,7 +52,7 @@ const AllRequest = () => {
                                                 <InlineIcon
                                                     onClick={() => navigate(`/admin/profile-request/profile-creation/${data?._id}`)}
                                                     className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"
-                                                    icon={"fluent:open-folder-16-filled"}
+                                                    icon={!data?.user?.profileTemplate ? "fluent:open-folder-16-filled" : "bx:bxs-edit"}
                                                 />
                                                 {data?.user?.profileTemplate ? <InlineIcon className="p-1 fs-3 alert-info btn mx-2 rounded-pill" icon={"bx:bx-expand-alt"} /> : null}
                                             </td>

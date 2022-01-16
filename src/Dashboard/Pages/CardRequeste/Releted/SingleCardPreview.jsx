@@ -4,16 +4,17 @@ import { useParams } from "react-router-dom";
 import { SecureFetch } from "../../../../Util/SecureFetch";
 import { InlineIcon } from "@iconify/react";
 import qrCodeImage from "../../../../assets/images/Group.png";
+import { apiBaseURL } from "../../../../Util/API_Info";
 
 const SingleCardPreview = ({}) => {
     const [singleCardData, setSingleCardData] = useState({});
     const [showDetails, setShowDetails] = useState(false);
     const { cardId } = useParams();
-    const baseurl = "http://localhost:8080";
+    const baseurl = apiBaseURL;
 
     useEffect(async () => {
         try {
-            const data = await SecureFetch.get(`https://onecard-pro.herokuapp.com/api/card/get-single-card/${cardId}`);
+            const data = await SecureFetch.get(`http://localhost:8080/api/card/get-single-card/${cardId}`);
             setSingleCardData(data);
             console.log(data);
         } catch (e) {
@@ -26,7 +27,7 @@ const SingleCardPreview = ({}) => {
             <div className="single-card-preview">
                 <div className="front-side">
                     <div className="logo" style={{ "--logo-scale": singleCardData?.frontSide?.scale }}>
-                        <img src={baseurl + singleCardData?.frontSide?.logo} alt="" />
+                        <img src={apiBaseURL + singleCardData?.frontSide?.logo} alt="" />
                     </div>
                     <div className="one-card-logo">
                         <h5>

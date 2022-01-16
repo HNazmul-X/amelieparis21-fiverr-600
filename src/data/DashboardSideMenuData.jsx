@@ -51,4 +51,11 @@ export const ProfileSidebarData = [
             },
         ],
     },
+    {
+        icon: "",
+        label: "Back To Home",
+        destination: "/",
+        id: "'8259a9b2-56e5-4ff1-b7e3-4080245bef9c'",
+        dropdown: [],
+    },
 ];

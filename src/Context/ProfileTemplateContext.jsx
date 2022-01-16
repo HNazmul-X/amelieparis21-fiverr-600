@@ -5,6 +5,10 @@ export const ProfileTemplateContextData = createContext();
 const ProfileTemplateContext = ({ children }) => {
     const [profileTemplateId, setProfileTemplateId] = useState("");
     const [socialLinks, setSocialLinks] = useState([]);
+    const [iconAndTextColor, setIconAndTextColor] = useState({
+        icon: "",
+        text: "",
+    });
     const [userInfo, setUserInfo] = useState({
         name: "",
         tags: [],
@@ -36,7 +40,20 @@ const ProfileTemplateContext = ({ children }) => {
         },
     });
 
-    const providerData = { profileTemplateId, socialLinks, userInfo, userPics, buttonInfo, setButtonInfo, setProfileTemplateId, setUserPics, setSocialLinks, setUserInfo };
+    const providerData = {
+        profileTemplateId,
+        socialLinks,
+        userInfo,
+        userPics,
+        buttonInfo,
+        iconAndTextColor,
+        setIconAndTextColor,
+        setButtonInfo,
+        setProfileTemplateId,
+        setUserPics,
+        setSocialLinks,
+        setUserInfo,
+    };
 
     return <ProfileTemplateContextData.Provider value={{ ...providerData }}>{children}</ProfileTemplateContextData.Provider>;
 };
@@ -44,7 +61,8 @@ const ProfileTemplateContext = ({ children }) => {
 export default ProfileTemplateContext;
 
 export const useProfileContext = () => {
-    const { profileTemplateId, setProfileTemplateId, socialLinks, setSocialLinks, userInfo, setUserInfo, userPics, setUserPics, buttonInfo, setButtonInfo } = useContext(ProfileTemplateContextData);
+    const { profileTemplateId, setProfileTemplateId, socialLinks, setSocialLinks, iconAndTextColor, setIconAndTextColor, userInfo, setUserInfo, userPics, setUserPics, buttonInfo, setButtonInfo } =
+        useContext(ProfileTemplateContextData);
 
-    return { profileTemplateId, setProfileTemplateId, socialLinks, setSocialLinks, userInfo, setUserInfo, userPics, setUserPics, buttonInfo, setButtonInfo };
+    return { profileTemplateId, setProfileTemplateId, socialLinks, setSocialLinks, iconAndTextColor, setIconAndTextColor, userInfo, setUserInfo, userPics, setUserPics, buttonInfo, setButtonInfo };
 };

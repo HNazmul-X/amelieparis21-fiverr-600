@@ -60,10 +60,10 @@ function ProfileTemplate1() {
     return (
         <div className="profile-template-1">
             <div className="banner">
-                <img src={userPics.cover.dataURL || banner} alt="Banner" />
+                <img src={userPics?.cover?.dataURL || banner} alt="Banner" />
             </div>
             <div className="besic-info">
-                <img className="profile-pic bg-light" src={userPics.profile.dataURL || profilePic} alt="profile" />
+                <img className="profile-pic bg-light" src={userPics?.profile?.dataURL || profilePic} alt="profile" />
                 <div className="info">
                     <div className="name-section">
                         <div>

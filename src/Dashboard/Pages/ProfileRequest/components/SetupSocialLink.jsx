@@ -5,7 +5,7 @@ import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
 import { useForm } from "react-hook-form";
 
 function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
-    const { socialLinks, setUserInfo } = useProfileContext();
+    const { socialLinks, setUserInfo, userInfo } = useProfileContext();
 
     const submitSocialLink = (e) => {
         e.preventDefault();
@@ -13,7 +13,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
         const createdArray = [...e.target.elements]
             .filter((data) => data.tagName === "INPUT" && data.value !== "")
             .map((data) => {
-                return { name: data.getAttribute("name"), link: data.value };
+                return { name: data.getAttribute("name"), link: data.value, _id: data?.getAttribute("data-id") };
             });
         setUserInfo((prev) => {
             return { ...prev, links: createdArray };
@@ -44,7 +44,16 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                                     return (
                                         <div className="col p-1 mb-3">
                                             <div className=" form-floating">
-                                                <input name={data.name} type="text" className="form-control primary-input" id={data?.id} placeholder="name@example.com" required={true} />
+                                                <input
+                                                    name={data.name}
+                                                    data-id={data?.id}
+                                                    defaultValue={userInfo?.links?.find((icon) => icon.name === data.name)?.link || ""}
+                                                    type="text"
+                                                    className="form-control primary-input"
+                                                    id={data?.id}
+                                                    placeholder="name@example.com"
+                                                    required={true}
+                                                />
                                                 <label htmlFor={data.id}>{data?.name}</label>
                                             </div>
                                         </div>

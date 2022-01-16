@@ -19,8 +19,9 @@ export default class GetCookie {
 
     deleteCookie(name) {
         const date = new Date();
-        date.setTime(date.getTime() + 700);
+        date.setTime(date.getTime() - 1000 * 60 * 60 * 24 * 3);
         const expire = date.toUTCString();
+        console.log(expire);
         document.cookie = `${name}=;expires${expire}`;
         return true;
     }

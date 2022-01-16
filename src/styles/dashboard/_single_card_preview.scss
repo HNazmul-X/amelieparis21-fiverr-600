@@ -1,159 +1,160 @@
 @use "../util/" as *;
+@use "sass:math";
 
 $card-details-conetnt-bg: #f7faff;
-$border-bg:#DCE2EE;
 
-.signle-card-preview {
-  padding: 75px 58px;
-  .image-area {
+.single-card-preview {
+    --each-card-width: 350px;
+    --each-card-height: auto;
+    --card-bg: #{$blue-grey};
+    --card-aspect-ratio: 2/1;
     display: flex;
-    gap: 20px;
-
-    .front-logo-wrapper {
-      padding: 60px 10px;
-      display: flex;
-      align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem;
+    @mixin card-common {
+        border-radius: 10px;
+        width: 350px;
+        background-color: $blue-grey;
+        aspect-ratio: 2/1;
+        height: auto;
+        position: relative;
+        z-index: 1;
+        color: white;
+        overflow: hidden;
+        @include min-lg {
+            width: 450px;
+        }
+    }
+    @include min-lg {
+        justify-content: space-between;
+        --each-card-width: 450px;
+    }
+    @include min-xxl{
       justify-content: center;
-      position: relative;
-      border-radius: 9px;
-      width: 50%;
-      overflow: hidden;
-      box-shadow: $large-spreading-shadow;
-      .front-logo {
-        max-width: 176px;
-
-        img {
-          width: 100%;
-        }
-      }
-      .card-name-area {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        .card-name {
-          font-size: 32px;
-          line-height: 26px;
-          color: $white;
-          margin-bottom: 0;
-        }
-        .sm-text {
-          font-size: 15px;
-          line-height: 26px;
-          margin-bottom: 0;
-          color: $white;
-        }
-      }
-
-      .icon {
-        position: absolute;
-        right: 10px;
-
-        svg {
-          font-size: 48px;
-          transform: rotate(90deg);
-          color: $white;
-        }
-      }
+      column-gap: 20px;
     }
 
-    .back-logo-wrapper {
-      width: 50%;
-      box-shadow: $large-spreading-shadow;
-      padding: 40px 30px 10px;
-      border-radius: 9px;
-      display: flex;
-      gap: 8px;
-      .info-container {
-        width: 70% !important;
-        .name {
-          font-size: 25px;
-          line-height: 26px;
-          color: $white;
-          margin-top: 30px;
-        }
-        .position {
-          font-weight: 600;
-          font-size: 20px;
-          line-height: 26px;
-          color: $white;
-          margin-bottom: 0;
-        }
-        .phone {
-          font-weight: 600;
-          font-size: 18px;
-          line-height: 26px;
-          color: $white;
-        }
-      }
-      .back-logo {
-        
-        img {
-          max-width: 156px;
-        }
-      }
+    .front-side {
+        @include card-common();
 
-      .qr-code {
+        .logo,
+        .one-card-logo,
+        .icon {
+            position: absolute;
+        }
+        .one-card-logo {
+            bottom: 10px;
+            margin-bottom: 0px;
+            left: 10px;
+        }
+        .icon {
+            right: 10px;
+            top: 50%;
+            transform: translate(0, -50%) rotate(90deg);
+            .iconify {
+                font-size: 30px;
+            }
+        }
+
+        .logo {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 26%;
+            img {
+                width: 100%;
+                height: 100%;
+                transform: scale(var(--logo-scale));
+            }
+        }
+    }
+    .back-side {
+        @include card-common();
+        .logo-and-info {
+            display: flex;
+            flex-flow: column;
+
+            .logo {
+                width: 100%;
+                height: 145px;
+                position: relative;
+                --logo-scale:1;
+                img.logo__logo{
+                  position: absolute;
+                  top: 50%;
+                  left:50%;
+                  transform: translate(-50%, -50%) scale(var(--logo-scale));
+                  width: 39%;
+                }
+            }
+            .info{
+              padding:5px 10px 10px 10px;
+              display: flex;
+              flex-flow: column;
+              &.center{
+                align-items: center;
+              }
+              p{
+                margin-bottom: 0px;
+                line-height: 22px;
+                &.name{
+                  font-size: 1.4rem;
+                }
+              }
+            }
+        }
+    }
+}
+
+.card-details {
+    margin-top: 65px;
+    .header {
+        background-color: $white;
+        padding: 20px 34px;
         display: flex;
         align-items: center;
-        height: 100%;
-        width: 30%;
-        justify-content: center;
-      }
-    }
-  }
-
-  .card-details {
-    margin-top: 65px;
-    box-shadow: $large-spreading-shadow;
-    .header {
-      background-color: $white;
-      padding: 23px 34px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      border-bottom:1px solid $border-bg;
-      p {
-        margin-bottom: 0;
-        font-weight: 600;
-        font-size: 26px;
-        line-height: 26px;
-        color: $blue-grey;
-      }
-      svg {
-        font-size: 24px;
-        transition: all 0.4s linear;
-      }
+        justify-content: space-between;
+        cursor: pointer;
+        p {
+            margin-bottom: 0;
+            font-weight: 600;
+            font-size: 26px;
+            line-height: 26px;
+            color: $blue-grey;
+        }
+        svg {
+            font-size: 24px;
+            transition: all 0.4s linear;
+        }
     }
 
     .card-details-content {
-      padding: 13px 62px 50px 65px;
-      background-color: $card-details-conetnt-bg;
-     
-      transition: all .4s linear;
-      .details-container {
-        display: flex;
-        // flex-wrap: wrap;
-        gap: 62px;
-        .single-fild {
-          width: 100%;
-          margin-bottom: 13px;
-          p {
-            margin-bottom: 0;
-            color: $blue-grey;
-            font-weight: 600;
-            font-size: 15px;
-            line-height: 26px;
-          }
-          input {
-            border: 1px solid #dce2ee;
-            outline: none;
-            background-color: $white;
-            width: 100%;
-            padding: 12px 20px;
-          }
+        padding: 13px 62px 80px 65px;
+        background-color: $card-details-conetnt-bg;
+        box-shadow: $large-spreading-shadow;
+        .details-container {
+            display: flex;
+            // flex-wrap: wrap;
+            gap: 62px;
+            .single-fild {
+                width: 100%;
+                margin-bottom: 13px;
+                p {
+                    margin-bottom: 0;
+                    color: $blue-grey;
+                    font-weight: 600;
+                    font-size: 15px;
+                    line-height: 26px;
+                }
+                input {
+                    border: 1px solid #dce2ee;
+                    outline: none;
+                    background-color: $white;
+                    width: 100%;
+                    padding: 12px 20px;
+                }
+            }
         }
-      }
     }
-  }
 }

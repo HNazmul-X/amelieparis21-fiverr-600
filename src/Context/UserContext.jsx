@@ -42,10 +42,9 @@ const UserContext = ({ children }) => {
     useEffect(async () => {
         const {
             data: { user: loggedInUser },
-        } = await axios.post("https://onecard-pro.herokuapp.com/api/auth/verify-token", {
+        } = await axios.post("http://localhost:8080/api/auth/verify-token", {
             token: cookie.getCookie("token"),
         });
-        console.log()
         if (loggedInUser) {
             if (loggedInUser?.token?.length > 2) {
                 loginUser(loggedInUser, () => navigate(location.pathname, { replace: true }));
@@ -53,7 +52,7 @@ const UserContext = ({ children }) => {
                 logoutUser();
             }
         } else {
-           logoutUser()
+            logoutUser();
         }
     }, []);
 
