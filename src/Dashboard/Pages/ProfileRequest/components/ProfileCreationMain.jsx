@@ -18,7 +18,7 @@ function ProfileCreationMain() {
     /* fetching single profile */
     useEffect(async () => {
         try {
-            const url = `https://onecard-pro.herokuapp.com/api/profile/single-profile/${profileId}?select=user firstname lastname`;
+            const url = `${apiBaseURL}/api/profile/single-profile/${profileId}?select=user firstname lastname`;
             const data = await SecureFetch.get(encodeURI(url));
             setSingleProfile(data);
         } catch (e) {
@@ -34,6 +34,7 @@ function ProfileCreationMain() {
             if (x?.user?.profileTemplate) {
                 const data = await SecureFetch.get(`${apiBaseURL}/api/profile-template/getSingleTemplateData/${x.user?.profileTemplate}`);
                 if (data) {
+                    console.log(data)
                     profileContext.setUserPics({
                         ...profileContext.userPics,
                         profile: { dataURL: `${apiBaseURL}${data?.photos?.profile}` },
@@ -64,7 +65,7 @@ function ProfileCreationMain() {
                     );
                     profileContext.setIconAndTextColor({
                         ...profileContext?.iconAndTextColor,
-                        icon: data?.color?.text,
+                        icon: data?.colors?.icon,
                         text: data?.colors?.text,
                     });
                 }

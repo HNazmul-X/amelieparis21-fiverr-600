@@ -2,12 +2,9 @@ import React, {useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import about from "../../../assets/images/about.png";
 import SwiperCore, {
-    Navigation,Pagination,Mousewheel,Keyboard,Autoplay
+    Navigation,Pagination,Autoplay
 } from 'swiper';
-import { Controller } from 'swiper';
 import { InlineIcon } from '@iconify/react';
-import rightArrow from "../../../assets/images/rightArrow.png";
-import leftArrow from "../../../assets/images/leftArrow.png";
 // Import Swiper styles
 import 'swiper/css';
 import "swiper/css/navigation"
@@ -16,9 +13,6 @@ import "swiper/css/pagination"
 SwiperCore.use([Navigation,Pagination,Autoplay]);
 
 const AboutUS = () => {
-    const [controlledSwiper, setControlledSwiper] = useState(null);
-    const [firstSwiper, setFirstSwiper] = useState(null);
-  const [secondSwiper, setSecondSwiper] = useState(null);
     const handlePopUp = (value) => {
         if (value === "true") {
             swal("Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti distinctio excepturi odio id quos vitae nam saepe aliquam quae! Praesentium, iure laboriosam? Itaque dolor, possimus tempore et illum aperiam facere voluptas accusantium unde, illo distinctio nisi. Quos minus ut voluptatibus? Deleniti, nam deserunt atque quod tempore facilis hic eius voluptatibus, odio doloremque accusamus omnis veniam magnam labore? Reiciendis adipisci doloremque tempore, aliquam exercitationem optio fugiat voluptatum minus odit beatae cupiditate impedit. Illum aut perferendis sunt odio culpa? Eveniet excepturi ut atque, quisquam asperiores ex qui nobis aperiam distinctio inventore nihil minima? Fugiat rem aliquam alias amet harum deserunt eveniet!")
