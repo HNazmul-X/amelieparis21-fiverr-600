@@ -4,20 +4,21 @@ import about from "../../../assets/images/about.png";
 import SwiperCore, {
     Navigation,Pagination,Mousewheel,Keyboard,Autoplay
 } from 'swiper';
+import { Controller } from 'swiper';
 import { InlineIcon } from '@iconify/react';
-
+import rightArrow from "../../../assets/images/rightArrow.png";
+import leftArrow from "../../../assets/images/leftArrow.png";
 // Import Swiper styles
 import 'swiper/css';
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
-
-SwiperCore.use([Navigation,Pagination,Mousewheel,Keyboard,Autoplay]);
+SwiperCore.use([Navigation,Pagination,Autoplay]);
 
 const AboutUS = () => {
-
+    const [controlledSwiper, setControlledSwiper] = useState(null);
+    const [firstSwiper, setFirstSwiper] = useState(null);
+  const [secondSwiper, setSecondSwiper] = useState(null);
     const handlePopUp = (value) => {
         if (value === "true") {
             swal("Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti distinctio excepturi odio id quos vitae nam saepe aliquam quae! Praesentium, iure laboriosam? Itaque dolor, possimus tempore et illum aperiam facere voluptas accusantium unde, illo distinctio nisi. Quos minus ut voluptatibus? Deleniti, nam deserunt atque quod tempore facilis hic eius voluptatibus, odio doloremque accusamus omnis veniam magnam labore? Reiciendis adipisci doloremque tempore, aliquam exercitationem optio fugiat voluptatum minus odit beatae cupiditate impedit. Illum aut perferendis sunt odio culpa? Eveniet excepturi ut atque, quisquam asperiores ex qui nobis aperiam distinctio inventore nihil minima? Fugiat rem aliquam alias amet harum deserunt eveniet!")
@@ -33,7 +34,7 @@ const AboutUS = () => {
                     <h2>What people Says About us</h2>
                 </div>
 
-                <div >
+                <div>
                     <Swiper 
                         breakpoints={{
                             // when window width is <= 320px
@@ -55,20 +56,21 @@ const AboutUS = () => {
           
                             // when window width is <= 768px
                             768: {
-                              slidesPerView: 3,
-                              spaceBetween: 100,
+                              slidesPerView: 2,
+                              spaceBetween: 40,
                             },
+                            992: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            }
                           }}
-                        slidesPerView={3}
-                        spaceBetween={100}
                         loop={true}
-                        loopFillGroupWithBlank={true}
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: false,
                         }}
-                        cssMode={true}
-                        navigation={true} pagination={true} mousewheel={false} keyboard={true}
+                        navigation={true} pagination={true}
+                        style={{padding: "0 10px"}}
                     >
                         <SwiperSlide className='slider_cart'>
                             <div className="cartInfo">

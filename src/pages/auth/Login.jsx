@@ -19,7 +19,7 @@ const Login = () => {
 
     const submitLoginData = async (data) => {
         try {
-            const returnedData = await Authentication.loginAndData("https://onecard-pro.herokuapp.com/api/auth/login", { ...data });
+            const returnedData = await Authentication.loginAndData("http://localhost:8080/api/auth/login", { ...data });
             auth.loginUser(returnedData, () => navigate(from, { replace: true }));
         } catch (e) {
             swal("Invalid Credentials", "Please check is your username or password is correct. otherwise you've entered a wrong password", "error");

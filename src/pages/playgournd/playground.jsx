@@ -16,7 +16,7 @@ const PlayGround = () => {
         formData.append("coverPic", Obj.coverPic[0]);
 
 
-        const res = await fetch("https://onecard-pro.herokuapp.com/playground/upload", {
+        const res = await fetch("http://localhost:8080/playground/upload", {
             method: "POST",
             body: formData,
         });

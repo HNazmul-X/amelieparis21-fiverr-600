@@ -12,7 +12,6 @@ import watch from "../../../assets/images/watch.png";
 import 'swiper/css';
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import "./customSlider.css";
 
 
 SwiperCore.use([Navigation,Pagination,Mousewheel,Keyboard,Autoplay]);

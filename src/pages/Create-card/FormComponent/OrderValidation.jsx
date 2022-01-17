@@ -40,7 +40,7 @@ const OrderValidation = () => {
         const formData = new FormData();
         formData.append("backSide", cardFiles?.backside);
         formData.append("frontSide", cardFiles?.frontSide);
-        const { data: uploadedImg } = await axios.post("https://onecard-pro.herokuapp.com/api/upload/upload-card-image", formData, {
+        const { data: uploadedImg } = await axios.post("http://localhost:8080/api/upload/upload-card-image", formData, {
             headers: {
                 Authorization: getCookie.getCookie("token"),
                 userId: getCookie.getCookie("userId"),
@@ -93,7 +93,7 @@ const OrderValidation = () => {
                 comment_on: data?.comment_on,
                 promoCode: data?.promoCode,
             };
-            const returnedData = await SecureFetch.post("https://onecard-pro.herokuapp.com/api/card/create-card", dataForSendBackend);
+            const returnedData = await SecureFetch.post("http://localhost:8080/api/card/create-card", dataForSendBackend);
             console.log(returnedData);
             if (returnedData?.card_created) {
                 navigate(`/card-status/${returnedData?.cardId}`);
