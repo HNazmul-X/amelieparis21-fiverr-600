@@ -25,6 +25,7 @@ import ProfilePage from "../pages/Profile/ProfilePage";
 import ResetPwd from "../pages/auth/ResetPwd";
 import ResetPwdVerification from "../pages/auth/ResetPwdVerification";
 import NewPwd from "../pages/auth/NewPwd";
+import AdminPrivateRoute from "./AdminPrivateRoute";
 
 const NavbarRouter = () => {
     return (
@@ -55,16 +56,20 @@ const NavbarRouter = () => {
 
             {/* Dashboard Layout Router */}
             <Route path="/admin" element={<DashboardLayout />}>
-                <Route path="profile-request/" element={<ProfileRequest />}>
-                    <Route path="all-user-profile" element={<AllRequest />} />
-                    <Route path="profile-creation/:profileId" element={<ProfileCreation />} />
-                </Route>
-
-                <Route path="card-request/" element={<CardRequest />}>
-                    <Route path="all/" element={<AllCard />} />
-                    <Route path="preview/:cardId" element={<SingleCardPreview />} />
-                </Route>
                 <Route path="login" element={<AdminLogin />} />
+
+                {/* private route for only admin */}
+                <Route element={<AdminPrivateRoute />}>
+                    <Route path="profile-request/" element={<ProfileRequest />}>
+                        <Route path="all-user-profile" element={<AllRequest />} />
+                        <Route path="profile-creation/:profileId" element={<ProfileCreation />} />
+                    </Route>
+
+                    <Route path="card-request/" element={<CardRequest />}>
+                        <Route path="all/" element={<AllCard />} />
+                        <Route path="preview/:cardId" element={<SingleCardPreview />} />
+                    </Route>
+                </Route>
             </Route>
         </Routes>
     );

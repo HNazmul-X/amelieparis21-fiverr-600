@@ -22,7 +22,7 @@ export default class GetCookie {
         date.setTime(date.getTime() - 1000 * 60 * 60 * 24 * 3);
         const expire = date.toUTCString();
         console.log(expire);
-        document.cookie = `${name}=;expires${expire}`;
+        document.cookie = `${name}=;expires=${expire};path=/`;
         return true;
     }
 }
