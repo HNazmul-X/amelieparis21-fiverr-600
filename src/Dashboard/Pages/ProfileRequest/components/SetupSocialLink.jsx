@@ -5,13 +5,13 @@ import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
 
 function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
     const [iconColor, setIconColor] = useState("");
-    const { socialLinks, setUserInfo, userInfo,  setIconAndTextColor } = useProfileContext();
+    const { socialLinks, setUserInfo, userInfo, setIconAndTextColor } = useProfileContext();
 
     const submitSocialLink = (e) => {
         e.preventDefault();
         console.log(e.target.elements);
         const createdArray = [...e.target.elements]
-            .filter((data) => data.tagName === "INPUT" && data.value !== "")
+            .filter((data) => data.tagName === "INPUT" && data.value !== "" && data.type !== "color")
             .map((data) => {
                 return { name: data.getAttribute("name"), link: data.value, _id: data?.getAttribute("data-id") };
             });

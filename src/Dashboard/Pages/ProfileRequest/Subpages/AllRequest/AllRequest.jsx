@@ -2,22 +2,45 @@ import { InlineIcon } from "@iconify/react";
 import swal from "@sweetalert/with-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { apiBaseURL } from "../../../../../Util/API_Info";
 import { SecureFetch } from "../../../../../Util/SecureFetch";
 
 const AllRequest = () => {
+    //states and function variable
     const navigate = useNavigate();
     const [allProfileData, setAllProfileData] = useState([]);
-    console.log(allProfileData);
 
+    // use effects
     useEffect(async () => {
         try {
-            const data = await SecureFetch.get("http://localhost:8080/api/profile/all-profile");
+            const data = await SecureFetch.get(`${apiBaseURL}/api/profile/all-profile`);
             setAllProfileData(data);
             console.log("data", data);
         } catch (err) {
             swal("Error Ocurred", err.message, "error");
         }
     }, []);
+
+    // Insider Functions for Handling data
+    const handleProfileRejectOrAccept = (con, userId) => {
+        try {
+            swal({
+                icon: "info",
+                title: "Are you to Approve This User",
+                buttons: ["No", "Yes"],
+            }).then(async (value) => {
+                if (value) {
+                    const g_data = { status: true };
+                    const r_data = await SecureFetch.post(`${apiBaseURL}/api/user//update-single-user-status/${userId}/`, g_data);
+                    if (r_data === true) {
+                        swal("Approved Successfully", "", "success");
+                    }
+                }
+            });
+        } catch (e) {
+            swal(e.message, "", "error");
+        }
+    };
 
     return (
         <>
@@ -47,8 +70,20 @@ const AllRequest = () => {
                                                 {data?.isApproved ? "Accepted" : "Pending"}
                                             </td>
                                             <td className="py-1">
-                                                <InlineIcon className="p-1 fs-3 alert-success btn mx-2 rounded-pill" icon={"la:check"} />
-                                                <InlineIcon className="p-1 fs-3 alert-danger btn mx-2 rounded-pill" icon={"la:times"} />
+                                                {!data.user.isApproved && (
+                                                    <InlineIcon
+                                                        onClick={() => handleProfileRejectOrAccept(true, data.user._id)}
+                                                        className="p-1 fs-3 alert-success btn mx-2 rounded-pill"
+                                                        icon={"la:check"}
+                                                    />
+                                                )}
+                                                {!data.user.isApproved && (
+                                                    <InlineIcon
+                                                        onClick={() => handleProfileRejectOrAccept(true, data.user._id)}
+                                                        className="p-1 fs-3 alert-danger btn mx-2 rounded-pill"
+                                                        icon={"la:times"}
+                                                    />
+                                                )}
                                                 <InlineIcon
                                                     onClick={() => navigate(`/admin/profile-request/profile-creation/${data?._id}`)}
                                                     className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"

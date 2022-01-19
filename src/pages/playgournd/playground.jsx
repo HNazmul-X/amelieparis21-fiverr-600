@@ -1,4 +1,5 @@
 import React from "react";
+import { apiBaseURL } from "../../Util/API_Info";
 
 const PlayGround = () => {
     //target the element and set submit event
@@ -15,8 +16,7 @@ const PlayGround = () => {
         formData.append("profilePic", Obj.profilePic[0]);
         formData.append("coverPic", Obj.coverPic[0]);
 
-
-        const res = await fetch("http://localhost:8080/playground/upload", {
+        const res = await fetch(`${apiBaseURL}/playground/upload`, {
             method: "POST",
             body: formData,
         });

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { apiBaseURL } from "../Util/API_Info";
 import GetCookie from "../Util/Coockie";
 
 export const UserContextData = createContext(null);
@@ -42,7 +43,7 @@ const UserContext = ({ children }) => {
     useEffect(async () => {
         const {
             data: { user: loggedInUser },
-        } = await axios.post("http://localhost:8080/api/auth/verify-token", {
+        } = await axios.post(`${apiBaseURL}/api/auth/verify-token`, {
             token: cookie.getCookie("token"),
         });
         if (loggedInUser) {

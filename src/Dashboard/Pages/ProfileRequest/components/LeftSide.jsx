@@ -27,7 +27,7 @@ function LeftSide() {
 
     // useEffects
     useEffect(async () => {
-        const x = await SecureFetch.get(`http://localhost:8080/api/user/get-user-by-profileId/${profileId}?select=_id`);
+        const x = await SecureFetch.get(`${apiBaseURL}/api/user/get-user-by-profileId/${profileId}?select=_id`);
         setTemplatedUser(x);
         if (!x.user?.profileTemplate) {
             resetProfileContext();
@@ -158,7 +158,7 @@ function LeftSide() {
 
                 // if template action type is create
                 if (type === "create") {
-                    const uploadedPics = await SecureFetch.post(`http://localhost:8080/api/profile-template/upload-template-images`, imageFormData);
+                    const uploadedPics = await SecureFetch.post(`${apiBaseURL}/api/profile-template/upload-template-images`, imageFormData);
                     if (uploadedPics.error) {
                         swal("Error", uploadedPics?.error, "error");
                     }
@@ -180,7 +180,7 @@ function LeftSide() {
 
                 // SENDING DATA TO SERVER BY DIFFERENCE METHOD
                 if (type === "create" && !uploadedUserPic.error) {
-                    const r_data = await SecureFetch.post(`http://localhost:8080/api/profile-template/create-profile-template/${templatedUser?.user?._id}`, templateDataGathering);
+                    const r_data = await SecureFetch.post(`${apiBaseURL}/api/profile-template/create-profile-template/${templatedUser?.user?._id}`, templateDataGathering);
                     checkingDataOrError(r_data);
                 } else if (type === "update") {
                     const r_data = await SecureFetch.post(`${apiBaseURL}/api/profile-template/updated-profileTemplate/${templatedUser?.user?.profileTemplate}`, templateDataGathering);

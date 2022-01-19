@@ -26,15 +26,12 @@ import vimeo from "../../../assets/images/social_icon/vimeo.png";
 import amazon from "../../../assets/images/social_icon/amazon.png";
 import telegram from "../../../assets/images/social_icon/telegram-app--v1.png";
 import blogger from "../../../assets/images/social_icon/blogger.png";
-//  import { useProfileContext } from "./../../../Context/ProfileTemplateContext";
 import { apiBaseURL } from "./../../../Util/API_Info";
 
-function ProfileTemplate1() {
-  const workLists = ["Social Media", "MARKETING", "DESIGN", "GRAPHIC"];
-  // const { userInfo, userPics, buttonInfo } = useProfileContext();
+function ProfileTemplate1({data}) {
   const baseurl = apiBaseURL;
 
-  const data = {
+ /*  const data = {
     photos: {
       cover:
         "/upload/profileTemplateImg/UploadcoverPic53f24c3b-542d-41a2-ac7e-f6233b4317f3Frameverification.png",
@@ -81,36 +78,36 @@ function ProfileTemplate1() {
     createdAt: "2022-01-16T07:46:34.564Z",
     updatedAt: "2022-01-16T08:35:22.029Z",
     __v: 0,
-  };
+  }; */
 
   const social = {
-    facebook: facebookIcon,
-    twitter: twitter,
-    instagram: instagramIcon,
-    linkedin: linkdinIcon,
-    tiktok: tiktok,
-    github: github,
-    website: website,
-    phone: callIcon,
-    telephone: telephone,
-    email: emailIcon,
-    whatsapp: whatsapp,
-    youtube: youtube,
-    microsoft: microsoft,
-    apple: apple,
-    vimeo: vimeo,
-    snapchat: snapchat,
-    amazon: amazon,
-    discord: discord,
-    telegram: telegram,
-    skype: skype,
-    dribbble: dribbble,
-    blogger: blogger,
-    behance: behance,
+      facebook: facebookIcon,
+      twitter: twitter,
+      instagram: instagramIcon,
+      linkedin: linkdinIcon,
+      tiktok: tiktok,
+      github: github,
+      website: website,
+      phone: callIcon,
+      telephone: telephone,
+      email: emailIcon,
+      whatsapp: whatsapp,
+      youtube: youtube,
+      microsoft: microsoft,
+      apple: apple,
+      vimeo: vimeo,
+      snapchat: snapchat,
+      amazon: amazon,
+      discord: discord,
+      telegram: telegram,
+      skype: skype,
+      dribbble: dribbble,
+      blogger: blogger,
+      behance: behance,
   };
 
   return (
-    <div className="profile-template-1 w-100 ">
+    <div className="profile-template-1 w-100 " style={{ "--icon-text": data?.colors?.icon, "--text": data?.colors?.text }}>
       <div className="banner">
         {/* <img src={baseurl + data?.photos.cover} alt="Banner" /> */}
         <img src={banner} alt="Banner" />
@@ -125,18 +122,18 @@ function ProfileTemplate1() {
         <div className="info">
           <div className="name-section">
             <div>
-              <h3>{data.personalInfo?.name || "Your Name Here"}</h3>
-              <p>{data.personalInfo?.tagline || "Your Tagline Here"}</p>
+              <h3>{data?.personalInfo?.name || "Your Name Here"}</h3>
+              <p>{data?.personalInfo?.tagline || "Your Tagline Here"}</p>
             </div>
             <div className="share">
               <InlineIcon className="share_icon" icon="bx:bxs-share-alt" />
             </div>
           </div>
           <div className="description">
-            <p>{data.personalInfo?.about || "Write Something About You"}</p>
+            <p>{data?.personalInfo?.about || "Write Something About You"}</p>
           </div>
           <div className="work-container">
-            {data.personalInfo.tags?.map((el, index) => (
+            {data?.personalInfo?.tags?.map((el, index) => (
               <p key={index} className="single-work">
                 {el}
               </p>

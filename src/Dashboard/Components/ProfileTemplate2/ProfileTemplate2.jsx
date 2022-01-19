@@ -35,7 +35,7 @@ export default function ProfileTemplate2() {
         facebook: facebookFill,
         twitter: twitterFill,
         instagram: instagramFill,
-        linkedIn: linkedinIcon,
+        linkedin: linkedinIcon,
         tiktok: bxlTiktok,
         github: githubFill,
         whatsapp: whatsappIcon,

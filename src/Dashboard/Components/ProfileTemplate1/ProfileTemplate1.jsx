@@ -87,11 +87,11 @@ function ProfileTemplate1() {
                 </div>
             </div>
             <div className="contact-section">
-                <button style={{ background: `${buttonInfo.colors.bg}`, color: `${buttonInfo.colors.color}`, boxShadow: `0 0 5px ${buttonInfo.colors.shadow}` }} className="add-contact-btn">
+                <button style={{ background: `${buttonInfo?.colors?.bg}`, color: `${buttonInfo?.colors?.color}`, boxShadow: `0 0 5px ${buttonInfo?.colors?.shadow}` }} className="add-contact-btn">
                     {buttonInfo?.info?.text || "ADD TO CONTACT"}
                 </button>
                 <div className="social-container">
-                    {userInfo.links.map((data) => (
+                    {userInfo?.links.map((data) => (
                         <a href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${data?.link}`} target="_blank" className="signle-social-link">
                             <div className="left">
                                 <img src={social[data?.name]} alt={""} />

@@ -51,7 +51,7 @@ function ProfileTemplate3() {
         github: githubFill,
         tiktok: bxlTiktok,
         instagram: instagramFill,
-        linkedIn: linkedinIcon,
+        linkedin: linkedinIcon,
         phone: bxsPhone,
         telephone: telephoneIcon,
         email: emailLine,
