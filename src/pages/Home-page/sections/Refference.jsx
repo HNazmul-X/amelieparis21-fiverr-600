@@ -9,7 +9,7 @@ const Refference = () => {
                     <div className="col-md-6">
                         <div className="refference_content">
                             <h2>Some thing Text World Be here</h2>
-                             <p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            <p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                                 
                             <button className='btn refferenceBtn'>Download Refference File</button>
                         </div>
