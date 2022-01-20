@@ -28,86 +28,117 @@ import telegram from "../../../assets/images/social_icon/telegram-app--v1.png";
 import blogger from "../../../assets/images/social_icon/blogger.png";
 
 function ProfileTemplate1() {
-    const workLists = ["Social Media", "MARKETING", "DESIGN", "GRAPHIC"];
-    const { userInfo, userPics, buttonInfo, iconAndTextColor } = useProfileContext();
+  const workLists = ["Social Media", "MARKETING", "DESIGN", "GRAPHIC"];
+  const { userInfo, userPics, buttonInfo, iconAndTextColor } =
+    useProfileContext();
 
-    const social = {
-        facebook: facebookIcon,
-        twitter: twitter,
-        instagram: instagramIcon,
-        linkedin: linkdinIcon,
-        tiktok: tiktok,
-        github: github,
-        website: website,
-        phone: callIcon,
-        telephone: telephone,
-        email: emailIcon,
-        whatsapp: whatsapp,
-        youtube: youtube,
-        microsoft: microsoft,
-        apple: apple,
-        vimeo: vimeo,
-        snapchat: snapchat,
-        amazon: amazon,
-        discord: discord,
-        telegram: telegram,
-        skype: skype,
-        dribbble: dribbble,
-        blogger: blogger,
-        behance: behance,
-    };
-    console.log(userInfo.name);
-    return (
-        <div className="profile-template-1" style={{ "--icon-text": iconAndTextColor?.icon, "--text": iconAndTextColor?.text }}>
-            <div className="banner">
-                <img src={userPics?.cover?.dataURL || banner} alt="Banner" />
+  const social = {
+    facebook: facebookIcon,
+    twitter: twitter,
+    instagram: instagramIcon,
+    linkedin: linkdinIcon,
+    tiktok: tiktok,
+    github: github,
+    website: website,
+    phone: callIcon,
+    telephone: telephone,
+    email: emailIcon,
+    whatsapp: whatsapp,
+    youtube: youtube,
+    microsoft: microsoft,
+    apple: apple,
+    vimeo: vimeo,
+    snapchat: snapchat,
+    amazon: amazon,
+    discord: discord,
+    telegram: telegram,
+    skype: skype,
+    dribbble: dribbble,
+    blogger: blogger,
+    behance: behance,
+  };
+  console.log(userInfo?.name);
+  return (
+    <div
+      className="profile-template-1"
+      style={{
+        "--icon-text": iconAndTextColor?.icon,
+        "--text": iconAndTextColor?.text,
+      }}
+    >
+      <div className="banner">
+        <img src={userPics?.cover?.dataURL || banner} alt="Banner" />
+      </div>
+      <div className="besic-info">
+        <img
+          className="profile-pic bg-light"
+          src={userPics?.profile?.dataURL || profilePic}
+          alt="profile"
+        />
+        <div className="info">
+          <div className="name-section">
+            <div>
+              <h3>{userInfo?.name || "Your Name Here"}</h3>
+              <p>{userInfo?.tagline || "Your Tagline Here"}</p>
             </div>
-            <div className="besic-info">
-                <img className="profile-pic bg-light" src={userPics?.profile?.dataURL || profilePic} alt="profile" />
-                <div className="info">
-                    <div className="name-section">
-                        <div>
-                            <h3>{userInfo?.name || "Your Name Here"}</h3>
-                            <p>{userInfo?.tagline || "Your Tagline Here"}</p>
-                        </div>
-                        <div className="share">
-                            <InlineIcon className="share_icon" icon="bx:bxs-share-alt" />
-                        </div>
-                    </div>
-                    <div className="description">
-                        <p>{userInfo?.about || "Write Something About You"}</p>
-                    </div>
-                    <div className="work-container">
-                        {userInfo.tags?.map((el, index) => (
-                            <p key={index} className="single-work">
-                                {el}
-                            </p>
-                        ))}
-                    </div>
-                </div>
+            <div className="share">
+              <InlineIcon className="share_icon" icon="bx:bxs-share-alt" />
             </div>
-            <div className="contact-section">
-                <button style={{ background: `${buttonInfo?.colors?.bg}`, color: `${buttonInfo?.colors?.color}`, boxShadow: `0 0 5px ${buttonInfo?.colors?.shadow}` }} className="add-contact-btn">
-                    {buttonInfo?.info?.text || "ADD TO CONTACT"}
-                </button>
-                <div className="social-container">
-                    {userInfo?.links.map((data) => (
-                        <a href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${data?.link}`} target="_blank" className="signle-social-link">
-                            <div className="left">
-                                <img src={social[data?.name]} alt={""} />
-                                <div>
-                                    <h5>{data?.name}</h5>
-                                    <p className="mt-1">{(userInfo.name && userInfo.name.split(" ")[1]) || "username"}</p>
-                                </div>
-                            </div>
-                            <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />
-                        </a>
-                    ))}
-                </div>
-            </div>
-            {/* </div> */}
+          </div>
+          <div className="description">
+            <p>{userInfo?.about || "Write Something About You"}</p>
+          </div>
+          <div className="work-container">
+            {userInfo?.tags?.map((el, index) => (
+              <p key={index} className="single-work">
+                {el}
+              </p>
+            ))}
+          </div>
         </div>
-    );
+      </div>
+      <div className="contact-section">
+        <button
+          style={{
+            background: `${buttonInfo?.colors?.bg}`,
+            color: `${buttonInfo?.colors?.color}`,
+            boxShadow: `0 0 5px ${buttonInfo?.colors?.shadow}`,
+          }}
+          className="add-contact-btn"
+        >
+          {buttonInfo?.info?.text || "ADD TO CONTACT"}
+        </button>
+        <div className="social-container">
+          {userInfo?.links.map((data) => (
+            <a
+              href={`${
+                data?.name === "phone"
+                  ? "tel:"
+                  : data?.name === "email"
+                  ? "mailto:"
+                  : ""
+              }${data?.link}`}
+              target="_blank"
+              className="signle-social-link"
+            >
+              <div className="left">
+                <img src={social[data?.name]} alt={""} />
+                <div>
+                  <h5>{data?.name}</h5>
+                  <p className="mt-1">
+                    {(userInfo?.name && userInfo?.name.split(" ")[1]) ||
+                      "username"}
+                  </p>
+                </div>
+              </div>
+              <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />
+            </a>
+          ))}
+        </div>
+      </div>
+      {/* </div> */}
+    </div>
+  );
 }
 
 export default ProfileTemplate1;
