@@ -102,6 +102,9 @@ const OrderValidation = () => {
                 console.log(returnedData);
                 if (returnedData?.card_created) {
                     navigate(`/card-status/${returnedData?.cardId}`);
+                } else if (returnedData.error) {
+                    setIsSpinnerShow(false);
+                    swal("Something Went Wrong", returnedData.error, "");
                 }
             }
         } catch (e) {
