@@ -19,7 +19,7 @@ const AllRequest = () => {
     const fetchData = async (currentPage, itemPerPage) => {
         try {
             const data = await SecureFetch.get(`${apiBaseURL}/api/profile/all-profile?item=${itemPerPage}&pageNo=${currentPage}`);
-            setAllProfileData(data.data);
+                     setAllProfileData(data.data);
             setDataInfo({
                 itemPerPage: data?.itemPerPage,
                 currentPage: data?.currentPage,
@@ -29,6 +29,7 @@ const AllRequest = () => {
             swal("Error Ocurred", err.message, "error");
         }
     };
+
 
     // use effects
     useEffect(async () => {
@@ -60,7 +61,7 @@ const AllRequest = () => {
         <>
             <div className="card-requested-table-section">
                 <div className="table-conatiner">
-                    {allProfileData.length > 0 ? (
+                    {allProfileData?.length > 0 ? (
                         <table className="my-table">
                             <thead>
                                 <tr>
