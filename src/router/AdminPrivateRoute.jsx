@@ -4,12 +4,12 @@ import { useAuth } from "../Context/UserContext";
 
 const AdminPrivateRoute = () => {
     const auth = useAuth();
-    const location = useLocation()
+    const location = useLocation();
 
     if (auth.user?.isAdmin) {
         return <Outlet />;
-    } else if (Object.values(auth?.user).length > 0 && !auth.user?.isAdmin) {
-        return <Navigate state={{from:location}} to={"/admin/login"} />;
+    } else if (Object.values(auth?.user).length > 0 && auth.user?.isAdmin === false) {
+        return <Navigate state={{ from: location }} to={"/admin/login"} />;
     } else {
         return (
             <div className="d-flex w-100 justify-content-center mt-5 pt-5 ">

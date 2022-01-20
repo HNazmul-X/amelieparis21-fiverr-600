@@ -3030,11 +3030,11 @@ body {
 }
 #realtime-making-card-preview-card .card-cover {
   width: 100%;
-  --card-radius: 10px;
+  --card-radius: 25px;
 }
 #realtime-making-card-preview-card .card-cover .preview-card__card {
   width: 90%;
-  height: 250px;
+  aspect-ratio: 4/2.54;
   margin-left: auto;
   border-radius: var(--card-radius);
   position: relative;
@@ -3158,6 +3158,10 @@ body {
 #realtime-making-card-preview-card .card-cover .preview-card__card .card-backside .backside__wrapper .info-and-logo .info-and-logo__info {
   display: flex;
   flex-direction: column;
+  padding: 5px 5px 10px 10px;
+}
+#realtime-making-card-preview-card .card-cover .preview-card__card .card-backside .backside__wrapper .info-and-logo .info-and-logo__info * {
+  margin-bottom: 10px;
 }
 #realtime-making-card-preview-card .card-cover .preview-card__card .card-backside .backside__wrapper .info-and-logo .info-and-logo__info.justify-left {
   align-items: flex-start;
@@ -3170,8 +3174,7 @@ body {
 }
 #realtime-making-card-preview-card .card-cover .preview-card__card .card-backside .backside__wrapper .info-and-logo .info-and-logo__logo {
   width: 100%;
-  max-height: 120px;
-  aspect-ratio: 3/1.5;
+  aspect-ratio: 3/2;
   text-align: center;
   position: relative;
 }
@@ -3180,7 +3183,7 @@ body {
   top: 50%;
   left: 50%;
   width: 120px;
-  transform: translate(-40%, -50%) scale(var(--logo-scale));
+  transform: translate(-50%, -50%) scale(var(--logo-scale));
 }
 
 #login_area #loginPopup {
@@ -4684,7 +4687,7 @@ body {
   border-radius: 10px;
   width: 350px;
   background-color: #57697d;
-  aspect-ratio: 2/1;
+  aspect-ratio: 4/2.54;
   height: auto;
   position: relative;
   z-index: 1;
@@ -4729,7 +4732,7 @@ body {
   border-radius: 10px;
   width: 350px;
   background-color: #57697d;
-  aspect-ratio: 2/1;
+  aspect-ratio: 4/2.54;
   height: auto;
   position: relative;
   z-index: 1;

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CreateCardPageContext } from "./CreateCardPage";
+import qrCodeImage from "../../assets/images/Group.png";
 
 const CardPreview = () => {
     const { formStepId, cardLogo } = useContext(CreateCardPageContext);
@@ -27,7 +28,7 @@ const CardPreview = () => {
                                 </div>
                             </div>
                             <div className="qr-code col-5 d-flex justify-content-center align-items-center">
-                                <img src="https://app.wemet.fr/static/media/qrCode.cf9b9dcc.png" className="w-75" alt="" />
+                                <img src={qrCodeImage} className="w-75" alt="" />
                             </div>
                         </div>
                     </div>

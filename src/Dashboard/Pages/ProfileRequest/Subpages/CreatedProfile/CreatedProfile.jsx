@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiBaseURL } from "../../../../../Util/API_Info";
 import { SecureFetch } from "../../../../../Util/SecureFetch";
+import DashboardTopBanner from "../../../../Components/DashboardTopBanner";
 
-const AllRequest = () => {
+const CreatedProfile = () => {
     //states and function variable
     const navigate = useNavigate();
     const [allProfileData, setAllProfileData] = useState([]);
@@ -18,13 +19,14 @@ const AllRequest = () => {
     // fetching data with pagination functionality
     const fetchData = async (currentPage, itemPerPage) => {
         try {
-            const data = await SecureFetch.get(`${apiBaseURL}/api/profile/all-profile?item=${itemPerPage}&pageNo=${currentPage}`);
+            const data = await SecureFetch.get(`${apiBaseURL}/api/profile/get-profile-by-user-filter?isApproved=true&pageNo=${currentPage}&limit=${itemPerPage}`);
             setAllProfileData(data.data);
             setDataInfo({
                 itemPerPage: data?.itemPerPage,
                 currentPage: data?.currentPage,
                 totalDocuments: data?.totalDocuments,
             });
+            console.log(data?.data);
         } catch (err) {
             swal("Error Ocurred", err.message, "error");
         }
@@ -58,6 +60,7 @@ const AllRequest = () => {
 
     return (
         <>
+            <DashboardTopBanner title={"Created Profile || Approved Profile"} />
             <div className="card-requested-table-section">
                 <div className="table-conatiner">
                     {allProfileData.length > 0 ? (
@@ -76,33 +79,27 @@ const AllRequest = () => {
                                 {allProfileData?.map((data, index) => {
                                     return (
                                         <tr key={index}>
-                                            <td>{data?.user.username}</td>
-                                            <td>{data?.user?.email}</td>
-                                            <td>{data?.phone}</td>
-                                            <td className={!data?.user?.isApproved ? "st-pending" : data?.user?.isApproved ? "st-delivered" : "st-rejected"}>
-                                                {data?.user?.isApproved ? "Approved" : "Pending"}
-                                            </td>
+                                            <td>{data.username}</td>
+                                            <td>{data?.email}</td>
+                                            <td>{data?.profile.phone}</td>
+                                            <td className={!data?.isApproved ? "st-pending" : data?.isApproved ? "st-delivered" : "st-rejected"}>{data?.isApproved ? "Approved" : "Pending"}</td>
                                             <td className="py-1">
-                                                {!data.user.isApproved && (
+                                                {!data?.isApproved && (
                                                     <InlineIcon
-                                                        onClick={() => handleProfileRejectOrAccept(true, data.user._id)}
+                                                        onClick={() => handleProfileRejectOrAccept(true, data._id)}
                                                         className="p-1 fs-3 alert-success btn mx-2 rounded-pill"
                                                         icon={"la:check"}
                                                     />
                                                 )}
-                                                {!data.user.isApproved && (
-                                                    <InlineIcon
-                                                        onClick={() => handleProfileRejectOrAccept(true, data.user._id)}
-                                                        className="p-1 fs-3 alert-danger btn mx-2 rounded-pill"
-                                                        icon={"la:times"}
-                                                    />
+                                                {!data?.isApproved && (
+                                                    <InlineIcon onClick={() => handleProfileRejectOrAccept(true, data._id)} className="p-1 fs-3 alert-danger btn mx-2 rounded-pill" icon={"la:times"} />
                                                 )}
                                                 <InlineIcon
-                                                    onClick={() => navigate(`/admin/profile-request/profile-creation/${data?._id}`)}
+                                                    onClick={() => navigate(`/admin/profile-request/profile-creation/${data?.profile?._id}`)}
                                                     className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"
-                                                    icon={!data?.user?.profileTemplate ? "fluent:open-folder-16-filled" : "bx:bxs-edit"}
+                                                    icon={!data?.profileTemplate ? "fluent:open-folder-16-filled" : "bx:bxs-edit"}
                                                 />
-                                                {data?.user?.profileTemplate ? <InlineIcon className="p-1 fs-3 alert-info btn mx-2 rounded-pill" icon={"bx:bx-expand-alt"} /> : null}
+                                                {data?.profileTemplate ? <InlineIcon className="p-1 fs-3 alert-info btn mx-2 rounded-pill" icon={"bx:bx-expand-alt"} /> : null}
                                             </td>
                                         </tr>
                                     );
@@ -145,4 +142,4 @@ const AllRequest = () => {
     );
 };
 
-export default AllRequest;
+export default CreatedProfile;

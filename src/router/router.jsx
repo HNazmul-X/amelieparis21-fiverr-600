@@ -26,6 +26,8 @@ import ResetPwd from "../pages/auth/ResetPwd";
 import ResetPwdVerification from "../pages/auth/ResetPwdVerification";
 import NewPwd from "../pages/auth/NewPwd";
 import AdminPrivateRoute from "./AdminPrivateRoute";
+import CreatedProfile from "../Dashboard/Pages/ProfileRequest/Subpages/CreatedProfile/CreatedProfile";
+import PendingProfile from "../Dashboard/Pages/ProfileRequest/Subpages/RejectedProfile/PendingProfile";
 
 const NavbarRouter = () => {
     return (
@@ -63,10 +65,13 @@ const NavbarRouter = () => {
                     <Route path="profile-request/" element={<ProfileRequest />}>
                         <Route path="all-user-profile" element={<AllRequest />} />
                         <Route path="profile-creation/:profileId" element={<ProfileCreation />} />
+                        <Route path="created-profile" element={<CreatedProfile />} />
+                        <Route path="pending-profile" element={<PendingProfile />} />
                     </Route>
 
                     <Route path="card-request/" element={<CardRequest />}>
                         <Route path="all/" element={<AllCard />} />
+                        <Route path="all/:status" element={<AllCard />} />
                         <Route path="preview/:cardId" element={<SingleCardPreview />} />
                     </Route>
                 </Route>

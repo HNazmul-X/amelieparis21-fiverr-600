@@ -1,11 +1,12 @@
 import { InlineIcon } from "@iconify/react";
 import swal from "@sweetalert/with-react";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { apiBaseURL } from "../../../../../Util/API_Info";
 import { SecureFetch } from "../../../../../Util/SecureFetch";
 
 const AllCard = () => {
+    const {status} = useParams()
     const [cardData, setCardData] = useState([
         {
             frontSide: { logo: "", scale: 0 },
