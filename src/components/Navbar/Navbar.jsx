@@ -42,7 +42,7 @@ const Navbar = () => {
                                 )}
                                 {auth.user?.isLoggedIn && !auth.user?.isAdmin && (
                                     <li className="navbar-list-item">
-                                        <Link to={`/profile/${auth?.user?._id}`} className="navbar-list-link">
+                                        <Link to={`/u/${auth?.user?.username}`} className="navbar-list-link">
                                             Profile
                                         </Link>
                                     </li>

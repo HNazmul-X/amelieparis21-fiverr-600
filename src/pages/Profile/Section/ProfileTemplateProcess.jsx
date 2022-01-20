@@ -10,20 +10,22 @@ import ProfileTemplate3 from "../Templates/ProfileTemplate3";
 const ProfileTemplateProcess = () => {
     const [templateDataWithUser, setTemplateDataWithUser] = useState({});
 
-    const { userId } = useParams();
+    const { username } = useParams();
+    console.log(username);
     useEffect(async () => {
         axios
-            .get(`${apiBaseURL}/api/profile-template/get-single-profile-by-userId/${userId}`)
+            .get(`${apiBaseURL}/api/profile-template/get-single-profile-by-username/${username}`)
             .then((data) => {
                 setTemplateDataWithUser(data.data);
+                console.log(data);
             })
             .catch((error) => {
-                swal("ERROR", e.message, "error");
+                swal("ERROR", error.message, "error");
             });
     }, []);
     console.log(templateDataWithUser);
 
-    if (templateDataWithUser.isApproved) {
+    if (templateDataWithUser.isApproved && templateDataWithUser.profileTemplate) {
         return (
             <div className="container py-5 pt-2">
                 <div className="mx-550 mx-auto shadow-lg">
@@ -37,11 +39,27 @@ const ProfileTemplateProcess = () => {
                 </div>
             </div>
         );
-    } else {
+    } else if (templateDataWithUser.isApproved === false) {
         return (
             <div className="container">
                 <div className="p-5 text-center alert-secondary mt-4 rounded">
                     <h1>Sorry Your Profile is not approved</h1>
+                </div>
+            </div>
+        );
+    } else if (templateDataWithUser?.profileTemplate === null || templateDataWithUser.profileTemplate === undefined) {
+        return (
+            <div className="container">
+                <div className="p-5 text-center alert-secondary mt-4 rounded">
+                    <h1>Sorry Your Profile is Not created Yet</h1>
+                </div>
+            </div>
+        );
+    } else {
+        return (
+            <div className="container text-center">
+                <div class="spinner-border mt-5" style={{ width: "5rem", height: "5rem" }} role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
         );

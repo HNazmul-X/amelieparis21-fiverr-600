@@ -40,7 +40,7 @@ const NavbarRouter = () => {
                 <Route path="signup" element={<SignUp />} />
                 <Route path="/verify-profile/:verificationId/:code/:userId" element={<Verification />} />
                 <Route path="/successfully-profile/:successfullyId" element={<Successfully />} />
-                <Route path="/profile/:userId" element={<ProfilePage />} />
+                <Route path="/u/:username" element={<ProfilePage />} />
                 <Route path="/reset-pwd" element={<ResetPwd />} />
                 <Route path="/reset-pwd-code/:verificationId/:code/:userId" element={<ResetPwdVerification />} />
                 <Route path="/new-pwd/:verificationId/:code/:userId" element={<NewPwd />} />
