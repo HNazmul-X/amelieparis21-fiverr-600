@@ -10,7 +10,7 @@ export const ProfileSidebarData = [
                 destination: "/admin/profile-request/all-user-profile",
             },
             {
-                label: "Created Profile",
+                label: "Approved Profile",
                 destination: "/admin/profile-request/created-profile",
             },
             {

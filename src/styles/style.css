@@ -4460,6 +4460,8 @@ body {
 }
 
 .profile-template-3 {
+  --red-700: #f51c57;
+  --red-700: #333e63;
   max-width: 500px;
   width: 100%;
   background-color: #fff;
@@ -4506,7 +4508,7 @@ body {
   justify-content: center;
   width: 36px;
   height: 36px;
-  background-color: #f51c57;
+  background-color: var(--red-700);
   color: #fff;
   font-size: 18px;
   border-radius: 50%;
@@ -4549,11 +4551,11 @@ body {
 .profile-template-3 .contact a svg {
   font-size: 36px;
   padding: 7px;
-  border: 1px solid #f51c57;
+  border: 1px solid var(--red-700);
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  color: #f51c57;
+  color: var(--red-700);
 }
 .profile-template-3 .contact a p {
   font-size: 12px;
@@ -4589,7 +4591,7 @@ body {
   font-weight: 600;
   font-size: 20px;
   line-height: 18px;
-  color: #f51c57;
+  color: var(--red-700);
   margin-bottom: 18px;
 }
 .profile-template-3 .about p {

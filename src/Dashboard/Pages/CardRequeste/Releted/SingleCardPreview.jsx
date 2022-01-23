@@ -30,8 +30,8 @@ const SingleCardPreview = ({}) => {
 
     return (
         <>
-            <div className="single-card-preview" style={{ "--card-base": `url(${singleCardData?.card_base})` }}>
-                <div className={`front-side ${isLightCardBase ? "border border-2 shadow-sm" : ""}`}>
+            <div className="single-card-preview">
+                <div style={{ backgroundImage: `url(${singleCardData?.card_base})` }} className={`front-side ${isLightCardBase ? "border border-2 shadow-sm" : ""}`}>
                     <div className="logo" style={{ "--logo-scale": singleCardData?.frontSide?.scale }}>
                         <img src={apiBaseURL + singleCardData?.frontSide?.logo} alt="" />
                     </div>
@@ -44,7 +44,7 @@ const SingleCardPreview = ({}) => {
                         <InlineIcon icon="akar-icons:wifi" />
                     </div>
                 </div>
-                <div className={`back-side ${isLightCardBase ? "border border-2 shadow-sm" : ""}`}>
+                <div style={{ backgroundImage: `url(${singleCardData?.card_base})` }} className={`back-side ${isLightCardBase ? "border border-2 shadow-sm" : ""}`}>
                     <div className="row w-100 h-100 m-0">
                         <div className="col-7 p-0 logo-and-info">
                             <div className="logo" style={{ "--logo-scale": singleCardData?.backSide?.scale }}>

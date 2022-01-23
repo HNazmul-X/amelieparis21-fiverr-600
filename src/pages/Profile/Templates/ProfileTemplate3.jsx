@@ -28,154 +28,123 @@ import bloggerRect from "@iconify/icons-brandico/blogger-rect";
 import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
 import { apiBaseURL } from "../../../Util/API_Info";
 
-function ProfileTemplate3({ data }) {
-  const baseurl = apiBaseURL;
+function ProfileTemplate3({ data, onShare }) {
+    const baseurl = apiBaseURL;
 
-  const social = {
-    facebook: facebookFill,
-    twitter: twitterFill,
-    whatsapp: whatsappIcon,
-    youtube: youtubeFilled,
-    microsoft: microsoftIcon,
-    apple: appleFilled,
-    vimeo: vimeoRect,
-    snapchat: snapchatIcon,
-    amazon: amazonCircleFilled,
-    discord: discordFill,
-    telegram: telegramFill,
-    skype: skypeFilled,
-    dribbble: dribbbleCircleFilled,
-    blogger: bloggerRect,
-    behance: behanceCircleFilled,
-    website: worldLine,
-    github: githubFill,
-    tiktok: bxlTiktok,
-    instagram: instagramFill,
-    linkedin: linkedinIcon,
-    phone: bxsPhone,
-    telephone: telephoneIcon,
-    email: emailLine,
-  };
+    const social = {
+        facebook: facebookFill,
+        twitter: twitterFill,
+        whatsapp: whatsappIcon,
+        youtube: youtubeFilled,
+        microsoft: microsoftIcon,
+        apple: appleFilled,
+        vimeo: vimeoRect,
+        snapchat: snapchatIcon,
+        amazon: amazonCircleFilled,
+        discord: discordFill,
+        telegram: telegramFill,
+        skype: skypeFilled,
+        dribbble: dribbbleCircleFilled,
+        blogger: bloggerRect,
+        behance: behanceCircleFilled,
+        website: worldLine,
+        github: githubFill,
+        tiktok: bxlTiktok,
+        instagram: instagramFill,
+        linkedin: linkedinIcon,
+        phone: bxsPhone,
+        telephone: telephoneIcon,
+        email: emailLine,
+    };
 
-  return (
-    <div className="profile-template-3 w-100 max-w-none ">
-      <div className="banner">
-        <img src={baseurl + data?.photos?.cover || banner} alt="Banner" />
-      </div>
-      <div className="besic-info">
-        <div className="profile-pic-container">
-          <div className="wrapper wrapper-3">
-            <img
-              className="profile-pic"
-              src={baseurl + data?.photos?.profile || profilePic}
-              alt="profile"
-            />
-
-            <div className="share share-3">
-              <InlineIcon className="share_icon " icon="bx:bxs-share-alt" />
+    return (
+        <div className="profile-template-3 w-100 max-w-none ">
+            <div className="banner">
+                <img src={baseurl + data?.photos?.cover || banner} alt="Banner" />
             </div>
-          </div>
-        </div>
-        <div className="info ">
-          <div className="name-section name-section-3">
-            <div>
-              <h3>{data?.personalInfo?.name || "Sandhya Mer"}</h3>
-              <p>{data?.personalInfo?.tagline || "Florida Branch"}</p>
+            <div className="besic-info">
+                <div className="profile-pic-container">
+                    <div className="wrapper wrapper-3">
+                        <img className="profile-pic" src={baseurl + data?.photos?.profile || profilePic} alt="profile" />
+
+                        <div onClick={onShare} className="share share-3" style={{ cursor: "pointer" }}>
+                            <InlineIcon className="share_icon " icon="bx:bxs-share-alt" />
+                        </div>
+                    </div>
+                </div>
+                <div className="info ">
+                    <div className="name-section name-section-3">
+                        <div>
+                            <h3>{data?.personalInfo?.name || "Sandhya Mer"}</h3>
+                            <p>{data?.personalInfo?.tagline || "Florida Branch"}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {data?.socialLinks?.length ? (
+                    <div className="contact">
+                        {data?.socialLinks.map((data) => (
+                            <a href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "tel+" ? "tel+" : ""}${data?.link}`} target="_blank">
+                                <Icon icon={social[data?.name]} />
+                                <p className="mb-0">{data?.name}</p>
+                            </a>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="contact">
+                        <a href="#">
+                            <InlineIcon className={`right-arrow `} icon="fluent:call-24-filled" />
+                            <p>Call Me</p>
+                        </a>
+                        <a href="#">
+                            <InlineIcon className={`right-arrow `} icon="bx:bxl-whatsapp" />
+                            <p>Whatsapp</p>
+                        </a>
+                        <a href="#">
+                            <InlineIcon className={`right-arrow `} icon="ep:location-information" />
+                            <p>Location</p>
+                        </a>
+                        <a href="#">
+                            <InlineIcon className={`right-arrow `} icon="ep:location-information" />
+                            <p>Email</p>
+                        </a>
+                        <a href="#">
+                            <InlineIcon className={`right-arrow `} icon="bx:bxl-facebook" />
+                            <p>Facebook</p>
+                        </a>
+                        <a href="#">
+                            <InlineIcon className={`right-arrow `} icon="ant-design:twitter-outlined" />
+
+                            <p>Twitter</p>
+                        </a>
+                        <a href="#">
+                            <InlineIcon className={`right-arrow `} icon="ci:instagram" />
+                            <p>Instagram</p>
+                        </a>
+                        <a href="#">
+                            <InlineIcon className={`right-arrow `} icon="bx:bxl-linkedin" />
+                            <p>Linkedin</p>
+                        </a>
+                    </div>
+                )}
+
+                <div className="add-contact-btn">
+                    <button
+                        style={{
+                            background: `${data?.colors?.button?.bg}`,
+                            color: `${data?.colors?.button?.color}`,
+                            boxShadow: `0 0 5px ${data?.colors?.button?.shadow}`,
+                        }}>
+                        {data?.mainButton?.text || "ADD TO CONTACT"}
+                    </button>
+                </div>
+                <div className="about">
+                    <h3>About {data.personalInfo?.name || "Skoda"}</h3>
+                    <p>{data.personalInfo?.about || "Škoda Auto a.s., often shortened to Škoda, is a Czech automobile manufacturer founded in 1895"}</p>
+                </div>
             </div>
-          </div>
         </div>
-
-        {data?.socialLinks?.length ? (
-          <div className="contact">
-            {data?.socialLinks.map((data) => (
-              <a
-                href={`${
-                  data?.name === "phone"
-                    ? "tel:"
-                    : data?.name === "email"
-                    ? "mailto:"
-                    : data?.name === "tel+"
-                    ? "tel+"
-                    : ""
-                }${data?.link}`}
-                target="_blank"
-              >
-                <Icon icon={social[data?.name]} />
-                <p className="mb-0">{data?.name}</p>
-              </a>
-            ))}
-          </div>
-        ) : (
-          <div className="contact">
-            <a href="#">
-              <InlineIcon
-                className={`right-arrow `}
-                icon="fluent:call-24-filled"
-              />
-              <p>Call Me</p>
-            </a>
-            <a href="#">
-              <InlineIcon className={`right-arrow `} icon="bx:bxl-whatsapp" />
-              <p>Whatsapp</p>
-            </a>
-            <a href="#">
-              <InlineIcon
-                className={`right-arrow `}
-                icon="ep:location-information"
-              />
-              <p>Location</p>
-            </a>
-            <a href="#">
-              <InlineIcon
-                className={`right-arrow `}
-                icon="ep:location-information"
-              />
-              <p>Email</p>
-            </a>
-            <a href="#">
-              <InlineIcon className={`right-arrow `} icon="bx:bxl-facebook" />
-              <p>Facebook</p>
-            </a>
-            <a href="#">
-              <InlineIcon
-                className={`right-arrow `}
-                icon="ant-design:twitter-outlined"
-              />
-
-              <p>Twitter</p>
-            </a>
-            <a href="#">
-              <InlineIcon className={`right-arrow `} icon="ci:instagram" />
-              <p>Instagram</p>
-            </a>
-            <a href="#">
-              <InlineIcon className={`right-arrow `} icon="bx:bxl-linkedin" />
-              <p>Linkedin</p>
-            </a>
-          </div>
-        )}
-
-        <div className="add-contact-btn">
-          <button
-            style={{
-              background: `${data?.colors?.button?.bg}`,
-              color: `${data?.colors?.button?.color}`,
-              boxShadow: `0 0 5px ${data?.colors?.button?.shadow}`,
-            }}
-          >
-            {data?.mainButton?.text || "ADD TO CONTACT"}
-          </button>
-        </div>
-        <div className="about">
-          <h3>About {data.personalInfo?.name || "Skoda"}</h3>
-          <p>
-            {data.personalInfo?.about ||
-              "Škoda Auto a.s., often shortened to Škoda, is a Czech automobile manufacturer founded in 1895"}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default ProfileTemplate3;
