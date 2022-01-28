@@ -49,7 +49,7 @@ const AboutUS = () => {
                             spaceBetween: 30,
                         }
                       }}
-                    onSlideChange={() => console.log('slide change')}
+                    // onSlideChange={() => console.log('slide change')}
                     // onSwiper={(swiper) => console.log(swiper)}
                     modules={[Controller, Thumbs]} 
                     controller={{ control: controlledSwiper, swiper: thumbsSwiper }}
