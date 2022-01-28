@@ -7,12 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import "./slider.css";
-
-// import Swiper core and required modules
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 
-// install Swiper modules
 SwiperCore.use([Navigation, Autoplay]);
 
 const HeroSlider = () => {
@@ -39,7 +35,7 @@ const HeroSlider = () => {
                   // when window width is <= 320px
                   320: {
                     slidesPerView: 1,
-                    spaceBetween: 100,
+                    spaceBetween: 150,
                   },
                   // when window width is <= 480px
                   480: {

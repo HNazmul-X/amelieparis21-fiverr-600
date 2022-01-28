@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { apiBaseURL } from "../Util/API_Info";
 import GetCookie from "../Util/Coockie";
 
 export const UserContextData = createContext(null);
@@ -31,7 +32,11 @@ const UserContext = ({ children }) => {
     };
 
     const logoutUser = (callback) => {
-        setUser({});
+        setUser({
+            isAdmin: false,
+            isLoggedIn: false,
+            isVerified: false,
+        });
         cookie.deleteCookie("token");
         cookie.deleteCookie("userId");
         if (callback) {
@@ -42,10 +47,9 @@ const UserContext = ({ children }) => {
     useEffect(async () => {
         const {
             data: { user: loggedInUser },
-        } = await axios.post("https://onecard-pro.herokuapp.com/api/auth/verify-token", {
+        } = await axios.post(`${apiBaseURL}/api/auth/verify-token`, {
             token: cookie.getCookie("token"),
         });
-        console.log()
         if (loggedInUser) {
             if (loggedInUser?.token?.length > 2) {
                 loginUser(loggedInUser, () => navigate(location.pathname, { replace: true }));
@@ -53,7 +57,7 @@ const UserContext = ({ children }) => {
                 logoutUser();
             }
         } else {
-           logoutUser()
+            logoutUser();
         }
     }, []);
 

@@ -3,34 +3,35 @@ import banner from "../../../assets/images/Cover Image1.png";
 import profilePic from "../../../assets/images/Profile Picture3.png";
 import { InlineIcon } from "@iconify/react";
 import { useProfileContext } from "../../../Context/ProfileTemplateContext";
-import { Icon } from '@iconify/react';
-import twitterFill from '@iconify/icons-akar-icons/twitter-fill';
-import facebookFill from '@iconify/icons-akar-icons/facebook-fill';
-import instagramFill from '@iconify/icons-akar-icons/instagram-fill';
-import linkedinIcon from '@iconify/icons-brandico/linkedin';
-import bxlTiktok from '@iconify/icons-bx/bxl-tiktok';
-import githubFill from '@iconify/icons-akar-icons/github-fill';
-import worldLine from '@iconify/icons-clarity/world-line';
-import bxsPhone from '@iconify/icons-bx/bxs-phone';
-import telephoneIcon from '@iconify/icons-bytesize/telephone';
-import emailLine from '@iconify/icons-clarity/email-line';
-import whatsappIcon from '@iconify/icons-dashicons/whatsapp';
-import youtubeFilled from '@iconify/icons-ant-design/youtube-filled';
-import microsoftIcon from '@iconify/icons-cib/microsoft';
-import appleFilled from '@iconify/icons-ant-design/apple-filled';
-import vimeoRect from '@iconify/icons-brandico/vimeo-rect';
-import snapchatIcon from '@iconify/icons-fa-brands/snapchat';
-import amazonCircleFilled from '@iconify/icons-ant-design/amazon-circle-filled';
-import discordFill from '@iconify/icons-akar-icons/discord-fill';
-import telegramFill from '@iconify/icons-akar-icons/telegram-fill';
-import skypeFilled from '@iconify/icons-ant-design/skype-filled';
-import dribbbleCircleFilled from '@iconify/icons-ant-design/dribbble-circle-filled';
-import bloggerRect from '@iconify/icons-brandico/blogger-rect';
-import behanceCircleFilled from '@iconify/icons-ant-design/behance-circle-filled';
-
+import { Icon } from "@iconify/react";
+import twitterFill from "@iconify/icons-akar-icons/twitter-fill";
+import facebookFill from "@iconify/icons-akar-icons/facebook-fill";
+import instagramFill from "@iconify/icons-akar-icons/instagram-fill";
+import linkedinIcon from "@iconify/icons-brandico/linkedin";
+import bxlTiktok from "@iconify/icons-bx/bxl-tiktok";
+import githubFill from "@iconify/icons-akar-icons/github-fill";
+import worldLine from "@iconify/icons-clarity/world-line";
+import bxsPhone from "@iconify/icons-bx/bxs-phone";
+import telephoneIcon from "@iconify/icons-bytesize/telephone";
+import emailLine from "@iconify/icons-clarity/email-line";
+import whatsappIcon from "@iconify/icons-dashicons/whatsapp";
+import youtubeFilled from "@iconify/icons-ant-design/youtube-filled";
+import microsoftIcon from "@iconify/icons-cib/microsoft";
+import appleFilled from "@iconify/icons-ant-design/apple-filled";
+import vimeoRect from "@iconify/icons-brandico/vimeo-rect";
+import snapchatIcon from "@iconify/icons-fa-brands/snapchat";
+import amazonCircleFilled from "@iconify/icons-ant-design/amazon-circle-filled";
+import discordFill from "@iconify/icons-akar-icons/discord-fill";
+import telegramFill from "@iconify/icons-akar-icons/telegram-fill";
+import skypeFilled from "@iconify/icons-ant-design/skype-filled";
+import dribbbleCircleFilled from "@iconify/icons-ant-design/dribbble-circle-filled";
+import bloggerRect from "@iconify/icons-brandico/blogger-rect";
+import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
+import locationCurrent from "@iconify/icons-carbon/location-current";
 
 function ProfileTemplate3() {
-  const { userInfo, userPics,buttonInfo } = useProfileContext();
+  const { userInfo, userPics, buttonInfo, iconAndTextColor } =
+    useProfileContext();
 
   const social = {
     facebook: facebookFill,
@@ -52,21 +53,32 @@ function ProfileTemplate3() {
     github: githubFill,
     tiktok: bxlTiktok,
     instagram: instagramFill,
-    linkedIn: linkedinIcon,
+    linkedin: linkedinIcon,
     phone: bxsPhone,
     telephone: telephoneIcon,
     email: emailLine,
+    location:locationCurrent
   };
 
   return (
-    <div className="profile-template-3">
+    <div
+      className="profile-template-3"
+      style={{
+        "--red-700": iconAndTextColor?.icon,
+        "--text": iconAndTextColor?.text,
+      }}
+    >
       <div className="banner">
-        <img src={userPics.cover.dataURL || banner} alt="Banner" />
+        <img src={userPics?.cover?.dataURL || banner} alt="Banner" />
       </div>
       <div className="besic-info">
         <div className="profile-pic-container">
           <div className="wrapper">
-            <img className="profile-pic" src={userPics.profile.dataURL || profilePic} alt="profile" />
+            <img
+              className="profile-pic"
+              src={userPics?.profile?.dataURL || profilePic}
+              alt="profile"
+            />
             <div className="share">
               <InlineIcon className="share_icon" icon="bx:bxs-share-alt" />
             </div>
@@ -81,18 +93,27 @@ function ProfileTemplate3() {
           </div>
         </div>
 
-        {userInfo.links.length ?
+        {userInfo?.links?.length ? (
           <div className="contact">
-            {
-              userInfo.links.map((data) => (
-                <a href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "tel+" ? "tel+": ""}${data?.link}`} target="_blank" >
-                  <Icon icon={social[data?.name]} />
-                  <p>{data.name}</p>
-                </a>
-              ))
-            }
+            {userInfo?.links.map((data) => (
+              <a
+                href={`${
+                  data?.name === "phone"
+                    ? "tel:"
+                    : data?.name === "email"
+                    ? "mailto:"
+                    : data?.name === "tel+"
+                    ? "tel+"
+                    : ""
+                }${data?.link}`}
+                target="_blank"
+              >
+                <Icon icon={social[data?.name]} />
+                <p>{data?.name}</p>
+              </a>
+            ))}
           </div>
-          :
+        ) : (
           <div className="contact">
             <a href="#">
               <InlineIcon
@@ -140,15 +161,24 @@ function ProfileTemplate3() {
               <p>Linkedin</p>
             </a>
           </div>
-        }
+        )}
 
         <div className="add-contact-btn">
-          <button style={{background: `${buttonInfo.colors.bg}`, color: `${buttonInfo.colors.color}`, boxShadow: `0 0 5px ${buttonInfo.colors.shadow}`}}>{buttonInfo?.info?.text || "ADD TO CONTACT"}</button>
+          <button
+            style={{
+              background: `${buttonInfo?.colors?.bg}`,
+              color: `${buttonInfo?.colors?.color}`,
+              boxShadow: `0 0 5px ${buttonInfo?.colors?.shadow}`,
+            }}
+          >
+            {buttonInfo?.info?.text || "ADD TO CONTACT"}
+          </button>
         </div>
         <div className="about">
           <h3>About {userInfo?.name || "Skoda"}</h3>
           <p>
-            {userInfo?.address || "Škoda Auto a.s., often shortened to Škoda, is a Czech automobile manufacturer founded in 1895"}
+            {userInfo?.address ||
+              "Škoda Auto a.s., often shortened to Škoda, is a Czech automobile manufacturer founded in 1895"}
           </p>
         </div>
       </div>

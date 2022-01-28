@@ -20,12 +20,19 @@ import SingleCardPreview from "../Dashboard/Pages/CardRequeste/Releted/SingleCar
 import AllRequest from "../Dashboard/Pages/ProfileRequest/Subpages/AllRequest/AllRequest";
 import ProfileCreation from "../Dashboard/Pages/ProfileRequest/Subpages/ProfileCreation/ProfileCreation";
 import PlayGround from "../pages/playgournd/playground";
-import HomePage from './../pages/Home-page/HomePage';
+import HomePage from "./../pages/Home-page/HomePage";
+import ProfilePage from "../pages/Profile/ProfilePage";
+import ResetPwd from "../pages/auth/ResetPwd";
+import ResetPwdVerification from "../pages/auth/ResetPwdVerification";
+import NewPwd from "../pages/auth/NewPwd";
+import AdminPrivateRoute from "./AdminPrivateRoute";
+import CreatedProfile from "../Dashboard/Pages/ProfileRequest/Subpages/CreatedProfile/CreatedProfile";
+import PendingProfile from "../Dashboard/Pages/ProfileRequest/Subpages/RejectedProfile/PendingProfile";
 
 const NavbarRouter = () => {
-  return (
-    <Routes>
-      {/* Admin Login */}
+    return (
+        <Routes>
+            {/* Admin Login */}
 
             {/* Navbar Layout Router */}
             <Route path="/" element={<Navbar />}>
@@ -35,6 +42,10 @@ const NavbarRouter = () => {
                 <Route path="signup" element={<SignUp />} />
                 <Route path="/verify-profile/:verificationId/:code/:userId" element={<Verification />} />
                 <Route path="/successfully-profile/:successfullyId" element={<Successfully />} />
+                <Route path="/u/:username" element={<ProfilePage />} />
+                <Route path="/reset-pwd" element={<ResetPwd />} />
+                <Route path="/reset-pwd-code/:verificationId/:code/:userId" element={<ResetPwdVerification />} />
+                <Route path="/new-pwd/:verificationId/:code/:userId" element={<NewPwd />} />
                 {/* navbar layout Private route */}
                 <Route element={<PrivateRoute />}>
                     <Route path=":id" element={<h1>Hi Iam abla page</h1>} />
@@ -45,24 +56,28 @@ const NavbarRouter = () => {
                 </Route>
             </Route>
 
-      {/* Dashboard Layout Router */}
-      <Route path="/admin" element={<DashboardLayout />}>
-        <Route path="profile-request/" element={<ProfileRequest />}>
-          <Route path="all-user-profile" element={<AllRequest />} />
-          <Route
-            path="profile-creation/:profileId"
-            element={<ProfileCreation />}
-          />
-        </Route>
+            {/* Dashboard Layout Router */}
+            <Route path="/admin" element={<DashboardLayout />}>
+                <Route path="login" element={<AdminLogin />} />
 
-        <Route path="card-request/" element={<CardRequest />}>
-          <Route path="all/" element={<AllCard />} />
-          <Route path="preview/:cardId" element={<SingleCardPreview />} />
-        </Route>
-        <Route path="login" element={<AdminLogin />} />
-      </Route>
-    </Routes>
-  );
+                {/* private route for only admin */}
+                <Route element={<AdminPrivateRoute />}>
+                    <Route path="profile-request/" element={<ProfileRequest />}>
+                        <Route path="all-user-profile" element={<AllRequest />} />
+                        <Route path="profile-creation/:profileId" element={<ProfileCreation />} />
+                        <Route path="created-profile" element={<CreatedProfile />} />
+                        <Route path="pending-profile" element={<PendingProfile />} />
+                    </Route>
+
+                    <Route path="card-request/" element={<CardRequest />}>
+                        <Route path="all/" element={<AllCard />} />
+                        <Route path="all/:status" element={<AllCard />} />
+                        <Route path="preview/:cardId" element={<SingleCardPreview />} />
+                    </Route>
+                </Route>
+            </Route>
+        </Routes>
+    );
 };
 
 export default NavbarRouter;

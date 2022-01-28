@@ -218,19 +218,6 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                                 <label for="floatingInput">country</label>
                                 {errors.country && <span className="d-block ps-3 small text-danger text-start">Postal Code is required</span>}
                             </div>
-
-                            <div className="w-100 form-floating mb-3">
-                                <input
-                                    type="number"
-                                    {...register("quantity", { required: true })}
-                                    defaultValue={cardContextData?.cardDetails?.quantity}
-                                    className="form-control primary-input"
-                                    id="floatingInput"
-                                    placeholder="name@example.com"
-                                />
-                                <label for="floatingInput">quantity</label>
-                                {errors.quantity && <span className="d-block ps-3 small text-danger text-start">City is required</span>}
-                            </div>
                         </div>
 
                         <div className="btnGroup mt-3 d-flex justify-content-center">

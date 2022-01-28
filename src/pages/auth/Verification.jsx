@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import swal from "@sweetalert/with-react";
 import axios from "axios";
 import { useAuth } from "../../Context/UserContext";
+import { apiBaseURL } from "../../Util/API_Info";
 
 const Verification = () => {
   /* Using Hooks here */
@@ -22,10 +23,7 @@ const Verification = () => {
   const handleOtpVerification = async (data) => {
     setIsSpinnerShow(true);
     try {
-      const { data: returnedData } = await axios.post(
-        "https://onecard-pro.herokuapp.com/api/auth/verify-profile/",
-        { code: data.code, id: verificationId, userId }
-      );
+      const { data: returnedData } = await axios.post(`${apiBaseURL}/api/auth/verify-profile/`, { code: data.code, id: verificationId, userId });
       if (returnedData.error) {
         setIsSpinnerShow(false);
         swal("Error Ocurred", returnedData.error, "error");

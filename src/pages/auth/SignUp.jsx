@@ -2,7 +2,8 @@ import swal from "@sweetalert/with-react";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import CardRoundImage from "../../assets/images/Group 23.png";
+import CardRoundImage from "../../assets/images/group 23.png";
+import { apiBaseURL } from "../../Util/API_Info";
 import Authentication from "../../Util/Authentication";
 
 const SignUp = () => {
@@ -16,7 +17,7 @@ const SignUp = () => {
 
     const onSubmit = async (data) => {
         setIsSpinnerShow(true);
-        const signedUpUser = await Authentication.signupAndData("https://onecard-pro.herokuapp.com/api/auth/signup", {
+        const signedUpUser = await Authentication.signupAndData(`${apiBaseURL}/api/auth/signup`, {
             username: data?.username,
             password: data?.password,
             confirmPassword: data?.confirmPassword,

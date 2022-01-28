@@ -1,8 +1,18 @@
 import React, { useContext } from "react";
 import { CreateCardPageContext } from "./CreateCardPage";
+import qrCodeImage from "../../assets/images/Group.png";
+import blackQrCode from "../../assets/images/black-qr-code.png"
 
 const CardPreview = () => {
     const { formStepId, cardLogo } = useContext(CreateCardPageContext);
+
+    const isLightCardBase = () => {
+        if (cardLogo?.card_base?.includes("white-card-base")) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
     return (
         <div id="realtime-making-card-preview-card">
@@ -20,14 +30,14 @@ const CardPreview = () => {
                                 <div className="info-and-logo__logo" style={{ "--logo-scale": cardLogo?.back?.scale }}>
                                     <img src={cardLogo?.back?.logo} alt="" className="" />
                                 </div>
-                                <div className={`info-and-logo__info  justify-${cardLogo?.back?.infoAlign}`}>
+                                <div className={`info-and-logo__info  justify-${cardLogo?.back?.infoAlign} ${isLightCardBase() ?"text-secondary":""}`}>
                                     <h5>H. Nazmul Hassan</h5>
                                     <h6>Web developer</h6>
                                     <p>10934739837</p>
                                 </div>
                             </div>
                             <div className="qr-code col-5 d-flex justify-content-center align-items-center">
-                                <img src="https://app.wemet.fr/static/media/qrCode.cf9b9dcc.png" className="w-75" alt="" />
+                                <img src={!isLightCardBase()?qrCodeImage:blackQrCode} className="w-75" alt="" />
                             </div>
                         </div>
                     </div>

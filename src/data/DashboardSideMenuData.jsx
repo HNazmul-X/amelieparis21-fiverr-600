@@ -10,7 +10,7 @@ export const ProfileSidebarData = [
                 destination: "/admin/profile-request/all-user-profile",
             },
             {
-                label: "Created Profile",
+                label: "Approved Profile",
                 destination: "/admin/profile-request/created-profile",
             },
             {
@@ -31,11 +31,11 @@ export const ProfileSidebarData = [
             },
             {
                 label: "Delivered",
-                destination: "/admin/card-request/delivered",
+                destination: "/admin/card-request/all/delivered",
             },
             {
                 label: "Rejected",
-                destination: "/admin/card-request/rejected",
+                destination: "/admin/card-request/all/rejected",
             },
         ],
     },
@@ -50,5 +50,12 @@ export const ProfileSidebarData = [
                 destination: "/",
             },
         ],
+    },
+    {
+        icon: "",
+        label: "Back To Home",
+        destination: "/",
+        id: "'8259a9b2-56e5-4ff1-b7e3-4080245bef9c'",
+        dropdown: [],
     },
 ];

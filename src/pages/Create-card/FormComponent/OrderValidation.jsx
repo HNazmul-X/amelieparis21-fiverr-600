@@ -1,7 +1,9 @@
+import swal from "@sweetalert/with-react";
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
+import { apiBaseURL } from "../../../Util/API_Info";
 import GetCookie from "../../../Util/Coockie";
 import { SecureFetch } from "../../../Util/SecureFetch";
 import { CreateCardPageContext } from "../CreateCardPage";
@@ -18,86 +20,96 @@ const OrderValidation = () => {
     const [sameBillingAddress, setSameBillingAddress] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const [isSpinnerShow, setIsSpinnerShow] = useState();
 
     const onSubmit = async (data) => {
-        const { additional_address, address, city, company, country, landing, email, firstName, lastName, phone, position, postalCode, quantity, society, website } = cardDetails;
-        const billingInfo = () => {
-            if (sameBillingAddress) {
-                return { is_billing_same_delivery: true };
-            } else {
-                return {
-                    firstName: data.b_firstName,
-                    lastName: data.b_lastName,
-                    address: data.b_address,
-                    additional_address: data.b_additional_address,
-                    society: data.b_society,
-                    phone: data.b_phone,
-                    postalCode: data.b_postalCode,
-                    city: data?.b_city,
-                };
-            }
-        };
-        const formData = new FormData();
-        formData.append("backSide", cardFiles?.backside);
-        formData.append("frontSide", cardFiles?.frontSide);
-        const { data: uploadedImg } = await axios.post("https://onecard-pro.herokuapp.com/api/upload/upload-card-image", formData, {
-            headers: {
-                Authorization: getCookie.getCookie("token"),
-                userId: getCookie.getCookie("userId"),
-                "Content-type": "multipart/form-data",
-            },
-        });
-        if (uploadedImg) {
-            const dataForSendBackend = {
-                card_base: cardLogo.card_base,
-                frontSide: {
-                    logo: uploadedImg.frontSide,
-                    scale: cardLogo.front?.scale,
-                },
-                backSide: {
-                    logo: uploadedImg.backSide,
-                    scale: cardLogo.back.scale,
-                    infoAlign: cardLogo.back.infoAlign,
-                },
-                cardInfo: {
-                    firstName,
-                    lastName,
-                    position,
-                    email,
-                    company,
-                    website,
-                    landing,
-                    address,
-                    additional_address,
-                    quantity,
-                    phone,
-                    city,
-                    country,
-                    society,
-                    postalCode,
-                },
-                deliveryInfo: {
-                    firstName: data?.firstName,
-                    lastName: data?.lastName,
-                    address: data?.address,
-                    additional_address: data?.additionalAddress,
-                    society: data?.society,
-                    phone: data?.phone,
-                    postalCode: data?.postalCode,
-                    city: data?.city,
-                    comment_on: data.comment_on,
-                    promoCode: data?.promoCode,
-                },
-                billingInfo: billingInfo(),
-                is_billing_same_delivery: sameBillingAddress,
-                comment_on: data?.comment_on,
-                promoCode: data?.promoCode,
+        setIsSpinnerShow(true);
+        try {
+            const { additional_address, address, city, company, country, landing, email, firstName, lastName, phone, position, postalCode, quantity, society, website } = cardDetails;
+            const billingInfo = () => {
+                if (sameBillingAddress) {
+                    return { is_billing_same_delivery: true };
+                } else {
+                    return {
+                        firstName: data.b_firstName,
+                        lastName: data.b_lastName,
+                        address: data.b_address,
+                        additional_address: data.b_additional_address,
+                        society: data.b_society,
+                        phone: data.b_phone,
+                        postalCode: data.b_postalCode,
+                        city: data?.b_city,
+                    };
+                }
             };
-            const returnedData = await SecureFetch.post("https://onecard-pro.herokuapp.com/api/card/create-card", dataForSendBackend);
-            console.log(returnedData);
-            if (returnedData?.card_created) {
-                navigate(`/card-status/${returnedData?.cardId}`);
+            const formData = new FormData();
+            formData.append("backSide", cardFiles?.backside);
+            formData.append("frontSide", cardFiles?.frontSide);
+            const { data: uploadedImg } = await axios.post(`${apiBaseURL}/api/upload/upload-card-image`, formData, {
+                headers: {
+                    Authorization: getCookie.getCookie("token"),
+                    userId: getCookie.getCookie("userId"),
+                    "Content-type": "multipart/form-data",
+                },
+            });
+            if (uploadedImg) {
+                const dataForSendBackend = {
+                    card_base: cardLogo.card_base,
+                    frontSide: {
+                        logo: uploadedImg.frontSide,
+                        scale: cardLogo.front?.scale,
+                    },
+                    backSide: {
+                        logo: uploadedImg.backSide,
+                        scale: cardLogo.back.scale,
+                        infoAlign: cardLogo.back.infoAlign,
+                    },
+                    cardInfo: {
+                        firstName,
+                        lastName,
+                        position,
+                        email,
+                        company,
+                        website,
+                        landing,
+                        address,
+                        additional_address,
+                        quantity,
+                        phone,
+                        city,
+                        country,
+                        society,
+                        postalCode,
+                    },
+                    deliveryInfo: {
+                        firstName: data?.firstName,
+                        lastName: data?.lastName,
+                        address: data?.address,
+                        additional_address: data?.additionalAddress,
+                        society: data?.society,
+                        phone: data?.phone,
+                        postalCode: data?.postalCode,
+                        city: data?.city,
+                        comment_on: data.comment_on,
+                        promoCode: data?.promoCode,
+                    },
+                    billingInfo: billingInfo(),
+                    is_billing_same_delivery: sameBillingAddress,
+                    comment_on: data?.comment_on,
+                    promoCode: data?.promoCode,
+                };
+                const returnedData = await SecureFetch.post(`${apiBaseURL}/api/card/create-card`, dataForSendBackend);
+                console.log(returnedData);
+                if (returnedData?.card_created) {
+                    navigate(`/card-status/${returnedData?.cardId}`);
+                } else if (returnedData.error) {
+                    setIsSpinnerShow(false);
+                    swal("Something Went Wrong", returnedData.error, "");
+                }
             }
+        } catch (e) {
+            swal("failed To Send Data", e.message, "error");
+            setIsSpinnerShow(false);
         }
     };
 
@@ -339,6 +351,11 @@ const OrderValidation = () => {
 
                         <div className="validateArea">
                             <button type="submit" className="btn">
+                                {isSpinnerShow && (
+                                    <div class="spinner-border spinner-border-sm" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                )}{" "}
                                 Validate Your Request
                             </button>
                             <p className="">Payment will be made by check or bank transfer</p>
