@@ -49,7 +49,7 @@ URL;type=pref:${window.location.href}
 END:VCARD
  `;
 
-    if (templateDataWithUser.isApproved && templateDataWithUser.profileTemplate) {
+    if (templateDataWithUser?.isApproved && templateDataWithUser?.profileTemplate) {
         return (
             <div className="container py-5 pt-2">
                 <div className="mx-550 mx-auto shadow-lg">
@@ -72,7 +72,7 @@ END:VCARD
                 </div>
             </div>
         );
-    } else if (templateDataWithUser.isApproved === false) {
+    } else if (templateDataWithUser?.isApproved === false) {
         return (
             <div className="container">
                 <div className="p-5 text-center alert-secondary mt-4 rounded">
