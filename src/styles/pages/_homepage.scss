@@ -84,7 +84,7 @@
             @include sm {
                 .slideHeaderIconImage {
                     top: 5%;
-                    left: 38%;
+                    left: 31%;
                     transform: translateY(-38%) translateX(-5%);
                 }
             }
@@ -95,19 +95,19 @@
                 color: $primary-50;
                 z-index: 1;
                 top: 18%;
-                left: 30%;
+                left: 24%;
             }
             @include md {
                 h2 {
                     top: 18%;
-                    left: 20%;
+                    left: 13%;
                 }
             }
             @include sm {
                 h2 {
                     font-size: calc(1.5rem + 1vw);
                     top: 18%;
-                    left: 14%;
+                    left: 0;
                     transform: translateY(-18%);
                 }
             }

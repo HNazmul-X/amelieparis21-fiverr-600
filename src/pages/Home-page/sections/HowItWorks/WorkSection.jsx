@@ -8,26 +8,20 @@ const workSliderInfo = [
     id: 1,
     img: workSliderImage,
     description:
-      "slider 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
+      "1 Créez votre Carte",
     
   },
   {
     id: 2,
     img: workSliderImage,
     description:
-      "slider 2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
+      "2 Choisir le design votre carte Digitale et entrer votre info",
   },
   {
     id: 3,
     img: workSliderImage,
     description:
-      "slider3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
-  },
-  {
-    id: 4,
-    img: workSliderImage,
-    description:
-      "slider4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
+      "3 partagez votre carte ils n'ont pas besoin de l'application",
   },
 ];
 
@@ -63,7 +57,7 @@ const WorkSection = () => {
           <img src={workSectionIcon} alt="WorkSection" />
         </div>
         <div className="work-section-title">
-          <h1>How it Works</h1>
+          <h1>Comment ça marche</h1>
         </div>
         <div className="slideTimeLine">
           <hr className="sliderLine" />

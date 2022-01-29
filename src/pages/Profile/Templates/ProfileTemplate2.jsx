@@ -88,7 +88,7 @@ export default function ProfileTemplate2({ data, onShare }) {
                                 target="_blank"
                                 className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
                                 <InlineIcon icon={social[data?.name]} />
-                                <p>{data.link}</p>
+                                <span>{data.link}</span>
                             </a>
                         ))}
                     </div>

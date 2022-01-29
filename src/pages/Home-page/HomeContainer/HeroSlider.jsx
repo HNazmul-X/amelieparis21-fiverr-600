@@ -24,7 +24,7 @@ const HeroSlider = () => {
           height="162px"
           object-fit="cover"
         />
-        <h2>join the One Card pro community</h2>
+        <h2>Rejoignez la communauté One Card pro</h2>
       </div>
       <div id="customSwiper">
         <div className="hero-slider__container">

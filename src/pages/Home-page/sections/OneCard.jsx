@@ -46,7 +46,7 @@ const OneCard = () => {
             <div className="container">
                 <div className="oneCart_top">
                     <img src={star} alt="" />
-                    <h2>Why One Card</h2>
+                    <h2>Pourquoi One Card pro</h2>
                 </div>
 
                 <div className="row">
