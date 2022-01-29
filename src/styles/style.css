@@ -106,7 +106,7 @@
 /* Input field Mixin */
 * {
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "San Francisco", sans-serif;
   font-size: 17px;
 }
 
@@ -644,7 +644,7 @@ body {
 @media screen and (max-width: 576px) {
   .hero-section .hero-slider .slideHeaderIcon .slideHeaderIconImage {
     top: 5%;
-    left: 38%;
+    left: 31%;
     transform: translateY(-38%) translateX(-5%);
   }
 }
@@ -655,19 +655,19 @@ body {
   color: #f0f6ff;
   z-index: 1;
   top: 18%;
-  left: 30%;
+  left: 24%;
 }
 @media screen and (max-width: 768px) {
   .hero-section .hero-slider .slideHeaderIcon h2 {
     top: 18%;
-    left: 20%;
+    left: 13%;
   }
 }
 @media screen and (max-width: 576px) {
   .hero-section .hero-slider .slideHeaderIcon h2 {
     font-size: calc(1.5rem + 1vw);
     top: 18%;
-    left: 14%;
+    left: 0;
     transform: translateY(-18%);
   }
 }
@@ -4393,12 +4393,13 @@ body {
 .profile-2-conatiner .contact-section {
   padding: 0 28px;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
 }
 .profile-2-conatiner .contact-section .single-contact {
   display: flex;
   text-decoration: none;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   border-top: 0.5px solid #e0e0e0;
   padding: 17px 0;
@@ -4406,15 +4407,30 @@ body {
 .profile-2-conatiner .contact-section .single-contact svg {
   font-size: 24px;
   width: 24px;
+  padding-right: 8px;
   color: var(--purple-600);
 }
-.profile-2-conatiner .contact-section .single-contact p {
+@media screen and (max-width: 576px) {
+  .profile-2-conatiner .contact-section .single-contact svg {
+    font-size: 30px;
+  }
+}
+.profile-2-conatiner .contact-section .single-contact span {
   margin-bottom: 0;
-  padding-left: 8px;
-  margin-top: -4px;
   font-size: 16px;
   font-weight: 600;
   color: var(--text);
+}
+@media screen and (max-width: 576px) {
+  .profile-2-conatiner .contact-section .single-contact span {
+    font-size: 11px;
+    text-align: justify;
+  }
+}
+@media screen and (max-width: 576px) {
+  .profile-2-conatiner .contact-section .single-contact {
+    overflow-wrap: break-word;
+  }
 }
 .profile-2-conatiner .contact-inner {
   padding: 0 28px;
@@ -4435,7 +4451,6 @@ body {
 .profile-2-conatiner .contact-inner .single-contact p {
   margin-bottom: 0;
   padding-left: 8px;
-  margin-top: -4px;
   font-size: 16px;
   font-weight: 600;
   color: #333e63;
@@ -4491,11 +4506,11 @@ body {
 }
 .profile-template-3 .besic-info .profile-pic-container .wrapper .profile-pic {
   position: absolute;
-  top: -35px;
-  left: -2px;
+  top: -41px;
+  left: -6px;
   transform: translateY(30%);
-  width: 108px;
-  height: 108px;
+  width: 118px;
+  height: 118px;
   border: 2px solid #fff;
   border-radius: 50%;
 }

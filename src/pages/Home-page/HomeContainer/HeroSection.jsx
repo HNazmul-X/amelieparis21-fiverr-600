@@ -9,15 +9,16 @@ const HeroSection = () => {
           <img src={HeroImage} alt="HeroImage" />
         </div>
         <div className="hero-text">
-          <h2>Onecard Pro</h2>
+          <h2>One Card Pro</h2>
           <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et{" "}
+            Votre Carte de visite unique
+            One Card pro
+            Créez votre Carte
+            Transmettez votre profil en un seul
+            geste 100 % interactive !
           </p>
           <button className="btn btn-primary rounded-pill px-4">
-            Sign In{" "}
+            Créez votre Carte{"  "}
             <svg
               width="20"
               height="20"
