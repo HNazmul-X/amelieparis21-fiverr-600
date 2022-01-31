@@ -109,7 +109,7 @@ export default function ProfileTemplate2({ data, onShare }) {
                             boxShadow: `0 0 5px ${data?.colors?.button?.shadow}`,
                         }}
                         className="add-contact-button">
-                        {data?.mainButton?.text || "ADD TO CONTACT"}
+                        {"ADD TO CONTACT"}
                     </button>
                 </div>
             </div>

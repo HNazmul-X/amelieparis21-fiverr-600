@@ -8,22 +8,30 @@ import AboutUS from "./sections/AboutUS";
 import Refference from "./sections/Refference";
 import HeroSection from "./HomeContainer/HeroSection";
 import WorkSection from "./sections/HowItWorks/WorkSection";
+import LeftImgRightText from "./sections/LeftImgRightText/LeftImgRightText";
 
 function HomePage() {
   return (
-    <>
-      <HeroSection />
-      <OneCard />
-      <MultipleDesign />
-      <VideoExplainer />
-      <WorkSection />
-      <div className="py-5">
-        <Refference />
-        <AboutUS />
-      </div>
-      <GetInTouch />
-      <Footer />
-    </>
+      <>
+          <HeroSection />
+          <OneCard />
+          <LeftImgRightText
+              site={"right"}
+              title={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, porro ab?"}
+              text={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, temporibus."}
+              button={"wow"}
+              sectionClassName={"bg-white"}
+          />
+          <MultipleDesign />
+          <VideoExplainer />
+          <WorkSection />
+          <div className="py-5">
+              <Refference />
+              <AboutUS />
+          </div>
+          <GetInTouch />
+          <Footer />
+      </>
   );
 }
 

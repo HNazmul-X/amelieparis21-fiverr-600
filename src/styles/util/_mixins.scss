@@ -6,8 +6,9 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
-// breakpoint for max width
 
+
+// breakpoint for max width
 @mixin xsm($breakpoint: $xsm) {
     @media screen and (max-width: $breakpoint) {
         @content;
@@ -56,7 +57,7 @@ $xxl: 1400px;
 }
 
 @mixin min-md($breakpoint: $md) {
-    @media screen and (max-width: $breakpoint) {
+    @media screen and (min-width: $breakpoint) {
         @content;
     }
 }
@@ -73,6 +74,14 @@ $xxl: 1400px;
 }
 @mixin min-xxl($breakpoint: $xxl) {
     @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+/* 
+==================================
+====CUSTOM BREAKPOINT============ */
+@mixin cm($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
         @content;
     }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "../../../assets/images/CREDIT_CARD 1.png";
+import HeroImage from "../../../assets/images/hero-section-image.png";
 import HeroSlider from "./HeroSlider";
 const HeroSection = () => {
   return (

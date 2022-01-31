@@ -80,6 +80,15 @@ END:VCARD
                 </div>
             </div>
         );
+    }
+    else if(templateDataWithUser===null){
+       return (
+           <div className="container">
+               <div className="p-5 text-center alert-secondary mt-4 rounded">
+                   <h1>NO profile Found</h1>
+               </div>
+           </div>
+       ); 
     } else {
         return (
             <div className="container text-center">
