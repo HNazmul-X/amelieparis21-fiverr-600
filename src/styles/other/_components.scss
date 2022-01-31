@@ -1,0 +1,32 @@
+@use "../util" as *;
+
+.why-onecard-pro-card{
+    background: $white;
+    height: 100%;
+    padding: 20px 40px;;
+    text-align: center;
+    box-shadow: $large-spreading-shadow;
+    border-radius: 10px;
+    color:$blue-grey;
+    cursor: pointer;
+
+    &:hover{
+        background:$primary-400;
+        color:$white;
+    }
+
+
+    .icon{
+        height: 90px;;
+        display: flex;
+        justify-content: center;
+
+        &>svg{
+            height: 70px;
+        }
+    }
+
+    .text{
+
+    }
+}

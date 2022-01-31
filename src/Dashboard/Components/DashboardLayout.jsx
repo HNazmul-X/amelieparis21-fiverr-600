@@ -17,7 +17,7 @@ const DashboardLayout = () => {
                 },
             });
         }
-    }, [auth.user.isAdmin]);
+    }, [auth?.user?.isAdmin]);
 
     return (
         <main id="admin_panel_dashboard">

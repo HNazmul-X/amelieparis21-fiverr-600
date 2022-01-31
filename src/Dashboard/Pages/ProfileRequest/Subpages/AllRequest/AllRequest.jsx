@@ -19,7 +19,7 @@ const AllRequest = () => {
     const fetchData = async (currentPage, itemPerPage) => {
         try {
             const data = await SecureFetch.get(`${apiBaseURL}/api/profile/all-profile?item=${itemPerPage}&pageNo=${currentPage}`);
-                     setAllProfileData(data.data);
+            setAllProfileData(data.data);
             setDataInfo({
                 itemPerPage: data?.itemPerPage,
                 currentPage: data?.currentPage,
@@ -29,7 +29,6 @@ const AllRequest = () => {
             swal("Error Ocurred", err.message, "error");
         }
     };
-
 
     // use effects
     useEffect(async () => {
@@ -103,7 +102,13 @@ const AllRequest = () => {
                                                     className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"
                                                     icon={!data?.user?.profileTemplate ? "fluent:open-folder-16-filled" : "bx:bxs-edit"}
                                                 />
-                                                {data?.user?.profileTemplate ? <InlineIcon className="p-1 fs-3 alert-info btn mx-2 rounded-pill" icon={"bx:bx-expand-alt"} /> : null}
+                                                {data?.user?.profileTemplate ? (
+                                                    <InlineIcon
+                                                        className="p-1 fs-3 alert-info btn mx-2 rounded-pill"
+                                                        icon={"bx:bx-expand-alt"}
+                                                        onClick={() => navigate(`/u/${data?.user?.username}`)}
+                                                    />
+                                                ) : null}
                                             </td>
                                         </tr>
                                     );

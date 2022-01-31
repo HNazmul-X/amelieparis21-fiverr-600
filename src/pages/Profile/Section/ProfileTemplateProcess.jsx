@@ -9,37 +9,70 @@ import ProfileTemplate3 from "../Templates/ProfileTemplate3";
 
 const ProfileTemplateProcess = () => {
     const [templateDataWithUser, setTemplateDataWithUser] = useState({});
-
     const { username } = useParams();
-    console.log(username);
+
     useEffect(async () => {
         axios
             .get(`${apiBaseURL}/api/profile-template/get-single-profile-by-username/${username}`)
             .then((data) => {
                 setTemplateDataWithUser(data.data);
-                console.log(data);
+                console.log(data.data);
             })
             .catch((error) => {
                 swal("ERROR", error.message, "error");
             });
     }, []);
-    console.log(templateDataWithUser);
 
-    if (templateDataWithUser.isApproved && templateDataWithUser.profileTemplate) {
+    //sharing profile
+    const handleSharingProfile = (data) => {
+        const shareData = {
+            title: document.title,
+            text: `${username} profile at OneCardPro.com`,
+            url: `${window.location.href}`,
+        };
+        window.navigator.share(shareData);
+    };
+
+    const dataForVcfFile = `
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.14.1//EN
+N:${templateDataWithUser?.profile?.firstname + " " + templateDataWithUser?.profile?.lastname};
+FN:${templateDataWithUser?.profile?.firstname + " " + templateDataWithUser?.profile?.lastname};
+ORG:OnecarPro.com;
+TITLE:memeber of one card pro; 
+EMAIL;type=INTERNET;type=WORK;type=pref:${templateDataWithUser?.email}; 
+TEL;type=WORK;type=pref:${templateDataWithUser?.profile?.phone}; 
+TEL;type=CELL:${templateDataWithUser?.profile?.phone};
+TEL;type=HOME:${templateDataWithUser?.profile?.phone}; 
+URL;type=pref:${window.location.href}
+END:VCARD
+ `;
+
+    if (templateDataWithUser?.isApproved && templateDataWithUser?.profileTemplate) {
         return (
             <div className="container py-5 pt-2">
                 <div className="mx-550 mx-auto shadow-lg">
                     {templateDataWithUser?.profileTemplate?.templateName === "profileTemplate1" ? (
-                        <ProfileTemplate1 data={templateDataWithUser?.profileTemplate} />
+                        <ProfileTemplate1 onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
                     ) : templateDataWithUser?.profileTemplate?.templateName === "profileTemplate2" ? (
-                        <ProfileTemplate2 data={templateDataWithUser?.profileTemplate} />
+                        <ProfileTemplate2 onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
                     ) : templateDataWithUser?.profileTemplate?.templateName === "profileTemplate3" ? (
-                        <ProfileTemplate3 data={templateDataWithUser?.profileTemplate} />
+                        <ProfileTemplate3 onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
                     ) : null}
+                </div>
+                <div className="text-center py-4">
+                    <a
+                        download={`${templateDataWithUser?.username}.vcf`}
+                        href={`data:text/plain;charset=utf-8,${encodeURIComponent(dataForVcfFile)}`}
+                        className=" my-button fs-5 d-inline-block text-decoration-none">
+                        {" "}
+                        Download
+                    </a>
                 </div>
             </div>
         );
-    } else if (templateDataWithUser.isApproved === false) {
+    } else if (templateDataWithUser?.isApproved === false) {
         return (
             <div className="container">
                 <div className="p-5 text-center alert-secondary mt-4 rounded">
@@ -47,14 +80,15 @@ const ProfileTemplateProcess = () => {
                 </div>
             </div>
         );
-    } else if (templateDataWithUser?.profileTemplate === null || templateDataWithUser.profileTemplate === undefined) {
-        return (
-            <div className="container">
-                <div className="p-5 text-center alert-secondary mt-4 rounded">
-                    <h1>Sorry Your Profile is Not created Yet</h1>
-                </div>
-            </div>
-        );
+    }
+    else if(templateDataWithUser===null){
+       return (
+           <div className="container">
+               <div className="p-5 text-center alert-secondary mt-4 rounded">
+                   <h1>NO profile Found</h1>
+               </div>
+           </div>
+       ); 
     } else {
         return (
             <div className="container text-center">

@@ -1,110 +1,116 @@
-import React, {useState} from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, {
-    Navigation,Pagination,Mousewheel,Keyboard,Autoplay
-} from 'swiper';
-
+import React, { useState } from "react";
 import star from "../../../assets/images/star.png";
-import sliderImg from "../../../assets/images/Group 1279.png";
+import sliderImg from "../../../assets/images/why-onecard-pro-image.png";
 import watch from "../../../assets/images/watch.png";
-
-// Import Swiper styles
-import 'swiper/css';
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-
-
-SwiperCore.use([Navigation,Pagination,Mousewheel,Keyboard,Autoplay]);
+import WhyOneCardProCard from "../../../components/WhyOneCardProCard/WhyOneCardProCard";
 
 const sliderInfo = [
     {
         img: watch,
         title: "SIMPLE AND FAST",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?"
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
     },
     {
         img: watch,
         title: "SIMPLE AND FAST",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?"
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
     },
     {
         img: watch,
         title: "SIMPLE AND FAST",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?"
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
     },
     {
         img: watch,
         title: "SIMPLE AND FAST",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?"
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
+    },
+];
+
+const whyOneCardProCardData = [
+    {
+        icon: (
+            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M76.6164 36.4812C75.789 31.9305 73.9273 27.7934 71.4451 24.0701L77.0301 18.2782C74.341 14.5549 71.0314 11.2453 67.3081 8.55618L61.723 14.3481C57.9997 11.8658 53.8626 10.211 49.3119 9.38357V1.31636C47.0365 0.902651 44.7612 0.695837 42.4858 0.902689C40.2104 0.902689 37.7282 1.10952 35.6597 1.52322V9.59044C31.109 10.4178 26.9719 12.2795 23.2486 14.7617L17.4567 9.17677C13.7334 11.8658 10.4238 15.1754 7.7347 18.8988L13.5265 24.4838C11.0443 28.2071 9.3895 32.3442 8.56209 36.8949H0.494874C0.0811698 39.1703 -0.125707 41.4456 0.0811446 43.721C0.0811446 45.9964 0.287971 48.4787 0.701675 50.5472H8.76896C9.80322 55.0979 11.458 59.235 13.9403 62.7514L8.35523 68.5433C11.0443 72.2666 14.354 75.5763 18.0773 78.2653L23.6623 72.4734C27.3857 74.9557 31.5227 76.6105 36.0734 77.4379V85.5052C38.3488 85.9189 40.6242 86.1257 42.8995 85.9188C45.1749 85.9188 47.6571 85.712 49.7256 85.2983V77.2311C54.2764 76.4037 58.4135 74.542 61.93 72.0598L67.7218 77.6447C71.4451 74.9557 74.7548 71.6461 77.4438 67.9227L71.6519 62.3377C74.1341 58.6144 75.789 54.4773 76.6164 49.9266H84.6837C85.0974 47.6512 85.3041 45.3759 85.0973 43.1005C85.0973 40.8251 84.8904 38.5497 84.4767 36.2743L76.6164 36.4812ZM65.2395 52.4088C60.4819 64.82 46.416 71.0255 33.798 66.2679C21.3869 61.5103 15.1813 47.4444 19.9389 34.8264C24.6965 22.4153 38.7625 16.2097 51.3804 20.9673C63.7915 25.7249 69.9971 39.7909 65.2395 52.4088Z"
+                    fill="currentColor"
+                />
+            </svg>
+        ),
+        text: "dakce cmaet mante qolite aplifize laiwoazotiq ialaaiion lmaniya. oie.aian ieoieqo",
+    },
+    {
+        icon: (
+            <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1037_861)">
+                    <path
+                        d="M65.409 1.86586L66.0027 14.152C62.5541 10.0837 58.2598 6.81621 53.4193 4.57716C48.5787 2.33811 43.3081 1.18136 37.9748 1.1875C19.999 1.1875 5.03352 14.0897 1.8243 31.1452C1.77682 31.4021 1.78647 31.6664 1.85256 31.9192C1.91865 32.1721 2.03957 32.4073 2.20672 32.6081C2.37388 32.809 2.58319 32.9706 2.8198 33.0816C3.05641 33.1925 3.31453 33.25 3.57586 33.25H10.8567C11.2581 33.2496 11.6476 33.1136 11.962 32.8641C12.2764 32.6146 12.4973 32.2662 12.589 31.8755C13.7764 26.9476 16.3724 22.4719 20.0604 18.9944C23.7483 15.5169 28.3687 13.188 33.3578 12.2918C38.3468 11.3957 43.4889 11.971 48.1565 13.9477C52.8241 15.9243 56.8155 19.2168 59.6437 23.4234L44.5832 22.702C44.3423 22.6906 44.1015 22.7282 43.8755 22.8125C43.6496 22.8969 43.4431 23.0263 43.2686 23.1929C43.0941 23.3594 42.9553 23.5597 42.8606 23.7815C42.7658 24.0033 42.7171 24.2421 42.7173 24.4833V31.5207C42.7173 31.9931 42.905 32.4462 43.2391 32.7802C43.5731 33.1143 44.0262 33.302 44.4986 33.302H74.2188C74.6912 33.302 75.1442 33.1143 75.4783 32.7802C75.8123 32.4462 76 31.9931 76 31.5207V1.78125C76 1.30883 75.8123 0.855765 75.4783 0.521716C75.1442 0.187667 74.6912 0 74.2188 0L67.1873 0C66.9463 0.000129612 66.7079 0.049147 66.4864 0.144086C66.2649 0.239025 66.065 0.377911 65.8988 0.55234C65.7326 0.72677 65.6034 0.933115 65.5192 1.15889C65.435 1.38466 65.3975 1.62517 65.409 1.86586V1.86586ZM37.9748 64.125C33.6917 64.1287 29.4737 63.0769 25.6937 61.0627C21.9138 59.0484 18.6885 56.1338 16.3029 52.5766L31.4138 53.2995C31.6548 53.3109 31.8955 53.2733 32.1215 53.1889C32.3475 53.1046 32.5539 52.9752 32.7284 52.8086C32.9029 52.6421 33.0417 52.4418 33.1365 52.22C33.2312 51.9982 33.28 51.7594 33.2797 51.5182V44.4823C33.2797 44.0099 33.092 43.5568 32.758 43.2227C32.4239 42.8887 31.9709 42.701 31.4984 42.701H1.78125C1.30883 42.701 0.855765 42.8887 0.521716 43.2227C0.187667 43.5568 0 44.0099 0 44.4823L0 74.2188C0 74.6912 0.187667 75.1442 0.521716 75.4783C0.855765 75.8123 1.30883 76 1.78125 76H8.80977C9.05137 76.0003 9.29051 75.9515 9.51264 75.8564C9.73477 75.7614 9.93524 75.6222 10.1019 75.4472C10.2685 75.2722 10.3978 75.0652 10.4819 74.8387C10.566 74.6122 10.6031 74.371 10.591 74.1297L9.975 61.8732C13.4231 65.9332 17.7138 69.1937 22.5491 71.4282C27.3843 73.6627 32.6482 74.8175 37.9748 74.8125C55.952 74.8125 70.9175 61.9103 74.1267 44.8548C74.1742 44.5979 74.1645 44.3336 74.0985 44.0808C74.0324 43.8279 73.9114 43.5927 73.7443 43.3919C73.5771 43.191 73.3678 43.0294 73.1312 42.9184C72.8946 42.8075 72.6365 42.75 72.3752 42.75H65.0943C64.6929 42.7504 64.3035 42.8864 63.989 43.1359C63.6746 43.3854 63.4537 43.7338 63.362 44.1245C61.9911 49.8249 58.7412 54.8979 54.1358 58.5261C49.5304 62.1543 43.8377 64.1265 37.9748 64.125V64.125Z"
+                        fill="currentColor"
+                    />
+                </g>
+                <defs>
+                    <clipPath id="clip0_1037_861">
+                        <rect width="76" height="76" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        ),
+        text: "Personnalisable Modifiez vos informations à tout moment",
+    },
+    {
+        icon: (
+            <svg width="100" height="57" viewBox="0 0 100 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M59 34.1001C56.4 36.2001 53.1 37.4001 49.7 37.4001C46.3 37.4001 43 36.2001 40.4 34.1001C35.5 36.0001 32 40.7001 32 46.3001V52.1001C32 54.7001 34.1 56.8001 36.7 56.8001H62.7C65.3 56.8001 67.4 54.7001 67.4 52.1001V46.3001C67.4 40.7001 63.9 36.0001 59 34.1001Z"
+                    fill="currentColor"
+                />
+                <path
+                    d="M36.9 22.6001C36.9 24.8001 37.5 26.9001 38.5 28.7001C38.9 29.4001 39.4 30.1 39.9 30.8C40.2 31.1 40.4 31.4001 40.7 31.7001C41 32 41.3 32.3001 41.6 32.5001C42 32.8001 42.4 33.1001 42.8 33.4001C43.1 33.6001 43.3 33.7001 43.6 33.9001C44.3 34.3001 45.1 34.6001 45.9 34.9001C47.1 35.3001 48.4 35.5001 49.7 35.5001C51 35.5001 52.3 35.3001 53.5 34.9001C54.3 34.7001 55.1 34.3001 55.8 33.9001C56.1 33.8001 56.3 33.6001 56.6 33.4001C57 33.1001 57.4 32.8001 57.8 32.5001C58.1 32.2001 58.4 32 58.7 31.7001C59 31.4001 59.3 31.1 59.5 30.8C60 30.2 60.5 29.5 60.9 28.7001C61.9 26.9001 62.5 24.8001 62.5 22.6001C62.5 15.5001 56.8 9.80005 49.7 9.80005C42.6 9.80005 36.9 15.5001 36.9 22.6001Z"
+                    fill="currentColor"
+                />
+                <path
+                    d="M22.3 19.9001C20.2 21.6001 17.6 22.5001 14.8 22.5001C12.1 22.5001 9.4 21.6001 7.3 19.9001C3.1 21.4001 0 25.4001 0 30.2001V34.2001C0 36.4001 1.80001 38.1001 3.90001 38.1001H25.6C27.8 38.1001 29.5 36.3001 29.5 34.2001V30.2001C29.6 25.5001 26.5 21.4001 22.3 19.9001Z"
+                    fill="currentColor"
+                />
+                <path
+                    d="M9.3 18.9001C9.6 19.1001 9.80001 19.2001 10.1 19.4001C11.5 20.2001 13.1 20.6001 14.8 20.6001C16.5 20.6001 18.1 20.2001 19.5 19.4001C19.8 19.3001 20 19.1001 20.3 18.9001C20.8 18.5001 21.3 18.1001 21.8 17.7001C22 17.5001 22.2 17.2001 22.5 17.0001C23.9 15.3001 24.8 13.0001 24.8 10.6001C24.8 5.1001 20.3 0.600098 14.8 0.600098C9.3 0.600098 4.8 5.1001 4.8 10.6001C4.8 13.4001 5.9 15.9001 7.8 17.7001C8.3 18.1001 8.8 18.5001 9.3 18.9001Z"
+                    fill="currentColor"
+                />
+                <path
+                    d="M92 19.9001C89.9 21.6001 87.3 22.5001 84.5 22.5001C81.8 22.5001 79.1 21.6001 77 19.9001C72.8 21.4001 69.7 25.4001 69.7 30.2001V34.2001C69.7 36.4001 71.5 38.1001 73.6 38.1001H95.3C97.5 38.1001 99.2 36.3001 99.2 34.2001V30.2001C99.2 25.5001 96.2 21.4001 92 19.9001Z"
+                    fill="currentColor"
+                />
+                <path
+                    d="M74.5 10.6001C74.5 13.4001 75.6 15.9001 77.5 17.7001C77.9 18.1001 78.4 18.5001 79 18.9001C79.3 19.1001 79.5 19.2001 79.8 19.4001C81.2 20.2001 82.8 20.6001 84.5 20.6001C86.2 20.6001 87.8 20.2001 89.2 19.4001C89.5 19.3001 89.7 19.1001 90 18.9001C90.5 18.5001 91 18.1001 91.5 17.7001C91.7 17.5001 91.9 17.2001 92.2 17.0001C93.6 15.3001 94.5 13.0001 94.5 10.6001C94.5 5.1001 90 0.600098 84.5 0.600098C79 0.600098 74.5 5.1001 74.5 10.6001Z"
+                    fill="currentColor"
+                />
+            </svg>
+        ),
+        text: "Personnalisable Modifiez vos informations à tout moment",
     },
 ];
 
 const OneCard = () => {
-
     return (
-        <div id='whyOneCart'>
+        <div id="whyOneCart">
             <div className="container">
                 <div className="oneCart_top">
                     <img src={star} alt="" />
-                    <h2>Why One Card</h2>
+                    <h2>Pourquoi One Card pro</h2>
                 </div>
 
                 <div className="row">
                     <div className="col-md-6">
-                        <Swiper 
-                            spaceBetween={50}
-                            slidesPerView={1}
-                            loop={true}
-                            loopFillGroupWithBlank={true}
-                            autoplay={{
-                            delay: 2000,
-                            disableOnInteraction: false,
-                            }}
-                             navigation={true} pagination={true} keyboard={true}
-                        >
-                            <SwiperSlide className="oneCart_slider">
-                                {
-                                    sliderInfo.map(info => 
-                                        <div className="content_area">
-                                            <img src={info.img} alt="" />
+                        {sliderInfo.map((info) => (
+                            <div className="content_area">
+                                <img src={info.img} alt="" />
 
-                                            <div>
-                                                <h5>{info.title}</h5>
-                                                <p>{info.description}</p>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </SwiperSlide>
-                            <SwiperSlide className="oneCart_slider">
-                                {
-                                    sliderInfo.map(info => 
-                                        <div className="content_area">
-                                            <img src={info.img} alt="" />
-
-                                            <div>
-                                                <h5>{info.title}</h5>
-                                                <p>{info.description}</p>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </SwiperSlide>
-                            <SwiperSlide className="oneCart_slider">
-                                {
-                                    sliderInfo.map(info => 
-                                        <div className="content_area">
-                                            <img src={info.img} alt="" />
-
-                                            <div>
-                                                <h5>{info.title}</h5>
-                                                <p>{info.description}</p>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </SwiperSlide>
-                        </Swiper>
+                                <div>
+                                    <h5>{info.title}</h5>
+                                    <p>{info.description}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
 
                     <div className="col-md-6">
@@ -112,6 +118,14 @@ const OneCard = () => {
                             <img src={sliderImg} alt="" />
                         </div>
                     </div>
+                </div>
+
+                <div className="row row-cols-lg-3 py-5 row-cols-md-2 row-cols-1 justify-content-center">
+                    {whyOneCardProCardData?.map((data) => (
+                        <div className="col">
+                            <WhyOneCardProCard data={data} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

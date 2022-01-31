@@ -1,93 +1,53 @@
 import React, { useState } from "react";
 import workSectionIcon from "../../../../assets/images/HowItWorkes.png";
-import workSliderImage from "../../../../assets/images/workSlider.jpg";
-import WorkSectionSlider from "./WorkSectionSlider/WorkSectionSlider";
+import workProfileImage from "../../../../assets/images/Group_1282.png";
+import workCardImage from "../../../../assets/images/Layer 2.png";
+import "./WorkSection.css"
 
-const workSliderInfo = [
-  {
-    id: 1,
-    img: workSliderImage,
-    description:
-      "slider 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
-    
-  },
-  {
-    id: 2,
-    img: workSliderImage,
-    description:
-      "slider 2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
-  },
-  {
-    id: 3,
-    img: workSliderImage,
-    description:
-      "slider3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
-  },
-  {
-    id: 4,
-    img: workSliderImage,
-    description:
-      "slider4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
-  },
-];
 
 const WorkSection = () => {
-  const [slideNumber, setSlideNumber] = useState({
-    number: 0,
-    numberOne: 1,
-    numberTwo: 2,
-  });
-
-  const handleClick = () => {
-    setSlideNumber({
-      ...slideNumber,
-      number: slideNumber.number + 1,
-      numberOne: slideNumber.numberOne + 1,
-      numberTwo: slideNumber.numberTwo + 1,
-    });
-  };
-
-  const handleDecrease = () => {
-    setSlideNumber({
-      ...slideNumber,
-      number: slideNumber.number - 1,
-      numberOne: slideNumber.numberOne - 1,
-      numberTwo: slideNumber.numberTwo - 1,
-    });
-  };
 
   return (
-    <div className="work-section">
-      <div className="work-section-container">
-        <div className="work-section-icon">
-          <img src={workSectionIcon} alt="WorkSection" />
-        </div>
-        <div className="work-section-title">
-          <h1>How it Works</h1>
-        </div>
-        <div className="slideTimeLine">
-          <hr className="sliderLine" />
-          <div className="timeLineNumber">
-            <p className="number-1">
-              <span>{slideNumber.number}</span>
-            </p>
-            <p className="number-2">
-              <span>{slideNumber.numberOne}</span>
-            </p>
-            <p className="number-3">
-              <span>{slideNumber.numberTwo}</span>
-            </p>
+   <div className="worksectionMainContainer">
+      <div className="worksectionSubContainer">
+          <img src={workSectionIcon} alt="" />
+          <h3 className="workTitlle">How it Works</h3>
+          <div className="worksectionSubDetails">
+              <div className="lineContainer">
+              </div>
+              <div className="workContent">
+                  <div className="workNumberContainer">
+                      <div className="workVerticalLine">
+                          <div className="workNumberBox">1</div>
+                          <div className="verticalLiner"></div>
+                      </div>
+                      <div className="workVerticalLine">
+                          <div className="workNumberBox">2</div>
+                          <div className="verticalLiner"></div>
+                      </div>
+                      <div className="workVerticalLine">
+                          <div className="workNumberBox">3</div>
+                          <div className="verticalLiner"></div>
+                      </div>
+                  </div>
+              </div>
+          <div className="workCardBoxContainer">
+              <div className="workCardBoxDetails cardDetails">
+                  <h3>Commander votre carte</h3>
+                  <img src={workCardImage} alt="" />
+              </div>
+              <div className="workCardBoxDetails profileDetails">
+                  <h3>Commander votre carte</h3>
+                  <img src={workProfileImage} alt="" />
+              </div>
+              <div className="workCardBoxDetails profileDetails">
+                  <h3>Commander votre carte</h3>
+                  <img src={workProfileImage} alt="" />
+              </div>
           </div>
-        </div>
+          </div>
       </div>
-      <div className="customSwipeWorkSlider">
-        <WorkSectionSlider
-          sliderData={workSliderInfo}
-          handleChange={handleClick}
-          handleDecrease={handleDecrease}
-        />
-      </div>
-    </div>
+   </div>
   );
 };
 

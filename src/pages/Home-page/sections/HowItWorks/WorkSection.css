@@ -1,0 +1,346 @@
+.worksectionMainContainer{
+    width: 98%;
+    height: 850px;
+    padding-top: 10px;
+
+}
+.workTitlle{
+   font-size: 30px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: black;
+   margin-bottom: 30px;
+}
+.worksectionSubContainer img{
+    width: 147px;
+    height: 147px;
+ }
+.lineContainer{
+    width: 797px;
+    margin: 0px auto;
+    background-color: #6a6b6ea2;
+    height: 3px;
+}
+.worksectionSubContainer{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.worksectionSubDetails{
+    width: 80%;
+    height: auto;
+    margin: 0px auto;
+}
+.workNumberContainer{
+    width: 100%;
+    text-align:center;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+  
+}
+.workContent{
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+.workNumberBox{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: grey;
+    text-align: center;
+    line-height: 30px;
+    position: relative;
+    top: -20px;
+    border:.5px solid #a2a2a562;
+    z-index: 1;
+}
+.verticalLiner{
+    width: 2px;
+    height: 50px;
+    background-color: #6a6b6ea2;
+    position: relative;
+    left: 15px;
+    top: -20px;
+}
+
+.workCardBoxContainer{
+    width: 1125px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+.workCardBoxDetails{
+    width: 353px;
+    height: 390px;
+    background-color: #FFFFFF;
+    position: relative;
+    top: -30px;
+    left: -20px;
+    border-radius: 10px;
+    border:.5px solid #a2a2a562;
+}
+
+.workCardBoxDetails h3{
+    width: 150px;
+    height: 40px;
+    position: relative;
+    left: 100px;
+    padding-top: 33px;
+    font-size: 23px;
+    line-height: 25px;
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+}
+
+.profileDetails img{
+    Width :118px;
+    Height: 240px;
+    border-radius:20px;
+    position: relative;
+    top: 90px;
+}
+.cardDetails img{
+    width: 235px;
+    height: 146px;
+    top: 110px;
+    position: relative;
+}
+
+/* media qurey for responsive */
+
+/* desktop */
+@media (min-width:1024px){
+   
+    .workCardBoxContainer{
+        width: 83%;
+    }
+        
+    .workCardBoxDetails{
+        width: 30%;
+    }
+    .lineContainer{
+        width: 75%;
+    }
+    .workNumberContainer{
+        width:85%;
+        left: 7%;
+    }
+    .workContent{
+        width: 90%;
+    }
+}
+
+
+/* tablet */
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .workCardBoxContainer{
+        width: 88%;
+    }
+    
+    .workCardBoxDetails {
+      width: 45%;
+      margin-right: 10px;
+    }
+    .lineContainer{
+        width: 74%;
+    }
+    .workNumberContainer{
+        width:78%;
+        left: 13%;
+    }
+    .workContent{
+        width: 100%;
+    }
+    
+.workCardBoxDetails h3{
+    width: 80%;
+    left: 10%;
+}
+  }
+
+
+  /* mobile */
+
+  
+@media(max-width:768px){
+    .worksectionMainContainer{
+        height: 1503px;
+    }
+  
+    .worksectionSubDetails{
+        position: absolute;
+    }
+    .workCardBoxContainer{
+        position: relative;
+        display: block;
+        width: 70%;
+        left: 29%;
+        top: -1960px;
+        
+    }
+    .workCardBoxDetails{
+        margin-bottom: 10px;
+        width: 90%;
+    }
+    .lineContainer{
+        width: 3px;
+        height: 797px;
+        position: relative;
+        left: -40.5%;
+        top: 250px;
+    }
+    .workNumberContainer{
+        grid-template-columns:auto;
+        height: 1200px;
+        top: -800px;
+        width: 10%;
+        left: 6.5%;
+        top: -550px;
+    }
+    .workVerticalLine{
+        display: flex;
+    }
+    .verticalLiner{
+        width: 105px;
+        height: 3px;
+        left: -1px;
+        top: -5px;
+    }
+    .workContent{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+}
+
+@media(max-width:576px){
+    .worksectionMainContainer{
+        height: 1503px;
+    }
+  
+    .worksectionSubDetails{
+        position: absolute;
+        width: 100%;
+    }
+    .workCardBoxContainer{
+        position: relative;
+        display: block;
+        width: 80%;
+        left: 20%;
+        top: -1960px;
+        
+    }
+    .workCardBoxDetails{
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    .lineContainer{
+        width: 3px;
+        height: 797px;
+        position: relative;
+        left: -10%;
+        top: 250px;
+    }
+    
+    .workNumberContainer{
+        grid-template-columns:auto;
+        height: 1200px;
+        top: -800px;
+        left: 2.5%;
+        top: -550px;
+    }
+   
+    .workVerticalLine{
+        display: flex;
+    }
+    .verticalLiner{
+        width: 5px;
+        height: 3px;
+        left: -1px;
+        top: -5px;
+    }
+    .workContent{
+        width: 10%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .workCardBoxDetails h3{
+        left: 20%;
+    }
+    .cardDetails img{
+        width: 100%;
+    }
+    
+    
+}
+
+@media (min-width: 300px) and (max-width: 575px){
+    .worksectionMainContainer{
+        height: 1503px;
+    }
+  
+    .worksectionSubDetails{
+        position: absolute;
+        width: 98%;
+    }
+    .workCardBoxContainer{
+        position: relative;
+        display: block;
+        width: 68%;
+        left: 140px;
+        top: -1960px;
+        
+    }
+    .workCardBoxDetails{
+        width: 274px;
+        margin-bottom: 10px;
+    }
+    .lineContainer{
+        width: 3px;
+        height: 797px;
+        position: relative;
+        left: -40.4%;
+        top: 250px;
+    }
+    
+    .workNumberContainer{
+        grid-template-columns:auto;
+        height: 1200px;
+        left: -388%;
+        top: -538px;
+    }
+   
+    .workVerticalLine{
+        display: flex;
+    }
+    .verticalLiner{
+        width:75px;
+        height: 3px;
+        left: 1px;
+        top: -5px;
+        z-index: -1;
+    }
+    .workContent{
+        width: 10%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .workCardBoxDetails h3{
+        left: 25%;
+    }
+    .cardDetails img{
+        width: 100%;
+    }
+    
+}

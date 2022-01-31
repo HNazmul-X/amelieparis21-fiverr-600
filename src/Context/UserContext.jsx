@@ -32,7 +32,11 @@ const UserContext = ({ children }) => {
     };
 
     const logoutUser = (callback) => {
-        setUser({});
+        setUser({
+            isAdmin: false,
+            isLoggedIn: false,
+            isVerified: false,
+        });
         cookie.deleteCookie("token");
         cookie.deleteCookie("userId");
         if (callback) {

@@ -10,7 +10,7 @@ export const ProfileSidebarData = [
                 destination: "/admin/profile-request/all-user-profile",
             },
             {
-                label: "Created Profile",
+                label: "Approved Profile",
                 destination: "/admin/profile-request/created-profile",
             },
             {
@@ -31,11 +31,11 @@ export const ProfileSidebarData = [
             },
             {
                 label: "Delivered",
-                destination: "/admin/card-request/delivered",
+                destination: "/admin/card-request/all/delivered",
             },
             {
                 label: "Rejected",
-                destination: "/admin/card-request/rejected",
+                destination: "/admin/card-request/all/rejected",
             },
         ],
     },

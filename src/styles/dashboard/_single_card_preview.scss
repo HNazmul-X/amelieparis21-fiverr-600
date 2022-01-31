@@ -8,19 +8,20 @@ $card-details-conetnt-bg: #f7faff;
     --each-card-height: auto;
     --card-bg: #{$blue-grey};
     --card-aspect-ratio: 2/1;
+    --card-base:url("");
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 3rem;
     @mixin card-common {
-        border-radius: 10px;
+        border-radius: 20px;
         width: 350px;
-        background-color: $blue-grey;
         aspect-ratio: 4/2.54;
         height: auto;
         position: relative;
         z-index: 1;
         color: white;
+        background:var(--card-base);
         overflow: hidden;
         @include min-lg {
             width: 450px;
@@ -30,9 +31,9 @@ $card-details-conetnt-bg: #f7faff;
         justify-content: space-between;
         --each-card-width: 450px;
     }
-    @include min-xxl{
-      justify-content: center;
-      column-gap: 20px;
+    @include min-xxl {
+        justify-content: center;
+        column-gap: 20px;
     }
 
     .front-side {
@@ -77,31 +78,33 @@ $card-details-conetnt-bg: #f7faff;
 
             .logo {
                 width: 100%;
-                height: 145px;
+                aspect-ratio: 3/2;
                 position: relative;
-                --logo-scale:1;
-                img.logo__logo{
-                  position: absolute;
-                  top: 50%;
-                  left:50%;
-                  transform: translate(-50%, -50%) scale(var(--logo-scale));
-                  width: 39%;
+                --logo-scale: 1;
+                img.logo__logo {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(var(--logo-scale));
+                    width: 39%;
                 }
             }
-            .info{
-              padding:5px 10px 10px 10px;
-              display: flex;
-              flex-flow: column;
-              &.center{
-                align-items: center;
-              }
-              p{
-                margin-bottom: 0px;
-                line-height: 22px;
-                &.name{
-                  font-size: 1.4rem;
+            .info {
+                padding: 5px 10px 10px 10px;
+                display: flex;
+                flex-flow: column;
+                * {
+                    margin-bottom: 10px;
                 }
-              }
+                &.center {
+                    align-items: center;
+                }
+                p {
+                    line-height: 22px;
+                    &.name {
+                        font-size: 1.4rem;
+                    }
+                }
             }
         }
     }
