@@ -30,7 +30,7 @@ import { apiBaseURL } from "../../../Util/API_Info";
 
 function ProfileTemplate3({ data }) {
   const baseurl = apiBaseURL;
-
+console.log("From : /pages/profile/profiltemplate3", data);
   const social = {
     facebook: facebookFill,
     twitter: twitterFill,

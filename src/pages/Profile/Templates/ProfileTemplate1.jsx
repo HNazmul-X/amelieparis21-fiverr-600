@@ -28,10 +28,10 @@ import telegram from "../../../assets/images/social_icon/telegram-app--v1.png";
 import blogger from "../../../assets/images/social_icon/blogger.png";
 import { apiBaseURL } from "./../../../Util/API_Info";
 
-function ProfileTemplate1({data}) {
+function ProfileTemplate1({ data }) {
   const baseurl = apiBaseURL;
 
- /*  const data = {
+  /*  const data = {
     photos: {
       cover:
         "/upload/profileTemplateImg/UploadcoverPic53f24c3b-542d-41a2-ac7e-f6233b4317f3Frameverification.png",
@@ -81,44 +81,51 @@ function ProfileTemplate1({data}) {
   }; */
 
   const social = {
-      facebook: facebookIcon,
-      twitter: twitter,
-      instagram: instagramIcon,
-      linkedin: linkdinIcon,
-      tiktok: tiktok,
-      github: github,
-      website: website,
-      phone: callIcon,
-      telephone: telephone,
-      email: emailIcon,
-      whatsapp: whatsapp,
-      youtube: youtube,
-      microsoft: microsoft,
-      apple: apple,
-      vimeo: vimeo,
-      snapchat: snapchat,
-      amazon: amazon,
-      discord: discord,
-      telegram: telegram,
-      skype: skype,
-      dribbble: dribbble,
-      blogger: blogger,
-      behance: behance,
+    facebook: facebookIcon,
+    twitter: twitter,
+    instagram: instagramIcon,
+    linkedin: linkdinIcon,
+    tiktok: tiktok,
+    github: github,
+    website: website,
+    phone: callIcon,
+    telephone: telephone,
+    email: emailIcon,
+    whatsapp: whatsapp,
+    youtube: youtube,
+    microsoft: microsoft,
+    apple: apple,
+    vimeo: vimeo,
+    snapchat: snapchat,
+    amazon: amazon,
+    discord: discord,
+    telegram: telegram,
+    skype: skype,
+    dribbble: dribbble,
+    blogger: blogger,
+    behance: behance,
   };
 
+  console.log("data", data);
   return (
-    <div className="profile-template-1 w-100 " style={{ "--icon-text": data?.colors?.icon, "--text": data?.colors?.text }}>
+    <div
+      className="profile-template-1 w-100 "
+      style={{
+        "--icon-text": data?.colors?.icon,
+        "--text": data?.colors?.text,
+      }}
+    >
       <div className="banner">
-        {/* <img src={baseurl + data?.photos.cover} alt="Banner" /> */}
-        <img src={banner} alt="Banner" />
+        <img src={baseurl + data?.photos.cover || banner} alt="Banner" />
+        {/* <img src={banner} alt="Banner" /> */}
       </div>
       <div className="besic-info">
-        {/* <img
+        <img
           className="profile-pic bg-light"
           src={baseurl + data?.photos?.profile || profilePic}
           alt="profile"
-        /> */}
-        <img className="profile-pic bg-light" src={profilePic} alt="profile" />
+        />
+        {/* <img className="profile-pic bg-light" src={profilePic} alt="profile" /> */}
         <div className="info">
           <div className="name-section">
             <div>
