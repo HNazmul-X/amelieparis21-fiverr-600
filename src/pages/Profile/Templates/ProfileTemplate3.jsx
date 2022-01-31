@@ -28,7 +28,7 @@ import bloggerRect from "@iconify/icons-brandico/blogger-rect";
 import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
 import { apiBaseURL } from "../../../Util/API_Info";
 
-function ProfileTemplate3({ data, onShare }) {
+function ProfileTemplate3({ data, onShare, addToContact }) {
     const baseurl = apiBaseURL;
 
     const social = {
@@ -130,6 +130,7 @@ function ProfileTemplate3({ data, onShare }) {
 
                 <div className="add-contact-btn">
                     <button
+                        onClick={addToContact}
                         style={{
                             background: `${data?.colors?.button?.bg}`,
                             color: `${data?.colors?.button?.color}`,

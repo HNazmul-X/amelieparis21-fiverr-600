@@ -29,7 +29,7 @@ import bxCurrentLocation from "@iconify/icons-bx/bx-current-location";
 
 import { apiBaseURL } from "./../../../Util/API_Info";
 
-export default function ProfileTemplate2({ data, onShare }) {
+export default function ProfileTemplate2({ data, onShare, addToContact }) {
     const baseurl = apiBaseURL;
 
     const social = {
@@ -108,6 +108,7 @@ export default function ProfileTemplate2({ data, onShare }) {
                             color: `${data?.colors?.button?.color}`,
                             boxShadow: `0 0 5px ${data?.colors?.button?.shadow}`,
                         }}
+                        onClick={addToContact}
                         className="add-contact-button">
                         {"ADD TO CONTACT"}
                     </button>
