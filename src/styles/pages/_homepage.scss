@@ -240,30 +240,7 @@ $black: #000000;
       margin-bottom: 50px;
     }
   }
-  .image-area {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 85px;
-    z-index: 99;
-    @include md {
-      display: none;
-    }
-    .img-wrapper {
-      z-index: 99;
-      &:nth-child(2) {
-        margin-top: 45px;
-      }
-      &:nth-child(3) {
-        margin-top: 90px;
-      }
-      img {
-        max-width: 225px !important;
-        z-index: 99;
-        width: 100%;
-      }
-    }
-  }
+ 
   .slider-area {
     display: none;
     @include md {
@@ -284,7 +261,7 @@ $black: #000000;
     .icon {
       width: 74px;
       height: 74px;
-      background-color: $primary-300;
+      background-color:$gray-400 !important;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -805,23 +782,25 @@ $black: #000000;
   }
   .image-area {
     display: flex;
-    justify-content: center;
+   justify-content: center;
     align-items: flex-start;
-    gap: 85px;
+    // justify-content: space-between;
+   gap: 85px;
     z-index: 99;
     @include md {
       display: none;
     }
     .img-wrapper {
       z-index: 99;
+      max-width: 260px;
+      width: 100%;
       &:nth-child(2) {
         margin-top: 45px;
       }
       &:nth-child(3) {
         margin-top: 90px;
       }
-      img {
-        max-width: 210px;
+      img {        
         z-index: 99;
         width: 100%;
       }
@@ -1280,6 +1259,10 @@ $black: #000000;
       letter-spacing: 0.1rem;
       word-spacing: 2px;
     }
+    .title{
+      font-weight: bold;
+      font-size: 20px;
+    }
     @include md {
       h2 {
         letter-spacing: normal;
@@ -1732,4 +1715,8 @@ $black: #000000;
       margin-bottom: 8px;
     }
   }
+}
+
+.w-auto{
+  width: auto;
 }
