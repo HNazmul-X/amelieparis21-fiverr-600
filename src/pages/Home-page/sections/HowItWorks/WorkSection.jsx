@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import workSectionIcon from "../../../../assets/images/HowItWorkes.png";
 import workProfileImage from "../../../../assets/images/Group_1282.png";
+import workImg2 from "../../../../assets/images/Untitled design (70).png"
 import workCardImage from "../../../../assets/images/Layer 2.png";
 import "./WorkSection.css";
 
@@ -35,13 +36,13 @@ const WorkSection = () => {
             </div>
             <div className="workCardBoxDetails profileDetails">
               <h3>
-                Choisir le design votre carte Digitale et entrer votre info
+                Choisir le design votre
               </h3>
-              <img src={workProfileImage} alt="" />
+              <img src={workProfileImage} alt=""  />
             </div>
             <div className="workCardBoxDetails profileDetails">
               <h3>3 partagez votre carte</h3>
-              <img src={workProfileImage} alt="" />
+              <img src={workImg2} alt="" className="w-auto" />
             </div>
           </div>
         </div>

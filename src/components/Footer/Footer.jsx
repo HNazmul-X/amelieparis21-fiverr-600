@@ -2,7 +2,7 @@ import React from "react";
 import { footerNavigation, socialDatas } from "./../../data/FooterData";
 import { InlineIcon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import logo from "../../../src/assets/images/Asset 1.svg"
+import logo from "../../../src/assets/images/Asset 1@2x.png"
 
 function Footer() {
   return (
