@@ -4734,9 +4734,12 @@ body {
   position: absolute;
 }
 .single-card-preview .front-side .one-card-logo {
-  bottom: 10px;
+  bottom: 15px;
   margin-bottom: 0px;
-  left: 10px;
+  left: 15px;
+}
+.single-card-preview .front-side .one-card-logo img {
+  width: 50px;
 }
 .single-card-preview .front-side .icon {
   right: 10px;

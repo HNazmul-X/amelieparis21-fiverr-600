@@ -6,6 +6,7 @@ import { InlineIcon } from "@iconify/react";
 import qrCodeImage from "../../../../assets/images/Group.png";
 import blackQrCode from "../../../../assets/images/black-qr-code.png";
 import { apiBaseURL } from "../../../../Util/API_Info";
+import DarkCardLogo from "../../../../assets/images/Asset 2.svg";
 
 const SingleCardPreview = ({}) => {
     const [singleCardData, setSingleCardData] = useState({});
@@ -36,9 +37,7 @@ const SingleCardPreview = ({}) => {
                         <img src={apiBaseURL + singleCardData?.frontSide?.logo} alt="" />
                     </div>
                     <div className={`one-card-logo ${isLightCardBase ? "text-secondary" : ""}`}>
-                        <h5>
-                            One <br /> <p className="small mb-0">card pro</p>
-                        </h5>
+                        <img src={DarkCardLogo} alt="" />
                     </div>
                     <div className={`icon ${isLightCardBase ? "text-secondary" : ""}`}>
                         <InlineIcon icon="akar-icons:wifi" />

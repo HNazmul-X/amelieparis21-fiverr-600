@@ -44,10 +44,14 @@ $card-details-conetnt-bg: #f7faff;
         .icon {
             position: absolute;
         }
+
         .one-card-logo {
-            bottom: 10px;
+            bottom: 15px;
             margin-bottom: 0px;
-            left: 10px;
+            left: 15px;
+            img{
+                width: 50px;
+            }
         }
         .icon {
             right: 10px;
