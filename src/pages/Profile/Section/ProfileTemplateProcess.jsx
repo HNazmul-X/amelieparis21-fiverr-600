@@ -49,26 +49,31 @@ URL;type=pref:${window.location.href}
 END:VCARD
  `;
 
+
+ const downloadingFile = () =>{
+     const a = document.createElement("a")
+     a.style.display = "none"
+     a.setAttribute("href",`data:text/plain;charset=utf8,${encodeURIComponent(dataForVcfFile)}`)
+     a.setAttribute("download",`${templateDataWithUser?.username}.vcf`)
+     document.body.appendChild(a)
+     a.click()
+     a.remove()
+ } 
+
     if (templateDataWithUser?.isApproved && templateDataWithUser?.profileTemplate) {
         return (
             <div className="container py-5 pt-2">
                 <div className="mx-550 mx-auto shadow-lg">
                     {templateDataWithUser?.profileTemplate?.templateName === "profileTemplate1" ? (
-                        <ProfileTemplate1 onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
+                        <ProfileTemplate1 addToContact={downloadingFile} onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
                     ) : templateDataWithUser?.profileTemplate?.templateName === "profileTemplate2" ? (
-                        <ProfileTemplate2 onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
+                        <ProfileTemplate2 addToContact={downloadingFile} onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
                     ) : templateDataWithUser?.profileTemplate?.templateName === "profileTemplate3" ? (
-                        <ProfileTemplate3 onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
+                        <ProfileTemplate3 addToContact={downloadingFile} onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
                     ) : null}
                 </div>
                 <div className="text-center py-4">
-                    <a
-                        download={`${templateDataWithUser?.username}.vcf`}
-                        href={`data:text/plain;charset=utf-8,${encodeURIComponent(dataForVcfFile)}`}
-                        className=" my-button fs-5 d-inline-block text-decoration-none">
-                        {" "}
-                        Download
-                    </a>
+                    
                 </div>
             </div>
         );

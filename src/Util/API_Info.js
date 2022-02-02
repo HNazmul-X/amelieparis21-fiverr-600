@@ -1,1 +1,1 @@
-export const apiBaseURL = `http://localhost:8080`;
+export const apiBaseURL = `https://server.onecardpro.com`;
