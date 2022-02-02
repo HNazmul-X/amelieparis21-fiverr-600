@@ -7,22 +7,22 @@ import WhyOneCardProCard from "../../../components/WhyOneCardProCard/WhyOneCardP
 const sliderInfo = [
     {
         img: watch,
-        title: "SIMPLE AND FAST",
+        title: "Simple et rapide",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
     },
     {
         img: watch,
-        title: "SIMPLE AND FAST",
+        title: "Partagez sans limite",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
     },
     {
         img: watch,
-        title: "SIMPLE AND FAST",
+        title: "Sans contact",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
     },
     {
         img: watch,
-        title: "SIMPLE AND FAST",
+        title: "Marketting viral efficace",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quas laudantium odio necessitatibus?",
     },
 ];
@@ -37,7 +37,7 @@ const whyOneCardProCardData = [
                 />
             </svg>
         ),
-        text: "dakce cmaet mante qolite aplifize laiwoazotiq ialaaiion lmaniya. oie.aian ieoieqo",
+        text: "Personnalisable Modifiez vos informations à tout moment",
     },
     {
         icon: (
@@ -55,7 +55,7 @@ const whyOneCardProCardData = [
                 </defs>
             </svg>
         ),
-        text: "Personnalisable Modifiez vos informations à tout moment",
+        text: "Sauvegardez directement dans les contacts du téléphone",
     },
     {
         icon: (
@@ -86,7 +86,7 @@ const whyOneCardProCardData = [
                 />
             </svg>
         ),
-        text: "Personnalisable Modifiez vos informations à tout moment",
+        text: "Eco responsable et Durable",
     },
 ];
 
@@ -107,7 +107,7 @@ const OneCard = () => {
 
                                 <div>
                                     <h5>{info.title}</h5>
-                                    <p>{info.description}</p>
+                                    {/* <p>{info.description}</p> */}
                                 </div>
                             </div>
                         ))}

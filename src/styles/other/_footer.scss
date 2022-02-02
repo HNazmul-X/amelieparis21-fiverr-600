@@ -18,11 +18,14 @@ $blue-grey-300: #85a0bf;
       gap: 22px;
     }
     .logo {
-      background-color: $blue-grey-700;
-      padding: 24px 132px;
-      display: inline-block;
+      // background-color: $blue-grey-700;
+      img{
+        width: 100px;
+      }
+      // padding: 24px 132px;
+      // display: inline-block;
       @include lg {
-        padding: 22px 80px;
+        // padding: 22px 80px;
       }
       p {
         margin-bottom: 0;

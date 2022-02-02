@@ -210,6 +210,10 @@ body {
 .hnazmul-navbar .hnazmul-navbar-container .hnazmul-nav-brand {
   padding-right: 20px;
 }
+.hnazmul-navbar .hnazmul-navbar-container .hnazmul-nav-brand img {
+  height: 55px;
+  width: auto;
+}
 .hnazmul-navbar .hnazmul-navbar-container .hnazmul-nav-toggle-btn {
   display: none;
 }
@@ -454,15 +458,8 @@ body {
     gap: 22px;
   }
 }
-.footer .top-footer .logo {
-  background-color: #1b3c80;
-  padding: 24px 132px;
-  display: inline-block;
-}
-@media screen and (max-width: 992px) {
-  .footer .top-footer .logo {
-    padding: 22px 80px;
-  }
+.footer .top-footer .logo img {
+  width: 100px;
 }
 .footer .top-footer .logo p {
   margin-bottom: 0;
@@ -842,7 +839,7 @@ body {
   margin-top: 90px;
 }
 .multiple-design-section .image-area .img-wrapper img {
-  max-width: 210px;
+  max-width: 225px !important;
   z-index: 99;
   width: 100%;
 }
@@ -1810,7 +1807,6 @@ body {
 #whyOneCart .content_area {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   column-gap: 25px;
   background: #fff;
   padding: 10px 20px;
@@ -2289,9 +2285,61 @@ body {
     font-size: 25px;
     margin-bottom: 10px;
   }
-  .left-image-right-text .text-wrapper .text, .left-image-right-text .text-wrapper .text2 {
+  .left-image-right-text .text-wrapper .text,
+.left-image-right-text .text-wrapper .text2 {
     font-size: 14px;
   }
+}
+
+.pb-108 {
+  padding-bottom: 108px;
+}
+
+.my-modal {
+  position: fixed;
+  z-index: 999999999;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* left: 5vw; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #0000008c;
+  padding: 40px 0 35px;
+}
+.my-modal .modl-conatiner {
+  position: relative;
+  width: 90vw;
+  margin: auto;
+  border: 1px solid #888;
+  box-shadow: 0 4px 8px #0003, 0 6px 20px #00000030;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+  background-color: white;
+  padding-top: 85px;
+  padding-bottom: 65px;
+}
+.my-modal .modl-conatiner .delet-icon-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+.my-modal .modl-conatiner .delet-icon-wrapper .delet-icon {
+  font-size: 33px;
+}
+.my-modal .modl-conatiner .title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.my-modal .modl-conatiner .tem {
+  font-size: 15px;
+  line-height: 1.3;
+  margin-bottom: 8px;
 }
 
 #create-card-login {

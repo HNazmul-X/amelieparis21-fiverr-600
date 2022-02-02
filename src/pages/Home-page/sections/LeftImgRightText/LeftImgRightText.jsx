@@ -6,12 +6,12 @@ const LeftImgRightText = ({ site, image,button, text, text2, title ,sectionClass
     return (
         <div className={`left-image-right-text ${sectionClassName}`}>
             <div className={`image ${site}`}>
-                <img src={IMAGE} alt="" />
+                <img src={image} alt="" />
             </div>
             <div className="container">
                 <div className="row ">
                     <div className={`col-md-6 text-wrapper ${site==="left"?"order-lg-1 text-lg-end":""}`}>
-                        <div className="py-3">
+                        <div className={`py-3 ${site === "left" ? "text-right" : ""}`}>
                             <h1 className="title">{title}</h1>
                             <p className="text mb-0">{text} </p>
                             <p className="text2">{text2} </p>

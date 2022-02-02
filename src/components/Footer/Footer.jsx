@@ -2,6 +2,7 @@ import React from "react";
 import { footerNavigation, socialDatas } from "./../../data/FooterData";
 import { InlineIcon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import logo from "../../../src/assets/images/Asset 1.svg"
 
 function Footer() {
   return (
@@ -10,7 +11,7 @@ function Footer() {
         <div className="top-footer">
           <div className="left">
             <div className="logo">
-              <p>Logo</p>
+              <img src={logo} alt="" />
             </div>
           </div>
           <div className="right-footer-social-area">

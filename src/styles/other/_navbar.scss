@@ -16,6 +16,10 @@
     align-items: center;
     .hnazmul-nav-brand {
       padding-right: 20px;
+      img{
+        height: 55px;
+        width: auto;
+      }
     }
     .hnazmul-nav-toggle-btn {
       display: none;
