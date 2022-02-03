@@ -29,10 +29,9 @@ import blogger from "../../../assets/images/social_icon/blogger.png";
 import location from "../../../assets/images/social_icon/location_icon.svg"
 import { apiBaseURL } from "./../../../Util/API_Info";
 
-function ProfileTemplate1({ data ,onShare}) {
+function ProfileTemplate1({ data, onShare, addToContact }) {
     const baseurl = apiBaseURL;
 
-  
     const social = {
         facebook: facebookIcon,
         twitter: twitter,
@@ -91,6 +90,7 @@ function ProfileTemplate1({ data ,onShare}) {
             </div>
             <div className="contact-section">
                 <button
+                onClick={addToContact}
                     style={{
                         background: `${data?.colors?.button?.bg}`,
                         color: `${data?.colors?.button?.color}`,

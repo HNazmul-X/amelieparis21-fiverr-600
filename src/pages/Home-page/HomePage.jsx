@@ -15,7 +15,15 @@ import PartagezImg from "../../assets/images/Partagez.png";
 
 
 function HomePage() {
- 
+  
+  useEffect(()=> {
+
+    document.title = "Home Page Onecard Pro.com"
+
+
+  })
+
+
   return (
     <>     
       <HeroSection />
