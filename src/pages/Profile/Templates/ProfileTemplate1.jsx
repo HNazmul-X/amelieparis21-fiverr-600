@@ -93,7 +93,7 @@ function ProfileTemplate1({ data, onShare, addToContact }) {
             </div>
             <div className="contact-section">
                 <button
-                onClick={addToContact}
+                    onClick={addToContact}
                     style={{
                         background: `${data?.colors?.button?.bg}`,
                         color: `${data?.colors?.button?.color}`,
@@ -104,7 +104,11 @@ function ProfileTemplate1({ data, onShare, addToContact }) {
                 </button>
                 <div className="social-container-1">
                     {data?.socialLinks.map((el, index) => (
-                        <a key={index} href={`${el?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${el?.link}`} target="_blank" className="signle-social-link">
+                        <a
+                            key={index}
+                            href={`${el?.name === "phone" ? "tel:" : el?.name === "email" ? "mailto:" : el?.name === "telephone" ? "tel:" : ""}${el?.link}`}
+                            target="_blank"
+                            className="signle-social-link">
                             <div className="left">
                                 <img src={social[el?.name]} alt={""} />
                                 <div>

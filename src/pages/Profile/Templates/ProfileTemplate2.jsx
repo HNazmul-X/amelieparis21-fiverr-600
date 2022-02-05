@@ -83,9 +83,10 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
 
                 {data?.socialLinks.length ? (
                     <div className="contact-section">
-                        {data?.socialLinks.map((data) => (
+                        {data?.socialLinks.map((data, index) => (
                             <a
-                                href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone" ? "tel+" : ""}${data?.link}`}
+                                key={index}
+                                href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone" ? "tel:" : ""}${data?.link}`}
                                 target="_blank"
                                 className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
                                 {console.log(social[data?.name])}
