@@ -26,7 +26,7 @@ const AllCard = () => {
             const data = await SecureFetch.get(`${apiBaseURL}/api/card/get-all-card/all?${status && `status=${status}`}`);
             setCardData(data);
         } catch (e) {
-            console.log(e);
+            swal("Unknow error happed",e.message,"error")
         }
     }, [status, updater]);
 

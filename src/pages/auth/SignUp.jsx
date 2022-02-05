@@ -35,9 +35,7 @@ const SignUp = () => {
 
         if (signedUpUser.error) {
             setIsSpinnerShow(false)
-            console.log(signedUpUser);
             const allError = Object.values(signedUpUser).map((err) => <li className="mb-0 text-danger text-start">{err}</li>);
-            console.log(allError);
 
             swal(
                 <div className="py-3">
@@ -46,7 +44,6 @@ const SignUp = () => {
                 </div>,
             );
         } else {
-            console.log("I am entering");
             navigate(`/verify-profile/${signedUpUser?.verificationInfo?._id}/${encodeURIComponent(signedUpUser?.verificationInfo?.code)}/${signedUpUser?.updatedUser?._id}`, {
                 replace: true,
             });
@@ -180,8 +177,8 @@ const SignUp = () => {
                                 <div className="validateBtn">
                                     <button className="btn d-inline-flex align-items-center ">
                                         {isSpinnerShow && (
-                                            <div class="spinner-border spinner-border-sm me-3" role="status">
-                                                <span class="visually-hidden">Loading...</span>
+                                            <div className="spinner-border spinner-border-sm me-3" role="status">
+                                                <span className="visually-hidden">Loading...</span>
                                             </div>
                                         )}
                                         Register

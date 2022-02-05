@@ -3,13 +3,7 @@ import img1 from "../../../assets/images/groun09.png";
 import { InlineIcon } from "@iconify/react";
 
 function VideoExplainer() {
-  //     useEffect(() => {
-  //    const ifream = document.querySelector("myframe").contentWindow.window.document
-  //       // const ifream = document.getElementById('myframe').contentWindow.document.getElementById("player")
-  //     //   ifream?.style.display="none"
-  //         console.log(ifream);
-  //         console.log(document.getElementById('myframe').contentWindow.document);
-  //     }, [])
+ 
 
   return (
     <section className="video-explainer-section">

@@ -47,8 +47,8 @@ const Verification = () => {
         <div className="row">
           <div className="col-lg-5 col-md-7 col-sm-9 mx-auto">
             <div id="signUp_Verification">
-              <div class="VCard">
-                <img src={VerificationImg} class="img-fluid" alt="" />
+              <div className="VCard">
+                <img src={VerificationImg} className="img-fluid" alt="" />
               </div>
 
               <div className="verificationDetails">
@@ -65,7 +65,7 @@ const Verification = () => {
                     <input
                       type="text"
                       {...register("code", { required: true })}
-                      class="form-control primary-input otpInput"
+                      className="form-control primary-input otpInput"
                       id="floatingInput"
                       placeholder="6 Digit OTP"
                     />
@@ -80,10 +80,10 @@ const Verification = () => {
                   <button className="btn verifyBtn">
                     {isSpinnerShow && (
                       <div
-                        class="spinner-border spinner-border-sm me-3"
+                        className="spinner-border spinner-border-sm me-3"
                         role="status"
                       >
-                        <span class="visually-hidden">Loading...</span>
+                        <span className="visually-hidden">Loading...</span>
                       </div>
                     )}
                     Verify

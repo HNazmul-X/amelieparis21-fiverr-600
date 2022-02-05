@@ -9,7 +9,6 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
 
     const submitSocialLink = (e) => {
         e.preventDefault();
-        console.log(e.target.elements);
         const createdArray = [...e.target.elements]
             .filter((data) => data.tagName === "INPUT" && data.value !== "" && data.type !== "color")
             .map((data) => {

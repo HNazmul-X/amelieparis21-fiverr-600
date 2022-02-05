@@ -55,8 +55,6 @@ const ProfileTemplateContext = ({ children }) => {
         setUserInfo,
     };
 
-    console.log(providerData);
-
     return <ProfileTemplateContextData.Provider value={{ ...providerData }}>{children}</ProfileTemplateContextData.Provider>;
 };
 

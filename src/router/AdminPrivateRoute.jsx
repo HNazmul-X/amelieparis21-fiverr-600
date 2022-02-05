@@ -13,8 +13,8 @@ const AdminPrivateRoute = () => {
     } else {
         return (
             <div className="d-flex w-100 justify-content-center mt-5 pt-5 ">
-                <div class="spinner-border alert-light" style={{ width: "5rem", height: "5rem" }} role="status">
-                    <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border alert-light" style={{ width: "5rem", height: "5rem" }} role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
         );

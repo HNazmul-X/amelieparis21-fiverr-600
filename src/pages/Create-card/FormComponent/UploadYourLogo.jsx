@@ -12,7 +12,6 @@ function UploadYourLogo({ componentIndex }) {
     };
 
     const handleFileUpload = useCallback((e) => {
-        console.log("updateing")
         const reader = new FileReader();
         reader.addEventListener("load", function () {
             cardLogo.front.logo = this.result;

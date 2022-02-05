@@ -173,7 +173,6 @@ function LeftSide() {
                     if (r_data.error) {
                         swal("Failed To create Template", r_data.error, "error");
                     } else {
-                        console.log(r_data);
                         swal("Template Creation Successfully", "", "success");
                     }
                 };
@@ -187,7 +186,6 @@ function LeftSide() {
                     checkingDataOrError(r_data);
                 }
             } catch (e) {
-                console.log(e);
                 swal("Error Ocurred", e.message, "error");
             }
         }

@@ -18,16 +18,15 @@ const ProfileTemplateProcess = () => {
                 navbar.style.display = "none";
             }
 
-            document.title = username +"'s Profile at one card pro"
+            document.title = username + "'s Profile at one card pro";
         } catch (e) {
-            console.log(e);
+            swal("Error Happened",e.message,"error")
         }
 
         axios
             .get(`${apiBaseURL}/api/profile-template/get-single-profile-by-username/${username}`)
             .then((data) => {
                 setTemplateDataWithUser(data.data);
-                console.log(data.data);
             })
             .catch((error) => {
                 swal("ERROR", error.message, "error");
@@ -48,7 +47,7 @@ const ProfileTemplateProcess = () => {
 BEGIN:VCARD
 VERSION:3.0
 PRODID:-//Apple Inc.//Mac OS X 10.14.1//EN
-N:${templateDataWithUser?.profile?.firstname + " " + templateDataWithUser?.profile?.lastname};
+N:${templateDataWithUser?.profileTemplate?.personalInfo?.name || "Member of Onecard Pro"};
 FN:${templateDataWithUser?.profile?.firstname + " " + templateDataWithUser?.profile?.lastname};
 ORG:OnecarPro.com;
 TITLE:memeber of one card pro; 
@@ -104,8 +103,8 @@ END:VCARD
     } else {
         return (
             <div className="container text-center">
-                <div class="spinner-border mt-5" style={{ width: "5rem", height: "5rem" }} role="status">
-                    <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border mt-5" style={{ width: "5rem", height: "5rem" }} role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
         );

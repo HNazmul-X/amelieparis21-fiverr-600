@@ -27,6 +27,7 @@ import amazon from "../../../assets/images/social_icon/amazon.png";
 import telegram from "../../../assets/images/social_icon/telegram-app--v1.png";
 import blogger from "../../../assets/images/social_icon/blogger.png";
 import location from "../../../assets/images/social_icon/location_icon.svg";
+import pinterest from "../../../assets/images/social_icon/pinterest.svg";
 
 function ProfileTemplate1() {
     const workLists = ["Social Media", "MARKETING", "DESIGN", "GRAPHIC"];
@@ -57,8 +58,8 @@ function ProfileTemplate1() {
         blogger: blogger,
         behance: behance,
         location: location,
+        pinterest: pinterest,
     };
-    console.log(userInfo?.name);
     return (
         <div
             className="profile-template-1"
@@ -110,7 +111,7 @@ function ProfileTemplate1() {
                                 <img src={social[data?.name]} alt={""} />
                                 <div>
                                     <h5>{data?.name}</h5>
-                                    <p className="mt-1">{(userInfo?.name && userInfo?.name.split(" ")[1]) || "username"}</p>
+                                    <p className="mt-1">{"name"}</p>
                                 </div>
                             </div>
                             <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />

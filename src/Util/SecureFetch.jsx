@@ -13,7 +13,6 @@ export const SecureFetch = {
         return new Promise(async (resolve, reject) => {
             const token = getCookie.getCookie("token");
             const userId = getCookie.getCookie("userId");
-            console.log(userId);
             if (token?.length > 0 && userId.length > 0) {
                 try {
                     const { data: returnedData } = await axios.post(url, data, {
@@ -26,7 +25,6 @@ export const SecureFetch = {
                     if (returnedData) {
                         resolve(returnedData);
                     } else {
-                        console.log(returnedData);
                         const error = new Error("Failed to Post Data");
                         reject(error);
                     }
@@ -42,7 +40,6 @@ export const SecureFetch = {
 
     get: (url, config) => {
         const getCookie = new GetCookie();
-        console.log(getCookie.getCookie("userId"));
         return new Promise(async (resolve, reject) => {
             try {
                 const { data: returnedData, status } = await axios.get(url, {

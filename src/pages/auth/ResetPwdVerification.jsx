@@ -29,8 +29,8 @@ const ResetPwdVerification = () => {
                 <div className="row">
                     <div className="col-lg-5 col-md-7 col-sm-9 mx-auto">
                         <div id="signUp_Verification">
-                            <div class="VCard col-5 pb-0 mx-auto">
-                                <img src={CardRoundImage} class="w-100 shadow-none" alt="" />
+                            <div className="VCard col-5 pb-0 mx-auto">
+                                <img src={CardRoundImage} className="w-100 shadow-none" alt="" />
                             </div>
 
                             <div className="verificationDetails">
@@ -43,7 +43,7 @@ const ResetPwdVerification = () => {
                                     <div className="form-floating otpWrapper my-3">
                                         <input
                                             type="text"
-                                            class="form-control primary-input text-center fw-bolder font-monospace otpInput fs-1"
+                                            className="form-control primary-input text-center fw-bolder font-monospace otpInput fs-1"
                                             name="code"
                                             id="floatingInput"
                                             placeholder="6 Digit OTP"
@@ -55,8 +55,8 @@ const ResetPwdVerification = () => {
 
                                     <button className="btn verifyBtn">
                                         {isSpinnerShow && (
-                                            <div class="spinner-border spinner-border-sm me-3" role="status">
-                                                <span class="visually-hidden">Loading...</span>
+                                            <div className="spinner-border spinner-border-sm me-3" role="status">
+                                                <span className="visually-hidden">Loading...</span>
                                             </div>
                                         )}
                                         Verify

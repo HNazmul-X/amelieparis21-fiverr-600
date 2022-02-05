@@ -4396,10 +4396,16 @@ body {
   padding: 17px 0;
 }
 .profile-2-conatiner .contact-section .single-contact svg {
-  font-size: 24px;
-  width: 24px;
+  width: 40px;
+  height: 40px;
   padding-right: 8px;
   color: var(--purple-600);
+  flex-shrink: 0;
+}
+.profile-2-conatiner .contact-section .single-contact p {
+  margin-bottom: 0px;
+  word-break: break-all;
+  line-height: 15px;
 }
 @media screen and (max-width: 576px) {
   .profile-2-conatiner .contact-section .single-contact svg {

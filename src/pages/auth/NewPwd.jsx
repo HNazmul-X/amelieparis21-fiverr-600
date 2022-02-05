@@ -42,7 +42,6 @@ const NewPwd = () => {
             }
         }
     };
-    console.log(error);
     return (
         <div id="verification_area">
             <div className="container">
@@ -50,8 +49,8 @@ const NewPwd = () => {
                     {!isSessionExpired ? (
                         <div className="col-lg-5 col-md-7 col-sm-9 mx-auto">
                             <div id="signUp_Verification">
-                                <div class="VCard col-5 pb-0 mx-auto">
-                                    <img src={CardRoundImage} class="w-100 shadow-none" alt="" />
+                                <div className="VCard col-5 pb-0 mx-auto">
+                                    <img src={CardRoundImage} className="w-100 shadow-none" alt="" />
                                 </div>
 
                                 <div className="verificationDetails">
@@ -92,8 +91,8 @@ const NewPwd = () => {
 
                                         <button className="btn verifyBtn">
                                             {isSpinnerShow && (
-                                                <div class="spinner-border spinner-border-sm me-3" role="status">
-                                                    <span class="visually-hidden">Loading...</span>
+                                                <div className="spinner-border spinner-border-sm me-3" role="status">
+                                                    <span className="visually-hidden">Loading...</span>
                                                 </div>
                                             )}
                                             Verify

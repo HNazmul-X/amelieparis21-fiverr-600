@@ -34,7 +34,6 @@ function ProfileCreationMain() {
             if (x?.user?.profileTemplate) {
                 const data = await SecureFetch.get(`${apiBaseURL}/api/profile-template/getSingleTemplateData/${x.user?.profileTemplate}`);
                 if (data) {
-                    console.log(data)
                     profileContext.setUserPics({
                         ...profileContext.userPics,
                         profile: { dataURL: `${apiBaseURL}${data?.photos?.profile}` },

@@ -26,7 +26,6 @@ const CreatedProfile = () => {
                 currentPage: data?.currentPage,
                 totalDocuments: data?.totalDocuments,
             });
-            console.log(data?.data);
         } catch (err) {
             swal("Error Ocurred", err.message, "error");
         }
@@ -114,22 +113,22 @@ const CreatedProfile = () => {
                 {(dataInfo?.totalDocuments / dataInfo.itemPerPage).toFixed(0) >= 1 && (
                     <div className="pagination justify-content-center mt-5">
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li onClick={() => dataInfo.currentPage >= 1 && fetchData(dataInfo?.currentPage - 1, dataInfo?.itemPerPage)} class={`page-item`}>
-                                    <a class="page-link" href="#">
+                            <ul className="pagination">
+                                <li onClick={() => dataInfo.currentPage >= 1 && fetchData(dataInfo?.currentPage - 1, dataInfo?.itemPerPage)} className={`page-item`}>
+                                    <a className="page-link" href="#">
                                         &lt;&lt;
                                     </a>
                                 </li>
                                 {[...new Array(parseInt(dataInfo.totalDocuments / dataInfo?.itemPerPage))].map((item, index) => (
-                                    <li onClick={() => fetchData(index + 1, dataInfo?.itemPerPage)} class={`page-item ${index + 1 === dataInfo.currentPage ? "active" : ""}`}>
-                                        <a class="page-link">{index + 1}</a>
+                                    <li onClick={() => fetchData(index + 1, dataInfo?.itemPerPage)} className={`page-item ${index + 1 === dataInfo.currentPage ? "active" : ""}`}>
+                                        <a className="page-link">{index + 1}</a>
                                     </li>
                                 ))}
 
                                 <li
                                     onClick={() => dataInfo.currentPage <= dataInfo.totalDocuments / dataInfo.itemPerPage && fetchData(dataInfo?.currentPage + 1, dataInfo.itemPerPage)}
-                                    class={`page-item ${dataInfo.currentPage == dataInfo.totalDocuments / dataInfo.itemPerPage ? "active disabled" : ""}`}>
-                                    <a class="page-link" href="#">
+                                    className={`page-item ${dataInfo.currentPage == dataInfo.totalDocuments / dataInfo.itemPerPage ? "active disabled" : ""}`}>
+                                    <a className="page-link" href="#">
                                         &gt;&gt;
                                     </a>
                                 </li>

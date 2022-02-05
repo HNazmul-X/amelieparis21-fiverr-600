@@ -28,6 +28,8 @@ import dribbbleCircleFilled from "@iconify/icons-ant-design/dribbble-circle-fill
 import bloggerRect from "@iconify/icons-brandico/blogger-rect";
 import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
 import locationCurrent from "@iconify/icons-carbon/location-current";
+import pinterestFill from "@iconify/icons-akar-icons/pinterest-fill";
+
 
 function ProfileTemplate3() {
   const { userInfo, userPics, buttonInfo, iconAndTextColor } =
@@ -57,7 +59,8 @@ function ProfileTemplate3() {
     phone: bxsPhone,
     telephone: telephoneIcon,
     email: emailLine,
-    location:locationCurrent
+    location:locationCurrent,
+    pinterest:pinterestFill
   };
 
   return (

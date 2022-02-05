@@ -99,7 +99,6 @@ const OrderValidation = () => {
                     promoCode: data?.promoCode,
                 };
                 const returnedData = await SecureFetch.post(`${apiBaseURL}/api/card/create-card`, dataForSendBackend);
-                console.log(returnedData);
                 if (returnedData?.card_created) {
                     navigate(`/card-status/${returnedData?.cardId}`);
                 } else if (returnedData.error) {
@@ -352,8 +351,8 @@ const OrderValidation = () => {
                         <div className="validateArea">
                             <button type="submit" className="btn">
                                 {isSpinnerShow && (
-                                    <div class="spinner-border spinner-border-sm" role="status">
-                                        <span class="visually-hidden">Loading...</span>
+                                    <div className="spinner-border spinner-border-sm" role="status">
+                                        <span className="visually-hidden">Loading...</span>
                                     </div>
                                 )}{" "}
                                 Validate Your Request

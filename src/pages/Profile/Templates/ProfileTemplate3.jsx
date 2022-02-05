@@ -26,6 +26,10 @@ import skypeFilled from "@iconify/icons-ant-design/skype-filled";
 import dribbbleCircleFilled from "@iconify/icons-ant-design/dribbble-circle-filled";
 import bloggerRect from "@iconify/icons-brandico/blogger-rect";
 import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
+import bxCurrentLocation from "@iconify/icons-bx/bx-current-location";
+
+import pinterestFill from "@iconify/icons-akar-icons/pinterest-fill";
+
 import { apiBaseURL } from "../../../Util/API_Info";
 
 function ProfileTemplate3({ data, onShare }) {
@@ -55,6 +59,8 @@ function ProfileTemplate3({ data, onShare }) {
         phone: bxsPhone,
         telephone: telephoneIcon,
         email: emailLine,
+        pinterest: pinterestFill,
+        location: bxCurrentLocation,
     };
 
     return (

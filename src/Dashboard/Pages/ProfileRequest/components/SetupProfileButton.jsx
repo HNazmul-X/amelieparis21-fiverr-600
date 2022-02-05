@@ -78,7 +78,6 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
                                 name="buttonText"
                                 placeholder="Type Button Text"
                             />
-                            {console.log(profileContext?.buttonInfo?.info?.text)}
                             <label htmlFor="btnText">Type Button Text</label>
                             {err === "buttonText" && <p className="mb-0 text-center text-danger">Button Text Required</p>}
                         </div>

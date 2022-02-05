@@ -35,8 +35,8 @@ const DashboardLayout = () => {
                     {" "}
                     {auth?.user?.isAdmin ? (
                         <div className="dashboard__navbar">
-                            <div class="input-group search_wrapper">
-                                <span class="input-group-text" className="adon">
+                            <div className="input-group search_wrapper">
+                                <span className="input-group-text adon">
                                     <InlineIcon icon=":ant-design:search-outlined" />
                                 </span>
                                 <input type="text" className="form-control" />

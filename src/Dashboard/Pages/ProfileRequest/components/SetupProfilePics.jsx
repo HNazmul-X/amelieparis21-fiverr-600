@@ -41,7 +41,6 @@ function SetupProfilePics({ open, handelOpen, title, templatedUser }) {
 
                     if (!userPics?.profile?.dataURL.startsWith(apiBaseURL)) {
                         setUserPics((value) => {
-                            console.log(value, profilePicData);
                             return { ...value, profile: { dataURL: profilePicData, file: file } };
                         });
                     } else {
@@ -81,7 +80,6 @@ function SetupProfilePics({ open, handelOpen, title, templatedUser }) {
             }
             e.target.value = "";
         } catch (e) {
-            console.error(e);
             swal("error", e.message, "error");
         }
     };
@@ -96,7 +94,6 @@ function SetupProfilePics({ open, handelOpen, title, templatedUser }) {
                             {!userPics.profile?.dataURL ? (
                                 <>
                                     {" "}
-                                    {console.log(userPics)}
                                     <InlineIcon icon="iconoir:profile-circled" />
                                     <p>
                                         <span>Upload</span> Profile Picture
@@ -108,9 +105,6 @@ function SetupProfilePics({ open, handelOpen, title, templatedUser }) {
                         </label>
                         <input
                             className="d-none"
-                            onClick={function (e) {
-                                console.log((e.target.value = null));
-                            }}
                             onChange={handelLogoupload}
                             name="profile"
                             type="file"

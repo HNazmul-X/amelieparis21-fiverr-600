@@ -22,7 +22,6 @@ const Login = () => {
             navigate(location.state?.from?.pathname || "/admin");
         }
     }, [auth?.user?.isAdmin]);
-    console.log(location);
 
     const onSubmit = async (data) => {
         const r_user = await Authentication.loginAndData(`${apiBaseURL}/api/auth/login`, data);

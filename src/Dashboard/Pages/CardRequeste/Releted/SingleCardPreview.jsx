@@ -50,9 +50,9 @@ const SingleCardPreview = ({}) => {
                                 <img className="logo__logo" src={`${baseurl + singleCardData?.backSide?.logo}`} alt=" " />
                             </div>
                             <div className={`info ${singleCardData?.backSide?.infoAlign} ${isLightCardBase ? "text-dark" : ""}`}>
-                                <p className="name">H. Nazmul Hassan</p>
-                                <p className="title">web developer</p>
-                                <p className="number">018478573</p>
+                                <p className="name">Nicolas Smith</p>
+                                <p className="title">Commercial</p>
+                                <p className="number">0756236598</p>
                             </div>
                         </div>
                         <div className="col-4 p-0 d-flex align-items-center h-100 text-center">
