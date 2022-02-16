@@ -2,8 +2,10 @@
 
 .hnazmul-navbar {
   padding: 10px;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
   display: flex;
-  background: util.$white;
+ background-color: rgb(246 248 251);
   width: 100%;
   position: relative;
   z-index: 999;
@@ -17,8 +19,8 @@
     .hnazmul-nav-brand {
       padding-right: 20px;
       img{
-        height: 55px;
-        width: auto;
+       width: 5rem;;
+        
       }
     }
     .hnazmul-nav-toggle-btn {

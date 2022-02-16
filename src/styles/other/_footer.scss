@@ -4,117 +4,31 @@ $blue-grey-700: #1b3c80;
 $blue-grey-300: #85a0bf;
 
 .footer {
-  background-color: $primary-700;
-  padding: 43px 0 25px;
-  .top-footer {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-bottom: 1px solid $blue-grey;
-    padding-bottom: 28px;
-    @include md {
-      justify-content: center;
-      gap: 22px;
-    }
-    .logo {
-      // background-color: $blue-grey-700;
-      img{
-        width: 100px;
-      }
-      // padding: 24px 132px;
-      // display: inline-block;
-      @include lg {
-        // padding: 22px 80px;
-      }
-      p {
-        margin-bottom: 0;
-        font-size: 36px;
-        color: $blue-grey-300;
-      }
-    }
-    .right-footer-social-area {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 31px;
-      justify-content: flex-end;
-      @media screen and (max-width:425px) {
-        justify-content: center;
-        flex-direction: column;
-        gap: 20px;
-      }
-      .socail-icon-wrapper {
-        display: flex;
-        gap: 31px;
-      }
-      p {
-        margin-bottom: 0;
-      }
-      a {
-        background: rgba(55, 107, 210, 0.62);
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        svg {
-          font-size: 22px;
-        }
-        .facebook {
-          color: $primary-700;
-        }
-        .twitter {
-          color: $primary-700;
-        }
-        .linkedin {
-          color: $primary-700;
-        }
-        .youtube {
-          color: $primary-700;
-        }
-      }
-    }
+  background-color: $blue-grey-700;
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  .footer-logo {
+    width: 6rem;
   }
   .bottom-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 21px;
-    @include md {
-      justify-content: center;
-      gap: 11px;
-    }
+    padding-top: 1.5rem;
     .copy-write-text {
-      @include md {
-        order: 1;
-      }
       p {
         margin-bottom: 0;
-        font-size: 17px;
         color: $white;
-        letter-spacing: 0.02em;
+        font-size: 16px;
       }
     }
-    .navigation {
+    .footer-link {
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 49px;
-      @include md {
-        justify-content: center;
-        flex-wrap: wrap;
-        column-gap: 30px;
-        row-gap: 11px;
-      }
-
-      .link {
-        font-size: 17px;
-        color: $white;
-        letter-spacing: 0.02em;
+      gap: 1.75rem;
+      a {
         text-decoration: none;
+        color: $white;
+        font-size: 15px;
       }
     }
   }

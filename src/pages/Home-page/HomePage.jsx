@@ -1,64 +1,39 @@
-import React, {useEffect} from "react";
-import MultipleDesign from "./sections/MultipleDesign";
-import VideoExplainer from "./sections/VideoExplainer";
-import GetInTouch from "./sections/getInTouch/GetInTouch";
+import React, { useEffect } from "react";
 import Footer from "./../../components/Footer/Footer";
-import OneCard from "./sections/OneCard";
-import AboutUS from "./sections/AboutUS";
-import Refference from "./sections/Refference";
-import HeroSection from "./HomeContainer/HeroSection";
-import WorkSection from "./sections/HowItWorks/WorkSection";
-import LeftImgRightText from "./sections/LeftImgRightText/LeftImgRightText";
-import LeMoyenImg from "../../assets/images/leMoyen.png";
-import SeDistinguer from "../../assets/images/Sedistinguer.png";
-import PartagezImg from "../../assets/images/Partagez.png";
-
+import HomeBanner from "./sections/HomeBanner/HomeBanner";
+import RejoignezSlider from "./sections/RejoignezSlider/RejoignezSlider";
+import HomePourquoiSection from "./sections/HomePourquoiSection/HomePourquoiSection";
+import TextAndImgSection1 from "./sections/TextAndImgSection1/TextAndImgSection1";
+import {
+  lemoyenData,
+  PartagezData,
+  SEDISTINGUERDATA,
+} from "./../../data/HomePageTextAndImgSection1Data";
+import HomePageComment from "./sections/HomePageComment/HomePageComment";
+import TextAndImgSection2 from "./sections/TextAndImgSection2/TextAndImgSection2";
+import HomeMultiDesigns from "./sections/HomeMultiDesigns/HomeMultiDesigns";
+import HomeVideoExplainer from "./sections/HomeVideoExplainer/HomeVideoExplainer";
+import HomeLesCommentaires from "./sections/HomeLesCommentaires/HomeLesCommentaires";
+import HomeLivraisonPartout from "./sections/HomeLivraisonPartout/HomeLivraisonPartout";
+import HomeContact from './sections/HomeContact/HomeContact';
 
 function HomePage() {
- 
   return (
-    <>     
-      <HeroSection />
-      <OneCard />
-      <LeftImgRightText
-        site={"right"}
-        title={"Le moyen professionnel pour établir de nouvelles relations"}
-        text={
-          "One card pro c une solution pour diffuser votre carte de visite, vos services et vos produits en un seul clic et transmissible à l'infini par vos contacts.Compatible avec tous les smartphones modernes, Apple et Android."
-        }
-        button={"wow"}
-        sectionClassName={"bg-white"}
-        image={LeMoyenImg}
-      />
-      <MultipleDesign />
-      <div className="pb-5 bg-white">
-        <LeftImgRightText
-          site={"left"}
-          title={"Se distinguer des autres"}
-          text={`Tout est transmis d'un simple contact. \nFaites de chanque rendez  vous une impression mémorable`}
-          sectionClassName={"bg-white"}
-          image={SeDistinguer}
-        />
-      </div>
-      <VideoExplainer />
-      <div className="pb-108">
-        <LeftImgRightText
-          site={"left"}
-          title={"Partagez vos informations en temps réel."}
-          text={
-            "Le partage d'informations est instantané avec One Card Pro. Il suffit de toucher l'écran du terminal mobile pour établir la connexion. L'échange de données est fait automatiquement"
-          }
-          sectionClassName={"bg-white"}
-          image={PartagezImg}
-        />
-      </div>
-      <WorkSection />
-      <div className="py-5">
-        <Refference />
-        <AboutUS />
-      </div>
-      <GetInTouch />
-      <Footer />
+    <>
+      <HomeBanner />
+      <RejoignezSlider />
+      <HomePourquoiSection />
+      <TextAndImgSection1 data={lemoyenData} />
+      <TextAndImgSection1 data={PartagezData} />
+      <HomePageComment />
+      <TextAndImgSection2 />
+      <HomeMultiDesigns />
+      <TextAndImgSection1 data={SEDISTINGUERDATA} />
+      <HomeVideoExplainer />
+      <HomeLesCommentaires />
+      <HomeLivraisonPartout />
+      <HomeContact />   
+      <Footer /> 
     </>
   );
 }

@@ -10,20 +10,19 @@ const Navbar = () => {
   const auth = useAuth();
 
   const handelOpenModal = () => {
-    const modal = document.getElementById("myModal")
-    modal.classList.toggle("d-none")
-  }
+    const modal = document.getElementById("myModal");
+    modal.classList.toggle("d-none");
+  };
   const handelClose = () => {
-    const modal = document.getElementById("myModal")
-    modal.classList.toggle("d-none")
-  }
+    const modal = document.getElementById("myModal");
+    modal.classList.toggle("d-none");
+  };
 
   return (
     <>
       <nav className="hnazmul-navbar">
         <div className="hnazmul-navbar-container">
           <div className="hnazmul-nav-brand">
-            {/* <h4>Navbar brand</h4> */}
             <img src={img1} alt="" />
           </div>
           <div
@@ -77,7 +76,11 @@ const Navbar = () => {
                   {/* <Link to={"/faq"} className="navbar-list-link">
                                         FAQ
                                     </Link> */}
-                  <a href="#" className="navbar-list-link" onClick={handelOpenModal}>
+                  <a
+                    href="#"
+                    className="navbar-list-link"
+                    onClick={handelOpenModal}
+                  >
                     Compatibilité
                   </a>
                 </li>
@@ -87,7 +90,8 @@ const Navbar = () => {
                   </Link>
                 </li>
 
-                {!auth?.user?.isLoggedIn ? (
+            
+               {!auth?.user?.isLoggedIn ? (
                   <>
                     <li className="navbar-list-item">
                       <Link
@@ -116,6 +120,7 @@ const Navbar = () => {
                     </button>
                   </li>
                 )}
+             
               </ul>
               <button
                 className="navbar-closer-icon"
