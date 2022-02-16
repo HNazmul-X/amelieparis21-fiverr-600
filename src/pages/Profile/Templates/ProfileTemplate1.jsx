@@ -26,13 +26,14 @@ import vimeo from "../../../assets/images/social_icon/vimeo.png";
 import amazon from "../../../assets/images/social_icon/amazon.png";
 import telegram from "../../../assets/images/social_icon/telegram-app--v1.png";
 import blogger from "../../../assets/images/social_icon/blogger.png";
-import location from "../../../assets/images/social_icon/location_icon.svg"
+import location from "../../../assets/images/social_icon/location_icon.svg";
+import pinterest from "../../../assets/images/social_icon/pinterest.svg";
+
 import { apiBaseURL } from "./../../../Util/API_Info";
 
-function ProfileTemplate1({ data ,onShare}) {
+function ProfileTemplate1({ data, onShare, addToContact }) {
     const baseurl = apiBaseURL;
 
-  
     const social = {
         facebook: facebookIcon,
         twitter: twitter,
@@ -58,6 +59,7 @@ function ProfileTemplate1({ data ,onShare}) {
         blogger: blogger,
         behance: behance,
         location: location,
+        pinterest: pinterest,
     };
 
     return (
@@ -91,6 +93,7 @@ function ProfileTemplate1({ data ,onShare}) {
             </div>
             <div className="contact-section">
                 <button
+                    onClick={addToContact}
                     style={{
                         background: `${data?.colors?.button?.bg}`,
                         color: `${data?.colors?.button?.color}`,
@@ -101,12 +104,16 @@ function ProfileTemplate1({ data ,onShare}) {
                 </button>
                 <div className="social-container-1">
                     {data?.socialLinks.map((el, index) => (
-                        <a key={index} href={`${el?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${el?.link}`} target="_blank" className="signle-social-link">
+                        <a
+                            key={index}
+                            href={`${el?.name === "phone" ? "tel:" : el?.name === "email" ? "mailto:" : el?.name === "telephone" ? "tel:" : ""}${el?.link}`}
+                            target="_blank"
+                            className="signle-social-link">
                             <div className="left">
                                 <img src={social[el?.name]} alt={""} />
                                 <div>
                                     <h5>{el?.name}</h5>
-                                    <p className="mt-1">{(data?.personalInfo?.name && data?.personalInfo?.name.split(" ")[1]) || "username"}</p>
+                                    <p className="mt-1">{el?.link}</p>
                                 </div>
                             </div>
                             <InlineIcon className={`right-arrow `} icon="ep:arrow-right" />

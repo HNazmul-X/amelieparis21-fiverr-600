@@ -10,7 +10,7 @@ function DashboardSideMenu() {
         <div className="deshbord-menus-section">
             <div className="menu-container">
                 {ProfileSidebarData.map((data, index) => (
-                    <SidebarAccordion data={data} activeMenu={activeMenu} setActiveMenu={setActiveMenu} index={index} />
+                    <SidebarAccordion key={index} data={data} activeMenu={activeMenu} setActiveMenu={setActiveMenu} index={index} />
                 ))}
             </div>
         </div>
@@ -61,8 +61,8 @@ const SidebarAccordion = ({ data, index, activeMenu, setActiveMenu }) => {
                     <div className={`dropworn-area d-block`} ref={dropdownRef} style={{ maxHeight: activeMenu === data?.id ? dropdownRef.current.scrollHeight : 0 }}>
                         <div className="p-2">
                             <div className="dropdown-container">
-                                {data.dropdown.map((drp) => (
-                                    <Link to={drp.destination} className="single-dropdown">
+                                {data.dropdown.map((drp,index) => (
+                                    <Link key={index} to={drp.destination} className="single-dropdown">
                                         {drp.label}
                                     </Link>
                                 ))}

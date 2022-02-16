@@ -6,6 +6,7 @@ import { InlineIcon } from "@iconify/react";
 import qrCodeImage from "../../../../assets/images/Group.png";
 import blackQrCode from "../../../../assets/images/black-qr-code.png";
 import { apiBaseURL } from "../../../../Util/API_Info";
+import DarkCardLogo from "../../../../assets/images/Asset 2.svg";
 
 const SingleCardPreview = ({}) => {
     const [singleCardData, setSingleCardData] = useState({});
@@ -36,9 +37,7 @@ const SingleCardPreview = ({}) => {
                         <img src={apiBaseURL + singleCardData?.frontSide?.logo} alt="" />
                     </div>
                     <div className={`one-card-logo ${isLightCardBase ? "text-secondary" : ""}`}>
-                        <h5>
-                            One <br /> <p className="small mb-0">card pro</p>
-                        </h5>
+                        <img src={DarkCardLogo} alt="" />
                     </div>
                     <div className={`icon ${isLightCardBase ? "text-secondary" : ""}`}>
                         <InlineIcon icon="akar-icons:wifi" />
@@ -51,9 +50,9 @@ const SingleCardPreview = ({}) => {
                                 <img className="logo__logo" src={`${baseurl + singleCardData?.backSide?.logo}`} alt=" " />
                             </div>
                             <div className={`info ${singleCardData?.backSide?.infoAlign} ${isLightCardBase ? "text-dark" : ""}`}>
-                                <p className="name">H. Nazmul Hassan</p>
-                                <p className="title">web developer</p>
-                                <p className="number">018478573</p>
+                                <p className="name">Nicolas Smith</p>
+                                <p className="title">Commercial</p>
+                                <p className="number">0756236598</p>
                             </div>
                         </div>
                         <div className="col-4 p-0 d-flex align-items-center h-100 text-center">

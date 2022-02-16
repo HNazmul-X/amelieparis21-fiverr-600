@@ -30,14 +30,14 @@ const CardPreview = () => {
                                 <div className="info-and-logo__logo" style={{ "--logo-scale": cardLogo?.back?.scale }}>
                                     <img src={cardLogo?.back?.logo} alt="" className="" />
                                 </div>
-                                <div className={`info-and-logo__info  justify-${cardLogo?.back?.infoAlign} ${isLightCardBase() ?"text-secondary":""}`}>
-                                    <h5>H. Nazmul Hassan</h5>
-                                    <h6>Web developer</h6>
-                                    <p>10934739837</p>
+                                <div className={`info-and-logo__info  justify-${cardLogo?.back?.infoAlign} ${isLightCardBase() ? "text-secondary" : ""}`}>
+                                    <h5>Nicolas Smith</h5>
+                                    <h6>Commercial</h6>
+                                    <p>0756236598</p>
                                 </div>
                             </div>
                             <div className="qr-code col-5 d-flex justify-content-center align-items-center">
-                                <img src={!isLightCardBase()?qrCodeImage:blackQrCode} className="w-75" alt="" />
+                                <img src={!isLightCardBase() ? qrCodeImage : blackQrCode} className="w-75" alt="" />
                             </div>
                         </div>
                     </div>

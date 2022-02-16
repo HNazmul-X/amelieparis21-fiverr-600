@@ -2857,11 +2857,11 @@ body {
 }
 .profile-template-1 .besic-info .profile-pic {
   position: absolute;
-  top: -78px;
+  top: -140px;
   transform: translateY(30%);
-  width: 78px;
-  height: 78px;
-  border: 2px solid #fff;
+  width: 128px;
+  height: 128px;
+  border: 2px solid #57697d;
   border-radius: 50%;
 }
 .profile-template-1 .besic-info .info .name-section {
@@ -2887,8 +2887,8 @@ body {
 }
 .profile-template-1 .besic-info .info .share svg {
   color: darkorange;
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: 34px;
   font-size: 24px;
 }
 .profile-template-1 .besic-info .info .description {
@@ -2956,8 +2956,8 @@ body {
 .profile-template-1 .contact-section .social-container .signle-social-link img {
   position: absolute;
   left: -23px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background: #fff;
   border-radius: 50%;
   border: 1px solid #f1f1f1;
@@ -3010,9 +3010,9 @@ body {
 }
 .social-container-1 .signle-social-link img {
   position: absolute;
-  left: -23px;
-  width: 40px;
-  height: 40px;
+  left: -29px;
+  width: 50px;
+  height: 50px;
   background: #fff;
   border-radius: 50%;
   border: 1px solid #f1f1f1;
@@ -3075,8 +3075,8 @@ body {
   bottom: 13px;
 }
 .profile-2-conatiner .profile_pic_area .shear_icon_wrapper .share_icon {
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: 34px;
   color: #333e63;
   cursor: pointer;
 }
@@ -3111,10 +3111,16 @@ body {
   padding: 17px 0;
 }
 .profile-2-conatiner .contact-section .single-contact svg {
-  font-size: 24px;
-  width: 24px;
+  width: 40px;
+  height: 40px;
   padding-right: 8px;
   color: var(--purple-600);
+  flex-shrink: 0;
+}
+.profile-2-conatiner .contact-section .single-contact p {
+  margin-bottom: 0px;
+  word-break: break-all;
+  line-height: 15px;
 }
 @media screen and (max-width: 576px) {
   .profile-2-conatiner .contact-section .single-contact svg {
@@ -3432,9 +3438,12 @@ body {
   position: absolute;
 }
 .single-card-preview .front-side .one-card-logo {
-  bottom: 10px;
+  bottom: 15px;
   margin-bottom: 0px;
-  left: 10px;
+  left: 15px;
+}
+.single-card-preview .front-side .one-card-logo img {
+  width: 50px;
 }
 .single-card-preview .front-side .icon {
   right: 10px;

@@ -12,7 +12,6 @@ function UploadYourLogo({ componentIndex }) {
     };
 
     const handleFileUpload = useCallback((e) => {
-        console.log("updateing")
         const reader = new FileReader();
         reader.addEventListener("load", function () {
             cardLogo.front.logo = this.result;
@@ -63,9 +62,11 @@ function UploadYourLogo({ componentIndex }) {
                 <input type="range" onChange={handleScalingLogo} defaultValue={100} max={400} id="slider" />
             </div>
             <div className="mt-5">
-                <button className="my-btn-primary me-3">Return</button>
+                <button className="my-btn-primary me-3" onClick={() => setFormStepId("step2")}>
+                    précédent
+                </button>
                 <button onClick={handleChangingStep} disabled={!checkingSteps?.step3} className={`my-btn-primary ${!checkingSteps?.step3 ? "opacity-50" : ""}`}>
-                    Following
+                    suivant
                 </button>
             </div>
         </div>

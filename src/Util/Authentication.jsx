@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export default class Authentication {
     constructor() {}
 
@@ -34,17 +36,11 @@ export default class Authentication {
     static async signupAndData(url, userData) {
         return new Promise(async (resolve, reject) => {
             try {
-                const returnedResponse = fetch(url, {
-                    method: "POST",
-                    headers: {
-                        "Content-type": "application/json",
-                    },
-                    body:JSON.stringify(userData)
-                });
-                const returnedData = (await returnedResponse).json();
+                const {data:returnedData} = await axios.post(url, userData, { headers: { "content-type": "application/json" } });
 
                 if (returnedData) {
-                    resolve(returnedData);
+                    console.log(returnedData);
+                    resolve({ ...returnedData, token: returnedData?.token });
                 } else {
                     const error = new Error("failed to register a user. Please provide correct data");
                     reject(error);

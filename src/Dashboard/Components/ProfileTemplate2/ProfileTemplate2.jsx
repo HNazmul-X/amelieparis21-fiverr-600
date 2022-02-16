@@ -27,10 +27,10 @@ import dribbbleCircleFilled from "@iconify/icons-ant-design/dribbble-circle-fill
 import bloggerRect from "@iconify/icons-brandico/blogger-rect";
 import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
 import bxCurrentLocation from "@iconify/icons-bx/bx-current-location";
+import pinterestFill from "@iconify/icons-akar-icons/pinterest-fill"
 
 export default function ProfileTemplate2() {
     const { userInfo, userPics, buttonInfo, iconAndTextColor } = useProfileContext();
-    console.log("info:", buttonInfo);
 
     const social = {
         facebook: facebookFill,
@@ -57,9 +57,9 @@ export default function ProfileTemplate2() {
         telephone: telephoneIcon,
         email: emailLine,
         location: bxCurrentLocation,
+        pinterest:pinterestFill
     };
 
-    console.log(iconAndTextColor);
     return (
         <div
             className="profile-2-conatiner"

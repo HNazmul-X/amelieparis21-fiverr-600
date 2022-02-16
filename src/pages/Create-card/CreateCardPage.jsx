@@ -44,7 +44,7 @@ const CreateCardPage = () => {
                 <article className="container">
                     <div className="row py-2 w-100">
                         <div className={`col-md-7 col-xl-6 left ${formStepId === "step5" ? "order-2" : ""}`}>
-                            {auth?.user.isLoggedIn ? [...FormStepsData].map((item, index) => (formStepId === item.id ? <item.component thisData={item} componentIndex={index} /> : null)) : null}
+                            {auth?.user.isLoggedIn ? [...FormStepsData].map((item, index) => (formStepId === item.id ? <item.component thisData={item} componentIndex={index} key={item?.id} /> : null)) : null}
                         </div>
                         <div className={`col-md-5 col-xl-6 right ${formStepId === "step5" ? "order-1" : "align-items-center"}`}>
                             <CardPreview />

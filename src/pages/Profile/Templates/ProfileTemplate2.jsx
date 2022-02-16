@@ -26,7 +26,7 @@ import dribbbleCircleFilled from "@iconify/icons-ant-design/dribbble-circle-fill
 import bloggerRect from "@iconify/icons-brandico/blogger-rect";
 import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
 import bxCurrentLocation from "@iconify/icons-bx/bx-current-location";
-
+import pinterestFill from "@iconify/icons-akar-icons/pinterest-fill";
 import { apiBaseURL } from "./../../../Util/API_Info";
 
 export default function ProfileTemplate2({ data, onShare, addToContact }) {
@@ -57,6 +57,7 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
         telephone: telephoneIcon,
         email: emailLine,
         location: bxCurrentLocation,
+        pinterest: pinterestFill,
     };
     return (
         <div
@@ -82,11 +83,13 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
 
                 {data?.socialLinks.length ? (
                     <div className="contact-section">
-                        {data?.socialLinks.map((data) => (
+                        {data?.socialLinks.map((data, index) => (
                             <a
-                                href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone" ? "tel+" : ""}${data?.link}`}
+                                key={index}
+                                href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone" ? "tel:" : ""}${data?.link}`}
                                 target="_blank"
                                 className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
+                                {console.log(social[data?.name])}
                                 <InlineIcon icon={social[data?.name]} />
                                 <span>{data.link}</span>
                             </a>

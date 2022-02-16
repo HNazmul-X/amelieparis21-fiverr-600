@@ -41,8 +41,8 @@ $button-shadow: 0px 12px 36px rgba(138, 62, 254, 0.36);
             right: 17px;
             bottom: 13px;
             .share_icon {
-                width: 24px;
-                height: 24px;
+                width: 34px;
+                height: 34px;
                 color: $gray-700;
                 cursor: pointer;
             }
@@ -79,10 +79,17 @@ $button-shadow: 0px 12px 36px rgba(138, 62, 254, 0.36);
             border-top: 0.5px solid $white-800;
             padding: 17px 0;
             svg {
-                font-size: 24px;
-                width: 24px;
+                width: 40px;
+                height: 40px;
                 padding-right: 8px;
                 color: var(--purple-600);
+                flex-shrink: 0;
+            }
+            p{
+                margin-bottom: 0px;
+                word-break: break-all;
+                line-height: 15px;
+
             }
             @include sm {
                 svg {

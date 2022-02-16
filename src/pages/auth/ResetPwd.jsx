@@ -40,14 +40,14 @@ const ResetPwd = () => {
 
                                 <div className="form-floating mb-4">
                                     <input required={true} type="text" className="form-control primary-input" name="email" id="floatingPassword" placeholder="Password" />
-                                    <label for="floatingPassword">Enter Your Email</label>
+                                    <label htmlFor="floatingPassword">Enter Your Email</label>
                                 </div>
 
                                 <div className="d-flex py-3 align-items-center justify-content-end">
                                     <button className="logBtn btn mb-2">
                                         {isSpinnerShow && (
-                                            <div class="spinner-border spinner-border-sm me-3" role="status">
-                                                <span class="visually-hidden">Loading...</span>
+                                            <div className="spinner-border spinner-border-sm me-3" role="status">
+                                                <span className="visually-hidden">Loading...</span>
                                             </div>
                                         )}
                                         Login

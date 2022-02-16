@@ -6,7 +6,6 @@ import {useState } from "react"
 function AllFaq() {
 
     const [selectedFaq, setSelectedFaq] = useState(0)
-    console.log(selectedFaq);
 
   return (
     <section className="container mt-5">

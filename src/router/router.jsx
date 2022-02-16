@@ -30,6 +30,7 @@ import CreatedProfile from "../Dashboard/Pages/ProfileRequest/Subpages/CreatedPr
 import PendingProfile from "../Dashboard/Pages/ProfileRequest/Subpages/RejectedProfile/PendingProfile";
 
 const NavbarRouter = () => {
+
     return (
         <Routes>
             {/* Admin Login */}
@@ -40,7 +41,7 @@ const NavbarRouter = () => {
                 <Route path="/playground" element={<PlayGround />} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />
-                <Route path="/verify-profile/:verificationId/:code/:userId" element={<Verification />} />
+                <Route path="/verify-profile/:verificationId/:code/" element={<Verification />} />
                 <Route path="/successfully-profile/:successfullyId" element={<Successfully />} />
                 <Route path="/u/:username" element={<ProfilePage />} />
                 <Route path="/reset-pwd" element={<ResetPwd />} />

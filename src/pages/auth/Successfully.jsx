@@ -9,8 +9,8 @@ const Successfully = () => {
                 <div className="row">
                     <div className="col-md-8 offset-md-2">
                         <div id="successful_area">
-                            <div class="SCard">
-                                <img src={Successful} class="img-fluid" alt="" />
+                            <div className="SCard">
+                                <img src={Successful} className="img-fluid" alt="" />
                             </div>
 
                             <div className="SInfo">

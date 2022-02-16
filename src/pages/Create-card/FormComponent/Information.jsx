@@ -74,7 +74,7 @@ function Information({ componentIndex }) {
                                     checked={data === cardLogo?.back?.infoAlign}
                                     onChange={() => handleChangeCheckbox(data)}
                                 />
-                                <label className="form-check-label check_box_label" for={data}>
+                                <label className="form-check-label check_box_label" htmlFor={data}>
                                     {data}
                                 </label>
                             </div>
@@ -87,9 +87,9 @@ function Information({ componentIndex }) {
                 <input type="range" defaultValue={100} max={200} onChange={handleScalingLogo} id="slider" />
             </div>
             <div className="mt-5">
-                <button className="my-btn-primary me-3">Return</button>
+                <button className="my-btn-primary me-3" onClick={()=> setFormStepId("step3")}>précédent</button>
                 <button onClick={handleChangingStep} disabled={!checkingSteps?.step4} className={`my-btn-primary ${!checkingSteps?.step4 ? "opacity-50" : ""}`}>
-                    Following
+                    suivant
                 </button>
             </div>
         </div>

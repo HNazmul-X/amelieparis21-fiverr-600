@@ -23,11 +23,11 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
     position: relative;
     .profile-pic {
       position: absolute;
-      top: -78px;
+      top: -140px;
       transform: translateY(30%);
-      width: 78px;
-      height: 78px;
-      border: 2px solid $white;
+      width: 128px;
+      height: 128px;
+      border: 2px solid $blue-grey;
       border-radius: 50%;
     }
     .info {
@@ -53,8 +53,8 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
         cursor: pointer;
         svg {
           color: $tem1-golden-rod;
-          width: 24px;
-          height: 24px;
+          width: 34px;
+          height: 34px;
           font-size: 24px;
         }
       }
@@ -122,8 +122,8 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
         img {
           position: absolute;
           left: -23px;
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
           background: #fff;
           border-radius: 50%;
           border: 1px solid #f1f1f1;
@@ -177,9 +177,9 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
     text-decoration: none;
     img {
       position: absolute;
-      left: -23px;
-      width: 40px;
-      height: 40px;
+      left: -29px;
+      width: 50px;
+      height: 50px;
       background: #fff;
       border-radius: 50%;
       border: 1px solid #f1f1f1;

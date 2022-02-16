@@ -116,8 +116,8 @@ function LeftSide() {
                     <ol className="text-start">
                         {Object.values(error)
                             .filter((item) => item)
-                            .map((item) => (
-                                <li className="small text-danger">{item} </li>
+                            .map((item,index) => (
+                                <li key={index} className="small text-danger">{item} </li>
                             ))}
                     </ol>
                 ),
@@ -173,7 +173,6 @@ function LeftSide() {
                     if (r_data.error) {
                         swal("Failed To create Template", r_data.error, "error");
                     } else {
-                        console.log(r_data);
                         swal("Template Creation Successfully", "", "success");
                     }
                 };
@@ -187,11 +186,23 @@ function LeftSide() {
                     checkingDataOrError(r_data);
                 }
             } catch (e) {
-                console.log(e);
                 swal("Error Ocurred", e.message, "error");
             }
         }
     };
+
+    //handle deleting Profile
+    const handleDeletingProfile = (id) => {
+
+        swal({
+            title:"Confirmation",
+            text:"Are You Sure to Delete This Profile",
+            icon:"info",
+            buttons:["No","yes"]
+        }).then(value => conso)
+        
+
+    }
 
     return (
         <>
@@ -213,7 +224,7 @@ function LeftSide() {
                         </>
                     ) : (
                         <>
-                            <button onClick={alert.bind(this, "haahahahha")} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
+                            <button onClick={handleDeletingProfile} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
                                 Delete
                             </button>
                             <button onClick={handleProfileCreation.bind(this, "update")} className="create-profile btn btn-primary rounded-pill btn-lg px-5">

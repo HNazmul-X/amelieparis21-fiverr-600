@@ -8,6 +8,7 @@ export const UserContextData = createContext(null);
 
 const UserContext = ({ children }) => {
     const [user, setUser] = useState({});
+    const [formFilledDataForSignUp,setFormFilledDataForSignUp] = useState({})
     const cookie = new GetCookie();
     const Location = useLocation();
     const navigate = useNavigate();
@@ -61,7 +62,7 @@ const UserContext = ({ children }) => {
         }
     }, []);
 
-    const providerData = { user, setUser, loginUser, logoutUser };
+    const providerData = { user, setUser, loginUser, logoutUser,formFilledDataForSignUp,setFormFilledDataForSignUp };
 
     return <UserContextData.Provider value={{ ...providerData }}>{children}</UserContextData.Provider>;
 };

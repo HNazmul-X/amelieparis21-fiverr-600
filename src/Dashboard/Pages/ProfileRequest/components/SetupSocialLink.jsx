@@ -9,7 +9,6 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
 
     const submitSocialLink = (e) => {
         e.preventDefault();
-        console.log(e.target.elements);
         const createdArray = [...e.target.elements]
             .filter((data) => data.tagName === "INPUT" && data.value !== "" && data.type !== "color")
             .map((data) => {
@@ -48,7 +47,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                             <div className="row row-cols-2 w-100">
                                 {socialLinks?.map((data) => {
                                     return (
-                                        <div className="col p-1 mb-3">
+                                        <div key={data?.id} className="col p-1 mb-3">
                                             <div className=" form-floating">
                                                 <input
                                                     name={data.name}
