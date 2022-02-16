@@ -47,7 +47,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                             <div className="row row-cols-2 w-100">
                                 {socialLinks?.map((data) => {
                                     return (
-                                        <div className="col p-1 mb-3">
+                                        <div key={data?.id} className="col p-1 mb-3">
                                             <div className=" form-floating">
                                                 <input
                                                     name={data.name}

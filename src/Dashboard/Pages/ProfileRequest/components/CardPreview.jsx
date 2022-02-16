@@ -10,7 +10,7 @@ function CardPreview() {
     return (
         <div className="">
             {/* <img src={cardImg} alt="" className='w-100' /> */}
-            {allTemplateData.map((template) => (profileTemplateId === template.id ? <template.template /> : null))}
+            {allTemplateData.map((template) => (profileTemplateId === template.id ? <template.template  key={template?.id}/> : null))}
             {/* <ProfileTemplate1 /> */}
         </div>
     );

@@ -40,7 +40,7 @@ const ResetPwd = () => {
 
                                 <div className="form-floating mb-4">
                                     <input required={true} type="text" className="form-control primary-input" name="email" id="floatingPassword" placeholder="Password" />
-                                    <label for="floatingPassword">Enter Your Email</label>
+                                    <label htmlFor="floatingPassword">Enter Your Email</label>
                                 </div>
 
                                 <div className="d-flex py-3 align-items-center justify-content-end">

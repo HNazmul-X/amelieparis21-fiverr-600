@@ -48,7 +48,7 @@ const ResetPwdVerification = () => {
                                             id="floatingInput"
                                             placeholder="6 Digit OTP"
                                         />
-                                        <label style={{ left: "115px" }} for="floatingInput">
+                                        <label style={{ left: "115px" }} htmlFor="floatingInput">
                                             6 Digit OTP *
                                         </label>
                                     </div>

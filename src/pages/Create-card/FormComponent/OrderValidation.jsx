@@ -131,7 +131,7 @@ const OrderValidation = () => {
                                         placeholder="name@example.com"
                                         {...register("firstName", { required: true })}
                                     />
-                                    <label for="floatingInput">First Name</label>
+                                    <label htmlFor="floatingInput">First Name</label>
                                     {errors.firstName?.type === "required" && <span className="text-danger ">First name is required</span>}
                                 </div>
 
@@ -144,7 +144,7 @@ const OrderValidation = () => {
                                         placeholder="name@example.com"
                                         {...register("lastName", { required: true })}
                                     />
-                                    <label for="floatingInput">Last Name</label>
+                                    <label htmlFor="floatingInput">Last Name</label>
                                     {errors.lastName?.type === "required" && <span className="text-danger ">Last name is required</span>}
                                 </div>
                             </div>
@@ -158,39 +158,39 @@ const OrderValidation = () => {
                                     placeholder="name@example.com"
                                     {...register("society", { required: true })}
                                 />
-                                <label for="floatingInput">Society</label>
+                                <label htmlFor="floatingInput">Society</label>
                                 {errors.society?.type === "required" && <span className="text-danger ">Society is required</span>}
                             </div>
 
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("address", { required: true })} />
-                                <label for="floatingInput">Address</label>
+                                <label htmlFor="floatingInput">Address</label>
                                 {errors.address?.type === "required" && <span className="text-danger ">Address is required</span>}
                             </div>
 
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("additionalAddress", { required: true })} />
-                                <label for="floatingInput">Additional Address</label>
+                                <label htmlFor="floatingInput">Additional Address</label>
                                 {errors.additionalAddress?.type === "required" && <span className="text-danger ">Additional Address is required</span>}
                             </div>
 
                             <div className="d-flex gap-3">
                                 <div className="w-100 form-floating mb-3">
                                     <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("postalCode", { required: true })} />
-                                    <label for="floatingInput">Postal code</label>
+                                    <label htmlFor="floatingInput">Postal code</label>
                                     {errors.postalCode?.type === "required" && <span className="text-danger ">Postal code is required</span>}
                                 </div>
 
                                 <div className="w-100 form-floating mb-3">
                                     <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("city", { required: true })} />
-                                    <label for="floatingInput">City</label>
+                                    <label htmlFor="floatingInput">City</label>
                                     {errors.city?.type === "required" && <span className="text-danger ">City is required</span>}
                                 </div>
                             </div>
 
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("country", { required: true })} />
-                                <label for="floatingInput">Country</label>
+                                <label htmlFor="floatingInput">Country</label>
                                 {errors.country?.type === "required" && <span className="text-danger ">Country is required</span>}
                             </div>
                         </div>
@@ -200,7 +200,7 @@ const OrderValidation = () => {
 
                             <div className="form-check">
                                 <input className="form-check-input check_box" type="checkbox" value={"data"} id={"b_checkbox"} onChange={() => setSameBillingAddress(!sameBillingAddress)} />
-                                <label className="form-check-label check_box_label mb-3" for="b_checkbox">
+                                <label className="form-check-label check_box_label mb-3" htmlFor="b_checkbox">
                                     My billing address is the same
                                 </label>
                             </div>
@@ -216,7 +216,7 @@ const OrderValidation = () => {
                                                 required: sameBillingAddress ? false : true,
                                             })}
                                         />
-                                        <label for="floatingInput">First Name</label>
+                                        <label htmlFor="floatingInput">First Name</label>
                                         {errors.b_firstName?.type === "required" && <span className="text-danger ">First name is required</span>}
                                     </div>
 
@@ -230,7 +230,7 @@ const OrderValidation = () => {
                                                 required: sameBillingAddress ? false : true,
                                             })}
                                         />
-                                        <label for="floatingInput">Last Name</label>
+                                        <label htmlFor="floatingInput">Last Name</label>
                                         {errors.b_lastName?.type === "required" && <span className="text-danger ">Last name is required</span>}
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@ const OrderValidation = () => {
                                             required: sameBillingAddress ? false : true,
                                         })}
                                     />
-                                    <label for="floatingInput">Society</label>
+                                    <label htmlFor="floatingInput">Society</label>
                                     {errors.b_society?.type === "required" && <span className="text-danger ">Society is required</span>}
                                 </div>
 
@@ -259,7 +259,7 @@ const OrderValidation = () => {
                                             required: sameBillingAddress ? false : true,
                                         })}
                                     />
-                                    <label for="floatingInput">Address</label>
+                                    <label htmlFor="floatingInput">Address</label>
                                     {errors.b_address?.type === "required" && <span className="text-danger ">Address is required</span>}
                                 </div>
 
@@ -273,7 +273,7 @@ const OrderValidation = () => {
                                             required: sameBillingAddress ? false : true,
                                         })}
                                     />
-                                    <label for="floatingInput">Additional Address</label>
+                                    <label htmlFor="floatingInput">Additional Address</label>
                                     {errors.b_additionalAddress?.type === "required" && <span className="text-danger ">Additional Address is required</span>}
                                 </div>
 
@@ -288,7 +288,7 @@ const OrderValidation = () => {
                                                 required: sameBillingAddress ? false : true,
                                             })}
                                         />
-                                        <label for="floatingInput">Postal code</label>
+                                        <label htmlFor="floatingInput">Postal code</label>
                                         {errors.b_postalCode?.type === "required" && <span className="text-danger ">Postal code is required</span>}
                                     </div>
 
@@ -302,7 +302,7 @@ const OrderValidation = () => {
                                                 required: sameBillingAddress ? false : true,
                                             })}
                                         />
-                                        <label for="floatingInput">City</label>
+                                        <label htmlFor="floatingInput">City</label>
                                         {errors.b_city?.type === "required" && <span className="text-danger ">City is required</span>}
                                     </div>
                                 </div>
@@ -317,7 +317,7 @@ const OrderValidation = () => {
                                             required: sameBillingAddress ? false : true,
                                         })}
                                     />
-                                    <label for="floatingInput">Country</label>
+                                    <label htmlFor="floatingInput">Country</label>
                                     {errors.b_country?.type === "required" && <span className="text-danger ">Country is required</span>}
                                 </div>
                                 <div className="form-floating mb-3">
@@ -330,21 +330,21 @@ const OrderValidation = () => {
                                             required: sameBillingAddress ? false : true,
                                         })}
                                     />
-                                    <label for="floatingInput">Phone</label>
-                                    {errors.b_phone?.type === "required" && <span className="text-danger ">Country is required</span>}
+                                    <label htmlFor="floatingInput">Phone</label>
+                                    {errors.b_phone?.type === "required" && <span className="text-danger ">Phone is required</span>}
                                 </div>
                             </div>
 
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("comment_on", { required: true })} />
-                                <label for="floatingInput">Comment On this Commance</label>
+                                <label htmlFor="floatingInput">Comment On this Commance</label>
                                 {errors.comment_on?.type === "required" && <span className="text-danger ">Comment On this Commance is required</span>}
                             </div>
 
                             <p className="mb-0 ms-3 pt-4">Do you have a promo code?</p>
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control primary-input" id="floatingInput" placeholder="name@example.com" {...register("promoCode")} />
-                                <label for="floatingInput">Promo Code</label>
+                                <label htmlFor="floatingInput">Promo Code</label>
                             </div>
                         </div>
 

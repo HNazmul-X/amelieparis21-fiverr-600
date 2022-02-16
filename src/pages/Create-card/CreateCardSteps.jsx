@@ -13,7 +13,7 @@ const CreateCardSteps = () => {
                 <article className="container">
                     <div className="section-wrapper" style={{ "--total-count": totalSteps.length }}>
                         {totalSteps.map((data, index) => (
-                            <div className="single-steps-wrapper">
+                            <div className="single-steps-wrapper" key={index}>
                                 {index === 0 ? "" : <div className="hr-line"></div>}
                                 <div className="single-steps" onClick={() => checkingSteps[data.id] && setFormStepId(data?.id)}>
                                     <span className="img-wrapper">

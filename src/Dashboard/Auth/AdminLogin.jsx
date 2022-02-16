@@ -50,13 +50,13 @@ const Login = () => {
 
                                 <div className="form-floating my-3 ">
                                     <input type="text" {...register("usernameOrEmail", { required: true })} className="form-control primary-input" id="floatingInput" placeholder="name@example.com" />
-                                    <label for="floatingInput">Email *</label>
+                                    <label htmlFor="floatingInput">Email *</label>
                                     {errors.email?.type === "required" && <span className="d-block ps-3 text-danger text-start">Email is required</span>}
                                 </div>
 
                                 <div className="form-floating mb-4">
                                     <input type="password" {...register("password", { required: true })} className="form-control primary-input" id="floatingPassword" placeholder="Password" />
-                                    <label for="floatingPassword">Password *</label>
+                                    <label htmlFor="floatingPassword">Password *</label>
                                     {errors.password?.type === "required" && <span className="d-block ps-3 text-danger text-start">Password is required</span>}
                                 </div>
 

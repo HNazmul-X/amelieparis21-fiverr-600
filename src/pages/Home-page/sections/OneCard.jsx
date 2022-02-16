@@ -101,8 +101,8 @@ const OneCard = () => {
 
                 <div className="row">
                     <div className="col-md-6">
-                        {sliderInfo.map((info) => (
-                            <div className="content_area">
+                        {sliderInfo.map((info,index) => (
+                            <div key={index} className="content_area">
                                 <img src={info.img} alt="" />
 
                                 <div>
@@ -121,8 +121,8 @@ const OneCard = () => {
                 </div>
 
                 <div className="row row-cols-lg-3 py-5 row-cols-md-2 row-cols-1 justify-content-center">
-                    {whyOneCardProCardData?.map((data) => (
-                        <div className="col">
+                    {whyOneCardProCardData?.map((data,index) => (
+                        <div className="col" key={index}>
                             <WhyOneCardProCard data={data} />
                         </div>
                     ))}

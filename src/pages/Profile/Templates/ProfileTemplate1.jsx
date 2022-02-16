@@ -26,7 +26,7 @@ import vimeo from "../../../assets/images/social_icon/vimeo.png";
 import amazon from "../../../assets/images/social_icon/amazon.png";
 import telegram from "../../../assets/images/social_icon/telegram-app--v1.png";
 import blogger from "../../../assets/images/social_icon/blogger.png";
-import location from "../../../assets/images/social_icon/location_icon.svg"
+import location from "../../../assets/images/social_icon/location_icon.svg";
 import pinterest from "../../../assets/images/social_icon/pinterest.svg";
 
 import { apiBaseURL } from "./../../../Util/API_Info";
@@ -59,7 +59,7 @@ function ProfileTemplate1({ data, onShare, addToContact }) {
         blogger: blogger,
         behance: behance,
         location: location,
-        pinterest:pinterest
+        pinterest: pinterest,
     };
 
     return (

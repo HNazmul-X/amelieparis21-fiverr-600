@@ -89,8 +89,8 @@ function ProfileTemplate3({ data, onShare }) {
 
                 {data?.socialLinks?.length ? (
                     <div className="contact">
-                        {data?.socialLinks.map((data) => (
-                            <a href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone"?"tel:":""}${data?.link}`} target="_blank">
+                        {data?.socialLinks.map((data, index) => (
+                            <a key={index} href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone" ? "tel:" : ""}${data?.link}`} target="_blank">
                                 <Icon icon={social[data?.name]} />
                                 <p className="mb-0">{data?.name}</p>
                             </a>

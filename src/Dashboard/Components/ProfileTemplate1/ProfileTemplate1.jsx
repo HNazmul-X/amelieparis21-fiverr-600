@@ -105,8 +105,8 @@ function ProfileTemplate1() {
                     {buttonInfo?.info?.text || "ADD TO CONTACT"}
                 </button>
                 <div className="social-container">
-                    {userInfo?.links.map((data) => (
-                        <a href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${data?.link}`} target="_blank" className="signle-social-link">
+                    {userInfo?.links.map((data,index) => (
+                        <a key={index} href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${data?.link}`} target="_blank" className="signle-social-link">
                             <div className="left">
                                 <img src={social[data?.name]} alt={""} />
                                 <div>

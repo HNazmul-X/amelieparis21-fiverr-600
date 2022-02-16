@@ -18,6 +18,7 @@ function SelectCardBase({ thisData, componentIndex }) {
             <div className="mb-4 select_card_thumb">
                 {SelectCardBaseData.map((data, index) => (
                     <div
+                    key={index}
                         onClick={() => {
                             cardLogo.card_base = data.imgSrc;
                             setCardLogo({ ...cardLogo });
@@ -34,9 +35,11 @@ function SelectCardBase({ thisData, componentIndex }) {
                 ))}
             </div>
             <div className="mt-5">
-                <button className="my-btn-primary me-3">Return</button>
+                <button className="my-btn-primary me-3" onClick={() => setFormStepId("step1")}>
+                   précédent
+                </button>
                 <button disabled={!checkingSteps?.step2} onClick={handleChangingStep} className={`my-btn-primary ${!checkingSteps?.step2 ? "opacity-50" : ""}`}>
-                    Following
+                   suivant
                 </button>
             </div>
         </section>

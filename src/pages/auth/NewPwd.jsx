@@ -68,7 +68,7 @@ const NewPwd = () => {
                                                 placeholder="Password"
                                                 required
                                             />
-                                            <label for="floatingPassword">Enter Your New Password</label>
+                                            <label htmlFor="floatingPassword">Enter Your New Password</label>
                                         </div>
                                         <div className="form-floating mb-4">
                                             <input
@@ -79,7 +79,7 @@ const NewPwd = () => {
                                                 placeholder="Password"
                                                 required
                                             />
-                                            <label for="floatingPassword">Re-Type you New Password</label>
+                                            <label htmlFor="floatingPassword">Re-Type you New Password</label>
                                         </div>
                                         {error && <p className="text-danger">{error}</p>}
                                         <div className="text-start" style={{ userSelect: "none" }}>

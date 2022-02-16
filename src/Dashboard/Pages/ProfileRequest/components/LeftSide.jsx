@@ -116,8 +116,8 @@ function LeftSide() {
                     <ol className="text-start">
                         {Object.values(error)
                             .filter((item) => item)
-                            .map((item) => (
-                                <li className="small text-danger">{item} </li>
+                            .map((item,index) => (
+                                <li key={index} className="small text-danger">{item} </li>
                             ))}
                     </ol>
                 ),
@@ -191,6 +191,19 @@ function LeftSide() {
         }
     };
 
+    //handle deleting Profile
+    const handleDeletingProfile = (id) => {
+
+        swal({
+            title:"Confirmation",
+            text:"Are You Sure to Delete This Profile",
+            icon:"info",
+            buttons:["No","yes"]
+        }).then(value => conso)
+        
+
+    }
+
     return (
         <>
             <div className="left-side-container db-template">
@@ -211,7 +224,7 @@ function LeftSide() {
                         </>
                     ) : (
                         <>
-                            <button onClick={alert.bind(this, "haahahahha")} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
+                            <button onClick={handleDeletingProfile} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
                                 Delete
                             </button>
                             <button onClick={handleProfileCreation.bind(this, "update")} className="create-profile btn btn-primary rounded-pill btn-lg px-5">

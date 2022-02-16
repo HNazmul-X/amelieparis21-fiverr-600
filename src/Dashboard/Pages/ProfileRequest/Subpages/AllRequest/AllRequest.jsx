@@ -130,7 +130,7 @@ const AllRequest = () => {
                                     </a>
                                 </li>
                                 {[...new Array(parseInt(dataInfo.totalDocuments / dataInfo?.itemPerPage))].map((item, index) => (
-                                    <li onClick={() => fetchData(index + 1, dataInfo?.itemPerPage)} className={`page-item ${index + 1 === dataInfo.currentPage ? "active" : ""}`}>
+                                    <li onClick={() => fetchData(index + 1, dataInfo?.itemPerPage)} className={`page-item ${index + 1 === dataInfo.currentPage ? "active" : ""}`} key={index}>
                                         <a className="page-link">{index + 1}</a>
                                     </li>
                                 ))}

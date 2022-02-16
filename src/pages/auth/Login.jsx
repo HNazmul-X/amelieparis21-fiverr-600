@@ -1,5 +1,5 @@
 import swal from "@sweetalert/with-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import CardRoundImage from "../../assets/images/Group 22.png";
@@ -27,6 +27,8 @@ const Login = () => {
         }
     };
 
+    useEffect(() => (document.title = "Login Onecard Pro"), []);
+
     return (
         <div id="login_area">
             <div className="container">
@@ -49,13 +51,13 @@ const Login = () => {
                                         name="usernameOrEmail"
                                         placeholder="name@example.com"
                                     />
-                                    <label for="floatingInput">Username Or email *</label>
+                                    <label htmlFor="floatingInput">Username Or email *</label>
                                     {errors.usernameOrEmail?.type === "required" && <span className="d-block ps-3 text-danger text-start">Email or username is required</span>}
                                 </div>
 
                                 <div className="form-floating mb-4">
                                     <input type="password" {...register("password", { required: true })} className="form-control primary-input" id="floatingPassword" placeholder="Password" />
-                                    <label for="floatingPassword">Password *</label>
+                                    <label htmlFor="floatingPassword">Password *</label>
                                     {errors.password?.type === "required" && <span className="d-block ps-3 text-danger text-start">Password is required</span>}
                                 </div>
 
