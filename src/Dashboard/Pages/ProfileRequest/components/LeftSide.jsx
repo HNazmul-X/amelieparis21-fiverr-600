@@ -13,7 +13,7 @@ import { SecureFetch } from "../../../../Util/SecureFetch";
 import { useAuth } from "../../../../Context/UserContext";
 import { apiBaseURL } from "../../../../Util/API_Info";
 
-function LeftSide() {
+function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
     // const Variables
     const profileContext = useProfileContext();
     const [open, setOpen] = useState([]);
@@ -32,7 +32,7 @@ function LeftSide() {
         if (!x.user?.profileTemplate) {
             resetProfileContext();
         }
-    }, []);
+    }, [templateDataReloader]);
 
     //handling collapse one and Off
     const handelOpen = (data) => {
@@ -110,14 +110,16 @@ function LeftSide() {
 
         if (Object.values(error).filter((item) => item).length > 0) {
             swal({
-                title: "please Fill up All Contect",
+                title: "please Fill up All Contact",
                 icon: "error",
                 content: (
                     <ol className="text-start">
                         {Object.values(error)
                             .filter((item) => item)
-                            .map((item,index) => (
-                                <li key={index} className="small text-danger">{item} </li>
+                            .map((item, index) => (
+                                <li key={index} className="small text-danger">
+                                    {item}{" "}
+                                </li>
                             ))}
                     </ol>
                 ),
@@ -134,7 +136,7 @@ function LeftSide() {
                 const userInfo = { ...profileContext?.userInfo };
                 delete userInfo.links;
                 const templateDataGathering = {
-                    user: `${templatedUser._id}`,
+                    user: `${templatedUser?.user?._id}`,
                     templateName: profileContext.profileTemplateId,
                     colors: {
                         button: {
@@ -148,7 +150,6 @@ function LeftSide() {
                     },
                     mainButton: {
                         text: profileContext?.buttonInfo?.info?.text || "",
-                        link: profileContext?.buttonInfo?.info?.link || "",
                     },
                     photos: {
                         cover: profileContext?.userPics.cover.dataURL.split(apiBaseURL)[1],
@@ -169,21 +170,22 @@ function LeftSide() {
                 }
 
                 // CHECKING RETURNED DATA OR ERROR
-                const checkingDataOrError = (r_data) => {
+                const checkingDataOrError = (r_data, type) => {
                     if (r_data.error) {
                         swal("Failed To create Template", r_data.error, "error");
                     } else {
-                        swal("Template Creation Successfully", "", "success");
+                        swal(`Template ${type} Successfully`, "", "success");
                     }
                 };
 
                 // SENDING DATA TO SERVER BY DIFFERENCE METHOD
                 if (type === "create" && !uploadedUserPic.error) {
                     const r_data = await SecureFetch.post(`${apiBaseURL}/api/profile-template/create-profile-template/${templatedUser?.user?._id}`, templateDataGathering);
-                    checkingDataOrError(r_data);
+                    checkingDataOrError(r_data, "Creation");
+                    setTemplateDataReloader(Math.random());
                 } else if (type === "update") {
                     const r_data = await SecureFetch.post(`${apiBaseURL}/api/profile-template/updated-profileTemplate/${templatedUser?.user?.profileTemplate}`, templateDataGathering);
-                    checkingDataOrError(r_data);
+                    checkingDataOrError(r_data, "Update");
                 }
             } catch (e) {
                 swal("Error Ocurred", e.message, "error");
@@ -192,23 +194,32 @@ function LeftSide() {
     };
 
     //handle deleting Profile
-    const handleDeletingProfile = (id) => {
-
+    const handleDeletingProfile = (id, userId) => {
         swal({
-            title:"Confirmation",
-            text:"Are You Sure to Delete This Profile",
-            icon:"info",
-            buttons:["No","yes"]
-        }).then(value => conso)
-        
-
-    }
+            title: "Confirmation",
+            text: "Are You Sure to Delete This Profile",
+            icon: "info",
+            buttons: ["No", "yes"],
+        }).then(async (value) => {
+            if (value) {
+                const r_data = await SecureFetch.post(`${apiBaseURL}/api/profile-template/delete-profile-template`, { templateId: id, userId });
+                if (r_data.success) {
+                    swal("Done", "successfully Delete the Profile", "success").then(() => {
+                        setTemplateDataReloader(Math.random());
+                        navigate("/admin/profile-request/all-user-profile");
+                    });
+                } else {
+                    swal("Failed", r_data.error, "error");
+                }
+            }
+        });
+    };
 
     return (
         <>
             <div className="left-side-container db-template">
                 <SelectProfileTemplate handelOpen={handelOpen} open={open} title={"Select Your Profile Template"} />
-                <SetupProfilePics templatedUser={templatedUser} handelOpen={handelOpen} open={open} title={"Setup Profile Link"} />
+                <SetupProfilePics templatedUser={templatedUser} handelOpen={handelOpen} open={open} title={"Setup Profile Picture"} />
                 <SetUpPersonalInformation handelOpen={handelOpen} open={open} title={"Setup Personal Information"} />
                 <SetupSocialLink setIconPopupShow={setIconPopupShow} handelOpen={handelOpen} open={open} title={"Setup Social Link"} />
                 <SetupProfileButton setIconPopupShow={setIconPopupShow} handelOpen={handelOpen} open={open} title={"Setup Profile Button info"} />
@@ -224,7 +235,7 @@ function LeftSide() {
                         </>
                     ) : (
                         <>
-                            <button onClick={handleDeletingProfile} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
+                            <button onClick={() => handleDeletingProfile(templatedUser?.user?.profileTemplate, templatedUser?.user?._id)} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
                                 Delete
                             </button>
                             <button onClick={handleProfileCreation.bind(this, "update")} className="create-profile btn btn-primary rounded-pill btn-lg px-5">

@@ -96,7 +96,7 @@ const CreatedProfile = () => {
                                                 <InlineIcon
                                                     onClick={() => navigate(`/admin/profile-request/profile-creation/${data?.profile?._id}`)}
                                                     className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"
-                                                    icon={!data?.profileTemplate ? "fluent:open-folder-16-filled" : "bx:bxs-edit"}
+                                                    icon={!data?.profileTemplate ? "akar-icons:person-add" : "bx:bxs-edit"}
                                                 />
                                                 {data?.profileTemplate ? <InlineIcon className="p-1 fs-3 alert-info btn mx-2 rounded-pill" icon={"bx:bx-expand-alt"} /> : null}
                                             </td>

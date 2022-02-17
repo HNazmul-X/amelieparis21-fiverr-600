@@ -14,6 +14,7 @@ function ProfileCreationMain() {
     const [singleProfile, setSingleProfile] = useState({});
     const { profileId } = useParams();
     const profileContext = useProfileContext();
+    const [templateDataReloader, setTemplateDataReloader] = useState(0);
 
     /* fetching single profile */
     useEffect(async () => {
@@ -72,7 +73,7 @@ function ProfileCreationMain() {
         } catch (e) {
             swal("error ocurred", e.message, "error");
         }
-    }, []);
+    }, [templateDataReloader]);
 
     const handleShowingFullPreview = async function () {
         try {
@@ -121,7 +122,7 @@ function ProfileCreationMain() {
             <div className="p-3">
                 <div className="row w-100">
                     <div className="col-md-7 col-xxl-9 pe-0">
-                        <LeftSide />
+                        <LeftSide setTemplateDataReloader={setTemplateDataReloader} templateDataReloader={templateDataReloader} />
                     </div>
                     <div className="col-md-5 col-xxl-3">
                         <CardPreview />

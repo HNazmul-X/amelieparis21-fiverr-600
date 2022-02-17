@@ -52,7 +52,7 @@ const AllRequest = () => {
                 }
             });
         } catch (e) {
-            swal(e.message, "", "error");
+            swal("Error Ocurred", e.message, "error");
         }
     };
 
@@ -100,7 +100,7 @@ const AllRequest = () => {
                                                 <InlineIcon
                                                     onClick={() => navigate(`/admin/profile-request/profile-creation/${data?._id}`)}
                                                     className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"
-                                                    icon={!data?.user?.profileTemplate ? "fluent:open-folder-16-filled" : "bx:bxs-edit"}
+                                                    icon={!data?.user?.profileTemplate ? "akar-icons:person-add" : "bx:bxs-edit"}
                                                 />
                                                 {data?.user?.profileTemplate ? (
                                                     <InlineIcon
