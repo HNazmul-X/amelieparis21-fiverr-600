@@ -5,12 +5,14 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation } from "swiper";
 import ReviewCard from './ReviewCard';
 import { HomeLesCommentairesData } from './../../../../data/HomeLesCommentairesData';
-
+import { motion } from "framer-motion";
 
 
 function HomeLesCommentaires() {
   return (
-    <section className="home-les-commentaires">
+    <motion.section className="home-les-commentaires" initial={{ x: "100%" }}
+	whileInView={{ x: 0 }}
+	transition={{ duration: 0.1 }}>
       <article className="container">
         <h3>Les commentaires de nos clients</h3>
         <div className="my-slider-wrapper">
@@ -53,7 +55,7 @@ function HomeLesCommentaires() {
 			</Swiper>
         </div>
       </article>
-    </section>
+    </motion.section>
   );
 }
 

@@ -1,15 +1,20 @@
 import React from "react";
 import img1 from "../../../../assets/images/manwithcard.418c8d5a39d60d8b153a.png";
+import { motion } from "framer-motion";
 
 function TextAndImgSection2() {
   return (
     <section className="TextAndImgSection2">
       <article className="container">
-        <div className="wrapper">
+        <motion.div className="wrapper">
           <div className="img-section">
-            <img src={img1} alt="" />
+            <motion.img src={img1} alt="" initial={{ scale: 0.9 }}
+				whileInView={{ scale: 1 }}
+				transition={{ duration: 0.3 }}/>
           </div>
-          <div className="content-area">
+          <motion.div className="content-area" initial={{ x: "100%" }}
+				whileInView={{ x: 0 }}
+				transition={{ duration: 0.3 }}>
             <div className="single-content">
               <h4>TOUJOURS AVEC VOUS</h4>
               <p>
@@ -30,8 +35,8 @@ function TextAndImgSection2() {
                 Échangez et enregistrez vos coordonnées en quelques secondes.
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </article>
     </section>
   );

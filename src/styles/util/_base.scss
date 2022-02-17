@@ -23,6 +23,10 @@ h6 {
     @include primary-input($isFat: true);
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
 body {
     background: $primary-50;
     color: $blue-grey;
