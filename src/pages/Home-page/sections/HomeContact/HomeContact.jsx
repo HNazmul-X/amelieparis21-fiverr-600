@@ -1,11 +1,13 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 function HomeContact() {
   return (
     <section className="home-contact-section">
       <article className="container">
         <div className="wrapper">
-          <div className="text-area">
+          <motion.div className="text-area" initial={{ scale: 0.6 }}
+				whileInView={{ scale: 1 }}
+				transition={{ duration: 0.3 }}>
             <h2>Contactez nous</h2>
             <div className="email-adress-area">
               <h4>Adresse électronique</h4>
@@ -15,9 +17,11 @@ function HomeContact() {
                 </a>
               </p>
             </div>
-          </div>
+          </motion.div>
           <div className="form-area">
-            <form className="my-form">
+            <motion.form className="my-form" initial={{ x: "100%" }}
+				whileInView={{ x: 0 }}
+				transition={{ duration: 0.3 }}>
               <div className="mb-4">
                 <input
                   type="text"
@@ -54,7 +58,7 @@ function HomeContact() {
               <div className="action-area">
 <button type="submit" className="submit-btn">Envoyer</button>
               </div>
-            </form>
+            </motion.form>
           </div>
         </div>
       </article>
