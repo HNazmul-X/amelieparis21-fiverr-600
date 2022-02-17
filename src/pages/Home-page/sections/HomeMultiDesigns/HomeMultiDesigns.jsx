@@ -2,6 +2,7 @@ import React from "react";
 import slide1 from "../../../../assets/images/screen1.4bbe20625557a4bc9794.png";
 import slide2 from "../../../../assets/images/screen2.51f15bf080c960fa554b.png";
 import slide3 from "../../../../assets/images/slide3.png";
+import { motion } from "framer-motion";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +16,9 @@ function HomeMultiDesigns() {
   return (
     <section className="home-multi-designs-section">
       <article className="container">
-        <div className="wrapper">
+        <motion.div className="wrapper" initial={{ scale: 0.8 }}
+			whileInView={{ scale: 1 }}
+			transition={{ duration: 0.3 }}>
           <h3>Multi Designs</h3>
           <div className="my-swiper-wrapper">
             <Swiper
@@ -55,7 +58,7 @@ function HomeMultiDesigns() {
               </SwiperSlide>
             </Swiper>
           </div>
-        </div>
+        </motion.div>
       </article>
     </section>
   );

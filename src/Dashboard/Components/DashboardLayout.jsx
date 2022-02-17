@@ -35,13 +35,9 @@ const DashboardLayout = () => {
                     {" "}
                     {auth?.user?.isAdmin ? (
                         <div className="dashboard__navbar">
-                            <div className="input-group search_wrapper">
-                                <span className="input-group-text adon">
-                                    <InlineIcon icon=":ant-design:search-outlined" />
-                                </span>
-                                <input type="text" className="form-control" />
-                            </div>
-                            <InlineIcon className="avatar" icon="carbon:user-avatar" />
+                            <button className="my-button" onClick={() => auth.logoutUser()}>
+                                LogOut
+                            </button>
                         </div>
                     ) : null}
                     <div style={{ height: !auth?.user?.isAdmin ? "100vh" : null }} className="dashboard-content ">

@@ -93,7 +93,7 @@ const AllCard = () => {
                                             <InlineIcon
                                                 onClick={() => navigate(`/admin/card-request/preview/${data?._id}`)}
                                                 className="p-1 fs-3 alert-primary btn mx-2 rounded-pill"
-                                                icon={"fluent:open-folder-16-filled"}
+                                                icon={"akar-icons:person-add"}
                                             />
                                         </td>
                                     </tr>

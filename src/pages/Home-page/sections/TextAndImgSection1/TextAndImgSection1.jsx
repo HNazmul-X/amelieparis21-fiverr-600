@@ -1,20 +1,25 @@
 import React from "react";
 import img from "../../../../assets/images/professional.1a5394a9c541aeacb807.jpg";
+import { motion } from "framer-motion";
 
 function TextAndImgSection1({ data }) {
   const { imgSrc, title, text, leftImg,backgroundColor } = data;
   return (
     <section className="text-img-section-1" style={{background:backgroundColor}}>
       <article className="container">
-        <div className="wrapper">
-          <div className={`content-area ${leftImg ? "order-1" : ""}`}>
+        <motion.div className="wrapper" >
+          <motion.div className={`content-area ${leftImg ? "order-1" : ""}`} initial={{ scale: 0.6 }}
+				whileInView={{ scale: 1 }}
+				transition={{ duration: 0.5 }}>
             <h3>{title}</h3>
             {text}
-          </div>
+          </motion.div>
           <div className="img-area">
-            <img src={imgSrc} alt={title} />
+            <motion.img src={imgSrc} alt={title} initial={{ scale: 0.6 }}
+				whileInView={{ scale: 1 }}
+				transition={{ duration: 0.5 }} />
           </div>
-        </div>
+        </motion.div>
       </article>
     </section>
   );

@@ -43,13 +43,13 @@ const SidebarAccordion = ({ data, index, activeMenu, setActiveMenu }) => {
                         {isDropDown(data) ? (
                             <>
                                 <div className="left user-select-none">
-                                    <InlineIcon icon="uil:image-upload" />
+                                    <InlineIcon icon={data?.icon} />
                                     <p className="title">{data.label}</p>
                                 </div>
                             </>
                         ) : (
                             <Link to="/" className="left">
-                                <InlineIcon icon="uil:image-upload" />
+                                <InlineIcon icon={data?.icon} />
                                 <p className="title">{data.label}</p>
                             </Link>
                         )}

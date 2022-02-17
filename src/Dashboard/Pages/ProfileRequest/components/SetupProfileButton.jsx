@@ -3,15 +3,14 @@ import SectionTitle from "./SectionTitle";
 import { useState } from "react";
 import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
 
-function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
+function SetupProfileButton({ open, handelOpen, title }) {
     const profileContext = useProfileContext();
-    const [buttonText, setButtonText] = useState("");
-    const [buttonLink, setButtonLink] = useState("");
+    const [buttonText, setButtonText] = useState("ADD TO CONTACT");
     const [err, setErr] = useState([]);
     const [buttonDesign, setButtonDesign] = useState({});
+
     useEffect(() => {
-        setButtonText(profileContext.buttonInfo?.info?.text);
-        setButtonLink(profileContext.buttonInfo?.info?.link);
+        setButtonText(profileContext.buttonInfo?.info?.text || "ADD TO CONTACT");
         setButtonDesign({
             background: profileContext.buttonInfo?.colors?.bg,
             color: profileContext.buttonInfo?.colors?.color,
@@ -27,9 +26,7 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
         }
 
         if (name === "buttonText") setButtonText(value);
-        if (name === "buttonLink") return setButtonLink(value);
 
-        //
         if (data.target.name === "background") setButtonDesign({ ...buttonDesign, background: data.target.value });
         if (data.target.name === "color") setButtonDesign({ ...buttonDesign, color: data.target.value });
         if (data.target.name === "shadow") setButtonDesign({ ...buttonDesign, shadow: data.target.value });
@@ -38,15 +35,11 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
     const handelSubmit = (e) => {
         e.preventDefault();
 
-        if (!buttonText) return setErr("buttonText");
-        if (!buttonLink) return setErr("buttonLink");
-
         profileContext.setButtonInfo((prev) => {
             return {
                 ...prev,
                 info: {
                     text: buttonText,
-                    link: buttonLink,
                 },
                 colors: {
                     bg: buttonDesign.background,
@@ -81,30 +74,10 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
                             <label htmlFor="btnText">Type Button Text</label>
                             {err === "buttonText" && <p className="mb-0 text-center text-danger">Button Text Required</p>}
                         </div>
-                        <div className="w-100 form-floating mb-3">
-                            <input
-                                defaultValue={buttonLink}
-                                onChange={(e) => handelChange(e)}
-                                type="text"
-                                name="buttonLink"
-                                className="form-control primary-input"
-                                id="btnLink"
-                                placeholder="Button Link"
-                            />
-                            <label htmlFor="btnText">Type Button Link</label>
-                            {err === "buttonLink" && <p className="mb-0 text-center text-danger">Button Text Required</p>}
-                        </div>
 
                         <div className="d-flex justify-content-between gap-4 align-items-center px-3 py-2">
                             <div className="text-center w-100">
-                                <input
-                                    defaultValue={buttonDesign?.background}
-                                    style={{ width: "100%" }}
-                                    type="color"
-                                    onChange={(e) => handelChange(e)}
-                                    value={buttonDesign.background}
-                                    name="background"
-                                />
+                                <input defaultValue={buttonDesign?.background} style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} name="background" />
                                 <br />
                                 <label style={{ transform: "translateX(0)" }} htmlFor="">
                                     BackGround
@@ -112,7 +85,7 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
                             </div>
 
                             <div className="text-center w-100">
-                                <input defaultValue={buttonDesign?.color} style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} value={buttonDesign.color} name="color" />
+                                <input defaultValue={buttonDesign?.color} style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} name="color" />
                                 <br />
                                 <label style={{ transform: "translateX(0)" }} htmlFor="">
                                     Color
@@ -120,7 +93,7 @@ function SetupProfileButton({ open, handelOpen, title, setIconPopupShow }) {
                             </div>
 
                             <div className="text-center w-100">
-                                <input defaultValue={buttonDesign?.shadow} style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} value={buttonDesign.shadow} name="shadow" />
+                                <input defaultValue={buttonDesign?.shadow} style={{ width: "100%" }} type="color" onChange={(e) => handelChange(e)} name="shadow" />
                                 <br />
                                 <label style={{ transform: "translateX(0)" }} htmlFor="">
                                     Shadow

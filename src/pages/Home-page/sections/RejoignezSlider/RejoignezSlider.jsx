@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { HeroSliderData } from "../../../../data/HeroSliderData";
+import { motion } from "framer-motion";
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,7 +15,9 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 function RejoignezSlider() {
   return (
     <section className="rejoigne-slider">
-      <article className="container">
+      <motion.article className="container" initial={{ scale: 0.6 }}
+			whileInView={{ scale: 1 }}
+			transition={{ duration: 0.5 }}>
         <h3>Rejoignez la communauté One Card pro</h3>
         <div className="my-slider-wrapper">
           <Swiper
@@ -50,7 +53,7 @@ function RejoignezSlider() {
             ))}
           </Swiper>
         </div>
-      </article>
+      </motion.article>
     </section>
   );
 }

@@ -184,6 +184,11 @@ h6 {
   color: rgba(87, 105, 125, 0.7);
 }
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background: #f0f6ff;
   color: #57697d;
@@ -589,6 +594,7 @@ body {
 }
 .HomePourquoiSection .wrapper {
   display: flex;
+  overflow-x: hidden;
 }
 .HomePourquoiSection .wrapper .img_wrapper {
   width: 45%;
