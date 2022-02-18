@@ -74,13 +74,13 @@ function ProfileTemplate3() {
             <div className="besic-info">
                 <div className="profile-pic-container">
                     <div className="wrapper">
-                        <img className="profile-pic" src={userPics?.profile?.dataURL || profilePic} alt="profile" />
-                        <div className="share">
+                        <img className="profile-pic dashboard" src={userPics?.profile?.dataURL || profilePic} alt="profile" />
+                        <div className="share dashboard">
                             <InlineIcon className="share_icon" icon="bx:bxs-share-alt" />
                         </div>
                     </div>
                 </div>
-                <div className="info">
+                <div className="info dashboard">
                     <div className="name-section">
                         <div>
                             <h3>{userInfo?.name || "Sandhya Mer"}</h3>

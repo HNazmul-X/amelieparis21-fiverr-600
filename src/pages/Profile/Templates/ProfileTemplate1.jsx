@@ -76,7 +76,7 @@ function ProfileTemplate1({ data, onShare, addToContact }) {
                             <p>{data?.personalInfo?.tagline || "Your Tagline Here"}</p>
                         </div>
                         <div className="share" onClick={() => onShare(window.location)}>
-                            <InlineIcon className="share_icon" icon="bx:bxs-share-alt" />
+                            <InlineIcon className="share_icon" icon="ci:share-outline" />
                         </div>
                     </div>
                     <div className="description">

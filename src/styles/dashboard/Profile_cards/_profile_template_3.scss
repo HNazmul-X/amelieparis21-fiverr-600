@@ -10,11 +10,16 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
     --red-700: #{$red-700};
     --red-700: #{$black-700};
 
+    * {
+        font-family: "poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     max-width: 500px;
     width: 100%;
     background-color: $white;
     .banner {
-        clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 77%, 81% 87%, 51% 95%, 21% 88%, 0 78%, 0% 35%, 0 0);
+        clip-path: ellipse(70% 100% at 50% 0%);
+        overflow: hidden;
         img {
             width: 100%;
             object-fit: cover;
@@ -24,29 +29,31 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
         position: relative;
         .profile-pic-container {
             position: absolute;
-            width: 125px;
-            height: 125px;
-            border: 10px solid $white;
+            width: 155px;
+            height: 155px;
+            background: $primary-100;
             border-radius: 50%;
             left: 50%;
-            top: -120px;
+            top: -160px;
             transform: translate(-50%, 50%);
+
             .wrapper {
                 position: relative;
                 .profile-pic {
                     position: absolute;
-                    top: -41px;
-                    left: -6px;
-                    transform: translateY(30%);
-                    width: 118px;
-                    height: 118px;
-                    border: 2px solid $white;
+                    top: 50%;
+                    width: 155px;
+                    height: 155px;
+                    border: 8px solid $white;
                     border-radius: 50%;
+                    &:not(.dashboard) {
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
                 }
                 .share {
                     position: absolute;
-                    bottom: 0;
-                    right: 0;
+
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -56,6 +63,12 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
                     color: $white;
                     font-size: 18px;
                     border-radius: 50%;
+                    bottom: 12%;
+                    right: 5%;
+                    &.dashboard {
+                        bottom: -140px;
+                        right: 3%;
+                    }
                 }
             }
             img {
@@ -65,6 +78,10 @@ $tem3-btn-shadow: 0px 18px 48px rgba(245, 28, 87, 0.36);
         .info {
             padding-top: 70px;
             text-align: center;
+
+            &.dashboard {
+                padding-top: 90px;
+            }
             h3 {
                 font-weight: 600;
                 font-size: 30px;

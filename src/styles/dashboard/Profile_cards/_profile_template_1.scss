@@ -7,10 +7,16 @@ $tem1-golden-rod-200: rgba(250, 156, 15, 0.2);
 $tem1-box-shadow: 0px 18px 36px rgba(255, 89, 2, 0.24);
 $tem1-box-shadow2: 0px -8px 36px rgba(51, 62, 99, 0.08);
 $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
+
+
+
 .profile-template-1 {
   width: 375px;
   margin: auto;
   background-color: $white;
+  *{
+    font-family: "poppins",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
   .banner {
     img {
       aspect-ratio: 3/1.8;
@@ -27,8 +33,9 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
       transform: translateY(30%);
       width: 128px;
       height: 128px;
-      border: 2px solid $blue-grey;
+      border: 8px solid $white;
       border-radius: 50%;
+      background:$primary-100 !important;
     }
     .info {
       .name-section {
@@ -44,7 +51,7 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
         }
         p {
           font-weight: 600;
-          font-size: 10px;
+          font-size: 13px;
           line-height: 10px;
           color: $tem1-gray-700;
         }
@@ -62,7 +69,7 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
         padding-left: 8px;
         border-left: 2px solid $tem1-golden-rod;
         p {
-          font-size: 11px;
+          font-size: 13px;
           line-height: 18px;
           color: $black;
         }
@@ -73,7 +80,7 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
         flex-wrap: wrap;
         .single-work {
           font-weight: 600;
-          font-size: 8px;
+          font-size: 11px;
           line-height: 8px;
           color: $tem1-golden-rod;
           background-color: $tem1-golden-rod-200;

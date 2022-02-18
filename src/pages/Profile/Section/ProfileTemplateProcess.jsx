@@ -72,7 +72,7 @@ END:VCARD
 
     if (templateDataWithUser?.isApproved && templateDataWithUser?.profileTemplate) {
         return (
-            <div className="container py-5 pt-2">
+            <div className="container py-2 px-0">
                 <div className="mx-550 mx-auto shadow-lg">
                     {templateDataWithUser?.profileTemplate?.templateName === "profileTemplate1" ? (
                         <ProfileTemplate1 addToContact={downloadingFile} onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
@@ -82,7 +82,6 @@ END:VCARD
                         <ProfileTemplate3 addToContact={downloadingFile} onShare={handleSharingProfile} data={templateDataWithUser?.profileTemplate} />
                     ) : null}
                 </div>
-                <div className="text-center py-4"></div>
             </div>
         );
     } else if (templateDataWithUser?.isApproved === false) {

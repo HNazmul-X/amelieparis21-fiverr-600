@@ -73,7 +73,7 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
                 <div className="profile_pic_area">
                     <img className="profile_pic" src={baseurl + data?.photos?.profile || profilePic} alt="Profile pic" />
                     <div onClick={onShare} className="shear_icon_wrapper">
-                        <InlineIcon className="share_icon" icon="bx:bxs-share-alt" />
+                        <InlineIcon className="share_icon" icon="ci:share-outline" />
                     </div>
                 </div>
                 <div className="besic-info">
@@ -89,7 +89,6 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
                                 href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone" ? "tel:" : ""}${data?.link}`}
                                 target="_blank"
                                 className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
-
                                 <InlineIcon icon={social[data?.name]} />
                                 <span>{data.link}</span>
                             </a>

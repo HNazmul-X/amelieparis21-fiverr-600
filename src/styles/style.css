@@ -2852,6 +2852,9 @@ body {
   margin: auto;
   background-color: #fff;
 }
+.profile-template-1 * {
+  font-family: "poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 .profile-template-1 .banner img {
   aspect-ratio: 3/1.8;
   width: 100%;
@@ -2867,8 +2870,9 @@ body {
   transform: translateY(30%);
   width: 128px;
   height: 128px;
-  border: 2px solid #57697d;
+  border: 8px solid #fff;
   border-radius: 50%;
+  background: #cadbff !important;
 }
 .profile-template-1 .besic-info .info .name-section {
   display: flex;
@@ -2884,7 +2888,7 @@ body {
 }
 .profile-template-1 .besic-info .info .name-section p {
   font-weight: 600;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 10px;
   color: #5b5b5b;
 }
@@ -2902,7 +2906,7 @@ body {
   border-left: 2px solid darkorange;
 }
 .profile-template-1 .besic-info .info .description p {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 18px;
   color: #030303;
 }
@@ -2913,7 +2917,7 @@ body {
 }
 .profile-template-1 .besic-info .info .work-container .single-work {
   font-weight: 600;
-  font-size: 8px;
+  font-size: 11px;
   line-height: 8px;
   color: darkorange;
   background-color: rgba(250, 156, 15, 0.2);
@@ -3051,8 +3055,11 @@ body {
   width: 375px;
   margin: auto;
   background-color: #fff;
-  --purple-600: var(--purple-600);
+  --purple-600: #8a3efe;
   --text: #000;
+}
+.profile-2-conatiner * {
+  font-family: "poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .profile-2-conatiner .banner img {
   aspect-ratio: 3/1.8;
@@ -3060,7 +3067,7 @@ body {
   object-fit: cover;
 }
 .profile-2-conatiner .content {
-  transform: translateY(-50px);
+  transform: translateY(-80px);
 }
 .profile-2-conatiner .profile_pic_area {
   display: flex;
@@ -3070,15 +3077,16 @@ body {
   margin-bottom: 18px;
 }
 .profile-2-conatiner .profile_pic_area .profile_pic {
-  width: 108px;
-  height: 108px;
-  border: 4px solid #fff;
+  width: 146px;
+  height: 146px;
+  border: 8px solid #fff;
   border-radius: 50%;
+  background: #cadbff;
 }
 .profile-2-conatiner .profile_pic_area .shear_icon_wrapper {
   position: absolute;
-  right: 17px;
-  bottom: 13px;
+  right: 5%;
+  bottom: -5%;
 }
 .profile-2-conatiner .profile_pic_area .shear_icon_wrapper .share_icon {
   width: 34px;
@@ -3103,10 +3111,15 @@ body {
   margin-bottom: 0;
 }
 .profile-2-conatiner .contact-section {
-  padding: 0 28px;
+  padding: 0 48px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 576px) {
+  .profile-2-conatiner .contact-section {
+    padding: 0 20px;
+  }
 }
 .profile-2-conatiner .contact-section .single-contact {
   display: flex;
@@ -3115,6 +3128,7 @@ body {
   width: 100%;
   border-top: 0.5px solid #e0e0e0;
   padding: 17px 0;
+  column-gap: 10px;
 }
 .profile-2-conatiner .contact-section .single-contact svg {
   width: 40px;
@@ -3127,6 +3141,7 @@ body {
   margin-bottom: 0px;
   word-break: break-all;
   line-height: 15px;
+  font-size: 15px;
 }
 @media screen and (max-width: 576px) {
   .profile-2-conatiner .contact-section .single-contact svg {
@@ -3135,9 +3150,10 @@ body {
 }
 .profile-2-conatiner .contact-section .single-contact span {
   margin-bottom: 0;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--text);
+  word-break: break-all;
 }
 @media screen and (max-width: 576px) {
   .profile-2-conatiner .contact-section .single-contact span {
@@ -3151,27 +3167,31 @@ body {
   }
 }
 .profile-2-conatiner .contact-inner {
-  padding: 0 28px;
+  padding: 0 48px;
+}
+@media screen and (max-width: 576px) {
+  .profile-2-conatiner .contact-inner {
+    padding: 0 20px;
+  }
 }
 .profile-2-conatiner .contact-inner .single-contact {
   display: flex;
   text-decoration: none;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   border-top: 0.5px solid #e0e0e0;
   padding: 17px 0;
 }
-.profile-2-conatiner .contact-inner .single-contact svg {
-  font-size: 24px;
-  width: 24px;
+.profile-2-conatiner .contact-inner .single-contact .iconify {
+  font-size: 38px;
   color: var(--purple-600);
 }
 .profile-2-conatiner .contact-inner .single-contact p {
   margin-bottom: 0;
   padding-left: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333e63;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
 }
 .profile-2-conatiner .contact-inner .add-contact-button {
   background-image: linear-gradient(91.54deg, #8a3efe -1.94%, #4d00c4 100%);
@@ -3199,8 +3219,12 @@ body {
   width: 100%;
   background-color: #fff;
 }
+.profile-template-3 * {
+  font-family: "poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 .profile-template-3 .banner {
-  clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 77%, 81% 87%, 51% 95%, 21% 88%, 0 78%, 0% 35%, 0 0);
+  clip-path: ellipse(70% 100% at 50% 0%);
+  overflow: hidden;
 }
 .profile-template-3 .banner img {
   width: 100%;
@@ -3211,12 +3235,12 @@ body {
 }
 .profile-template-3 .besic-info .profile-pic-container {
   position: absolute;
-  width: 125px;
-  height: 125px;
-  border: 10px solid #fff;
+  width: 155px;
+  height: 155px;
+  background: #cadbff;
   border-radius: 50%;
   left: 50%;
-  top: -120px;
+  top: -160px;
   transform: translate(-50%, 50%);
 }
 .profile-template-3 .besic-info .profile-pic-container .wrapper {
@@ -3224,18 +3248,18 @@ body {
 }
 .profile-template-3 .besic-info .profile-pic-container .wrapper .profile-pic {
   position: absolute;
-  top: -41px;
-  left: -6px;
-  transform: translateY(30%);
-  width: 118px;
-  height: 118px;
-  border: 2px solid #fff;
+  top: 50%;
+  width: 155px;
+  height: 155px;
+  border: 8px solid #fff;
   border-radius: 50%;
+}
+.profile-template-3 .besic-info .profile-pic-container .wrapper .profile-pic:not(.dashboard) {
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .profile-template-3 .besic-info .profile-pic-container .wrapper .share {
   position: absolute;
-  bottom: 0;
-  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3245,6 +3269,12 @@ body {
   color: #fff;
   font-size: 18px;
   border-radius: 50%;
+  bottom: 12%;
+  right: 5%;
+}
+.profile-template-3 .besic-info .profile-pic-container .wrapper .share.dashboard {
+  bottom: -140px;
+  right: 3%;
 }
 .profile-template-3 .besic-info .profile-pic-container img {
   width: 100%;
@@ -3252,6 +3282,9 @@ body {
 .profile-template-3 .besic-info .info {
   padding-top: 70px;
   text-align: center;
+}
+.profile-template-3 .besic-info .info.dashboard {
+  padding-top: 90px;
 }
 .profile-template-3 .besic-info .info h3 {
   font-weight: 600;
@@ -3640,3 +3673,4 @@ body {
   color: rgba(87, 105, 125, 0.7);
 }
 
+/*# sourceMappingURL=style.css.map */
