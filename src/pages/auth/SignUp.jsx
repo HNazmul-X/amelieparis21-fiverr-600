@@ -1,11 +1,12 @@
 import swal from "@sweetalert/with-react";
+import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import CardRoundImage from "../../assets/images/group 23.png";
 import { UserContextData } from "../../Context/UserContext";
 import { apiBaseURL } from "../../Util/API_Info";
-import Authentication from "../../Util/Authentication";
+import { renderToStaticMarkup } from "react-dom/server";
 
 const SignUp = () => {
     const {
@@ -20,7 +21,7 @@ const SignUp = () => {
 
     const onSubmit = async (data) => {
         setIsSpinnerShow(true);
-        setFormFilledDataForSignUp({
+        const dataForBackend = {
             username: data?.username,
             password: data?.password,
             confirmPassword: data?.confirmPassword,
@@ -34,21 +35,40 @@ const SignUp = () => {
             city: data?.city,
             ambassador_code: data?.ambassador_code,
             postalCode: data?.postalCode,
-        });
+        };
 
-        fetch(`${apiBaseURL}/api/auth/send-email`, {
-            method: "POST",
-            headers: {
-                "content-type": "application/JSON",
-            },
-            body: JSON.stringify({ email: data?.email }),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                setIsSpinnerShow(false);
-                navigate(`/verify-profile/${data._id}/${encodeURIComponent(data.code)}/`);
+
+
+        const isDataValid = await axios.post(`${apiBaseURL}/api/auth/validate-signup-data`, dataForBackend);
+        console.log(isDataValid);
+        if (isDataValid.data?.error) {
+            setIsSpinnerShow(false);
+            swal({
+                title: "Validation Required",
+                content: (
+                    <ul className="text-danger text-start">
+                        {isDataValid.data?.error?.map((er) => (
+                            <li>{er}</li>
+                        ))}
+                    </ul>
+                ),
+            });
+        } else {
+            setFormFilledDataForSignUp({...dataForBackend});
+            fetch(`${apiBaseURL}/api/auth/send-email`, {
+                method: "POST",
+                headers: {
+                    "content-type": "application/JSON",
+                },
+                body: JSON.stringify({ email: data?.email }),
             })
-            .catch((e) => swal("Failed to send Verification email", e.message, "error"));
+                .then((res) => res.json())
+                .then((data) => {
+                    setIsSpinnerShow(false);
+                    navigate(`/verify-profile/${data._id}/${encodeURIComponent(data.code)}/`);
+                })
+                .catch((e) => swal("Failed to send Verification email", e.message, "error"));
+        }
     };
 
     useEffect(() => {

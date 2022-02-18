@@ -89,7 +89,7 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
                                 href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone" ? "tel:" : ""}${data?.link}`}
                                 target="_blank"
                                 className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
-                                {console.log(social[data?.name])}
+
                                 <InlineIcon icon={social[data?.name]} />
                                 <span>{data.link}</span>
                             </a>

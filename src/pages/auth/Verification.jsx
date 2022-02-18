@@ -17,7 +17,7 @@ const Verification = () => {
     } = useForm();
     const { verificationId, code } = useParams();
     const auth = useAuth();
-    const { formFilledDataForSignUp: userData } = useContext(UserContextData);
+    const { formFilledDataForSignUp: userData, setFormFilledDataForSignUp: setUserData } = useContext(UserContextData);
     const [isSpinnerShow, setIsSpinnerShow] = useState(false);
     const navigate = useNavigate();
     const [isSessionExist, setIsSessionExist] = useState(true);
@@ -49,10 +49,12 @@ const Verification = () => {
                 swal("Error Ocurred", returnedData.error, "error");
             } else {
                 const r_user = await Authentication.signupAndData(`${apiBaseURL}/api/auth/signup`, userData);
-
-                console.log(r_user);
                 if (r_user.error) {
-                    const allError = Object.values(r_user).map((err,index) => <li key={index} className="mb-0 text-danger text-start">{err}</li>);
+                    const allError = Object.values(r_user).map((err, index) => (
+                        <li key={index} className="mb-0 text-danger text-start">
+                            {err}
+                        </li>
+                    ));
                     swal(
                         <div className="py-3">
                             <h1 className="">Invalid Information</h1>
@@ -66,6 +68,7 @@ const Verification = () => {
                         icon: "success",
                         button: true,
                     }).then((value) => {
+                        setUserData({});
                         navigate("/login");
                     });
                 }
