@@ -4,63 +4,63 @@ import slide2 from "../../../../assets/images/screen2.51f15bf080c960fa554b.png";
 import slide3 from "../../../../assets/images/slide3.png";
 import { motion } from "framer-motion";
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
-
-// Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Navigation } from "swiper";
 
-const datas = [slide1, slide2, slide3];
 function HomeMultiDesigns() {
   return (
-    <section className="home-multi-designs-section">
-      <article className="container">
-        <motion.div className="wrapper" initial={{ scale: 0.8 }}
-			whileInView={{ scale: 1 }}
-			transition={{ duration: 0.3 }}>
-          <h3>Multi Designs</h3>
-          <div className="my-swiper-wrapper">
-            <Swiper
-              spaceBetween={30}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              breakpoints={{
-                340: {
-                  slidesPerView: 1,
-                  spaceBetween: 20,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 40,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 20,
-                },
-              }}
-              className="mySwiper"
-            >
-              <SwiperSlide className="my-slide">
-                <img src={slide1} alt="one card pro" className="my-slide-img" />
-              </SwiperSlide>
-              <SwiperSlide className="my-slide">
-                <img src={slide2} alt="one card pro" className="my-slide-img" />
-              </SwiperSlide>
-              <SwiperSlide className="my-slide">
-                <img src={slide3} alt="one card pro" className="my-slide-img" />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </motion.div>
-      </article>
-    </section>
+    <motion.div
+    initial={{ scale: 0.8 }}
+    whileInView={{ scale: 1 }}
+    transition={{ duration: 0.3 }}
+    className="flex flex-col w-full px-14 py-14 space-y-14 items-center bg-oneCard-lightGray"
+  >
+    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-oneCard-darkBlue">
+      Multi Designs
+    </h3>
+    <Swiper
+      spaceBetween={30}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      breakpoints={{
+        340: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Autoplay, Navigation]}
+      className="w-11/12 grid grid-cols-3"
+    >
+      <SwiperSlide className="flex items-center justify-center">
+        <img src={slide1} alt="one card pro" className="w-7/12" />
+      </SwiperSlide>
+      <SwiperSlide className="flex items-center justify-center">
+        <img src={slide2} alt="one card pro" className="w-7/12" />
+      </SwiperSlide>
+      <SwiperSlide className="flex items-center justify-center">
+        <img src={slide3} alt="one card pro" className="w-7/12" />
+      </SwiperSlide>
+    </Swiper>
+  </motion.div>
   );
 }
 
