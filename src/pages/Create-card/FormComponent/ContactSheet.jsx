@@ -42,7 +42,6 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   placeholder="name@example.com"
                 />
                 <label for="floatingInput">First Name</label>
-                {console.log(errors)}
                 {errors.firstName && (
                   <span className="d-block ps-3 small text-danger text-start">
                     First Name is required

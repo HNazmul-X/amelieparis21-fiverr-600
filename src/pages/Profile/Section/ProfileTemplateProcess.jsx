@@ -20,12 +20,13 @@ const ProfileTemplateProcess = () => {
 
             document.title = username + "'s Profile at one card pro";
         } catch (e) {
-            swal("Error Happened",e.message,"error")
+            swal("Error Happened", e.message, "error");
         }
 
         axios
             .get(`${apiBaseURL}/api/profile-template/get-single-profile-by-username/${username}`)
             .then((data) => {
+                data.data.profileTemplate = data.data?.profileTemplate === undefined ? null : data?.data?.profileTemplate;
                 setTemplateDataWithUser(data.data);
             })
             .catch((error) => {
@@ -92,7 +93,7 @@ END:VCARD
                 </div>
             </div>
         );
-    } else if (templateDataWithUser === null) {
+    } else if (templateDataWithUser?.profileTemplate === null) {
         return (
             <div className="container">
                 <div className="p-5 text-center alert-secondary mt-4 rounded">

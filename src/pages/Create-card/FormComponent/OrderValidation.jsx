@@ -131,7 +131,6 @@ const OrderValidation = () => {
           `${apiBaseURL}/api/card/create-card`,
           dataForSendBackend
         );
-        console.log(returnedData);
         if (returnedData?.card_created) {
           navigate(`/card-status/${returnedData?.cardId}`);
         } else if (returnedData.error) {

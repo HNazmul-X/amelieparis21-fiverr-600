@@ -39,7 +39,6 @@ export default class Authentication {
                 const {data:returnedData} = await axios.post(url, userData, { headers: { "content-type": "application/json" } });
 
                 if (returnedData) {
-                    console.log(returnedData);
                     resolve({ ...returnedData, token: returnedData?.token });
                 } else {
                     const error = new Error("failed to register a user. Please provide correct data");
