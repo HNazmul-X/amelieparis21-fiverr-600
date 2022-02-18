@@ -13,11 +13,10 @@ const ProfileTemplateProcess = () => {
 
     useEffect(async () => {
         try {
-            const navbar = document.querySelector(".hnazmul-navbar");
+            const navbar = document.querySelector("#homepage.onecardPro_navbar");
             if (navbar) {
                 navbar.style.display = "none";
             }
-
             document.title = username + "'s Profile at one card pro";
         } catch (e) {
             swal("Error Happened", e.message, "error");

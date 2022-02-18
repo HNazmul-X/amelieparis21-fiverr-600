@@ -16,24 +16,26 @@ import StandOutFromCrowd from "./sections/StandOutFromCrowd/StandOutFromCrowd";
 
 function HomePage() {
   return (
-    <>
-      <HomeBanner />
-      <RejoignezSlider />
-      <HomePourquoiSection />
-      <Professional />
-      <ShareInfoInRealTime />
-      <HomeHowItWorks />
-      <ManWithCard />
-      <HomeMultiDesigns />
-      <StandOutFromCrowd />
-      <HomeVideoExplainer />
-      <div className="flex flex-col items-center w-full divide-y divide-oneCard-lightGray">
-        <HomeLesCommentaires />
-        <HomeLivraisonPartout />
-      </div>
-      <HomeContact />
-      <Footer />
-    </>
+      <>
+          <div id="homepage">
+              <HomeBanner />
+              <RejoignezSlider />
+              <HomePourquoiSection />
+              <Professional />
+              <ShareInfoInRealTime />
+              <HomeHowItWorks />
+              <ManWithCard />
+              <HomeMultiDesigns />
+              <StandOutFromCrowd />
+              <HomeVideoExplainer />
+              <div className="flex flex-col items-center w-full divide-y divide-oneCard-lightGray">
+                  <HomeLesCommentaires />
+                  <HomeLivraisonPartout />
+              </div>
+              <HomeContact />
+              <Footer />
+          </div>
+      </>
   );
 }
 

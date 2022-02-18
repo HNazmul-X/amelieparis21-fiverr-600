@@ -1,4 +1,5 @@
-
+#homepage{
+  
 
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap);
 /*
@@ -273,7 +274,7 @@ video {
   color: rgb(30 60 114 / var(--tw-text-opacity));
   display: flex;
   justify-content: space-between;
-  padding: 1.25rem 2rem;
+  padding: 0.55rem 2rem;
   width: 100%;
 }
 @media (min-width: 640px) {
@@ -1573,3 +1574,4 @@ button.swiper-pagination-bullet {
 }
 /*# sourceMappingURL=main.2bb5153f.css.map*/
 
+}
