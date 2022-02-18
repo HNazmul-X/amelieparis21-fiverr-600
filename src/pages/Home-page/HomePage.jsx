@@ -1,21 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "./../../components/Footer/Footer";
 import HomeBanner from "./sections/HomeBanner/HomeBanner";
 import RejoignezSlider from "./sections/RejoignezSlider/RejoignezSlider";
 import HomePourquoiSection from "./sections/HomePourquoiSection/HomePourquoiSection";
-import TextAndImgSection1 from "./sections/TextAndImgSection1/TextAndImgSection1";
-import {
-  lemoyenData,
-  PartagezData,
-  SEDISTINGUERDATA,
-} from "./../../data/HomePageTextAndImgSection1Data";
-import HomePageComment from "./sections/HomePageComment/HomePageComment";
-import TextAndImgSection2 from "./sections/TextAndImgSection2/TextAndImgSection2";
 import HomeMultiDesigns from "./sections/HomeMultiDesigns/HomeMultiDesigns";
 import HomeVideoExplainer from "./sections/HomeVideoExplainer/HomeVideoExplainer";
 import HomeLesCommentaires from "./sections/HomeLesCommentaires/HomeLesCommentaires";
 import HomeLivraisonPartout from "./sections/HomeLivraisonPartout/HomeLivraisonPartout";
-import HomeContact from './sections/HomeContact/HomeContact';
+import HomeContact from "./sections/HomeContact/HomeContact";
+import Professional from "./sections/Professional/Professional";
+import ShareInfoInRealTime from "./sections/ShareInfoInRealTime/ShareInfoInRealTime";
+import HomeHowItWorks from "./sections/HomeHowItWorks/HomeHowItWorks";
+import ManWithCard from "./sections/ManWithCard/ManWithCard";
+import StandOutFromCrowd from "./sections/StandOutFromCrowd/StandOutFromCrowd";
 
 function HomePage() {
   return (
@@ -23,17 +20,19 @@ function HomePage() {
       <HomeBanner />
       <RejoignezSlider />
       <HomePourquoiSection />
-      <TextAndImgSection1 data={lemoyenData} />
-      <TextAndImgSection1 data={PartagezData} />
-      <HomePageComment />
-      <TextAndImgSection2 />
+      <Professional />
+      <ShareInfoInRealTime />
+      <HomeHowItWorks />
+      <ManWithCard />
       <HomeMultiDesigns />
-      <TextAndImgSection1 data={SEDISTINGUERDATA} />
+      <StandOutFromCrowd />
       <HomeVideoExplainer />
-      <HomeLesCommentaires />
-      <HomeLivraisonPartout />
-      <HomeContact />   
-      <Footer /> 
+      <div className="flex flex-col items-center w-full divide-y divide-oneCard-lightGray">
+        <HomeLesCommentaires />
+        <HomeLivraisonPartout />
+      </div>
+      <HomeContact />
+      <Footer />
     </>
   );
 }

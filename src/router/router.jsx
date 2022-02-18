@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
+import MyNavBar from '../components/Navbar/MyNavBar';
 import DashboardLayout from "../Dashboard/Components/DashboardLayout";
 import CreateCardPage from "../pages/Create-card/CreateCardPage";
 import FaqPage from "../pages/Faq-page/FaqPage";
@@ -29,6 +30,7 @@ import AdminPrivateRoute from "./AdminPrivateRoute";
 import CreatedProfile from "../Dashboard/Pages/ProfileRequest/Subpages/CreatedProfile/CreatedProfile";
 import PendingProfile from "../Dashboard/Pages/ProfileRequest/Subpages/RejectedProfile/PendingProfile";
 
+
 const NavbarRouter = () => {
 
     return (
@@ -36,7 +38,8 @@ const NavbarRouter = () => {
             {/* Admin Login */}
 
             {/* Navbar Layout Router */}
-            <Route path="/" element={<Navbar />}>
+            {/* <Route path="/" element={<Navbar />}>  */}
+            <Route path="/" element={<MyNavBar />}>
                 <Route index element={<HomePage />} />
                 <Route path="/playground" element={<PlayGround />} />
                 <Route path="login" element={<Login />} />

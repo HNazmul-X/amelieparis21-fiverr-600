@@ -92,7 +92,7 @@ const Navbar = () => {
 
             
                {!auth?.user?.isLoggedIn ? (
-                  <>
+                  <div>
                     <li className="navbar-list-item">
                       <Link
                         to={"/login"}
@@ -109,7 +109,7 @@ const Navbar = () => {
                         Register
                       </Link>
                     </li>
-                  </>
+                  </div>
                 ) : (
                   <li className="navbar-list-item">
                     <button
