@@ -9,7 +9,7 @@ function Footer() {
 				<img src={logo} alt="one card pro" className="w-24" />
 							</div>
 			<div className="flex flex-col items-center justify-between w-full pt-6 space-y-4 font-normal text-oneCard-lightGray md:space-y-0 md:flex-row">
-				<h5>© {date.getFullYear} All right reserved by onecardpro.com</h5>
+				<h5>© {date.getFullYear()} All right reserved by onecardpro.com</h5>
 				<div className="flex font-normal space-x-7 text-oneCard-lightGray">
 				
 					<h5 className="cursor-pointer">FAQ</h5>

@@ -142,8 +142,8 @@ const SignUp = () => {
                                     {errors.username?.type === "required" && <span className="d-block ps-3 text-danger text-start">Username is required</span>}
                                 </div>
 
-                                <div className="d-flex gap-4 my-4 flex-wrap">
-                                    <div style={{ width: "48.2%" }} className="form-floating">
+                                <div className="d-flex gap-4 my-4 flex-wrap justify-content-between">
+                                    <div  className="form-floating col-12 col-md-6">
                                         <input
                                             defaultValue={userData_f?.password}
                                             type={isTypePassword ? "password" : "text"}
@@ -155,7 +155,7 @@ const SignUp = () => {
                                         <label htmlFor="floatingPassword45">Password *</label>
                                         {errors.password?.type === "required" && <span className="d-block ps-3 text-danger text-start">Password is required</span>}
                                     </div>
-                                    <div style={{ width: "48.2%" }} className="form-floating">
+                                    <div  className="form-floating col-12 col-md-5">
                                         <input
                                             defaultValue={userData_f?.confirmPassword}
                                             type={isTypePassword ? "password" : "text"}

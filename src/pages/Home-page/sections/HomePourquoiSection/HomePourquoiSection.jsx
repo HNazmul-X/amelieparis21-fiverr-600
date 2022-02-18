@@ -41,7 +41,7 @@ function HomePourquoiSection() {
                 <img src={pencilIcon} alt="one card pro" />
               </div>
               <div className="text-oneCard-darkBlue flex flex-col text-base sm:text-lg md:text-xl font-bold">
-                <h2 classNane="font-bold">Personnalisable</h2>
+                <h2 className="font-bold">Personnalisable</h2>
                 <h2 className="font-normal">
                   modifiez vous informations à tout moment
                 </h2>

@@ -192,6 +192,8 @@ html {
 body {
   background: #f0f6ff;
   color: #57697d;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
@@ -787,7 +789,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0.55rem 2rem;
-  width: 100%;
+  width: 100vw;
 }
 @media (min-width: 640px) {
   #homepage .stickyNavbarStyles {
@@ -2972,7 +2974,6 @@ body {
 @media screen and (max-width: 768px) {
   #login_area #loginPopup {
     width: 500px;
-    margin-left: -83px;
   }
 }
 @media screen and (max-width: 576px) {

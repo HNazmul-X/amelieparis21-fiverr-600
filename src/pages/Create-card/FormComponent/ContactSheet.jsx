@@ -41,7 +41,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">First Name</label>
+                <label htmlFor="floatingInput">First Name</label>
                 {errors.firstName && (
                   <span className="d-block ps-3 small text-danger text-start">
                     First Name is required
@@ -58,7 +58,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Last Name</label>
+                <label htmlFor="floatingInput">Last Name</label>
                 {errors.lastName && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Last Name is required
@@ -76,7 +76,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                 id="floatingInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Email</label>
+              <label htmlFor="floatingInput">Email</label>
               {errors.email && (
                 <span className="d-block ps-3 small text-danger text-start">
                   Email is required
@@ -94,7 +94,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Company</label>
+                <label htmlFor="floatingInput">Company</label>
                 {errors.company && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Company is required
@@ -111,7 +111,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Position</label>
+                <label htmlFor="floatingInput">Position</label>
                 {errors.position && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Position is required
@@ -129,7 +129,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Website</label>
+                <label htmlFor="floatingInput">Website</label>
                 {errors.website && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Website is required
@@ -146,7 +146,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Landing</label>
+                <label htmlFor="floatingInput">Landing</label>
                 {errors.landing && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Landing is required
@@ -165,7 +165,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Society</label>
+                <label htmlFor="floatingInput">Society</label>
                 {errors.society && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Society is required
@@ -182,7 +182,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Phone</label>
+                <label htmlFor="floatingInput">Phone</label>
                 {errors.phone && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Phone is required
@@ -200,7 +200,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                 id="floatingInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Address</label>
+              <label htmlFor="floatingInput">Address</label>
               {errors.address && (
                 <span className="d-block ps-3 small text-danger text-start">
                   Address is required
@@ -217,7 +217,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                 id="floatingInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Additional Address</label>
+              <label htmlFor="floatingInput">Additional Address</label>
               {errors.addition_address && (
                 <span className="d-block ps-3 small text-danger text-start">
                   Additional Address is required
@@ -235,7 +235,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Postal code</label>
+                <label htmlFor="floatingInput">Postal code</label>
                 {errors.postalCode && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Postal Code is required
@@ -252,7 +252,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">City</label>
+                <label htmlFor="floatingInput">City</label>
                 {errors.city && (
                   <span className="d-block ps-3 small text-danger text-start">
                     City is required
@@ -270,7 +270,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Country</label>
+                <label htmlFor="floatingInput">Country</label>
                 {errors.country && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Country is required

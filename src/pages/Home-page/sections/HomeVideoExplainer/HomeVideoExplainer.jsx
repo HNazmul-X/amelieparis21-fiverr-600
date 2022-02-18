@@ -14,11 +14,11 @@ function HomeVideoExplainer() {
 			>
 				<iframe
 					src="https://player.vimeo.com/video/146022717?color=0c88dd&title=0&byline=0&portrait=0&badge=0"
-					frameborder="0"
+					frameBorder="0"
 					title="one card pro"
 					className="absolute top-0 left-0 right-0 bottom-0 w-full h-full overflow-hidden"
 					allow="fullscreen; picture-in-picture"
-					allowfullscreen
+					allowFullScreen
 				></iframe>
 			</motion.div>
 		</div>
