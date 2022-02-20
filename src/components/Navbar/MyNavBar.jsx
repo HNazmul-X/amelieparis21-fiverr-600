@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Logo from "../../assets/images/Asset 1.svg";
 import { Outlet } from "react-router-dom";
 import { useAuth } from "../../Context/UserContext";
+import { InlineIcon } from "@iconify/react";
 
 const btnVariants = {
     hover: {
@@ -70,7 +71,7 @@ function MyNavBar() {
                                     <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
                                         <PageLink
                                             to="/login"
-                                            className="w-full d-none d-lg-block py-3 mt-3 mb-8 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                            className="w-full d-none d-lg-block py-3  text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                             onClick={() => setSidebar(false)}>
                                             Connexion
                                         </PageLink>
@@ -78,24 +79,29 @@ function MyNavBar() {
                                     <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
                                         <PageLink
                                             to="/signup"
-                                            className="w-full d-none d-lg-block py-3 mt-3 mb-8 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                            className="w-full d-none d-lg-block py-3 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                             onClick={() => setSidebar(false)}>
                                             Créez votre carte
                                         </PageLink>
                                     </motion.div>
                                 </>
                             ) : (
-                                <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
-                                    <PageLink
-                                        to="/login"
-                                        className="w-full  d-lg-block d-none py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
-                                        onClick={() => {
-                                            setSidebar(false);
-                                            auth?.logoutUser();
-                                        }}>
-                                        LogOut
+                                <>
+                                    <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
+                                        <PageLink
+                                            to="/login"
+                                            className="w-full  d-lg-block d-none py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                            onClick={() => {
+                                                setSidebar(false);
+                                                auth?.logoutUser();
+                                            }}>
+                                            LogOut
+                                        </PageLink>
+                                    </motion.div>
+                                    <PageLink to={`/profile-creation/${auth?.user?.profile}`}>
+                                        <InlineIcon icon={"gg:profile"} className="display-5" />
                                     </PageLink>
-                                </motion.div>
+                                </>
                             )}
                             <motion.button
                                 variants={btnVariants}
@@ -168,7 +174,7 @@ function MyNavBar() {
                                         <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
                                             <PageLink
                                                 to="/login"
-                                                className="w-full py-3 mt-3 mb-8 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                                className="w-full py-3  text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                                 onClick={() => setSidebar(false)}>
                                                 Connexion
                                             </PageLink>
@@ -176,7 +182,7 @@ function MyNavBar() {
                                         <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
                                             <PageLink
                                                 to="/signup"
-                                                className="w-full py-3 mt-3 mb-8 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                                className="w-full py-3  text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                                 onClick={() => setSidebar(false)}>
                                                 Créez votre carte
                                             </PageLink>

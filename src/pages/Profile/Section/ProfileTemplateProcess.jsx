@@ -12,8 +12,8 @@ const ProfileTemplateProcess = () => {
     const { username } = useParams();
 
     useEffect(async () => {
+        const navbar = document.querySelector("#homepage.onecardPro_navbar");
         try {
-            const navbar = document.querySelector("#homepage.onecardPro_navbar");
             if (navbar) {
                 navbar.style.display = "none";
             }
@@ -25,12 +25,17 @@ const ProfileTemplateProcess = () => {
         axios
             .get(`${apiBaseURL}/api/profile-template/get-single-profile-by-username/${username}`)
             .then((data) => {
+                console.log(data)
                 data.data.profileTemplate = data.data?.profileTemplate === undefined ? null : data?.data?.profileTemplate;
                 setTemplateDataWithUser(data.data);
             })
             .catch((error) => {
                 swal("ERROR", error.message, "error");
             });
+
+        return () => {
+            navbar.style.display = "block"
+        }
     }, []);
 
     //sharing profile
