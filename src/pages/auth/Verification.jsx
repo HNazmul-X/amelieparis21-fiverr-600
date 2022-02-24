@@ -43,12 +43,14 @@ const Verification = () => {
 
         try {
             const { data: returnedData } = await axios.post(`${apiBaseURL}/api/auth/verify-code/`, { code: data.code, id: verificationId });
+            console.log(returnedData)
 
             if (returnedData.error) {
                 setIsSpinnerShow(false);
                 swal("Error Ocurred", returnedData.error, "error");
             } else {
                 const r_user = await Authentication.signupAndData(`${apiBaseURL}/api/auth/signup`, userData);
+                await axios.delete(`${apiBaseURL}/api/util//delete-verification-data/${verificationId}`);
                 if (r_user.error) {
                     const allError = Object.values(r_user).map((err, index) => (
                         <li key={index} className="mb-0 text-danger text-start">

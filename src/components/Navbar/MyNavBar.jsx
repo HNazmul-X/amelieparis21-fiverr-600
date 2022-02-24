@@ -50,7 +50,7 @@ function MyNavBar() {
                             </PageLink>
                             {auth?.user?.isAdmin ? (
                                 <PageLink to="/admin" className="navLink">
-                                    Dashboard
+                                    tableau de bord
                                 </PageLink>
                             ) : (
                                 <PageLink to={`/u/${auth?.user?.username}`} className="navLink">
@@ -95,7 +95,18 @@ function MyNavBar() {
                                                 setSidebar(false);
                                                 auth?.logoutUser();
                                             }}>
-                                            LogOut
+                                            Créez votre Carte
+                                        </PageLink>
+                                    </motion.div>
+                                    <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
+                                        <PageLink
+                                            to="/login"
+                                            className="w-full  d-lg-block d-none py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                            onClick={() => {
+                                                setSidebar(false);
+                                                auth?.logoutUser();
+                                            }}>
+                                            Se déconnecter
                                         </PageLink>
                                     </motion.div>
                                     <PageLink to={`/profile-creation/${auth?.user?.profile}`}>
@@ -189,17 +200,30 @@ function MyNavBar() {
                                         </motion.div>
                                     </>
                                 ) : (
-                                    <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
-                                        <PageLink
-                                            to="/login"
-                                            className="w-full py-3 mt-3 mb-8 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
-                                            onClick={() => {
-                                                setSidebar(false);
-                                                auth?.logoutUser();
-                                            }}>
-                                            LogOut
-                                        </PageLink>
-                                    </motion.div>
+                                    <>
+                                        <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
+                                            <PageLink
+                                                to="/login"
+                                                className="w-full  d-lg-block d-none py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                                onClick={() => {
+                                                    setSidebar(false);
+                                                    auth?.logoutUser();
+                                                }}>
+                                                Créez votre Carte
+                                            </PageLink>
+                                        </motion.div>
+                                        <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
+                                            <PageLink
+                                                to="/login"
+                                                className="w-full py-3 mt-3 mb-8 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                                onClick={() => {
+                                                    setSidebar(false);
+                                                    auth?.logoutUser();
+                                                }}>
+                                                LogOut
+                                            </PageLink>
+                                        </motion.div>
+                                    </>
                                 )}
                             </div>
                         </div>

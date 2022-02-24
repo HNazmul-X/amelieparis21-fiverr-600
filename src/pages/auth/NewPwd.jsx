@@ -38,6 +38,7 @@ const NewPwd = () => {
             } else {
                 setError("");
                 const { data: r_data } = await axios.post(`${apiBaseURL}/api/auth/change-password/${userId}/${verificationId}`, { password });
+                await axios.delete(`${apiBaseURL}/api/util//delete-verification-data/${verificationId}`);
                 auth.loginUser(r_data, () => navigate("/", { replace: true }));
             }
         }

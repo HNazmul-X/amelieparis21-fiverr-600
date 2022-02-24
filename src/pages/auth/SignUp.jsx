@@ -35,9 +35,8 @@ const SignUp = () => {
             city: data?.city,
             ambassador_code: data?.ambassador_code,
             postalCode: data?.postalCode,
+            country:data?.country
         };
-
-
 
         const isDataValid = await axios.post(`${apiBaseURL}/api/auth/validate-signup-data`, dataForBackend);
         console.log(isDataValid);
@@ -54,7 +53,7 @@ const SignUp = () => {
                 ),
             });
         } else {
-            setFormFilledDataForSignUp({...dataForBackend});
+            setFormFilledDataForSignUp({ ...dataForBackend });
             fetch(`${apiBaseURL}/api/auth/send-email`, {
                 method: "POST",
                 headers: {
@@ -98,8 +97,8 @@ const SignUp = () => {
                                             id="floatingInput44"
                                             placeholder="name@example.com"
                                         />
-                                        <label htmlFor="floatingInput44">First Name</label>
-                                        {errors.firstName?.type === "required" && <span className="d-block ps-3 text-danger text-start">First Name is required</span>}
+                                        <label htmlFor="floatingInput44">Prénom *</label>
+                                        {errors.firstName?.type === "required" && <span className="d-block ps-3 text-danger text-start">Prénom * is required</span>}
                                     </div>
 
                                     <div className="w-100 form-floating mt-3 ">
@@ -111,8 +110,8 @@ const SignUp = () => {
                                             id="floatingInput1"
                                             placeholder="name@example.com"
                                         />
-                                        <label htmlFor="floatingInput1">Last Name</label>
-                                        {errors.lastName?.type === "required" && <span className="d-block ps-3 text-danger text-start">Last Name is required</span>}
+                                        <label htmlFor="floatingInput1">Nom de famille *</label>
+                                        {errors.lastName?.type === "required" && <span className="d-block ps-3 text-danger text-start">Nom de famille * is required</span>}
                                     </div>
                                 </div>
 
@@ -125,8 +124,8 @@ const SignUp = () => {
                                         id="floatingInput2"
                                         placeholder="name@example.com"
                                     />
-                                    <label htmlFor="floatingInput2">Email *</label>
-                                    {errors.email?.type === "required" && <span className="d-block ps-3 text-danger text-start">Email is required</span>}
+                                    <label htmlFor="floatingInput2">E-mail *</label>
+                                    {errors.email?.type === "required" && <span className="d-block ps-3 text-danger text-start">E-mail is required</span>}
                                 </div>
                                 <div className="form-floating my-4 mb-5 ">
                                     <input
@@ -138,12 +137,12 @@ const SignUp = () => {
                                         id="floatingInput5"
                                         placeholder="name@example.com"
                                     />
-                                    <label htmlFor="floatingInput5">Username</label>
-                                    {errors.username?.type === "required" && <span className="d-block ps-3 text-danger text-start">Username is required</span>}
+                                    <label htmlFor="floatingInput5">Nom d'utilisateur </label>
+                                    {errors.username?.type === "required" && <span className="d-block ps-3 text-danger text-start">Nom d'utilisateur is required</span>}
                                 </div>
 
                                 <div className="d-flex gap-4 my-4 flex-wrap justify-content-between">
-                                    <div  className="form-floating col-12 col-md-6">
+                                    <div className="form-floating col-12 col-md-6">
                                         <input
                                             defaultValue={userData_f?.password}
                                             type={isTypePassword ? "password" : "text"}
@@ -152,10 +151,10 @@ const SignUp = () => {
                                             id="floatingPassword45"
                                             placeholder="Password"
                                         />
-                                        <label htmlFor="floatingPassword45">Password *</label>
-                                        {errors.password?.type === "required" && <span className="d-block ps-3 text-danger text-start">Password is required</span>}
+                                        <label htmlFor="floatingPassword45">Mot de passe *</label>
+                                        {errors.password?.type === "required" && <span className="d-block ps-3 text-danger text-start">Mot de passe is required</span>}
                                     </div>
-                                    <div  className="form-floating col-12 col-md-5">
+                                    <div className="form-floating col-12 col-md-5">
                                         <input
                                             defaultValue={userData_f?.confirmPassword}
                                             type={isTypePassword ? "password" : "text"}
@@ -164,12 +163,12 @@ const SignUp = () => {
                                             id="floatingPassword76"
                                             placeholder="Password"
                                         />
-                                        <label htmlFor="floatingPassword76">Re-Password *</label>
-                                        {errors.confirmPassword?.type === "required" && <span className="d-block ps-3 text-danger text-start">Re-Password is required</span>}
+                                        <label htmlFor="floatingPassword76">Re-Mot de passe *</label>
+                                        {errors.confirmPassword?.type === "required" && <span className="d-block ps-3 text-danger text-start">Re-Mot de passe is required</span>}
                                     </div>
                                     <div className="w-100 text-start">
                                         <input type="checkbox" defaultChecked={!isTypePassword} id="show-password" onChange={(e) => setIsTypePassword(!e.currentTarget.checked)} />{" "}
-                                        <label htmlFor="show-password"> Show Password</label>
+                                        <label htmlFor="show-password"> Montrer le mot de passe</label>
                                     </div>
                                 </div>
 
@@ -183,8 +182,8 @@ const SignUp = () => {
                                             id="floatingPassword123"
                                             placeholder="Password"
                                         />
-                                        <label htmlFor="floatingPassword123">Society</label>
-                                        {errors.society?.type === "required" && <span className="d-block ps-3 text-danger text-start">Society is required</span>}
+                                        <label htmlFor="floatingPassword123">Société</label>
+                                        {errors.society?.type === "required" && <span className="d-block ps-3 text-danger text-start">Société is required</span>}
                                     </div>
 
                                     <div className="w-100 form-floating my-3">
@@ -196,8 +195,8 @@ const SignUp = () => {
                                             id="floatingPassword786"
                                             placeholder="Password"
                                         />
-                                        <label htmlFor="floatingPassword786">Phone</label>
-                                        {errors.phone?.type === "required" && <span className="d-block ps-3 text-danger text-start">Phone is required</span>}
+                                        <label htmlFor="floatingPassword786">Téléphone </label>
+                                        {errors.phone?.type === "required" && <span className="d-block ps-3 text-danger text-start">Téléphone is required</span>}
                                     </div>
                                 </div>
 
@@ -210,8 +209,8 @@ const SignUp = () => {
                                         id="floatingPassword2324"
                                         placeholder="Password"
                                     />
-                                    <label htmlFor="floatingPassword2324">Address</label>
-                                    {errors.address?.type === "required" && <span className="d-block ps-3 text-danger text-start">Address is required</span>}
+                                    <label htmlFor="floatingPassword2324">Adresse </label>
+                                    {errors.address?.type === "required" && <span className="d-block ps-3 text-danger text-start">Adresse is required</span>}
                                 </div>
 
                                 <div className="form-floating my-4">
@@ -223,7 +222,7 @@ const SignUp = () => {
                                         id="floatingPassword127"
                                         placeholder="Password"
                                     />
-                                    <label htmlFor="floatingPassword127">Additional Address</label>
+                                    <label htmlFor="floatingPassword127">Adresse supplémentaire</label>
                                 </div>
 
                                 <div className="d-flex gap-3">
@@ -236,8 +235,8 @@ const SignUp = () => {
                                             id="floatingPassword48"
                                             placeholder="Password"
                                         />
-                                        <label htmlFor="floatingPassword48">Postal code</label>
-                                        {errors.postalCode?.type === "required" && <span className="d-block ps-3 text-danger text-start">Postal Code is required</span>}
+                                        <label htmlFor="floatingPassword48">Code Postal</label>
+                                        {errors.postalCode?.type === "required" && <span className="d-block ps-3 text-danger text-start">Code Postal is required</span>}
                                     </div>
 
                                     <div className="w-100 form-floating my-4">
@@ -249,24 +248,23 @@ const SignUp = () => {
                                             id="floatingPass324"
                                             placeholder="Password"
                                         />
-                                        <label htmlFor="floatingPass324">City</label>
-                                        {errors.city?.type === "required" && <span className="d-block ps-3 text-danger text-start">City is required</span>}
+                                        <label htmlFor="floatingPass324">Ville</label>
+                                        {errors.city?.type === "required" && <span className="d-block ps-3 text-danger text-start">Ville is required</span>}
                                     </div>
                                 </div>
 
                                 <div>
-                                    <p className="text-start my-0 ms-3">Do you have an ambassador code ?</p>
-                                    <div className="form-floating my-3">
+                                    <div className="form-floating mb-3">
                                         <input
-                                            defaultValue={userData_f?.ambassador_code}
+                                            defaultValue={userData_f?.country}
                                             type="text"
-                                            {...register("ambassador_code", { required: false })}
+                                            {...register("country", { required: true })}
                                             className="form-control unFatty-input"
                                             id="floatingPassword39"
                                             placeholder="Password"
                                         />
-                                        <label htmlFor="floatingPassword39">Ambassador Code</label>
-                                        {errors.ambassador_code?.type === "required" && <span className="d-block ps-3 text-danger text-start">Ambassador Code is required</span>}
+                                        <label htmlFor="floatingPassword39">country</label>
+                                        {errors.ambassador_code?.type === "required" && <span className="d-block ps-3 text-danger text-start">Acountry is required</span>}
                                     </div>
                                 </div>
 
@@ -277,10 +275,10 @@ const SignUp = () => {
                                                 <span className="visually-hidden">Loading...</span>
                                             </div>
                                         )}
-                                        Register
+                                        S'inscrire
                                     </button>
                                     <p>
-                                        Already Have an Account ? <a href="/login">Login</a>
+                                        Vous avez déjà un compte ? <a href="/login">Connexion</a>
                                     </p>
                                 </div>
                             </form>

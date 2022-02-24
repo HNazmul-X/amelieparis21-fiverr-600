@@ -11,7 +11,7 @@ $tem1-btn-bg: linear-gradient(91.57deg, #ff8c00 0%, #ff3710 100%);
 
 
 .profile-template-1 {
-  width: 375px;
+  min-width: 375px;
   margin: auto;
   background-color: $white;
   *{

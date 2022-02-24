@@ -68,7 +68,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
                         <div className="text-end d-flex justify-content-between align-items-center">
                             <div className="w-50 me-2">
                                 <input onChange={handleChangeTextColor} defaultValue={"#255ed1"} type="color" className="form-control p-0" name="" id="" />
-                                <small className="w-100 text-center d-block small">Text Color</small>
+                                <strong className="w-100 text-center d-block small">Text Color</strong>
                             </div>
                             <button className="btn text-white bg-primary-500 px-4  rounded-pill">Submit</button>
                         </div>

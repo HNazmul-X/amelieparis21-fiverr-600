@@ -30,7 +30,7 @@ function HomeContact() {
                 <div className="flex flex-col space-y-6">
                     <div className="flex flex-col space-y-2 text-oneCard-darkBlue">
                         <h3 className="">Adresse électronique</h3>
-                        <h2 className="text-xl font-bold">CONTACT@TRYDUS.CO</h2>
+                        <h2 className="text-xl font-bold">CONTACT@SERVER2.ONECARDPRO.COM</h2>
                     </div>
                 </div>
             </motion.div>

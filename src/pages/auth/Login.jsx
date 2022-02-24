@@ -51,24 +51,24 @@ const Login = () => {
                                         name="usernameOrEmail"
                                         placeholder="name@example.com"
                                     />
-                                    <label htmlFor="floatingInput">Username Or email *</label>
+                                    <label htmlFor="floatingInput">identifiant ou email *</label>
                                     {errors.usernameOrEmail?.type === "required" && <span className="d-block ps-3 text-danger text-start">Email or username is required</span>}
                                 </div>
 
                                 <div className="form-floating mb-4">
                                     <input type="password" {...register("password", { required: true })} className="form-control primary-input" id="floatingPassword" placeholder="Password" />
-                                    <label htmlFor="floatingPassword">Password *</label>
+                                    <label htmlFor="floatingPassword">Mot de passe *</label>
                                     {errors.password?.type === "required" && <span className="d-block ps-3 text-danger text-start">Password is required</span>}
                                 </div>
 
                                 <div className="d-flex py-3 align-items-center justify-content-center">
                                     <Link to="/signup" className="mb-3 btn createBtn">
-                                        Resister
+                                        Créer mon compte
                                     </Link>
-                                    <button className="logBtn btn mb-2">Login</button>
+                                    <button className="logBtn btn mb-2">se connecter</button>
                                 </div>
                                 <Link to={"/reset-pwd"} className="forget">
-                                    Forget Your Password ?
+                                    Mot de passe oublié ?
                                 </Link>
                             </form>
                         </div>
