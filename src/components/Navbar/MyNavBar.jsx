@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link as PageLink } from "react-router-dom";
+import { Link as PageLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../../assets/images/Asset 1.svg";
 import { Outlet } from "react-router-dom";
@@ -19,6 +19,7 @@ function MyNavBar() {
     const [sidebar, setSidebar] = useState(false);
     const [navbar, setNavbar] = useState(false);
     const auth = useAuth();
+    const navigate = useNavigate()
 
     const variants = {
         open: { opacity: 1, x: 0 },
@@ -88,15 +89,13 @@ function MyNavBar() {
                             ) : (
                                 <>
                                     <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
-                                        <PageLink
-                                            to="/login"
+                                        <button
                                             className="w-full  d-lg-block d-none py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                             onClick={() => {
-                                                setSidebar(false);
-                                                auth?.logoutUser();
+                                                navigate("create-card");
                                             }}>
                                             Créez votre Carte
-                                        </PageLink>
+                                        </button>
                                     </motion.div>
                                     <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
                                         <PageLink
@@ -202,15 +201,13 @@ function MyNavBar() {
                                 ) : (
                                     <>
                                         <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
-                                            <PageLink
-                                                to="/login"
-                                                className="w-full  d-lg-block d-none py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                            <button
+                                                className="w-full  py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                                 onClick={() => {
-                                                    setSidebar(false);
-                                                    auth?.logoutUser();
+                                                    navigate("create-card");
                                                 }}>
                                                 Créez votre Carte
-                                            </PageLink>
+                                            </button>
                                         </motion.div>
                                         <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
                                             <PageLink
@@ -220,7 +217,7 @@ function MyNavBar() {
                                                     setSidebar(false);
                                                     auth?.logoutUser();
                                                 }}>
-                                                LogOut
+                                                Se déconnecter
                                             </PageLink>
                                         </motion.div>
                                     </>
@@ -232,6 +229,7 @@ function MyNavBar() {
                     </motion.div>
                 </motion.div>
             </div>
+            {navbar && <div className="p-5 mt-3"></div>}
             <Outlet />
         </>
     );

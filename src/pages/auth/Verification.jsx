@@ -119,6 +119,7 @@ const Verification = () => {
                                     </form>
                                 </div>
                             </div>
+                            <div className="py-5"></div>
                         </div>
                     </div>
                 ) : (

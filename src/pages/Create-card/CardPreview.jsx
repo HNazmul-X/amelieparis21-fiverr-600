@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { CreateCardPageContext } from "./CreateCardPage";
 import qrCodeImage from "../../assets/images/Group.png";
 import blackQrCode from "../../assets/images/black-qr-code.png"
+import logo from "../../assets/images/Asset 1@2x.png"
+
 
 const CardPreview = () => {
     const { formStepId, cardLogo } = useContext(CreateCardPageContext);
@@ -16,11 +18,13 @@ const CardPreview = () => {
 
     return (
         <div id="realtime-making-card-preview-card">
-            <div className="card-cover">
+            <div className="card-cover" draggable={true}>
                 <div className={`preview-card__card ${formStepId}`}>
                     <div className={`card-front-side`} style={{ "--logo-scale": cardLogo?.front?.scale, backgroundImage: `url(${cardLogo?.card_base})` }}>
                         <div className="front__wrapper">
-                            <h1 className={`front__title ${formStepId}`}>One Card Pro</h1>
+                            <h1 className={`front__title ${formStepId}`}>
+                                <img style={{width:"150px",userSelect:"none"}} draggable={false} src={logo} alt="" />
+                            </h1>
                             {cardLogo?.front?.logo?.length > 2 && <img src={cardLogo?.front?.logo} alt="" className={`front__logo ${formStepId}`} />}
                         </div>
                     </div>

@@ -167,7 +167,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                       <div className="form-floating mb-3">
                           <input
                               type="text"
-                              {...register("additional_address", { required: true })}
+                              {...register("additional_address", { required: false })}
                               defaultValue={cardContextData?.cardDetails?.addition_address}
                               className="form-control primary-input"
                               id="floatingInput"
