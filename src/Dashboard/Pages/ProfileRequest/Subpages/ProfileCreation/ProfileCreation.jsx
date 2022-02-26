@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
+import { togglingNavbar } from "../../../../../Util/API_Info";
 import ProfileCreationMain from "../../components/ProfileCreationMain";
 
 const ProfileCreation = () => {
     useEffect(() => {
-        const navbar = document.querySelector("#homepage.onecardPro_navbar");
-        if (navbar) navbar.style.display = "none";
-
+        togglingNavbar("HIDE")
         return () => {
-            navbar.style.display = "block";
+            togglingNavbar("SHOW")
         };
     }, []);
 

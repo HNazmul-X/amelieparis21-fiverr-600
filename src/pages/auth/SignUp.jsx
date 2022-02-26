@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import CardRoundImage from "../../assets/images/group 23.png";
 import { UserContextData } from "../../Context/UserContext";
 import { apiBaseURL } from "../../Util/API_Info";
-import { renderToStaticMarkup } from "react-dom/server";
 
 const SignUp = () => {
     const {
@@ -39,7 +38,6 @@ const SignUp = () => {
         };
 
         const isDataValid = await axios.post(`${apiBaseURL}/api/auth/validate-signup-data`, dataForBackend);
-        console.log(isDataValid);
         if (isDataValid.data?.error) {
             setIsSpinnerShow(false);
             swal({
@@ -85,7 +83,7 @@ const SignUp = () => {
                             </div>
 
                             <form action="" onSubmit={handleSubmit(onSubmit)}>
-                                <h2 className="title mb-4 mt-5">Registration</h2>
+                                <h2 className="title mb-4 mt-5">Créer Mon Compte</h2>
 
                                 <div className="d-flex gap-3 mb-5">
                                     <div className="w-100 form-floating mt-3 ">

@@ -22,6 +22,7 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
     const [iconPopupShow, setIconPopupShow] = useState(false);
     const [selectedIcon, setSelectedIcon] = useState([]);
     const [error, setError] = useState({});
+    const [spinners, setSpinners] = useState({ delete: false, update: false, create: false });
     const { profileId } = useParams();
     const navigate = useNavigate();
     const auth = useAuth();
@@ -203,6 +204,7 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
             buttons: ["No", "yes"],
         }).then(async (value) => {
             if (value) {
+                setSpinners((prev) => ({ ...prev, delete: true }));
                 const r_data = await SecureFetch.post(`${apiBaseURL}/api/profile-template/delete-profile-template`, { templateId: id, userId });
                 if (r_data.success) {
                     swal("Done", "successfully Delete the Profile", "success").then(() => {
@@ -230,7 +232,7 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                             <button onClick={handleCancelProfileCreation} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
                                 Cancel
                             </button>
-                            <button onClick={() => handleProfileCreation("create")} className="create-profile btn btn-primary rounded-pill btn-lg px-5">
+                            <button onClick={() => handleProfileCreation("create")} className="create-profile btn btn-primary rounded-pill btn-lg px-4">
                                 Create Profile
                             </button>
                         </>
@@ -239,14 +241,24 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                             {auth?.user?.isAdmin && (
                                 <button
                                     onClick={() => handleDeletingProfile(templatedUser?.user?.profileTemplate, templatedUser?.user?._id)}
-                                    className="btn btn-danger rounded-pill btn-lg px-5 cancel">
+                                    className="btn btn-danger rounded-pill btn-lg px-4 cancel">
+                                    {spinners.delete && (
+                                        <div class="spinner-border spinner-border-sm me-2" role="status">
+                                            <span className="visually-hidden">Loading...</span>
+                                        </div>
+                                    )}
                                     Delete
                                 </button>
                             )}
-                            <button onClick={handleProfileCreation.bind(this, "update")} className="create-profile btn btn-primary rounded-pill btn-lg px-5">
-                                Updated
+                            <button onClick={handleProfileCreation.bind(this, "update")} className="create-profile btn btn-primary rounded-pill btn-lg px-4">
+                                {spinners.update && (
+                                    <div class="spinner-border spinner-border-sm me-2" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                )}
+                                Update
                             </button>
-                            <button className="btn-success btn rounded-pill px-5 fs-5" onClick={() => navigate("/u/" + templatedUser?.user?.username)}>
+                            <button className="btn-success btn rounded-pill px-4 fs-5" onClick={() => navigate("/u/" + templatedUser?.user?.username)}>
                                 Preview
                             </button>
                         </>

@@ -1,6 +1,6 @@
 import swal from "@sweetalert/with-react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component } from "react";
 import { useParams } from "react-router-dom";
 import { apiBaseURL } from "../../../Util/API_Info";
 import ProfileTemplate1 from "../Templates/ProfileTemplate1";
@@ -12,30 +12,16 @@ const ProfileTemplateProcess = () => {
     const { username } = useParams();
 
     useEffect(async () => {
-        const navbar = document.querySelector("#homepage.onecardPro_navbar");
-        try {
-            if (navbar) {
-                navbar.style.display = "none";
-            }
-            document.title = username + "'s Profile at one card pro";
-        } catch (e) {
-            swal("Error Happened", e.message, "error");
-        }
-
         axios
             .get(`${apiBaseURL}/api/profile-template/get-single-profile-by-username/${username}`)
             .then((data) => {
-                console.log(data)
+                console.log(data);
                 data.data.profileTemplate = data.data?.profileTemplate === undefined ? null : data?.data?.profileTemplate;
                 setTemplateDataWithUser(data.data);
             })
             .catch((error) => {
                 swal("ERROR", error.message, "error");
             });
-
-        return () => {
-            navbar.style.display = "block"
-        }
     }, []);
 
     //sharing profile

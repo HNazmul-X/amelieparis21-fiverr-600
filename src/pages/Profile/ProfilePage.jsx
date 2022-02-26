@@ -1,18 +1,20 @@
-import React from "react";
 import ProfileTemplateProcess from "./Section/ProfileTemplateProcess";
 
+import React, { Component } from "react";
+import { togglingNavbar } from "../../Util/API_Info";
 
+class ProfilePage extends Component {
+    componentDidMount() {
+        console.log(togglingNavbar("HIDE"));
+    }
 
+    componentWillUnmount() {
+        togglingNavbar("SHOW");
+    }
 
-
-const ProfilePage = () => {
-
-
-
-
-  return (
-    <ProfileTemplateProcess/>
-  );
-};
+    render() {
+        return <ProfileTemplateProcess />;
+    }
+}
 
 export default ProfilePage;

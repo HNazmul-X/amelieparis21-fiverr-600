@@ -108,8 +108,8 @@ function MyNavBar() {
                                             Se déconnecter
                                         </PageLink>
                                     </motion.div>
-                                    <PageLink to={`/profile-creation/${auth?.user?.profile}`}>
-                                        <InlineIcon icon={"gg:profile"} className="display-5" />
+                                    <PageLink to={auth?.user?.profileTemplate ? `/profile-creation/${auth?.user?.profile}` : `/u/${auth?.user?.username}`}>
+                                        <InlineIcon icon={"fa-solid:user-edit"} className="display-6" />
                                     </PageLink>
                                 </>
                             )}
@@ -229,10 +229,11 @@ function MyNavBar() {
                     </motion.div>
                 </motion.div>
             </div>
-            {navbar && <div className="p-5 mt-3"></div>}
+            {<div id="navbarSpacer3d1447cf-6762-464f-a561-d42f13ffed34" className={` ${navbar ? "p-5" : ""}`}></div>}
             <Outlet />
         </>
     );
 }
 
 export default MyNavBar;
+
