@@ -63,7 +63,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
                                 id="floatingInput_address"
                                 placeholder="name@example.com"
                             />
-                            <label htmlFor="floatingInput_address">Address</label>
+                            <label htmlFor="floatingInput_address">Adresse *</label>
                         </div>
                         <div className="text-end d-flex justify-content-between align-items-center">
                             <div className="w-50 me-2">

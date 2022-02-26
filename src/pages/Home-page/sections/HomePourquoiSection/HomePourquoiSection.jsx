@@ -6,6 +6,8 @@ import wirelaseIcon from "../../../../assets/images/wireless.ea231e98f185e874aff
 import pathIcon from "../../../../assets/images/infinite.6e794310bd63e994d8e74ab52aeb8177.svg";
 import specakIcon from "../../../../assets/images/speaker.d9119ff686478f695c84e3b1faccfce9.svg";
 import ecoIcon from "../../../../assets/images/Eco.f5cfaf56acbf48374227.png";
+import peopleIcon from "../../../../assets/images/people.svg"
+
 function HomePourquoiSection() {
   return (
     <>
@@ -66,7 +68,7 @@ function HomePourquoiSection() {
 
             <div className="flex items-center space-x-4">
               <div className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 p-3 bg-oneCard-blue bg-opacity-10 rounded-2xl sm:rounded-3xl text-oneCard-blue text-2xl space-y-4">
-                <img src={wirelaseIcon} alt="one card pro" />
+                <img src={peopleIcon} alt="one card pro" className="w-full" />
               </div>
               <div className="text-base sm:text-lg md:text-xl text-oneCard-darkBlue flex flex-col">
                 <h2 className="font-bold">Sauvegardez directement</h2>

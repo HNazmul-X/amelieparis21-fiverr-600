@@ -83,12 +83,12 @@ const CardDetails = ({ singleCardData }) => {
                     <div style={{ padding: "13px 62px 80px 65px" }}>
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>First name</p>
-                                <input type="text" defaultValue={singleCardData.firstname} readOnly />
+                                <p>Prénom</p>
+                                <input type="text" value={singleCardData.firstname} readOnly />
                             </div>
                             <div className="single-fild">
-                                <p>Last name</p>
-                                <input type="text" defaultValue={singleCardData.lastname} readOnly />
+                                <p>Nom *</p>
+                                <input type="text" value={singleCardData.lastname} readOnly />
                             </div>
                         </div>
                         <div className="details-container">
@@ -97,8 +97,8 @@ const CardDetails = ({ singleCardData }) => {
                                 <input type="text" defaultValue={singleCardData.email} readOnly />
                             </div>
                             <div className="single-fild">
-                                <p>Postal Code</p>
-                                <input type="text" defaultValue={singleCardData.postalCode} readOnly />
+                                <p>Code Postal</p>
+                                <input type="text" value={singleCardData.postalCode} readOnly />
                             </div>
                         </div>
                         <div className="details-container">
@@ -107,30 +107,30 @@ const CardDetails = ({ singleCardData }) => {
                                 <input type="text" defaultValue={singleCardData.society} readOnly />
                             </div>
                             <div className="single-fild">
-                                <p>City</p>
-                                <input type="text" defaultValue={singleCardData.city} readOnly />
+                                <p>Ville</p>
+                                <input type="text" value={singleCardData.city} readOnly />
                             </div>
                         </div>
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>Address</p>
-                                <input type="text" defaultValue={singleCardData.address} readOnly />
+                                <p>Adresse</p>
+                                <input type="text" value={singleCardData.address} readOnly />
                             </div>
                         </div>
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>Additional Address</p>
-                                <input type="text" defaultValue={singleCardData.additional_address} readOnly />
+                                <p>Adresse supplémentaire  </p>
+                                <input type="text" value={singleCardData.additional_address} readOnly />
                             </div>
                         </div>
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>Website</p>
-                                <input type="text" defaultValue={singleCardData.website} readOnly />
+                                <p>Site web *</p>
+                                <input type="text" value={singleCardData.website} readOnly />
                             </div>
                             <div className="single-fild">
-                                <p>Landing</p>
-                                <input type="text" defaultValue={singleCardData.landing} readOnly />
+                                <p>Take it off</p>
+                                <input type="text" value={singleCardData.landing} readOnly />
                             </div>
                         </div>
                         <div className="details-container">

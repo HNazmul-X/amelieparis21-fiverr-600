@@ -95,8 +95,8 @@ const SignUp = () => {
                                             id="floatingInput44"
                                             placeholder="name@example.com"
                                         />
-                                        <label htmlFor="floatingInput44">Prénom *</label>
-                                        {errors.firstName?.type === "required" && <span className="d-block ps-3 text-danger text-start">Prénom * is required</span>}
+                                        <label htmlFor="floatingInput44">Prénom</label>
+                                        {errors.firstName?.type === "required" && <span className="d-block ps-3 text-danger text-start">Prénom is required</span>}
                                     </div>
 
                                     <div className="w-100 form-floating mt-3 ">
@@ -108,8 +108,8 @@ const SignUp = () => {
                                             id="floatingInput1"
                                             placeholder="name@example.com"
                                         />
-                                        <label htmlFor="floatingInput1">Nom de famille *</label>
-                                        {errors.lastName?.type === "required" && <span className="d-block ps-3 text-danger text-start">Nom de famille * is required</span>}
+                                        <label htmlFor="floatingInput1">Nom*</label>
+                                        {errors.lastName?.type === "required" && <span className="d-block ps-3 text-danger text-start">Nom is required</span>}
                                     </div>
                                 </div>
 
@@ -207,8 +207,8 @@ const SignUp = () => {
                                         id="floatingPassword2324"
                                         placeholder="Password"
                                     />
-                                    <label htmlFor="floatingPassword2324">Adresse </label>
-                                    {errors.address?.type === "required" && <span className="d-block ps-3 text-danger text-start">Adresse is required</span>}
+                                    <label htmlFor="floatingPassword2324">Adresse *</label>
+                                    {errors.address?.type === "required" && <span className="d-block ps-3 text-danger text-start">Address is required</span>}
                                 </div>
 
                                 <div className="form-floating my-4">
@@ -220,7 +220,7 @@ const SignUp = () => {
                                         id="floatingPassword127"
                                         placeholder="Password"
                                     />
-                                    <label htmlFor="floatingPassword127">Adresse supplémentaire</label>
+                                    <label htmlFor="floatingPassword127">Adresse supplémentaire  </label>
                                 </div>
 
                                 <div className="d-flex gap-3">
@@ -246,7 +246,7 @@ const SignUp = () => {
                                             id="floatingPass324"
                                             placeholder="Password"
                                         />
-                                        <label htmlFor="floatingPass324">Ville</label>
+                                        <label htmlFor="floatingPass324">Ville *</label>
                                         {errors.city?.type === "required" && <span className="d-block ps-3 text-danger text-start">Ville is required</span>}
                                     </div>
                                 </div>
