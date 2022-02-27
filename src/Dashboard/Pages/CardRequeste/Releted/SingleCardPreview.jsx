@@ -71,11 +71,11 @@ const SingleCardPreview = ({}) => {
                     <div className="card-details-content">
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>First name</p>
+                                <p>Prénom</p>
                                 <input type="text" value={singleCardData.firstname} readOnly />
                             </div>
                             <div className="single-fild">
-                                <p>Last name</p>
+                                <p>Nom *</p>
                                 <input type="text" value={singleCardData.lastname} readOnly />
                             </div>
                         </div>
@@ -85,7 +85,7 @@ const SingleCardPreview = ({}) => {
                                 <input type="text" value={singleCardData.email} readOnly />
                             </div>
                             <div className="single-fild">
-                                <p>Postal Code</p>
+                                <p>Code Postal</p>
                                 <input type="text" value={singleCardData.postalCode} readOnly />
                             </div>
                         </div>
@@ -95,29 +95,29 @@ const SingleCardPreview = ({}) => {
                                 <input type="text" value={singleCardData.society} readOnly />
                             </div>
                             <div className="single-fild">
-                                <p>City</p>
+                                <p>Ville</p>
                                 <input type="text" value={singleCardData.city} readOnly />
                             </div>
                         </div>
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>Address</p>
+                                <p>Adresse</p>
                                 <input type="text" value={singleCardData.address} readOnly />
                             </div>
                         </div>
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>Additional Address</p>
+                                <p>Adresse supplémentaire  </p>
                                 <input type="text" value={singleCardData.additional_address} readOnly />
                             </div>
                         </div>
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>Website</p>
+                                <p>Site web *</p>
                                 <input type="text" value={singleCardData.website} readOnly />
                             </div>
                             <div className="single-fild">
-                                <p>Landing</p>
+                                <p>Take it off</p>
                                 <input type="text" value={singleCardData.landing} readOnly />
                             </div>
                         </div>

@@ -3,6 +3,7 @@ import { Link as PageLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../../assets/images/Asset 1.svg";
 import { Outlet } from "react-router-dom";
+import MyModal from './../MyModal/MyModal';
 
 const btnVariants = {
   hover: {
@@ -33,6 +34,16 @@ function MyNavBar() {
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
   }, []);
+
+
+  const handelOpenModal = () => {
+    const modal = document.getElementById("myModal")
+    modal.classList.toggle("d-none")
+  }
+  const handelClose = () => {
+    const modal = document.getElementById("myModal")
+    modal.classList.toggle("d-none")
+  }
   return (
       <>
           <div id="homepage" className="onecardPro_navbar">
@@ -45,7 +56,7 @@ function MyNavBar() {
                           <PageLink to="/" activeClass="active" className="navLink">
                               Accueil
                           </PageLink>
-                          <PageLink to="#" activeClass="active" className="navLink">
+                          <PageLink to="#" activeClass="active" className="navLink" onClick={handelOpenModal}>
                               Compatibilité
                           </PageLink>
                           <PageLink to="/create-card" activeClass="active" className="navLink">
@@ -147,6 +158,9 @@ function MyNavBar() {
               </motion.div>
           </div>
           <Outlet />
+          <div className="my-modal d-none" id="myModal">
+        <MyModal handelClose={handelClose} />
+      </div>
       </>
   );
 }

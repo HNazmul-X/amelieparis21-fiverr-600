@@ -81,17 +81,17 @@ const FormLoginPopup = () => {
                                     <div className="d-flex gap-3">
                                         <div className="w-100 form-floating mt-3 ">
                                             <input type="text" {...register("firstName", { required: true })} className="form-control unFatty-input" id="floatingInput" placeholder="name@example.com" />
-                                            <label htmlFor="floatingInput">First Name</label>
+                                            <label htmlFor="floatingInput">Prénom</label>
                                             {errors.firstName?.type === "required" && (
-                                                <span className="d-block ps-3 text-danger text-start">First Name is required</span>
+                                                <span className="d-block ps-3 text-danger text-start">Prénom is required</span>
                                             )}
                                         </div>
 
                                         <div className="w-100 form-floating mt-3 ">
                                             <input type="text" {...register("lastName", { required: true })} className="form-control unFatty-input" id="floatingInput" placeholder="name@example.com" />
-                                            <label htmlFor="floatingInput">Last Name</label>
+                                            <label htmlFor="floatingInput">Nom*</label>
                                             {errors.lastName?.type === "required" && (
-                                                <span className="d-block ps-3 text-danger text-start">Last Name is required</span>
+                                                <span className="d-block ps-3 text-danger text-start">Nom is required</span>
                                             )}
                                         </div>
                                     </div>
@@ -141,7 +141,7 @@ const FormLoginPopup = () => {
 
                                     <div className="form-floating mb-3">
                                         <input type="text" {...register("address", { required: true })} className="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label htmlFor="floatingPassword">Address</label>
+                                        <label htmlFor="floatingPassword">Adresse *</label>
                                         {errors.address?.type === "required" && (
                                             <span className="d-block ps-3 text-danger text-start">Address is required</span>
                                         )}
@@ -149,26 +149,26 @@ const FormLoginPopup = () => {
 
                                     <div className="form-floating mb-3">
                                         <input type="text" {...register("additionalAddress", { required: true })}  className="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                        <label htmlFor="floatingPassword">Additional Address</label>
+                                        <label htmlFor="floatingPassword">Adresse supplémentaire  </label>
                                         {errors.additionalAddress?.type === "required" && (
-                                            <span className="d-block ps-3 text-danger text-start">Additional Address is required</span>
+                                            <span className="d-block ps-3 text-danger text-start">Adresse supplémentaire   is required</span>
                                         )}
                                     </div>
 
                                     <div className="d-flex gap-3">
                                         <div className="w-100 form-floating mb-3">
                                             <input type="text" {...register("postalCode", { required: true })} className="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                            <label htmlFor="floatingPassword">Postal code</label>
+                                            <label htmlFor="floatingPassword">Code Postal</label>
                                             {errors.postalCode?.type === "required" && (
-                                                <span className="d-block ps-3 text-danger text-start">Postal Code is required</span>
+                                                <span className="d-block ps-3 text-danger text-start">Code Postal is required</span>
                                             )}
                                         </div>
 
                                         <div className="w-100 form-floating mb-3">
                                             <input {...register("city", { required: true })} type="text" className="form-control unFatty-input" id="floatingPassword" placeholder="Password" />
-                                            <label htmlFor="floatingPassword">City</label>
+                                            <label htmlFor="floatingPassword">Ville *</label>
                                             {errors.city?.type === "required" && (
-                                                <span className="d-block ps-3 text-danger text-start">City is required</span>
+                                                <span className="d-block ps-3 text-danger text-start">Ville is required</span>
                                             )}
                                         </div>
                                     </div>

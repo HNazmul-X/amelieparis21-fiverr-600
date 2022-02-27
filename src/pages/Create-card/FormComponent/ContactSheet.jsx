@@ -41,10 +41,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">First Name</label>
+                <label for="floatingInput">Prénom</label>
                 {errors.firstName && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    First Name is required
+                    Prénom is required
                   </span>
                 )}
               </div>
@@ -58,10 +58,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Last Name</label>
+                <label for="floatingInput">Nom*</label>
                 {errors.lastName && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    Last Name is required
+                    Nom is required
                   </span>
                 )}
               </div>
@@ -76,7 +76,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                 id="floatingInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Email</label>
+              <label for="floatingInput">Email *</label>
               {errors.email && (
                 <span className="d-block ps-3 small text-danger text-start">
                   Email is required
@@ -94,10 +94,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Company</label>
+                <label for="floatingInput">Société</label>
                 {errors.company && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    Company is required
+                    Société is required
                   </span>
                 )}
               </div>
@@ -129,10 +129,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Website</label>
+                <label for="floatingInput">Site web *</label>
                 {errors.website && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    Website is required
+                    Site web  is required
                   </span>
                 )}
               </div>
@@ -146,10 +146,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Landing</label>
+                <label for="floatingInput">Take it off</label>
                 {errors.landing && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    Landing is required
+                    Take it off is required
                   </span>
                 )}
               </div>
@@ -200,7 +200,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                 id="floatingInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Address</label>
+              <label for="floatingInput">Adresse *</label>
               {errors.address && (
                 <span className="d-block ps-3 small text-danger text-start">
                   Address is required
@@ -217,10 +217,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                 id="floatingInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Additional Address</label>
+              <label for="floatingInput">Adresse supplémentaire  </label>
               {errors.addition_address && (
                 <span className="d-block ps-3 small text-danger text-start">
-                  Additional Address is required
+                  Adresse supplémentaire is required
                 </span>
               )}
             </div>
@@ -235,10 +235,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Postal code</label>
+                <label for="floatingInput">Code Postal</label>
                 {errors.postalCode && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    Postal Code is required
+                    Code Postal is required
                   </span>
                 )}
               </div>
@@ -252,10 +252,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">City</label>
+                <label for="floatingInput">Ville *</label>
                 {errors.city && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    City is required
+                    Ville is required
                   </span>
                 )}
               </div>
@@ -270,18 +270,18 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Country</label>
+                <label for="floatingInput">Pays *</label>
                 {errors.country && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    Country is required
+                    Pays is required
                   </span>
                 )}
               </div>
             </div>
 
             <div className="btnGroup mt-3 d-flex justify-content-center">
-              <button className="btn">Return</button>
-              <button className="btn">Following</button>
+              <button className="btn">Précédent  </button>
+              <button className="btn">Suivant</button>
             </div>
           </form>
         </div>
