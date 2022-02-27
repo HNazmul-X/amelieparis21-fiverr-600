@@ -198,7 +198,7 @@ const OrderValidation = () => {
                   placeholder="name@example.com"
                   {...register("society", { required: true })}
                 />
-                <label for="floatingInput">Society</label>
+                <label htmlFor="floatingInput">Society</label>
                 {errors.society?.type === "required" && (
                   <span className="text-danger ">Society is required</span>
                 )}
@@ -294,7 +294,7 @@ const OrderValidation = () => {
                 />
                 <label
                   className="form-check-label check_box_label mb-3"
-                  for="b_checkbox"
+                  htmlFor="b_checkbox"
                 >
                   Mon adresse de facturation est la même
                 </label>
@@ -348,7 +348,7 @@ const OrderValidation = () => {
                       required: sameBillingAddress ? false : true,
                     })}
                   />
-                  <label for="floatingInput">Society</label>
+                  <label htmlFor="floatingInput">Society</label>
                   {errors.b_society?.type === "required" && (
                     <span className="text-danger ">Society is required</span>
                   )}
@@ -449,7 +449,7 @@ const OrderValidation = () => {
                       required: sameBillingAddress ? false : true,
                     })}
                   />
-                  <label for="floatingInput">Phone</label>
+                  <label htmlFor="floatingInput">Phone</label>
                   {errors.b_phone?.type === "required" && (
                     <span className="text-danger ">Phone is required</span>
                   )}
@@ -464,7 +464,7 @@ const OrderValidation = () => {
                   placeholder="name@example.com"
                   {...register("comment_on", { required: true })}
                 />
-                <label for="floatingInput">Comment On this Commance</label>
+                <label htmlFor="floatingInput">Comment On this Commance</label>
                 {errors.comment_on?.type === "required" && (
                   <span className="text-danger ">
                     Comment On this Commance is required
@@ -481,7 +481,7 @@ const OrderValidation = () => {
                   placeholder="name@example.com"
                   {...register("promoCode")}
                 />
-                <label for="floatingInput">Promo Code</label>
+                <label htmlFor="floatingInput">Promo Code</label>
               </div>
             </div>
 

@@ -32,7 +32,7 @@ import pinterestFill from "@iconify/icons-akar-icons/pinterest-fill";
 
 import { apiBaseURL } from "../../../Util/API_Info";
 
-function ProfileTemplate3({ data, onShare }) {
+function ProfileTemplate3({ data, onShare, addToContact }) {
     const baseurl = apiBaseURL;
 
     const social = {
@@ -136,6 +136,7 @@ function ProfileTemplate3({ data, onShare }) {
 
                 <div className="add-contact-btn">
                     <button
+                        onClick={addToContact}
                         style={{
                             background: `${data?.colors?.button?.bg}`,
                             color: `${data?.colors?.button?.color}`,
@@ -145,7 +146,6 @@ function ProfileTemplate3({ data, onShare }) {
                     </button>
                 </div>
                 <div className="about">
-                    <h3>About {data.personalInfo?.name || "Skoda"}</h3>
                     <p>{data.personalInfo?.about || "Škoda Auto a.s., often shortened to Škoda, is a Czech automobile manufacturer founded in 1895"}</p>
                 </div>
             </div>

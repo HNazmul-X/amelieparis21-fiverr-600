@@ -186,12 +186,13 @@ h6 {
 
 html {
   width: 100%;
-  overflow-x: hidden;
 }
 
 body {
   background: #f0f6ff;
   color: #57697d;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
@@ -787,7 +788,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0.55rem 2rem;
-  width: 100%;
+  width: 100vw;
 }
 @media (min-width: 640px) {
   #homepage .stickyNavbarStyles {
@@ -3019,7 +3020,6 @@ body {
 @media screen and (max-width: 768px) {
   #login_area #loginPopup {
     width: 500px;
-    margin-left: -83px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -3892,7 +3892,7 @@ body {
 }
 
 .profile-template-1 {
-  width: 375px;
+  min-width: 375px;
   margin: auto;
   background-color: #fff;
 }
@@ -4096,7 +4096,7 @@ body {
 }
 
 .profile-2-conatiner {
-  width: 375px;
+  min-width: 375px;
   margin: auto;
   background-color: #fff;
   --purple-600: #8a3efe;
@@ -4186,6 +4186,7 @@ body {
   word-break: break-all;
   line-height: 15px;
   font-size: 15px;
+  color: var(--text);
 }
 @media screen and (max-width: 576px) {
   .profile-2-conatiner .contact-section .single-contact svg {
@@ -4235,7 +4236,7 @@ body {
   padding-left: 8px;
   font-size: 15px;
   font-weight: 500;
-  color: var(--text);
+  color: var(--text) !important;
 }
 .profile-2-conatiner .contact-inner .add-contact-button {
   background-image: linear-gradient(91.54deg, #8a3efe -1.94%, #4d00c4 100%);
@@ -4359,12 +4360,11 @@ body {
   text-align: center;
 }
 .profile-template-3 .contact a svg {
-  font-size: 36px;
-  padding: 7px;
+  padding: 8px;
   border: 1px solid var(--red-700);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   color: var(--red-700);
 }
 .profile-template-3 .contact a p {
@@ -4540,7 +4540,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 26%;
+  width: 21%;
 }
 .single-card-preview .front-side .logo img {
   width: 100%;
@@ -4621,9 +4621,11 @@ body {
   transition: all 0.4s linear;
 }
 .card-details .card-details-content {
-  padding: 13px 62px 80px 65px;
   background-color: #f7faff;
   box-shadow: 6px 17px 25px rgba(87, 105, 125, 0.07), 0px 4px 10px rgba(87, 105, 125, 0.14), 4px 0px 37px -6px rgba(87, 105, 125, 0.12);
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.5s;
 }
 .card-details .card-details-content .details-container {
   display: flex;

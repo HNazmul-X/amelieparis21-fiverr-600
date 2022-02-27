@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
-import MyNavBar from '../components/Navbar/MyNavBar';
+import MyNavBar from "../components/Navbar/MyNavBar";
 import DashboardLayout from "../Dashboard/Components/DashboardLayout";
 import CreateCardPage from "../pages/Create-card/CreateCardPage";
 import FaqPage from "../pages/Faq-page/FaqPage";
@@ -29,10 +29,10 @@ import NewPwd from "../pages/auth/NewPwd";
 import AdminPrivateRoute from "./AdminPrivateRoute";
 import CreatedProfile from "../Dashboard/Pages/ProfileRequest/Subpages/CreatedProfile/CreatedProfile";
 import PendingProfile from "../Dashboard/Pages/ProfileRequest/Subpages/RejectedProfile/PendingProfile";
-
+import ProfileTemplateContext from "../Context/ProfileTemplateContext";
+import EditProfileTemplate from "../pages/EditProfileTemplate/EditProfileTemplate";
 
 const NavbarRouter = () => {
-
     return (
         <Routes>
             {/* Admin Login */}
@@ -57,6 +57,7 @@ const NavbarRouter = () => {
                     <Route path="create-card" element={<CreateCardPage />} />
                     <Route path="/card-status/:cardId" element={<CardStatus />} />
                     <Route path="faq" element={<FaqPage />} />
+                    <Route path="profile-creation/:profileId" element={<EditProfileTemplate />} />
                 </Route>
             </Route>
 

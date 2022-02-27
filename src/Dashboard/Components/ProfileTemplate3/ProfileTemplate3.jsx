@@ -147,7 +147,6 @@ function ProfileTemplate3() {
                     </button>
                 </div>
                 <div className="about">
-                    <h3>About {userInfo?.name || "Skoda"}</h3>
                     <p>{userInfo?.address || "Škoda Auto a.s., often shortened to Škoda, is a Czech automobile manufacturer founded in 1895"}</p>
                 </div>
             </div>

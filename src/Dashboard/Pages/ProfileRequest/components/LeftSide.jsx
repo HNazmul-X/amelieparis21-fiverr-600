@@ -24,6 +24,7 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
     const [error, setError] = useState({});
     const { profileId } = useParams();
     const navigate = useNavigate();
+    const auth = useAuth();
 
     // useEffects
     useEffect(async () => {
@@ -235,11 +236,18 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                         </>
                     ) : (
                         <>
-                            <button onClick={() => handleDeletingProfile(templatedUser?.user?.profileTemplate, templatedUser?.user?._id)} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
-                                Delete
-                            </button>
+                            {auth?.user?.isAdmin && (
+                                <button
+                                    onClick={() => handleDeletingProfile(templatedUser?.user?.profileTemplate, templatedUser?.user?._id)}
+                                    className="btn btn-danger rounded-pill btn-lg px-5 cancel">
+                                    Delete
+                                </button>
+                            )}
                             <button onClick={handleProfileCreation.bind(this, "update")} className="create-profile btn btn-primary rounded-pill btn-lg px-5">
                                 Updated
+                            </button>
+                            <button className="btn-success btn rounded-pill px-5 fs-5" onClick={() => navigate("/u/" + templatedUser?.user?.username)}>
+                                Preview
                             </button>
                         </>
                     )}

@@ -1,16 +1,17 @@
 import swal from "@sweetalert/with-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { SecureFetch } from "../../../../Util/SecureFetch";
 import { InlineIcon } from "@iconify/react";
 import qrCodeImage from "../../../../assets/images/Group.png";
 import blackQrCode from "../../../../assets/images/black-qr-code.png";
 import { apiBaseURL } from "../../../../Util/API_Info";
-import DarkCardLogo from "../../../../assets/images/Asset 2.svg";
+import WhiteLogo from "../../../../assets/images/Asset 2.svg";
+import DarkCardLogo from "../../../../assets/images/Asset 1.svg";
+import axios from "axios";
 
 const SingleCardPreview = ({}) => {
     const [singleCardData, setSingleCardData] = useState({});
-    const [showDetails, setShowDetails] = useState(false);
     const [isLightCardBase, setIsLightCardBase] = useState(false);
     const { cardId } = useParams();
     const baseurl = apiBaseURL;
@@ -37,7 +38,7 @@ const SingleCardPreview = ({}) => {
                         <img src={apiBaseURL + singleCardData?.frontSide?.logo} alt="" />
                     </div>
                     <div className={`one-card-logo ${isLightCardBase ? "text-secondary" : ""}`}>
-                        <img src={DarkCardLogo} alt="" />
+                        <img src={isLightCardBase ? DarkCardLogo : WhiteLogo} alt="" />
                     </div>
                     <div className={`icon ${isLightCardBase ? "text-secondary" : ""}`}>
                         <InlineIcon icon="akar-icons:wifi" />
@@ -61,14 +62,25 @@ const SingleCardPreview = ({}) => {
                     </div>
                 </div>
             </div>
+            <CardDetails singleCardData={singleCardData} />
+            <DeliveryInfo cardId={cardId} />
+        </>
+    );
+};
 
-            <div className="px-5">
-                <div className="card-details" onClick={() => setShowDetails(!showDetails)}>
-                    <div className="header">
-                        <p>Card Details</p>
-                        <InlineIcon className={`right-arrow ${showDetails ? "active-arrow" : ""}`} icon="ep:arrow-right" />
-                    </div>
-                    <div className="card-details-content">
+const CardDetails = ({ singleCardData }) => {
+    const [showDetails, setShowDetails] = useState(false);
+    const innerElement = useRef(null);
+
+    return (
+        <div className="px-5">
+            <div className="card-details shadow-lg mb-3" onClick={() => setShowDetails(!showDetails)}>
+                <div className="header">
+                    <p>Card Details</p>
+                    <InlineIcon className={`right-arrow ${showDetails ? "active-arrow" : ""}`} icon="ep:arrow-right" />
+                </div>
+                <div className="card-details-content shadow-none" style={{ maxHeight: showDetails ? innerElement.current.scrollHeight : 0 + "px" }} ref={innerElement}>
+                    <div style={{ padding: "13px 62px 80px 65px" }}>
                         <div className="details-container">
                             <div className="single-fild">
                                 <p>Prénom</p>
@@ -82,7 +94,7 @@ const SingleCardPreview = ({}) => {
                         <div className="details-container">
                             <div className="single-fild">
                                 <p>Email</p>
-                                <input type="text" value={singleCardData.email} readOnly />
+                                <input type="text" defaultValue={singleCardData.email} readOnly />
                             </div>
                             <div className="single-fild">
                                 <p>Code Postal</p>
@@ -92,7 +104,7 @@ const SingleCardPreview = ({}) => {
                         <div className="details-container">
                             <div className="single-fild">
                                 <p>Socity</p>
-                                <input type="text" value={singleCardData.society} readOnly />
+                                <input type="text" defaultValue={singleCardData.society} readOnly />
                             </div>
                             <div className="single-fild">
                                 <p>Ville</p>
@@ -124,17 +136,149 @@ const SingleCardPreview = ({}) => {
                         <div className="details-container">
                             <div className="single-fild">
                                 <p>Position</p>
-                                <input type="text" value={singleCardData.position} readOnly />
+                                <input type="text" defaultValue={singleCardData.position} readOnly />
                             </div>
                             <div className="single-fild">
                                 <p>Phone</p>
-                                <input type="text" value={singleCardData.phone} readOnly />
+                                <input type="text" defaultValue={singleCardData.phone} readOnly />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
+    );
+};
+
+const DeliveryInfo = ({ cardId }) => {
+    const [deliveryInfo, setDeliveryInfo] = useState({});
+    const [showDetails, setShowDetails] = useState(false);
+    const innerElement = useRef(null);
+
+    useEffect(async () => {
+        try {
+            SecureFetch.get(`${apiBaseURL}/api/card/get-card-delivery-info/${cardId}`)
+                .then((res) => setDeliveryInfo(res))
+                .catch((e) => swal("error", e.message, "error"));
+        } catch (e) {
+            swal("Error", e.message, "error");
+        }
+    }, []);
+
+    return (
+        <div className="px-5">
+            <div className="card-details shadow-lg mb-5 mt-0">
+                <div className="header" onClick={() => setShowDetails(!showDetails)}>
+                    <p>Delivery Details</p>
+                    <InlineIcon className={`right-arrow ${showDetails ? "active-arrow" : ""}`} icon="ep:arrow-right" />
+                </div>
+                <div className="card-details-content shadow-none" style={{ maxHeight: showDetails ? innerElement.current.scrollHeight : 0 + "px" }} ref={innerElement}>
+                    <div style={{ padding: "13px 62px 80px 65px" }}>
+                        <div className="">
+                            <div className="py-2 border border-4 px-3">
+                                <div className="text-start mt-2 mb-4">
+                                    <h5 className="">Delivery Info</h5>
+                                </div>
+                                <div className="details-container">
+                                    <div className="single-fild">
+                                        <p>First Name</p>
+                                        <input type="text" defaultValue={deliveryInfo?.deliver_info?.firstname} readOnly />
+                                    </div>
+                                    <div className="single-fild">
+                                        <p>Last Name</p>
+                                        <input type="text" defaultValue={deliveryInfo?.deliver_info?.lastname} readOnly />
+                                    </div>
+                                </div>
+                                <div className="details-container">
+                                    <div className="single-fild">
+                                        <p>Address</p>
+                                        <input type="text" defaultValue={deliveryInfo?.deliver_info?.address} readOnly />
+                                    </div>
+                                    <div className="single-fild">
+                                        <p>Additional Address</p>
+                                        <input type="text" defaultValue={deliveryInfo?.deliver_info?.additional_address} readOnly />
+                                    </div>
+                                </div>
+                                <div className="details-container">
+                                    <div className="single-fild">
+                                        <p>Society</p>
+                                        <input type="text" defaultValue={deliveryInfo?.deliver_info?.society} readOnly />
+                                    </div>
+                                    <div className="single-fild">
+                                        <p>Phone</p>
+                                        <input type="text" defaultValue={deliveryInfo?.deliver_info?.phone} readOnly />
+                                    </div>
+                                    <div className="single-fild">
+                                        <p>Postal Code</p>
+                                        <input type="text" defaultValue={deliveryInfo?.deliver_info?.postalCode} readOnly />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="py-2 border-4 border px-3 mt-5">
+                                <div className="text-start mt-2 mb-4">
+                                    <h5 className="">Billing Info</h5>
+                                </div>
+                                {deliveryInfo.is_billing_same ? (
+                                    <>
+                                        <div className="p-5">
+                                            <h4 className="fw-bold text-center">Billing Same as Delivery</h4>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="details-container">
+                                            <div className="single-fild">
+                                                <p>First Name</p>
+                                                <input type="text" defaultValue={deliveryInfo?.billing_info?.firstname} readOnly />
+                                            </div>
+                                            <div className="single-fild">
+                                                <p>Last Name</p>
+                                                <input type="text" defaultValue={deliveryInfo?.billing_info?.lastname} readOnly />
+                                            </div>
+                                        </div>
+                                        <div className="details-container">
+                                            <div className="single-fild">
+                                                <p>Address</p>
+                                                <input type="text" defaultValue={deliveryInfo?.billing_info?.address} readOnly />
+                                            </div>
+                                            <div className="single-fild">
+                                                <p>Additional Address</p>
+                                                <input type="text" defaultValue={deliveryInfo?.billing_info?.additional_address} readOnly />
+                                            </div>
+                                        </div>
+                                        <div className="details-container">
+                                            <div className="single-fild">
+                                                <p>Society</p>
+                                                <input type="text" defaultValue={deliveryInfo?.billing_info?.society} readOnly />
+                                            </div>
+                                            <div className="single-fild">
+                                                <p>Phone</p>
+                                                <input type="text" defaultValue={deliveryInfo?.billing_info?.phone} readOnly />
+                                            </div>
+                                            <div className="single-fild">
+                                                <p>Postal Code</p>
+                                                <input type="text" defaultValue={deliveryInfo?.billing_info?.postalCode} readOnly />
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                            <div className="py-2 border-4 border px-3 mt-5">
+                                <div className="text-start mt-2 mb-4">
+                                    <h5 className="">Other Info</h5>
+                                </div>
+                                <div className="details-container">
+                                    <div className="single-fild">
+                                        <p>Order Date</p>
+                                        <input type="text" defaultValue={new Date(deliveryInfo?.orderDate).toUTCString()} readOnly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 
