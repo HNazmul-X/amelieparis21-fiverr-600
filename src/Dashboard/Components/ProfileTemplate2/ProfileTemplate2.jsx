@@ -87,7 +87,7 @@ export default function ProfileTemplate2() {
                         {userInfo?.links.map((data) => (
                             <a
                                 key={data?.id}
-                                href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "telephone" ? "tel+" : ""}${data?.link}`}
+                                href={`${data?.link}`}
                                 target="_blank"
                                 className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
                                 <InlineIcon icon={social[data?.name]} />

@@ -106,7 +106,7 @@ function ProfileTemplate1() {
                 </button>
                 <div className="social-container">
                     {userInfo?.links.map((data,index) => (
-                        <a key={index} href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : ""}${data?.link}`} target="_blank" className="signle-social-link">
+                        <a key={index} href={`${data?.link}`} target="_blank" className="signle-social-link">
                             <div className="left">
                                 <img src={social[data?.name]} alt={""} />
                                 <div>

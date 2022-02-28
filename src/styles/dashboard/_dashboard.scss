@@ -10,7 +10,7 @@
         overflow: hidden;
         min-height: 100vh;
 
-        --menubar-width: 230px;
+        --menubar-width: 290px;
         --navbar-height: 70px;
 
         .dashboard__layout__side__menu__bar {
@@ -46,6 +46,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: end;
+                border: 2px solid $grey-200;
+                border-width: 0px 0px 2px 0px;
+
                 .search_wrapper {
                     width: 331px;
                     cursor: pointer;

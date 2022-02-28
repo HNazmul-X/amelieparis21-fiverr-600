@@ -2,6 +2,7 @@ export const allSocialsIcons = [
     {
         id: "a0597848-7fff-412a-a7f3-46568d4bf6ea",
         name: "facebook",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g fill="none">
@@ -18,6 +19,7 @@ export const allSocialsIcons = [
     {
         id: "04c41745-a0f1-4ac8-9b0d-db1d5c349ecb",
         name: "twitter",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g fill="none">
@@ -32,6 +34,7 @@ export const allSocialsIcons = [
     {
         id: "84ec2532-0334-4962-b09f-06b325470f50",
         name: "whatsapp",
+        prefix: "https://wa.me/",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g fill="none">
@@ -46,10 +49,11 @@ export const allSocialsIcons = [
     {
         id: "1f981cf8-194f-4724-865c-8c6533600926",
         name: "youtube",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g fill="none">
-                    <g clip-path="url(#clip0_100_7)">
+                    <g clipPath="url(#clip0_100_7)">
                         <path
                             d="M23.5 6.507a2.786 2.786 0 0 0-.766-1.27a3.05 3.05 0 0 0-1.338-.742C19.518 4 11.994 4 11.994 4a76.624 76.624 0 0 0-9.39.47a3.16 3.16 0 0 0-1.338.76c-.37.356-.638.795-.778 1.276A29.09 29.09 0 0 0 0 12c-.012 1.841.151 3.68.488 5.494c.137.479.404.916.775 1.269c.371.353.833.608 1.341.743c1.903.494 9.39.494 9.39.494a76.8 76.8 0 0 0 9.402-.47a3.05 3.05 0 0 0 1.338-.742c.37-.353.633-.792.765-1.27A28.38 28.38 0 0 0 24 12.023a26.579 26.579 0 0 0-.5-5.517zM9.602 15.424V8.577l6.26 3.424l-6.26 3.423z"
                             fill="currentColor"
@@ -62,6 +66,7 @@ export const allSocialsIcons = [
     {
         id: "78d4d1dd-7548-49ad-9e19-a6844e9d8a07",
         name: "microsoft ",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M11.55 21H3v-8.55h8.55V21zM21 21h-8.55v-8.55H21V21zm-9.45-9.45H3V3h8.55v8.55zm9.45 0h-8.55V3H21v8.55z" fill="currentColor" />
@@ -71,6 +76,7 @@ export const allSocialsIcons = [
     {
         id: "808942ce-f8ec-4a00-acfe-f2e433e959f3",
         name: "discord",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g fill="none">
@@ -85,6 +91,7 @@ export const allSocialsIcons = [
     {
         id: "2f311606-4e5a-459c-ac2f-71c8d1e3214f",
         name: "amazon",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                 <path
@@ -97,6 +104,7 @@ export const allSocialsIcons = [
     {
         id: "d5a7f731-9b52-4405-be4e-b0de7aff43dc",
         name: "snapchat",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                 <path
@@ -109,6 +117,7 @@ export const allSocialsIcons = [
     {
         id: "9eba5a84-7e23-46ca-b946-64eac84552fc",
         name: "vimeo",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
                 <path
@@ -121,6 +130,7 @@ export const allSocialsIcons = [
     {
         id: "3fcbf856-6548-4f1e-b7e3-bf0b24cef75e",
         name: "apple",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                 <path
@@ -133,12 +143,13 @@ export const allSocialsIcons = [
     {
         id: "a74be0f7-c451-4e72-93eb-7514818dd243",
         name: "telegram",
+        prefix: "https://t.me/",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g fill="none">
                     <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                        fillRule="evenodd"
+                        clipRule="evenodd"
                         d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12S5.373 0 12 0s12 5.373 12 12zM12.43 8.859c-1.167.485-3.5 1.49-6.998 3.014c-.568.226-.866.447-.893.663c-.046.366.412.51 1.034.705c.085.027.173.054.263.084c.613.199 1.437.432 1.865.441c.389.008.823-.152 1.302-.48c3.268-2.207 4.955-3.322 5.061-3.346c.075-.017.179-.039.249.024c.07.062.063.18.056.212c-.046.193-1.84 1.862-2.77 2.726c-.29.269-.495.46-.537.504c-.094.097-.19.19-.282.279c-.57.548-.996.96.024 1.632c.49.323.882.59 1.273.856c.427.291.853.581 1.405.943c.14.092.274.187.405.28c.497.355.944.673 1.496.623c.32-.03.652-.331.82-1.23c.397-2.126 1.179-6.73 1.36-8.628a2.111 2.111 0 0 0-.02-.472a.506.506 0 0 0-.172-.325c-.143-.117-.365-.142-.465-.14c-.451.008-1.143.249-4.476 1.635z"
                         fill="currentColor"
                     />
@@ -149,6 +160,7 @@ export const allSocialsIcons = [
     {
         id: "ef83094a-85ea-41ab-8f5f-fb0727c3308e",
         name: "skype",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                 <path
@@ -161,6 +173,7 @@ export const allSocialsIcons = [
     {
         id: "a92e581e-3340-4e8b-854d-cfe0bb902d02",
         name: "dribbble",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                 <path
@@ -173,6 +186,7 @@ export const allSocialsIcons = [
     {
         id: "f7474a33-6fa0-418e-a54d-ec2ecc5f8d1d",
         name: "blogger",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
                 <path
@@ -185,6 +199,7 @@ export const allSocialsIcons = [
     {
         id: "00796460-c30c-41d4-892d-0ee21c63eb33",
         name: "behance",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                 <path
@@ -197,6 +212,7 @@ export const allSocialsIcons = [
     {
         id: "c7a23846-ae7e-4bb0-9fd3-7bda3fe39bcf",
         name: "instagram",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <g fill="currentColor">
@@ -208,6 +224,7 @@ export const allSocialsIcons = [
     {
         id: "c9a1b375-1fe6-4bd7-8ab1-08ecf1a8acbd",
         name: "pinterest",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g fill="currentColor">
@@ -222,6 +239,7 @@ export const allSocialsIcons = [
     {
         id: "7e8dff49-1756-46f3-8282-46aada538d0d",
         name: "linkedin",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <g fill="currentColor">
@@ -233,6 +251,7 @@ export const allSocialsIcons = [
     {
         id: "7419104f-3a2d-4a07-b206-2c3efe9f3aea",
         name: "tiktok",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <g fill="currentColor">
@@ -244,6 +263,7 @@ export const allSocialsIcons = [
     {
         id: "fcf21fc3-1e0f-4859-a57e-41470fb7f38a",
         name: "github",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                 <g fill="currentColor">
@@ -255,6 +275,7 @@ export const allSocialsIcons = [
     {
         id: "fcf21fc3-1e0f-43359-a57e-41470fb7f38a",
         name: "website",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
@@ -267,6 +288,7 @@ export const allSocialsIcons = [
     {
         id: "e12a4bdc-8539-42ff-ae68-2d0fdb7d45a5",
         name: "phone",
+        prefix: "tel:",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">
                 <path
@@ -279,23 +301,24 @@ export const allSocialsIcons = [
     {
         id: "83251074-5f1b-4596-abb2-89217e4f7e3d",
         name: "telephone",
+        prefix: "tel:",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 63.99">
                 <defs></defs>
                 <g id="Layer_2" data-name="Layer 2">
                     <g id="OBJECTS">
-                        <path fill="currentColor" class="cls-1" d="M19.74,25.78c0-13,12.28-12.73,17.26-12.73s17.25-.27,17.25,12.73H73.61S79.42,0,37,0,.38,25.78.38,25.78Z" />
-                        <rect fill="currentColor" class="cls-1" y="27.78" width="20" height="4" />
-                        <rect fill="currentColor" class="cls-1" x="54" y="27.78" width="20" height="4" />
+                        <path fill="currentColor" className="cls-1" d="M19.74,25.78c0-13,12.28-12.73,17.26-12.73s17.25-.27,17.25,12.73H73.61S79.42,0,37,0,.38,25.78.38,25.78Z" />
+                        <rect fill="currentColor" className="cls-1" y="27.78" width="20" height="4" />
+                        <rect fill="currentColor" className="cls-1" x="54" y="27.78" width="20" height="4" />
                         <path
                             fill="currentColor"
-                            class="cls-1"
+                            className="cls-1"
                             d="M51.29,32.45c0,1.3,0,2.65,0,4,0,11.12-6.41,20.13-14.32,20.13s-14.32-9-14.32-20.13c0-1.47,0-2.91,0-4.3A35.82,35.82,0,0,0,.92,64H72.49A35.82,35.82,0,0,0,51.29,32.45Z"
                         />
-                        <path fill="currentColor" class="cls-1" d="M51.29,32.45c-.19-9.19-1.75-16.1-14.29-16.1S22.93,23.13,22.71,32.18a35.83,35.83,0,0,1,28.58.27Z" />
+                        <path fill="currentColor" className="cls-1" d="M51.29,32.45c-.19-9.19-1.75-16.1-14.29-16.1S22.93,23.13,22.71,32.18a35.83,35.83,0,0,1,28.58.27Z" />
                         <path
                             fill="currentColor"
-                            class="cls-1"
+                            className="cls-1"
                             d="M37,56.61c7.91,0,14.32-9,14.32-20.13,0-1.38,0-2.73,0-4a35.83,35.83,0,0,0-28.58-.27c0,1.39,0,2.83,0,4.3C22.68,47.6,29.09,56.61,37,56.61Zm0-19.55a9.7,9.7,0,1,1-9.7,9.69A9.69,9.69,0,0,1,37,37.06Z"
                         />
                     </g>
@@ -306,14 +329,15 @@ export const allSocialsIcons = [
     {
         id: "04255219-6fd5-43cc-abbb-9cf92bcdd2e4",
         name: "email",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 106">
                 <g id="Layer_2" data-name="Layer 2">
                     <g id="OBJECTS">
-                        <circle stroke="currentColor" strokeWidth={5} fill="transparent" class="cls-1" cx="53" cy="53" r="51" transform="translate(-7.26 97.57) rotate(-81.49)" />
+                        <circle stroke="currentColor" strokeWidth={5} fill="transparent" className="cls-1" cx="53" cy="53" r="51" transform="translate(-7.26 97.57) rotate(-81.49)" />
                         <path
                             fill="currentColor"
-                            class="cls-2"
+                            className="cls-2"
                             d="M66.67,80.51a32.58,32.58,0,0,1-15.9,3.57c-14.65,0-27.06-10.72-27.06-27.87,0-18.39,12.77-34.29,32.59-34.29,15.54,0,26,10.89,26,25.81C82.29,61.13,74.79,69,66.4,69c-3.58,0-6.88-2.42-6.61-7.86h-.36C56.3,66.4,52.2,69,46.84,69c-5.18,0-9.65-4.2-9.65-11.26A21.09,21.09,0,0,1,58.36,36.57a23.63,23.63,0,0,1,9.56,1.87l-3,16.17c-1.34,6.78-.27,9.91,2.68,10,4.55.09,9.64-6,9.64-16.35C77.2,35.31,69.43,26,55.59,26,41,26,28.8,37.55,28.8,55.68c0,14.91,9.73,24.11,23,24.11a28,28,0,0,0,13.49-3.12ZM61.75,41.92a15.73,15.73,0,0,0-4.46-.62c-7.86,0-14.2,7.41-14.2,16.08,0,3.92,2,6.78,5.89,6.78,5.18,0,9.91-6.61,10.9-12.14Z"
                         />
                     </g>
@@ -324,6 +348,7 @@ export const allSocialsIcons = [
     {
         id: "83622296-b2e9-4b9b-b766-d54a50d80fe6",
         name: "location",
+        prefix: "https://",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path

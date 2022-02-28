@@ -92,7 +92,7 @@ function ProfileTemplate3() {
                 {userInfo?.links?.length ? (
                     <div className="contact">
                         {userInfo?.links.map((data) => (
-                            <a key={data?._id} href={`${data?.name === "phone" ? "tel:" : data?.name === "email" ? "mailto:" : data?.name === "tel+" ? "tel+" : ""}${data?.link}`} target="_blank">
+                            <a key={data?._id} href={`${data?.link}`} target="_blank">
                                 <Icon icon={social[data?.name]} />
                                 <p>{data?.name}</p>
                             </a>

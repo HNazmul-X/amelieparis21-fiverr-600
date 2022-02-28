@@ -12,8 +12,10 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
         const createdArray = [...e.target.elements]
             .filter((data) => data.tagName === "INPUT" && data.value !== "" && data.type !== "color")
             .map((data) => {
-                return { name: data.getAttribute("name"), link: data.value, _id: data?.getAttribute("data-id") };
+                console.log(data.prefix);
+                return { name: data.getAttribute("name"), link: `${data?.getAttribute("data-prefix") || ""}${data.value}`, _id: data?.getAttribute("data-id") };
             });
+        console.log(createdArray);
         setUserInfo((prev) => {
             return { ...prev, links: createdArray };
         });
@@ -44,22 +46,24 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                     </div>
                     <div className="socail-link-box">
                         <form onSubmit={submitSocialLink}>
-                            <div className="row row-cols-2 w-100">
+                            <div className="row row-cols-1 w-100">
                                 {socialLinks?.map((data) => {
                                     return (
                                         <div key={data?.id} className="col p-1 mb-3">
-                                            <div className=" form-floating">
+                                            <div className="input-group">
+                                                <span className="input-group-text" id="basic-addon3">
+                                                    {data?.prefix}
+                                                </span>
                                                 <input
                                                     name={data.name}
                                                     data-id={data?.id}
                                                     defaultValue={userInfo?.links?.find((icon) => icon.name === data.name)?.link || ""}
                                                     type="text"
-                                                    className="form-control primary-input"
+                                                    className="form-control p-2 alert-secondary"
                                                     id={data?.id}
-                                                    placeholder="name@example.com"
                                                     required={true}
+                                                    data-prefix={data?.prefix}
                                                 />
-                                                <label htmlFor={data.id}>{data?.name}</label>
                                             </div>
                                         </div>
                                     );

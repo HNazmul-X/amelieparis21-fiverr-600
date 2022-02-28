@@ -17,31 +17,42 @@
             flex-wrap: wrap;
             gap: 20px;
             .profile-template-card {
-                width: math.div(100%,3.4);
+                width: math.div(100%, 3.4);
                 box-shadow: $large-spreading-shadow;
                 border: 5px solid;
                 position: relative;
                 z-index: 1;
                 cursor: pointer;
-                &:hover{
-                  &::after{
-                    z-index: 1;
-                  }
+                --content: "Sélectionnez";
+                &:hover {
+                    &::after {
+                        z-index: 1;
+                    }
                 }
-                &::after{
-                  content: 'Select';
-                  color:white;
-                  position: absolute;
-                  z-index: -1;
-                  background: transparentize($color: $blue-grey, $amount: 0.3);
-                  font-size: 25px;
-                  font-weight: bold;
 
-                  width: 100%;
-                  height: 100%;
-                  left:0px;
-                  top:0px;
-                  @include flex-x-y-center;
+                @mixin selected($content) {
+                    content: $content;
+                    color: white;
+                    position: absolute;
+                    z-index: -1;
+                    background: transparentize($color: $blue-grey, $amount: 0.3);
+                    font-size: 18px;
+                    font-weight: bold;
+
+                    width: 100%;
+                    height: 100%;
+                    left: 0px;
+                    top: 0px;
+                    @include flex-x-y-center;
+                }
+                &.selected {
+                    &::after{
+                        @include selected("choisi");
+                        z-index: 1;
+                    }
+                }
+                &::after {
+                    @include selected(var(--content));
                 }
                 img {
                     width: 100%;

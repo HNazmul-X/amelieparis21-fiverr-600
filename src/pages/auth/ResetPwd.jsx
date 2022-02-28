@@ -16,10 +16,9 @@ const ResetPwd = () => {
         const { email } = Object.fromEntries(form.entries());
         const { data: r_data } = await axios.post(`${apiBaseURL}/api/auth/reset-pwd-code-sending`, { email });
         if (r_data.error) {
-            swal("Failed To Send Code", r_data.error, "error");
+            swal( r_data.error,"", "error");
             setIsSpinnerShow(false);
-        }
-        {
+        } else {
             const { code, _id, userId } = r_data;
             navigate(`/reset-pwd-code/${_id}/${encodeURIComponent(code)}/${userId}`, { replace: true });
         }

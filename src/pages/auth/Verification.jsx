@@ -97,14 +97,14 @@ const Verification = () => {
 
                                 <div className="verificationDetails">
                                     <div className="verificationText">
-                                        <h5>VERIFICATION</h5>
-                                        <p>Email has been sent to you email. check the email and Provide a Correct OTP</p>
+                                        <h5>VÉRIFICATION</h5>
+                                        <p>Un code de vérification a été envoyé sur votre adresse e-mail</p>
                                     </div>
 
                                     <form action="" onSubmit={handleSubmit(handleOtpVerification)}>
                                         <div className="form-floating otpWrapper my-3">
                                             <input type="text" {...register("code", { required: true })} className="form-control primary-input otpInput" id="floatingInput" placeholder="6 Digit OTP" />
-                                            <label htmlFor="floatingInput">Paste OTP Here *</label>
+                                            <label htmlFor="floatingInput">Insérez le code </label>
                                             {errors.code && <p className="small text-danger">please Enter Your code</p>}
                                         </div>
 
@@ -114,7 +114,7 @@ const Verification = () => {
                                                     <span className="visually-hidden">Loading...</span>
                                                 </div>
                                             )}
-                                            Verify
+                                            Vérification
                                         </button>
                                     </form>
                                 </div>

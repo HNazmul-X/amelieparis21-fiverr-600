@@ -167,7 +167,7 @@ const OrderValidation = () => {
                     placeholder="name@example.com"
                     {...register("firstName", { required: true })}
                   />
-                  <label for="floatingInput">Prénom</label>
+                  <label htmlFor="floatingInput">Prénom</label>
                   {errors.firstName?.type === "required" && (
                     <span className="text-danger ">Prénom is required</span>
                   )}
@@ -182,7 +182,7 @@ const OrderValidation = () => {
                     placeholder="name@example.com"
                     {...register("lastName", { required: true })}
                   />
-                  <label for="floatingInput">Nom*</label>
+                  <label htmlFor="floatingInput">Nom*</label>
                   {errors.lastName?.type === "required" && (
                     <span className="text-danger ">Nom is required</span>
                   )}
@@ -212,7 +212,7 @@ const OrderValidation = () => {
                   placeholder="name@example.com"
                   {...register("address", { required: true })}
                 />
-                <label for="floatingInput">Adresse *</label>
+                <label htmlFor="floatingInput">Adresse *</label>
                 {errors.address?.type === "required" && (
                   <span className="text-danger ">Address is required</span>
                 )}
@@ -226,7 +226,7 @@ const OrderValidation = () => {
                   placeholder="name@example.com"
                   {...register("additionalAddress", { required: true })}
                 />
-                <label for="floatingInput">Adresse supplémentaire  </label>
+                <label htmlFor="floatingInput">Adresse supplémentaire  </label>
                 {errors.additionalAddress?.type === "required" && (
                   <span className="text-danger ">
                     Adresse supplémentaire is required
@@ -243,7 +243,7 @@ const OrderValidation = () => {
                     placeholder="name@example.com"
                     {...register("postalCode", { required: true })}
                   />
-                  <label for="floatingInput">Code Postal</label>
+                  <label htmlFor="floatingInput">Code Postal</label>
                   {errors.postalCode?.type === "required" && (
                     <span className="text-danger ">
                      Code Postal is required
@@ -259,7 +259,7 @@ const OrderValidation = () => {
                     placeholder="name@example.com"
                     {...register("city", { required: true })}
                   />
-                  <label for="floatingInput">Ville *</label>
+                  <label htmlFor="floatingInput">Ville *</label>
                   {errors.city?.type === "required" && (
                     <span className="text-danger ">Ville is required</span>
                   )}
@@ -274,7 +274,7 @@ const OrderValidation = () => {
                   placeholder="name@example.com"
                   {...register("country", { required: true })}
                 />
-                <label for="floatingInput">Pays *</label>
+                <label htmlFor="floatingInput">Pays *</label>
                 {errors.country?.type === "required" && (
                   <span className="text-danger ">Pays is required</span>
                 )}
@@ -311,7 +311,7 @@ const OrderValidation = () => {
                         required: sameBillingAddress ? false : true,
                       })}
                     />
-                    <label for="floatingInput">Prénom</label>
+                    <label htmlFor="floatingInput">Prénom</label>
                     {errors.b_firstName?.type === "required" && (
                       <span className="text-danger ">
                         Prénom is required
@@ -329,7 +329,7 @@ const OrderValidation = () => {
                         required: sameBillingAddress ? false : true,
                       })}
                     />
-                    <label for="floatingInput">Nom*</label>
+                    <label htmlFor="floatingInput">Nom*</label>
                     {errors.b_lastName?.type === "required" && (
                       <span className="text-danger ">
                         Nom is required
@@ -364,7 +364,7 @@ const OrderValidation = () => {
                       required: sameBillingAddress ? false : true,
                     })}
                   />
-                  <label for="floatingInput">Adresse *</label>
+                  <label htmlFor="floatingInput">Adresse *</label>
                   {errors.b_address?.type === "required" && (
                     <span className="text-danger ">Address is required</span>
                   )}
@@ -380,7 +380,7 @@ const OrderValidation = () => {
                       required: sameBillingAddress ? false : true,
                     })}
                   />
-                  <label for="floatingInput">Adresse supplémentaire  </label>
+                  <label htmlFor="floatingInput">Adresse supplémentaire  </label>
                   {errors.b_additionalAddress?.type === "required" && (
                     <span className="text-danger ">
                       Adresse supplémentaire is required
@@ -399,7 +399,7 @@ const OrderValidation = () => {
                         required: sameBillingAddress ? false : true,
                       })}
                     />
-                    <label for="floatingInput">Code Postal</label>
+                    <label htmlFor="floatingInput">Code Postal</label>
                     {errors.b_postalCode?.type === "required" && (
                       <span className="text-danger ">
                         Code Postal is required
@@ -417,7 +417,7 @@ const OrderValidation = () => {
                         required: sameBillingAddress ? false : true,
                       })}
                     />
-                    <label for="floatingInput">Ville *</label>
+                    <label htmlFor="floatingInput">Ville *</label>
                     {errors.b_city?.type === "required" && (
                       <span className="text-danger ">Ville  is required</span>
                     )}
@@ -434,7 +434,7 @@ const OrderValidation = () => {
                       required: sameBillingAddress ? false : true,
                     })}
                   />
-                  <label for="floatingInput">Pays *</label>
+                  <label htmlFor="floatingInput">Pays *</label>
                   {errors.b_country?.type === "required" && (
                     <span className="text-danger ">Pays is required</span>
                   )}
@@ -488,8 +488,8 @@ const OrderValidation = () => {
             <div className="validateArea">
               <button type="submit" className="btn">
                 {isSpinnerShow && (
-                  <div class="spinner-border spinner-border-sm" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                  <div className="spinner-border spinner-border-sm" role="status">
+                    <span className="visually-hidden">Loading...</span>
                   </div>
                 )}{" "}
                 Validate Your Request

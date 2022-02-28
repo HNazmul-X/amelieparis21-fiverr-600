@@ -106,7 +106,7 @@ function ProfileTemplate1({ data, onShare, addToContact }) {
                     {data?.socialLinks.map((el, index) => (
                         <a
                             key={index}
-                            href={`${el?.name === "phone" ? "tel:" : el?.name === "email" ? "mailto:" : el?.name === "telephone" ? "tel:" : ""}${el?.link}`}
+                            href={`${el?.link}`}
                             target="_blank"
                             className="signle-social-link">
                             <div className="left">

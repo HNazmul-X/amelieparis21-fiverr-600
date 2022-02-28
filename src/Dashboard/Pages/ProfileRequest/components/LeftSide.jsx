@@ -243,7 +243,7 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                                     onClick={() => handleDeletingProfile(templatedUser?.user?.profileTemplate, templatedUser?.user?._id)}
                                     className="btn btn-danger rounded-pill btn-lg px-4 cancel">
                                     {spinners.delete && (
-                                        <div class="spinner-border spinner-border-sm me-2" role="status">
+                                        <div className="spinner-border spinner-border-sm me-2" role="status">
                                             <span className="visually-hidden">Loading...</span>
                                         </div>
                                     )}
@@ -252,7 +252,7 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                             )}
                             <button onClick={handleProfileCreation.bind(this, "update")} className="create-profile btn btn-primary rounded-pill btn-lg px-4">
                                 {spinners.update && (
-                                    <div class="spinner-border spinner-border-sm me-2" role="status">
+                                    <div className="spinner-border spinner-border-sm me-2" role="status">
                                         <span className="visually-hidden">Loading...</span>
                                     </div>
                                 )}
