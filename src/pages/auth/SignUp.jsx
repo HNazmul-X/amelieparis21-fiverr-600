@@ -41,7 +41,7 @@ const SignUp = () => {
         if (isDataValid.data?.error) {
             setIsSpinnerShow(false);
             swal({
-                title: "Validation Required",
+                title: "Validation requise",
                 content: (
                     <ul className="text-danger text-start">
                         {isDataValid.data?.error?.map((er) => (
@@ -64,7 +64,7 @@ const SignUp = () => {
                     setIsSpinnerShow(false);
                     navigate(`/verify-profile/${data._id}/${encodeURIComponent(data.code)}/`);
                 })
-                .catch((e) => swal("Failed to send Verification email", e.message, "error"));
+                .catch((e) => swal("Échec de l'envoi de l'e-mail de vérification", e.message, "error"));
         }
     };
 

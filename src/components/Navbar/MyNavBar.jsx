@@ -82,7 +82,7 @@ function MyNavBar() {
                                     <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
                                         <PageLink
                                             to="/login"
-                                            className="w-full d-none d-lg-block py-3  text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                            className="w-full d-none d-lg-block py-2  text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                             onClick={() => setSidebar(false)}>
                                             Connexion
                                         </PageLink>
@@ -90,7 +90,7 @@ function MyNavBar() {
                                     <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
                                         <PageLink
                                             to="/signup"
-                                            className="w-full d-none d-lg-block py-3 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
+                                            className="w-full d-none d-lg-block py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                             onClick={() => setSidebar(false)}>
                                             Créez votre carte
                                         </PageLink>
@@ -119,7 +119,10 @@ function MyNavBar() {
                                         </PageLink>
                                     </motion.div>
                                     <PageLink to={auth?.user?.profileTemplate ? `/profile-creation/${auth?.user?.profile}` : `/u/${auth?.user?.username}`} title="Edit Profile Template">
-                                        <InlineIcon icon={"fluent:document-edit-20-regular"} className="display-6" />
+                                        <div className="d-flex flex-column align-items-center ">
+                                            <InlineIcon icon={"fluent:document-edit-20-regular"} className="fs-3" />
+                                            <p className="mb-0 small">modifier le profil</p>
+                                        </div>
                                     </PageLink>
                                 </>
                             )}
