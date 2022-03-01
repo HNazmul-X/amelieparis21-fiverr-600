@@ -96,7 +96,7 @@ function SetupProfilePics({ open, handelOpen, title, templatedUser }) {
                                     {" "}
                                     <InlineIcon icon="iconoir:profile-circled" />
                                     <p>
-                                        <span>Upload</span> Profile Picture
+                                        <span>Photo</span> de profil
                                     </p>
                                 </>
                             ) : (
@@ -118,7 +118,7 @@ function SetupProfilePics({ open, handelOpen, title, templatedUser }) {
                                     {" "}
                                     <InlineIcon icon="iconoir:profile-circled" />
                                     <p>
-                                        <span>Upload</span> Profile Picture
+                                    <span>Photo</span> de profil
                                     </p>
                                 </>
                             ) : (

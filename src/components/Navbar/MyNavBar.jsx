@@ -65,7 +65,7 @@ function MyNavBar() {
                                 </PageLink>
                             ) : (
                                 <PageLink to={`/u/${auth?.user?.username}`} className="navLink">
-                                    Profile
+                                    Profil
                                 </PageLink>
                             )}
                             <PageLink to="#" className="navLink" onClick={() => handelOpenModal()}>
@@ -176,7 +176,7 @@ function MyNavBar() {
                                     </PageLink>
                                 ) : (
                                     <PageLink to={`/u/${auth?.user?.username}`} className="navLink">
-                                        Profile
+                                        Profil
                                     </PageLink>
                                 )}
                                 <PageLink to="#" className="sidebar-link" onClick={() => setSidebar(false)}>

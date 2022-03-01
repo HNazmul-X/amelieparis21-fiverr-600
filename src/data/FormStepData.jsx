@@ -7,13 +7,13 @@ import Information from "./../pages/Create-card/FormComponent/Information";
 export const FormStepsData = [
     /* NOTE: please don't change the Id name; if you change then the whole function will affected for this */
     {
-        label: "Contact Sheet",
+        label: "Fiche de contact",
         icon: "cil:contact",
         id: "step1",
         component: ContactSheet,
     },
     {
-        label: "Card Base",
+        label: "Couleur de carte",
         icon: "cil:contact",
         id: "step2",
         component: SelectCardBase,

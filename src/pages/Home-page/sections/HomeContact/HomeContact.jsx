@@ -30,11 +30,11 @@ function HomeContact() {
     return (
         <div className="flex flex-col justify-between w-full px-8 lg:flex-row bg-oneCard-lightGray md:px-16 py-14">
             <motion.div initial={{ scale: 0.6 }} whileInView={{ scale: 1 }} transition={{ duration: 0.3 }} className="flex flex-col py-10 space-y-10">
-                <h1 className="text-4xl font-bold text-oneCard-darkBlue">Contactez nous</h1>
+                <h1 className="text-4xl font-bold text-oneCard-darkBlue">Contactez-nous</h1>
                 <div className="flex flex-col space-y-6">
                     <div className="flex flex-col space-y-2 text-oneCard-darkBlue">
                         <h3 className="">Adresse électronique</h3>
-                        <h2 className="text-xl font-bold">CONTACT@SERVER2.ONECARDPRO.COM</h2>
+                        <h2 className="text-xl font-bold">contact@onecardpro.com</h2>
                     </div>
                 </div>
             </motion.div>
