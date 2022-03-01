@@ -53,7 +53,7 @@ function SetupProfileButton({ open, handelOpen, title }) {
     return (
         <div className="setup-profile-button-info db-template">
             <SectionTitle title={title} handelOpen={handelOpen} open={open} />
-            <div className={`${open.includes(title) ? "d-block open-div" : "d-none"} ${title === "Setup Profile Button info" ? "setup-profile-button-info-area" : ""}`}>
+            <div className={`${open.includes(title) ? "d-block open-div" : "d-none"} ${title === "Configurer le bouton Ajouter aux contacts " ? "setup-profile-button-info-area" : ""}`}>
                 <div>
                     <div className="preview-btn">
                         <button style={{ background: `${buttonDesign.background}`, color: `${buttonDesign.color}`, boxShadow: `0px 0px 5px ${buttonDesign.shadow}` }}>
@@ -102,7 +102,8 @@ function SetupProfileButton({ open, handelOpen, title }) {
                         </div>
 
                         <div className="submit-btn">
-                            <button type={"submit"}>Submit</button>
+                            <button type={"submit"}>Mettre à jour
+</button>
                         </div>
                     </form>
                 </div>

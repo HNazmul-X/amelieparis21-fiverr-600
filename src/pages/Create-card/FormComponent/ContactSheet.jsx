@@ -182,10 +182,10 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label htmlFor="floatingInput">Phone</label>
+                <label htmlFor="floatingInput">Téléphoner</label>
                 {errors.phone && (
                   <span className="d-block ps-3 small text-danger text-start">
-                    Phone is required
+                    Téléphoner is required
                   </span>
                 )}
               </div>

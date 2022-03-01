@@ -62,7 +62,7 @@ function HomePourquoiSection() {
                 <img src={specakIcon} alt="one card pro" />
               </div>
               <h5 className="text-base sm:text-lg md:text-xl font-bold text-oneCard-darkBlue">
-                Marketting viral efficace
+              Marketing viral efficace
               </h5>
             </div>
 
@@ -80,7 +80,7 @@ function HomePourquoiSection() {
                 <img src={ecoIcon} alt="one card pro" />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl text-oneCard-darkBlue font-bold">
-                Éco responsable et Durable
+                Éco responsable et durable 
               </h3>
             </div>
           </div>

@@ -20,23 +20,23 @@ function ManWithCard() {
 				className="flex flex-col lg:w-2/5 space-y-4"
 			>
 				<div className="flex flex-col text-oneCard-darkBlue space-y-2">
-					<h4 className="text-xl font-bold">TOUJOURS AVEC VOUS</h4>
+					<h4 className="text-xl font-bold">TOUJOURS AVEC VOUS
+</h4>
 					<h6 className="text-base sm:text-lg font-normal text-oneCard-darkBlue">
-						Vous n'aurez plus peur d'oublier vos cartes de visites, one card pro
-						est toujours prêt à l'emploi.
+					Vous n'aurez plus peur d'oublier vos cartes de visites, One Card Pro est toujours prêt à l'emploi.
+
 					</h6>
 				</div>
 				<div className="flex flex-col text-oneCard-darkBlue space-y-2">
 					<h4 className="text-xl font-bold">ÉCONOMISEZ DE L'ARGENT</h4>
 					<h6 className="text-base sm:text-lg font-normal text-oneCard-darkBlue">
-						Arrêtez d'acheter des milliers de cartes de visite qui finissent à
-						la poubelle.
+					Arrêtez d'acheter des milliers de cartes de visite qui finissent à la poubelle.
 					</h6>
 				</div>
 				<div className="flex flex-col text-oneCard-darkBlue space-y-2">
-					<h4 className="text-xl font-bold">TOUJOURS AVEC VOUS</h4>
+					<h4 className="text-xl font-bold">INTERACTIVITÉ </h4>
 					<h6 className="text-base sm:text-lg font-normal text-oneCard-darkBlue">
-						Échangez et enregistrez vos coordonnées en quelques secondes.
+					Échangez et enregistrez vos coordonnées en quelques secondes.
 					</h6>
 				</div>
 			</motion.div>
