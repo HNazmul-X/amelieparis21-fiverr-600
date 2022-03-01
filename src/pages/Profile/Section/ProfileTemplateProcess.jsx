@@ -2,7 +2,7 @@ import swal from "@sweetalert/with-react";
 import axios from "axios";
 import React, { useEffect, useState, Component } from "react";
 import { useParams } from "react-router-dom";
-import { apiBaseURL } from "../../../Util/API_Info";
+import { apiBaseURL, togglingNavbar } from "../../../Util/API_Info";
 import ProfileTemplate1 from "../Templates/ProfileTemplate1";
 import ProfileTemplate2 from "../Templates/ProfileTemplate2";
 import ProfileTemplate3 from "../Templates/ProfileTemplate3";
@@ -23,6 +23,11 @@ const ProfileTemplateProcess = () => {
                 swal("ERROR", error.message, "error");
             });
     }, []);
+
+    useEffect(()=> {
+        togglingNavbar("HIDE")
+    })
+
 
     //sharing profile
     const handleSharingProfile = (data) => {

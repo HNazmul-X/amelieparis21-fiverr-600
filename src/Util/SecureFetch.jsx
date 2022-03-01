@@ -17,6 +17,7 @@ export const SecureFetch = {
                 try {
                     const { data: returnedData } = await axios.post(url, data, {
                         headers: {
+                            
                             "content-type": "application/json",
                             Authorization: token,
                             userId: userId,

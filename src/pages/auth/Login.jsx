@@ -44,7 +44,7 @@ const Login = () => {
                             </div>
 
                             <form action="" className="px-2" onSubmit={handleSubmit(submitLoginData)}>
-                                <h2 className="title">Login</h2>
+                                <h2 className="title">Connexion</h2>
 
                                 <div className="form-floating my-3">
                                     <input
