@@ -492,9 +492,9 @@ const OrderValidation = () => {
                     <span className="visually-hidden">Loading...</span>
                   </div>
                 )}{" "}
-                Validate Your Request
+               Validez votre demande
               </button>
-              <p className="">Payment will be made by check or bank transfer</p>
+              <p className="">Le règlement s'effectuera par chèque ou virement bancaire</p>
             </div>
           </form>
         </div>

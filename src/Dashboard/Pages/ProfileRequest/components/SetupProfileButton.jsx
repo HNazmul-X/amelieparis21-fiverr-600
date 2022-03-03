@@ -5,12 +5,12 @@ import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
 
 function SetupProfileButton({ open, handelOpen, title }) {
     const profileContext = useProfileContext();
-    const [buttonText, setButtonText] = useState("ADD TO CONTACT");
+    const [buttonText, setButtonText] = useState("Ajouter aux contacts");
     const [err, setErr] = useState([]);
     const [buttonDesign, setButtonDesign] = useState({});
 
     useEffect(() => {
-        setButtonText(profileContext.buttonInfo?.info?.text || "ADD TO CONTACT");
+        setButtonText(profileContext.buttonInfo?.info?.text || "Ajouter aux contacts ");
         setButtonDesign({
             background: profileContext.buttonInfo?.colors?.bg,
             color: profileContext.buttonInfo?.colors?.color,
@@ -102,7 +102,7 @@ function SetupProfileButton({ open, handelOpen, title }) {
                         </div>
 
                         <div className="submit-btn">
-                            <button type={"submit"}>Mettre à jour
+                            <button type={"submit"}>Aperçu
 </button>
                         </div>
                     </form>

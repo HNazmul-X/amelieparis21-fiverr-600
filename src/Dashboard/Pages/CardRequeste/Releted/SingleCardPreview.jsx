@@ -125,7 +125,7 @@ const CardDetails = ({ singleCardData }) => {
                         </div>
                         <div className="details-container">
                             <div className="single-fild">
-                                <p>Site web *</p>
+                                <p>Site web </p>
                                 <input type="text" value={singleCardData.website} readOnly />
                             </div>
                             <div className="single-fild">

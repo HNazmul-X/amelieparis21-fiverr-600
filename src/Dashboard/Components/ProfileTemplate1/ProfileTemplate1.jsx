@@ -102,7 +102,7 @@ function ProfileTemplate1() {
                         boxShadow: `0 0 5px ${buttonInfo?.colors?.shadow}`,
                     }}
                     className="add-contact-btn">
-                    {buttonInfo?.info?.text || "ADD TO CONTACT"}
+                    {buttonInfo?.info?.text || "Ajouter aux contacts "}
                 </button>
                 <div className="social-container">
                     {userInfo?.links.map((data,index) => (

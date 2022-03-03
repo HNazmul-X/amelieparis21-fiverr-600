@@ -100,7 +100,7 @@ function ProfileTemplate1({ data, onShare, addToContact }) {
                         boxShadow: `0 0 5px ${data?.colors?.button?.shadow}`,
                     }}
                     className="add-contact-btn">
-                    {"ADD TO CONTACT"}
+                    {"Ajouter aux contacts"}
                 </button>
                 <div className="social-container-1">
                     {data?.socialLinks.map((el, index) => (

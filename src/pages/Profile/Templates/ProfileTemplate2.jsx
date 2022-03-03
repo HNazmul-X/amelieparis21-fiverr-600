@@ -112,7 +112,7 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
                         }}
                         onClick={addToContact}
                         className="add-contact-button">
-                        {"ADD TO CONTACT"}
+                        {"Ajouter aux contacts"}
                     </button>
                 </div>
             </div>

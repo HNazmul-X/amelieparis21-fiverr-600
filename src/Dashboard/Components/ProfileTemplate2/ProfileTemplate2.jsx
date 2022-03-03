@@ -129,7 +129,7 @@ export default function ProfileTemplate2() {
                             boxShadow: `0 0 5px ${buttonInfo?.colors?.shadow}`,
                         }}
                         className="add-contact-button">
-                        {buttonInfo?.info?.text || "ADD TO CONTACT"}
+                        {buttonInfo?.info?.text || "Ajouter aux contacts "}
                     </button>
                 </div>
             </div>
