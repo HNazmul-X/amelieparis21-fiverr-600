@@ -70,7 +70,7 @@ function SetUpPersonalInformation({ open, handelOpen, title }) {
                                 <input onChange={handleChangeTextColor} defaultValue={"#255ed1"} type="color" className="form-control p-0" name="" id="" />
                                 <strong className="w-100 text-center d-block small">Couleur du texte  </strong>
                             </div>
-                            <button className="btn text-white bg-primary-500 px-4  rounded-pill">Mettre à jour
+                            <button className="btn text-white bg-primary-500 px-4  rounded-pill">Aperçu
 </button>
                         </div>
                     </div>

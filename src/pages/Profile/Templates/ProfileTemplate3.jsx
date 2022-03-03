@@ -142,7 +142,7 @@ function ProfileTemplate3({ data, onShare, addToContact }) {
                             color: `${data?.colors?.button?.color}`,
                             boxShadow: `0 0 5px ${data?.colors?.button?.shadow}`,
                         }}>
-                        {data?.mainButton?.text || "ADD TO CONTACT"}
+                        {data?.mainButton?.text || "Ajouter aux contacts"}
                     </button>
                 </div>
                 <div className="about">

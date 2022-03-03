@@ -143,7 +143,7 @@ function ProfileTemplate3() {
                             color: `${buttonInfo?.colors?.color}`,
                             boxShadow: `0 0 5px ${buttonInfo?.colors?.shadow}`,
                         }}>
-                        {buttonInfo?.info?.text || "ADD TO CONTACT"}
+                        {buttonInfo?.info?.text || "Ajouter aux contacts "}
                     </button>
                 </div>
                 <div className="about">

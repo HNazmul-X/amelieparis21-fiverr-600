@@ -123,18 +123,18 @@ const ContactSheet = ({ thisData, componentIndex }) => {
               <div className="w-100 form-floating mb-3">
                 <input
                   type="text"
-                  {...register("website", { required: true })}
+                  {...register("website")}
                   defaultValue={cardContextData?.cardDetails?.website}
                   className="form-control primary-input"
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label htmlFor="floatingInput">Site web *</label>
-                {errors.website && (
+                <label htmlFor="floatingInput">Site web </label>
+                {/* {errors.website && (
                   <span className="d-block ps-3 small text-danger text-start">
                     Site web  is required
                   </span>
-                )}
+                )} */}
               </div>
 
               <div className="w-100 form-floating mb-3">

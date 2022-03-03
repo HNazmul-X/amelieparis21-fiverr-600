@@ -74,7 +74,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                                     <input onChange={handleIconColorChange} defaultValue={"#57697d"} type="color" className="form-control p-0" name="" id="" />
                                     <strong className="w-100 text-center d-block small">Couleur de l’icône</strong>
                                 </div>
-                                <button className="btn text-white bg-primary-500 px-4  rounded-pill">Mettre à jour
+                                <button className="btn text-white bg-primary-500 px-4  rounded-pill">Aperçu
 </button>
                             </div>
                         </form>
