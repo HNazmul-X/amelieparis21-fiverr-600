@@ -137,7 +137,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                 )} */}
               </div>
 
-              <div className="w-100 form-floating mb-3">
+              {/* <div className="w-100 form-floating mb-3">
                 <input
                   type="text"
                   {...register("landing", { required: true })}
@@ -152,11 +152,11 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                     Take it off is required
                   </span>
                 )}
-              </div>
+              </div> */}
             </div>
 
             <div className="d-flex gap-3">
-              <div className="w-100 form-floating mb-3">
+              {/* <div className="w-100 form-floating mb-3">
                 <input
                   type="text"
                   {...register("society", { required: true })}
@@ -171,7 +171,7 @@ const ContactSheet = ({ thisData, componentIndex }) => {
                     Society is required
                   </span>
                 )}
-              </div>
+              </div> */}
 
               <div className="w-100 form-floating mb-3">
                 <input
