@@ -15,7 +15,6 @@ const ProfileTemplateProcess = () => {
         axios
             .get(`${apiBaseURL}/api/profile-template/get-single-profile-by-username/${username}`)
             .then((data) => {
-                console.log(data);
                 data.data.profileTemplate = data.data?.profileTemplate === undefined ? null : data?.data?.profileTemplate;
                 setTemplateDataWithUser(data.data);
             })

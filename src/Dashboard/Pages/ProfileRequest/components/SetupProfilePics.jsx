@@ -31,8 +31,8 @@ function SetupProfilePics({ open, handelOpen, title, templatedUser }) {
                 });
             };
 
-            if (file.size > 1024 * 1024 * 2) {
-                return swal("File is Large", "File Size cannot be greater then 2mb", "error");
+            if (file.size > 1024 * 1024 * 1) {
+                return swal("File is Large", "File Size cannot be greater then 1mb", "error");
             } else {
                 if (e.target.name === "profile") {
                     const profilePicData = await readingFile(file);
@@ -128,7 +128,7 @@ function SetupProfilePics({ open, handelOpen, title, templatedUser }) {
                         <input
                             className="d-none"
                             onClick={function (e) {
-                                console.log((e.target.value = null));
+                                e.target.value = null;
                             }}
                             onChange={handelLogoupload}
                             name="cover"

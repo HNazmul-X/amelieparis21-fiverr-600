@@ -18,12 +18,11 @@ function HomeContact() {
             //data for backend
             const { data: r_data } = await axios.post(`${apiBaseURL}/api/util/send-contact-form-data-to-mail`, data);
             setIsSpinnerShow(false);
-            console.log(r_data);
             if (r_data) swal("Done", "Message Sent Successfully", "success");
             else swal("Failed", "Failed to sent message", "error");
         } catch (e) {
             setIsSpinnerShow(false);
-            console.log(e)
+            console.error(e)
             swal("Error Ocurred", "Failed To Send Email", "error");
         }
     };

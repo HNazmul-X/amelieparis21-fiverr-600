@@ -39,6 +39,10 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
         }
     }, [templateDataReloader]);
 
+    useEffect(() => {
+        setSelectedIcon(profileContext?.socialLinks);
+    }, [profileContext?.socialLinks]);
+
     //handling collapse one and Off
     const handelOpen = (data) => {
         if (open.includes(data)) {
@@ -163,15 +167,7 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                 // if template action type is create
                 if (type === "create") {
                     setSpinners((prev) => ({ ...prev, create: true }));
-                    const uploadedPics = await fetch(`${apiBaseURL}/api/profile-template/upload-template-images`, {
-                        method: "POST",
-                        mode: "no-cors",
-                        headers: {
-                            "Access-Control-Allow-Origin": "*",
-                            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-                        },
-                        body: imageFormData,
-                    });
+                    const uploadedPics = await SecureFetch.post(`${apiBaseURL}/api/profile-template/upload-template-images`, imageFormData);
                     if (uploadedPics.error) {
                         swal("Error", uploadedPics?.error, "error");
                     }
@@ -251,7 +247,12 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                             <button onClick={handleCancelProfileCreation} className="btn btn-danger rounded-pill btn-lg px-5 cancel">
                                 Annuler
                             </button>
-                            <button onClick={() => handleProfileCreation("create")} className="create-profile btn btn-primary rounded-pill btn-lg px-4">
+                            <button onClick={() => handleProfileCreation("create")} className="create-profile btn btn-primary flex align-items-center fs-6 rounded-pill  btn-lg px-4">
+                                {spinners.create && (
+                                    <div className="spinner-border spinner-border-sm me-2" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                )}
                                 Créez votre carte numérique
                             </button>
                         </>

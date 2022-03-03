@@ -12,10 +12,8 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
         const createdArray = [...e.target.elements]
             .filter((data) => data.tagName === "INPUT" && data.value !== "" && data.type !== "color")
             .map((data) => {
-                console.log(data.prefix);
                 return { name: data.getAttribute("name"), link: `${data?.getAttribute("data-prefix") || ""}${data.value}`, _id: data?.getAttribute("data-id") };
             });
-        console.log(createdArray);
         setUserInfo((prev) => {
             return { ...prev, links: createdArray };
         });
@@ -26,6 +24,15 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
     const handleIconColorChange = (e) => {
         setIconColor(e.target.value);
     };
+
+    const removePrefixFromUrl = (url) => {
+        if(!url) return false
+        if(url?.startsWith("https://")){
+            return url?.split("https://")[1]
+        } else if(url?.startsWith("tel:")){
+            return url?.split("tel:")[1]
+        }
+    }
 
     return (
         <div className="setup-social-link db-template">
@@ -57,7 +64,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                                                 <input
                                                     name={data.name}
                                                     data-id={data?.id}
-                                                    defaultValue={userInfo?.links?.find((icon) => icon.name === data.name)?.link || ""}
+                                                    defaultValue={removePrefixFromUrl(userInfo?.links?.find((icon) => icon.name === data.name)?.link) || ""}
                                                     type="text"
                                                     className="form-control p-2 alert-secondary"
                                                     id={data?.id}

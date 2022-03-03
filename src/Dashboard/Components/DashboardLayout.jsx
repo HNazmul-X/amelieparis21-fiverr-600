@@ -3,6 +3,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import DashboardSideMenu from "./DashboardSideMenu";
 import { InlineIcon } from "@iconify/react";
 import { useAuth } from "../../Context/UserContext";
+import logo from "../../assets/images/Asset 1.svg"
 
 const DashboardLayout = () => {
     const auth = useAuth();
@@ -25,7 +26,7 @@ const DashboardLayout = () => {
                 {auth?.user?.isAdmin ? (
                     <div className="dashboard__layout__side__menu__bar">
                         <div className="sidebar-brand">
-                            <h3>Brand Name</h3>
+                           <img src={logo} className="img-fluid " style={{width:"80px"}}  alt="" />
                         </div>
                         <DashboardSideMenu />
                     </div>

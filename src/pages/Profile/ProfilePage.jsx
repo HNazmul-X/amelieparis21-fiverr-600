@@ -5,7 +5,7 @@ import { togglingNavbar } from "../../Util/API_Info";
 
 class ProfilePage extends Component {
     componentDidMount() {
-        console.log(togglingNavbar("HIDE"));
+        togglingNavbar("HIDE");
     }
 
     componentWillUnmount() {

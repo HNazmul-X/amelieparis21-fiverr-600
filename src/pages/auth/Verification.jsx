@@ -43,7 +43,7 @@ const Verification = () => {
 
         try {
             const { data: returnedData } = await axios.post(`${apiBaseURL}/api/auth/verify-code/`, { code: data.code, id: verificationId });
-            console.log(returnedData)
+   
 
             if (returnedData.error) {
                 setIsSpinnerShow(false);
