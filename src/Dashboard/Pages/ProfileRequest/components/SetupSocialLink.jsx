@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SectionTitle from "./SectionTitle";
 import { InlineIcon } from "@iconify/react";
 import { useProfileContext } from "../../../../Context/ProfileTemplateContext";
+import { removePrefixFromUrl } from "../../../../Util/API_Info";
 
 function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
     const [iconColor, setIconColor] = useState("");
@@ -25,14 +26,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
         setIconColor(e.target.value);
     };
 
-    const removePrefixFromUrl = (url) => {
-        if(!url) return false
-        if(url?.startsWith("https://")){
-            return url?.split("https://")[1]
-        } else if(url?.startsWith("tel:")){
-            return url?.split("tel:")[1]
-        }
-    }
+    
 
     return (
         <div className="setup-social-link db-template">
@@ -70,6 +64,7 @@ function SetupSocialLink({ open, handelOpen, title, setIconPopupShow }) {
                                                     id={data?.id}
                                                     required={true}
                                                     data-prefix={data?.prefix}
+                                                    placeholder={data?.name}
                                                 />
                                             </div>
                                         </div>

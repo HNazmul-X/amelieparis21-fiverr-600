@@ -28,6 +28,7 @@ import bloggerRect from "@iconify/icons-brandico/blogger-rect";
 import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
 import bxCurrentLocation from "@iconify/icons-bx/bx-current-location";
 import pinterestFill from "@iconify/icons-akar-icons/pinterest-fill"
+import { removePrefixFromUrl } from "../../../Util/API_Info";
 
 export default function ProfileTemplate2() {
     const { userInfo, userPics, buttonInfo, iconAndTextColor } = useProfileContext();
@@ -85,13 +86,9 @@ export default function ProfileTemplate2() {
                 {userInfo?.links?.length ? (
                     <div className="contact-section">
                         {userInfo?.links.map((data) => (
-                            <a
-                                key={data?.id}
-                                href={`${data?.link}`}
-                                target="_blank"
-                                className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
+                            <a key={data?.id} href={`${data?.link}`} target="_blank" className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
                                 <InlineIcon icon={social[data?.name]} />
-                                <p>{data?.link}</p>
+                                <p>{removePrefixFromUrl(data?.link)}</p>
                             </a>
                         ))}
                     </div>

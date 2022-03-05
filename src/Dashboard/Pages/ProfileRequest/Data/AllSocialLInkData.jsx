@@ -329,7 +329,7 @@ export const allSocialsIcons = [
     {
         id: "04255219-6fd5-43cc-abbb-9cf92bcdd2e4",
         name: "email",
-        prefix: "https://",
+        prefix: "mailto:",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 106">
                 <g id="Layer_2" data-name="Layer 2">

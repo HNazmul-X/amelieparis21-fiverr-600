@@ -27,7 +27,7 @@ import bloggerRect from "@iconify/icons-brandico/blogger-rect";
 import behanceCircleFilled from "@iconify/icons-ant-design/behance-circle-filled";
 import bxCurrentLocation from "@iconify/icons-bx/bx-current-location";
 import pinterestFill from "@iconify/icons-akar-icons/pinterest-fill";
-import { apiBaseURL } from "./../../../Util/API_Info";
+import { apiBaseURL, removePrefixFromUrl } from "./../../../Util/API_Info";
 
 export default function ProfileTemplate2({ data, onShare, addToContact }) {
     const baseurl = apiBaseURL;
@@ -90,7 +90,7 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
                                 target="_blank"
                                 className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
                                 <InlineIcon icon={social[data?.name]} />
-                                <span>{data.link}</span>
+                                <span>{removePrefixFromUrl(data?.link)}</span>
                             </a>
                         ))}
                     </div>

@@ -81,16 +81,18 @@ END:VCARD
     } else if (templateDataWithUser?.isApproved === false) {
         return (
             <div className="container">
-                <div className="p-5 text-center alert-secondary mt-4 rounded">
-                    <h1>Sorry Your Profile is not approved</h1>
+                <div className="p-5 text-center alert-danger mt-4 rounded">
+                    <h1>Sorry Your Profile is not Approved</h1>
                 </div>
             </div>
         );
     } else if (templateDataWithUser?.profileTemplate === null) {
         return (
             <div className="container">
-                <div className="p-5 text-center alert-secondary mt-4 rounded">
-                    <h1>NO profile Found</h1>
+                <div className="p-5 text-center alert-success mt-4 rounded">
+                    <h2 className="text-black fw-normal">
+                        Your Profile is Approved But <strong style={{fontSize:"inherit"}}>No Template is Created</strong> For You
+                    </h2>
                 </div>
             </div>
         );

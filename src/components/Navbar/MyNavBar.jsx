@@ -118,7 +118,7 @@ function MyNavBar() {
                                             Se déconnecter
                                         </PageLink>
                                     </motion.div>
-                                    <PageLink to={auth?.user?.profileTemplate ? `/profile-creation/${auth?.user?.profile}` : `/u/${auth?.user?.username}`} title="Edit Profile Template">
+                                    <PageLink to={`/profile-creation/${auth?.user?.profile}`} title="Edit Profile Template">
                                         <div className="d-flex flex-column align-items-center ">
                                             <InlineIcon icon={"fluent:document-edit-20-regular"} className="fs-3" />
                                             <p className="mb-0 small">modifier le profil</p>
