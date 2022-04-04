@@ -57,22 +57,22 @@ function MyNavBar() {
                         </PageLink>
                         <div className="items-center self-center hidden space-x-4 lg:flex text-oneCard-darkBlue place-self-center justify-self-center">
                             <PageLink to="/" className="navLink">
-                                Accueil
+                                Home
                             </PageLink>
                             {auth?.user?.isAdmin ? (
                                 <PageLink to="/admin" className="navLink">
-                                    tableau de bord
+                                    Dashboard
                                 </PageLink>
                             ) : (
                                 <PageLink to={`/u/${auth?.user?.username}`} className="navLink">
-                                    Profil
+                                    Profile
                                 </PageLink>
                             )}
                             <PageLink to="#" className="navLink" onClick={() => handelOpenModal()}>
-                                Compatibilité
+                                Comparability
                             </PageLink>
                             <PageLink to="/create-card" className="navLink">
-                                Éco-responsable
+                                Crate Card
                             </PageLink>
                         </div>
                         <div className="flex text-[#5C637C] items-center space-x-3">
@@ -84,7 +84,7 @@ function MyNavBar() {
                                             to="/login"
                                             className="w-full d-none d-lg-block py-2  text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                             onClick={() => setSidebar(false)}>
-                                            Connexion
+                                            Login
                                         </PageLink>
                                     </motion.div>
                                     <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
@@ -92,7 +92,7 @@ function MyNavBar() {
                                             to="/signup"
                                             className="w-full d-none d-lg-block py-2 text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                             onClick={() => setSidebar(false)}>
-                                            Créez votre carte
+                                            Crate Account
                                         </PageLink>
                                     </motion.div>
                                 </>
@@ -104,7 +104,7 @@ function MyNavBar() {
                                             onClick={() => {
                                                 navigate("create-card");
                                             }}>
-                                            Créez votre Carte
+                                            Create Card
                                         </button>
                                     </motion.div>
                                     <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
@@ -115,13 +115,13 @@ function MyNavBar() {
                                                 setSidebar(false);
                                                 auth?.logoutUser();
                                             }}>
-                                            Se déconnecter
+                                            Logout
                                         </PageLink>
                                     </motion.div>
                                     <PageLink to={`/profile-creation/${auth?.user?.profile}`} title="Edit Profile Template">
                                         <div className="d-flex flex-column align-items-center ">
                                             <InlineIcon icon={"fluent:document-edit-20-regular"} className="fs-3" />
-                                            <p className="mb-0 small">modifier le profil</p>
+                                            <p className="mb-0 small">Edit Profile</p>
                                         </div>
                                     </PageLink>
                                 </>
@@ -179,14 +179,14 @@ function MyNavBar() {
                                     </PageLink>
                                 ) : (
                                     <PageLink to={`/u/${auth?.user?.username}`} className="navLink">
-                                        Profil
+                                        Profile
                                     </PageLink>
                                 )}
                                 <PageLink to="#" className="sidebar-link" onClick={() => setSidebar(false)}>
-                                    Compatibilité
+                                    Compatibility
                                 </PageLink>
                                 <PageLink to="/create-card" className="sidebar-link" onClick={() => setSidebar(false)}>
-                                    Éco-responsable
+                                    Create Card
                                 </PageLink>
                             </div>
 
@@ -199,7 +199,7 @@ function MyNavBar() {
                                                 to="/login"
                                                 className="w-full py-3  text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                                 onClick={() => setSidebar(false)}>
-                                                Connexion
+                                                Login
                                             </PageLink>
                                         </motion.div>
                                         <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
@@ -207,7 +207,7 @@ function MyNavBar() {
                                                 to="/signup"
                                                 className="w-full py-3  text-lg font-medium text-center rounded-full cursor-pointer px-7 text-oneCard-lightGray focus:outline-none hover:shadow-lg bg-oneCard-darkBlue"
                                                 onClick={() => setSidebar(false)}>
-                                                Créez votre carte
+                                                Signup
                                             </PageLink>
                                         </motion.div>
                                     </>
@@ -219,7 +219,7 @@ function MyNavBar() {
                                                 onClick={() => {
                                                     navigate("create-card");
                                                 }}>
-                                                Créez votre Carte
+                                                Create Card
                                             </button>
                                         </motion.div>
                                         <motion.div variants={btnVariants} initial={{ scale: 0.3 }} animate={{ scale: 1 }} whileHover="hover" whileTap={{ scale: 0.9 }}>
@@ -230,7 +230,7 @@ function MyNavBar() {
                                                     setSidebar(false);
                                                     auth?.logoutUser();
                                                 }}>
-                                                Se déconnecter
+                                                    Logout
                                             </PageLink>
                                         </motion.div>
                                     </>

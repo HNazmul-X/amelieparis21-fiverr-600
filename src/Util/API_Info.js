@@ -1,5 +1,5 @@
 const local = `http://localhost:8080`;
-const server = "https://server.onecardpro.com";
+const server = "https://onecardpro-server-demo-server.herokuapp.com";
 
 export const apiBaseURL = server;
 

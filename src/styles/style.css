@@ -4199,6 +4199,7 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 @media screen and (max-width: 576px) {
   .profile-2-conatiner .contact-section {
@@ -4242,7 +4243,7 @@ body {
 }
 @media screen and (max-width: 576px) {
   .profile-2-conatiner .contact-section .single-contact span {
-    font-size: 11px;
+    font-size: 15px;
     text-align: justify;
   }
 }

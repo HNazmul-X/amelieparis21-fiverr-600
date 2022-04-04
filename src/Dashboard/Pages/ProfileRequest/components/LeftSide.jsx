@@ -267,7 +267,7 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                                             <span className="visually-hidden">Loading...</span>
                                         </div>
                                     )}
-                                    Delete
+                                    Enregistrer
                                 </button>
                             )}
                             <button onClick={handleProfileCreation.bind(this, "update")} className="create-profile btn btn-primary rounded-pill btn-lg px-4">
@@ -276,10 +276,10 @@ function LeftSide({ setTemplateDataReloader, templateDataReloader }) {
                                         <span className="visually-hidden">Loading...</span>
                                     </div>
                                 )}
-                                Update
+                                Mise a jour
                             </button>
                             <button className="btn-success btn rounded-pill px-4 fs-5" onClick={() => navigate("/u/" + templatedUser?.user?.username)}>
-                                Preview
+                                Aperçu
                             </button>
                         </>
                     )}

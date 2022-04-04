@@ -88,7 +88,7 @@ export default function ProfileTemplate2({ data, onShare, addToContact }) {
                                 key={index}
                                 href={`${data?.link}`}
                                 target="_blank"
-                                className={data?.name === "phone" || data?.name === "telephone" ? `w-50 single-contact` : `w-100 single-contact`}>
+                                className={data?.name === "phone" || data?.name === "telephone" ? `single-contact` : `w-100 single-contact`}>
                                 <InlineIcon icon={social[data?.name]} />
                                 <span>{removePrefixFromUrl(data?.link)}</span>
                             </a>

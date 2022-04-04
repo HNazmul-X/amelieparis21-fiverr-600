@@ -91,7 +91,7 @@ const SignUp = () => {
               </div>
 
               <form action="" onSubmit={handleSubmit(onSubmit)}>
-                <h2 className="title mb-4 mt-5">Créer Mon Compte</h2>
+                <h2 className="title mb-4 mt-5">Create a Account for Free</h2>
 
                 <div className="d-flex gap-3 mb-5">
                   <div className="w-100 form-floating mt-3 ">
@@ -103,10 +103,10 @@ const SignUp = () => {
                       id="floatingInput44"
                       placeholder="name@example.com"
                     />
-                    <label htmlFor="floatingInput44">Prénom</label>
+                    <label htmlFor="floatingInput44">First name</label>
                     {errors.firstName?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Prénom is required
+                        firstname is required
                       </span>
                     )}
                   </div>
@@ -120,10 +120,10 @@ const SignUp = () => {
                       id="floatingInput1"
                       placeholder="name@example.com"
                     />
-                    <label htmlFor="floatingInput1">Nom*</label>
+                    <label htmlFor="floatingInput1">LastName</label>
                     {errors.lastName?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Nom is required
+                        LastName is required
                       </span>
                     )}
                   </div>
@@ -138,7 +138,7 @@ const SignUp = () => {
                     id="floatingInput2"
                     placeholder="name@example.com"
                   />
-                  <label htmlFor="floatingInput2">E-mail *</label>
+                  <label htmlFor="floatingInput2">E-mail </label>
                   {errors.email?.type === "required" && (
                     <span className="d-block ps-3 text-danger text-start">
                       E-mail is required
@@ -155,10 +155,10 @@ const SignUp = () => {
                     id="floatingInput5"
                     placeholder="name@example.com"
                   />
-                  <label htmlFor="floatingInput5">Nom d'utilisateur </label>
+                  <label htmlFor="floatingInput5">Username </label>
                   {errors.username?.type === "required" && (
                     <span className="d-block ps-3 text-danger text-start">
-                      Nom d'utilisateur is required
+                      Username is required
                     </span>
                   )}
                 </div>
@@ -173,10 +173,10 @@ const SignUp = () => {
                       id="floatingPassword45"
                       placeholder="Password"
                     />
-                    <label htmlFor="floatingPassword45">Mot de passe *</label>
+                    <label htmlFor="floatingPassword45">Password</label>
                     {errors.password?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Mot de passe is required
+                        Password is required
                       </span>
                     )}
                   </div>
@@ -190,11 +190,11 @@ const SignUp = () => {
                       placeholder="Password"
                     />
                     <label htmlFor="floatingPassword76">
-                    Confirmer votre mot de passe *
+                    Confirm Password *
                     </label>
                     {errors.confirmPassword?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Confirmer votre mot de passe
+                        Confirm Password is Required
                       </span>
                     )}
                   </div>
@@ -209,7 +209,7 @@ const SignUp = () => {
                     />{" "}
                     <label htmlFor="show-password">
                       {" "}
-                      Montrer le mot de passe
+                      Show Password
                     </label>
                   </div>
                 </div>
@@ -224,10 +224,10 @@ const SignUp = () => {
                       id="floatingPassword123"
                       placeholder="Password"
                     />
-                    <label htmlFor="floatingPassword123">Société</label>
+                    <label htmlFor="floatingPassword123">society</label>
                     {errors.society?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Société is required
+                        society is required
                       </span>
                     )}
                   </div>
@@ -241,10 +241,10 @@ const SignUp = () => {
                       id="floatingPassword786"
                       placeholder="Password"
                     />
-                    <label htmlFor="floatingPassword786">Téléphone </label>
+                    <label htmlFor="floatingPassword786">Telephone </label>
                     {errors.phone?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Téléphone is required
+                        Telephone is required
                       </span>
                     )}
                   </div>
@@ -259,7 +259,7 @@ const SignUp = () => {
                     id="floatingPassword2324"
                     placeholder="Password"
                   />
-                  <label htmlFor="floatingPassword2324">Adresse *</label>
+                  <label htmlFor="floatingPassword2324">Address *</label>
                   {errors.address?.type === "required" && (
                     <span className="d-block ps-3 text-danger text-start">
                       Address is required
@@ -277,7 +277,7 @@ const SignUp = () => {
                     placeholder="Password"
                   />
                   <label htmlFor="floatingPassword127">
-                    Adresse supplémentaire{" "}
+                    Additional Address {" "}
                   </label>
                 </div>
 
@@ -291,10 +291,10 @@ const SignUp = () => {
                       id="floatingPassword48"
                       placeholder="Password"
                     />
-                    <label htmlFor="floatingPassword48">Code Postal</label>
+                    <label htmlFor="floatingPassword48">Postal Code </label>
                     {errors.postalCode?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Code Postal is required
+                        Postal Code is required
                       </span>
                     )}
                   </div>
@@ -308,10 +308,10 @@ const SignUp = () => {
                       id="floatingPass324"
                       placeholder="Password"
                     />
-                    <label htmlFor="floatingPass324">Ville *</label>
+                    <label htmlFor="floatingPass324">City *</label>
                     {errors.city?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Ville is required
+                        City is required
                       </span>
                     )}
                   </div>
@@ -327,10 +327,10 @@ const SignUp = () => {
                       id="floatingPassword39"
                       placeholder="Password"
                     />
-                    <label htmlFor="floatingPassword39">Pays</label>
+                    <label htmlFor="floatingPassword39">Country</label>
                     {errors.ambassador_code?.type === "required" && (
                       <span className="d-block ps-3 text-danger text-start">
-                        Pays is required
+                        Country is required
                       </span>
                     )}
                   </div>
@@ -346,10 +346,10 @@ const SignUp = () => {
                         <span className="visually-hidden">Loading...</span>
                       </div>
                     )}
-                    S'inscrire
+                    Create Account
                   </button>
                   <p>
-                    Vous avez déjà un compte ? <a href="/login">Connexion</a>
+                    Already Have a account <a href="/login">Login</a>
                   </p>
                 </div>
               </form>
